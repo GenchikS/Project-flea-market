@@ -1,0 +1,29 @@
+.containerButton{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 8px;
+  width: 64px;
+  height: 32px;
+  font-size: 14px;
+  padding: 12px 16px;
+  border-radius: 20px;
+  border: 2px solid var(--color-border);
+  background-color: rgb(157, 102, 239);
+  color: var(--color-white);
+  cursor: pointer;
+}
+
+.button.green{
+    background-color: var(--color-button-green);
+}
+
+.button.red{
+    background-color: var(--color-button-red);
+}

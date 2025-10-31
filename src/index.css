@@ -1,5 +1,12 @@
 :root {
- 
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+
+  --color-white: white;
+  --color-border: #6d9cd2;
+
+  --color-button-green: rgb(86, 197, 53);
+  --color-button-red:rgb(236, 26, 26);
 }
 
 a {
