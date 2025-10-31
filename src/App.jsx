@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css'
 // import clsx from "clsx";
-import AddUserPages from './pages/AddUserPages/AddUserPage.jsx';
+import AddUserPages from './pages/AddUserPages/AddUserPages.jsx';
 import IsClick from './components/IsClick/IsClick.jsx';
 
 function App() {
