@@ -1,33 +1,36 @@
-import { useEffect, useState } from 'react';
-import './App.css'
-// import clsx from "clsx";
-import AddUserPages from './pages/AddUserPages/AddUserPages.jsx';
-import IsClick from './components/IsClick/IsClick.jsx';
+import { useEffect, useState } from "react";
+import css from "./App.module.css";
+import AddUserPages from "./pages/User/AddUserPages/AddUserPages.jsx";
+import IsClick from "./components/IsClick/IsClick.jsx";
+import UserPages from "./pages/User/UserPages/UserPages.jsx";
 
 function App() {
-  const [isClick, setIsClick] = useState(true);
+  const [isClick, setIsClick] = useState(false);
+  const [userAdd, setUserAdd] = useState(false)
   const [color, setColor] = useState("");
 
   useEffect(() => {
-    // console.log(`useEffect1`);
-    // console.log(`isClick`, isClick);
-    // console.log(`color`, color);
-  }, [isClick]);
 
+  }, [isClick, userAdd]);
 
   return (
-    <div>
-      {isClick ? (
-        <AddUserPages
-          isClick={isClick}
-          setIsClick={setIsClick}
-          setColor={setColor}
-        />
+    <div className={css.containerApp}>
+      {!userAdd ? (
+        <UserPages setUserAdd={setUserAdd} setIsClick={setIsClick} />
+      ) : isClick ? (
+        <AddUserPages setIsClick={setIsClick} setColor={setColor} />
       ) : (
-        <IsClick isClick={isClick} color={color} setIsClick={setIsClick} />
+        <IsClick
+          color={color}
+          setIsClick={setIsClick}
+          setUserAdd={setUserAdd}
+        />
       )}
+      {/* <div className={css.containerApp}> */}
+
+      {/* </div> */}
     </div>
   );
 }
 
-export default App
+export default App;

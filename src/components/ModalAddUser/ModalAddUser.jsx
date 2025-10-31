@@ -2,7 +2,7 @@ import css from "./ModalAddUser.module.css"
 import { Field, Form, Formik } from "formik";
 import ButtonModalAddUser from "./ButtonModalAddUser.jsx";
 
-export const ModalAddUser = ({ setColor, setIsClick, isClick }) => {
+export const ModalAddUser = ({ setColor, setIsClick}) => {
     const initialValues = {
         username: "",
         email: "",
@@ -16,7 +16,6 @@ export const ModalAddUser = ({ setColor, setIsClick, isClick }) => {
           <Field className={css.email} type="email" name="email" />
           <Field className={css.phone} type="phone" name="phone" />
           <ButtonModalAddUser
-            isClick={isClick}
             setIsClick={setIsClick}
             setColor={setColor}
           />

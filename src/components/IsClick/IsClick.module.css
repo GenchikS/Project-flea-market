@@ -1,0 +1,14 @@
+.containerClose{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 36px;
+}
+
+.green{
+    color:var(--color-button-green);
+}
+
+.red{
+    color: var(--color-button-red);
+}

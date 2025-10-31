@@ -1,19 +1,19 @@
 import clsx from "clsx";
 import {Button} from '../Button/Button.jsx'
 
-export default function ButtonModalAddUser({ setColor, setIsClick, isClick }) {
+export default function ButtonModalAddUser({ setColor, setIsClick}) {
   // console.log(`type`, type);
   const handleClick = (evn) => {
     setColor(evn);
-    setIsClick(!isClick);
+    setIsClick(false);
     return;
   };
   return (
     <div className={clsx(`containerButton`)}>
-      <Button color="green" onClick={handleClick}>
+      <Button value="green" onClick={handleClick}>
         Done
       </Button>
-      <Button color="red" onClick={handleClick}>
+      <Button value="red" onClick={handleClick}>
         Cencel
       </Button>
     </div>

@@ -10,3 +10,19 @@
     height: 24px;
     gap: 8px;
 }
+
+.username, .email, .phone{
+    border: 1px solid var(--color-border);
+    outline: none;
+    border-radius: 14px;
+    padding: 6px;
+    background-color: var(--bg-color);
+    cursor: pointer;
+}
+
+.username:hover, .email:hover, .phone:hover{
+    background-color: var(--bg-color-hover);
+}
+.username:focus, .email:focus, .phone:focus{
+    background-color: var(--bg-color-focus);
+}
