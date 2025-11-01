@@ -1,34 +1,39 @@
 import { useEffect, useState } from "react";
 import css from "./App.module.css";
-import AddUserPages from "./pages/User/AddUserPages/AddUserPages.jsx";
+import AddUserPages from "./components/FormUserDate/AddUserPages/AddUserPages.jsx";
 import IsClick from "./components/IsClick/IsClick.jsx";
 import UserPages from "./pages/User/UserPages/UserPages.jsx";
+// import UpdateUserPages from "./pages/User/UpdateUserPages/UpdateUserPages.jsx";
+import UserDate from "./pages/User/UserDate/UserDate.jsx";
 
 function App() {
-  const [isClick, setIsClick] = useState(false);
-  const [userAdd, setUserAdd] = useState(false)
+  const [isClick, setIsClick] = useState(true);
+  const [userAdd, setUserAdd] = useState(false);
+  const [userUpdate, setUserUpdate] = useState(false);
+  const [deleteUser, setDeleteUser] = useState(false);
   const [color, setColor] = useState("");
 
-  useEffect(() => {
-
-  }, [isClick, userAdd]);
+  useEffect(() => {}, [isClick, userAdd, userUpdate, deleteUser]);
 
   return (
     <div className={css.containerApp}>
-      {!userAdd ? (
-        <UserPages setUserAdd={setUserAdd} setIsClick={setIsClick} />
-      ) : isClick ? (
-        <AddUserPages setIsClick={setIsClick} setColor={setColor} />
-      ) : (
-        <IsClick
-          color={color}
+      {isClick && (
+        <UserPages
           setIsClick={setIsClick}
           setUserAdd={setUserAdd}
+          setUserUpdate={setUserUpdate}
+          setDeleteUser={setDeleteUser}
         />
       )}
-      {/* <div className={css.containerApp}> */}
-
-      {/* </div> */}
+      {!isClick && (
+        <UserDate
+          setIsClick={setIsClick}
+          setUserAdd={setUserAdd}
+          setUserUpdate={setUserUpdate}
+          setDeleteUser={setDeleteUser}
+          constants={{ userAdd, userUpdate, deleteUser, isClick, color }}
+        />
+      )}
     </div>
   );
 }

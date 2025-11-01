@@ -16,7 +16,7 @@
   padding: 12px 16px;
   border-radius: 20px;
   border: 1px solid var(--color-border);
-  background-color: rgb(157, 102, 239);
+  background-color: var(--color-button-blue);
   color: var(--color-white);
   cursor: pointer;
 }
@@ -41,17 +41,20 @@
     background-color: var(--color-button-red-hover);
 }
 
-.addUser{
-/* justify-content: center; */
-  /* align-items: center; */
-  margin: 8px;
-  width: 94px;
+.addUser, .updateUser, .deleteUser{
+  width: 100px;
   height: 32px;
-  font-size: 14px;
-  padding: 12px 16px;
-  border-radius: 20px;
-  border: 1px solid var(--color-border);
-  background-color: rgb(157, 102, 239);
-  color: var(--color-white);
-  cursor: pointer;
+  font-size: 12px;
+}
+
+.addUser{
+background-color: var(--color-button-green);
+}
+
+.updateUser{
+background-color: var(--color-button-blue);
+}
+
+.deleteUser{
+background-color: var(--color-button-red);
 }

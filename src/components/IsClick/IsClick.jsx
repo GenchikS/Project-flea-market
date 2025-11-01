@@ -1,25 +1,17 @@
-import css from "./IsClick.module.css"
-import { Button } from "../Button/Button.jsx";
-// import clsx from "clsx";
+import css from "./IsClick.module.css";
+import { ButtonUserPage } from "../Button/ButtonUserPage.jsx";
 
-export default function IsClick({ color, setIsClick, setUserAdd }) {
+export default function IsClick({ setIsClick}) {
+  
   const handleClick = () => {
-    setIsClick(false);
-    setUserAdd(false);
+    setIsClick(true);
     return;
   };
 
-  let text = "";
-  if (color === "green") {
-    text = "Done";
-  } else if (color === "red") {
-    text = "Cencel";
-  }
-
   return (
     <div className={css.containerClose}>
-      <p className={text === "Done" ? css.green : css.red}>{text}</p>
-      <Button onClick={handleClick}>Close</Button>
+      <p className={css.green}>Done!</p>
+      <ButtonUserPage onClick={handleClick}>Cencel</ButtonUserPage>
     </div>
   );
 }

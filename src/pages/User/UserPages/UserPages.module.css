@@ -1,6 +1,18 @@
 .containerUserPages{
     display: flex;
-    flex-direction: column;
-    text-align: center;
+    flex-direction: row;
+    width: 100%;
+    justify-content:space-between;
     padding-top: 40px;
+}
+
+
+.listButtonUserPages{
+    list-style-type: none;
+    margin-right: 28px;
+    width: 120px;
+    border: 1px solid var(--border-color-black);
+    border-radius: 14px;
+    background-color: var(--bg-color);
+    padding: 8px;
 }

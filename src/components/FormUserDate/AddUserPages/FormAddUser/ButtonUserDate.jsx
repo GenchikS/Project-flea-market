@@ -1,16 +1,12 @@
 import clsx from "clsx";
-import "./Button.css";
+import "./ButtonUserDate.css";
 
-export const Button = ({ value, onClick, children }) => {
-return (
+export const ButtonUserDate = ({ type, value, children }) => {
+  return (
     <div>
       {/* <button className={clsx(`button`, color)} onClick={handleClick}>{children}</button> */}
       {/* <button className={clsx(`button`, color)} onClick={()=>console.log(`click ${color}`) }>{children}</button> */}
-      <button
-        className={clsx(`button`, value)}
-        onClick={() => onClick(value)}
-        type="submit"
-      >
+      <button type={type} className={clsx(`button`, value)}>
         {children}
       </button>
     </div>

@@ -10,6 +10,7 @@
   --bg-color-hover: rgba(135, 242, 102, 0.665);
 
   --color-button-green: rgb(87, 197, 53);
+  --color-button-blue:rgb(157, 102, 239);
   --color-button-red:rgb(236, 26, 26);
   --color-button-green-hover: rgba(87, 197, 53, 0.65);
   --color-button-red-hover:rgba(236, 26, 26, 0.65);
@@ -33,7 +34,7 @@ body {
   place-items: top;
   margin: 0 auto;
 }
-h1, h2, h3, h4, h5, a, p{
+h1, h2, h3, h4, h5, ul, li, a, p{
   margin: 0;
   padding: 0;
 }

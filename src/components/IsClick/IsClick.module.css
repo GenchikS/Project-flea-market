@@ -6,9 +6,6 @@
 }
 
 .green{
-    color:var(--color-button-green);
-}
-
-.red{
-    color: var(--color-button-red);
+    font-size: 24px;;
+    color :var(--color-button-green);
 }

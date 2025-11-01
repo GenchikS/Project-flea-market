@@ -1,0 +1,16 @@
+.containerUpdateUserPages{
+    display: flex;
+    flex-direction: column;
+    width: 222px;
+    text-align: center;
+    border: 1px solid var(--border-color-black);
+    border-radius: 14px;
+    background-color: var(--bg-color);
+    padding: 12px;
+    margin-top: 24px;
+}
+
+.title{
+    font-size: 20px;
+    margin-bottom: 16px;
+}
