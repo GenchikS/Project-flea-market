@@ -1,6 +1,7 @@
 import css from "./FormAddUser.module.css";
 import { Field, Form, Formik } from "formik";
 import ButtonModalAddUser from "./ButtonModalAddUser.jsx";
+import { useId } from "react";
 
 export const FormAddUser = ({
   setIsClick,
@@ -15,6 +16,10 @@ export const FormAddUser = ({
     phone: "",
   };
 
+  const nameFieldId = useId();
+  const emailFieldId = useId();
+  const phoneFieldId = useId();
+
   const hahdleSubmit = (value, actions) => {
     console.log(`value`, value);
     setUserAdd(false);
@@ -23,15 +28,54 @@ export const FormAddUser = ({
     actions.resetForm();
   };
   return (
-    <div className={css.containerModalAddUser}>
+    <div
+      className={
+        !textTitleDelete
+          ? css.containerModalAddUser
+          : css.containerModalDeleteUser
+      }
+    >
       <Formik initialValues={initialValues} onSubmit={hahdleSubmit}>
-        <Form className={css.form}>
+        <Form className={css.formContainer}>
           {!textTitleDelete && (
-            <Field className={css.username} type="text" name="username" />
+            <div className={css.listContainer}>
+              <p className={css.markerRed}>*</p>
+              <label className={css.label} htmlFor={nameFieldId}>
+                name
+              </label>
+              <Field
+                className={css.username}
+                type="text"
+                name="username"
+                id={nameFieldId}
+              />
+            </div>
           )}
-          <Field className={css.email} type="email" name="email" />
+          <div className={css.listContainer}>
+            <p className={css.markerRed}>*</p>
+            <label className={css.label} htmlFor={emailFieldId}>
+              email
+            </label>
+            <Field
+              className={css.email}
+              type="email"
+              name="email"
+              id={emailFieldId}
+            />
+          </div>
           {!textTitleDelete && (
-            <Field className={css.phone} type="phone" name="phone" />
+            <div className={css.listContainer}>
+              <p className={css.markerGreen}>*</p>
+              <label className={css.label} htmlFor={phoneFieldId}>
+                phone
+              </label>
+              <Field
+                className={css.phone}
+                type="phone"
+                name="phone"
+                id={phoneFieldId}
+              />
+            </div>
           )}
           <ButtonModalAddUser
             setIsClick={setIsClick}

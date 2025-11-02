@@ -11,7 +11,7 @@ export default function AddUserPages({
 }) {
   return (
     <div className={css.containerAddUserPages}>
-      <div>
+      {/* <div> */}
         <h3 className={css.title}>{textTitle}</h3>
         <FormAddUser
           setIsClick={setIsClick}
@@ -19,7 +19,7 @@ export default function AddUserPages({
           setUserUpdate={setUserUpdate}
           setDeleteUser={setDeleteUser}
         />
-      </div>
+      {/* </div> */}
     </div>
   );
 }
