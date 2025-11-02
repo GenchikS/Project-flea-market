@@ -1,8 +1,7 @@
 import css from "./IsClick.module.css";
-import { ButtonUserPage } from "../Button/ButtonUserPage.jsx";
+import { ButtonUserDate } from "../Button/ButtonUserDate.jsx";
 
-export default function IsClick({ setIsClick}) {
-  
+export default function IsClick({ setIsClick }) {
   const handleClick = () => {
     setIsClick(true);
     return;
@@ -11,7 +10,7 @@ export default function IsClick({ setIsClick}) {
   return (
     <div className={css.containerClose}>
       <p className={css.green}>Done!</p>
-      <ButtonUserPage onClick={handleClick}>Cencel</ButtonUserPage>
+      <ButtonUserDate type="button" onClick={handleClick}>Cencel</ButtonUserDate>
     </div>
   );
 }

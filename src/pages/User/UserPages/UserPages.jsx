@@ -1,5 +1,5 @@
 import css from "./UserPages.module.css";
-import { ButtonUserPage } from "../../../components/Button/ButtonUserPage.jsx";
+import { ButtonUserDate } from "../../../components/Button/ButtonUserDate.jsx";
 
 export default function UserPages({
   setIsClick,
@@ -26,27 +26,27 @@ export default function UserPages({
         // console.log(`evn userPage`, evn);
         break;
     }
-    return
+    return;
   };
-  
+
   return (
     <div className={css.containerUserPages}>
       <h4>UserPages</h4>
       <ul className={css.listButtonUserPages}>
         <li>
-          <ButtonUserPage value="addUser" onClick={handleClick}>
+          <ButtonUserDate value="addUser" onClick={handleClick}>
             Add user
-          </ButtonUserPage>
+          </ButtonUserDate>
         </li>
         <li>
-          <ButtonUserPage value="updateUser" onClick={handleClick}>
+          <ButtonUserDate value="updateUser" onClick={handleClick}>
             update User
-          </ButtonUserPage>
+          </ButtonUserDate>
         </li>
         <li>
-          <ButtonUserPage value="deleteUser" onClick={handleClick}>
+          <ButtonUserDate value="deleteUser" onClick={handleClick}>
             delete User
-          </ButtonUserPage>
+          </ButtonUserDate>
         </li>
       </ul>
     </div>

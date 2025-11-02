@@ -1,12 +1,12 @@
 import clsx from "clsx";
-import { ButtonUserDate } from "./ButtonUserDate.jsx";
-import { ButtonUserPage } from "../../../Button/ButtonUserPage.jsx";
+// import { ButtonUserDate } from "./ButtonUserDate.jsx";
+import { ButtonUserDate } from "../../../Button/ButtonUserDate.jsx";
 
 export default function ButtonModalAddUser({
   setIsClick,
   setUserAdd,
   setUserUpdate,
-  setDeleteUser
+  setDeleteUser,
 }) {
   const handleClick = () => {
     setIsClick(true);
@@ -20,9 +20,9 @@ export default function ButtonModalAddUser({
       <ButtonUserDate type="submit" value="green">
         Done
       </ButtonUserDate>
-      <ButtonUserPage value="red" onClick={handleClick}>
+      <ButtonUserDate type="button" value="red" onClick={handleClick}>
         Cencel
-      </ButtonUserPage>
+      </ButtonUserDate>
     </div>
   );
 }
