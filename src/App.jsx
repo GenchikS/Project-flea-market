@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
 import css from "./App.module.css";
-import AddUserPages from "./components/FormUserDate/AddUserPages/AddUserPages.jsx";
-import IsClick from "./components/IsClick/IsClick.jsx";
 import UserPages from "./pages/User/UserPages/UserPages.jsx";
-// import UpdateUserPages from "./pages/User/UpdateUserPages/UpdateUserPages.jsx";
 import UserDate from "./pages/User/UserDate/UserDate.jsx";
+// import axios from "axios";
 
 function App() {
   const [isClick, setIsClick] = useState(true);
@@ -13,7 +11,11 @@ function App() {
   const [deleteUser, setDeleteUser] = useState(false);
   const [color, setColor] = useState("");
 
-  useEffect(() => {}, [isClick, userAdd, userUpdate, deleteUser]);
+  useEffect(() => {
+    // axios function fetchUser() {
+    //   const response = await axios.get(``)
+    // }
+  }, [isClick, userAdd, userUpdate, deleteUser]);
 
   return (
     <div className={css.containerApp}>
@@ -24,6 +26,7 @@ function App() {
           setUserUpdate={setUserUpdate}
           setDeleteUser={setDeleteUser}
         />
+        
       )}
       {!isClick && (
         <UserDate

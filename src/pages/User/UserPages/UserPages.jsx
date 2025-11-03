@@ -31,8 +31,12 @@ export default function UserPages({
 
   return (
     <div className={css.containerUserPages}>
-      <h4>UserPages</h4>
-      <ul className={css.listButtonUserPages}>
+         <div className={css.containerUserFilterListButtonUserPages}>
+            <div>
+              <h4>UserPages</h4>
+            </div>
+            <div>
+              <ul className={css.listButtonUserPages}>
         <li>
           <ButtonUserDate value="addUser" onClick={handleClick}>
             Add user
@@ -49,6 +53,13 @@ export default function UserPages({
           </ButtonUserDate>
         </li>
       </ul>
+      </div>
     </div>
+
+    <div className={css.containerUserInfo}>
+    <h4>User info:</h4>
+    </div>
+    </div>
+
   );
 }
