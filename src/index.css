@@ -3,11 +3,15 @@
   font-style: normal;
 
   --color-white: white;
+  --color-white-grey: rgb(240, 240, 240);
+  --color-black: black;
+  --color-text: #2e2e2e;
   --color-border: #6d9cd2;
   --bg-color-body:rgba(217, 187, 148, 0.4);
   --bg-color: rgba(229, 235, 235, 0.6);
   --bg-color-focus: rgba(135, 242, 102, 0.267);
   --bg-color-hover: rgba(135, 242, 102, 0.665);
+  --bg-color-grey: rgba(176, 53, 53, 0.45);
 
   --color-button-green: rgb(87, 197, 53);
   --color-button-blue:rgb(157, 102, 239);

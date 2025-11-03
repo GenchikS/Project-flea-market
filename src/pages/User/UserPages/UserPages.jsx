@@ -1,5 +1,6 @@
 import css from "./UserPages.module.css";
 import { ButtonUserDate } from "../../../components/Button/ButtonUserDate.jsx";
+import UserTableList from "../../../components/UserInfoTable/UserInfoTable.jsx";
 
 export default function UserPages({
   setIsClick,
@@ -57,7 +58,8 @@ export default function UserPages({
     </div>
 
     <div className={css.containerUserInfo}>
-    <h4>User info:</h4>
+    <h4 className={css.userCollectionsTitle}>User collections:</h4>
+    <UserTableList/>
     </div>
     </div>
 
