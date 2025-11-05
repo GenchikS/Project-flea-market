@@ -7,6 +7,7 @@ export default function UserPages({
   setUserAdd,
   setUserUpdate,
   setDeleteUser,
+  response,
 }) {
   const handleClick = (evn) => {
     setIsClick(false);
@@ -32,36 +33,35 @@ export default function UserPages({
 
   return (
     <div className={css.containerUserPages}>
-         <div className={css.containerUserFilterListButtonUserPages}>
-            <div>
-              <h4>UserPages</h4>
-            </div>
-            <div>
-              <ul className={css.listButtonUserPages}>
-        <li>
-          <ButtonUserDate value="addUser" onClick={handleClick}>
-            Add user
-          </ButtonUserDate>
-        </li>
-        <li>
-          <ButtonUserDate value="updateUser" onClick={handleClick}>
-            update User
-          </ButtonUserDate>
-        </li>
-        <li>
-          <ButtonUserDate value="deleteUser" onClick={handleClick}>
-            delete User
-          </ButtonUserDate>
-        </li>
-      </ul>
+      <div className={css.containerUserFilterListButtonUserPages}>
+        <div>
+          <h4>UserPages</h4>
+        </div>
+        <div>
+          <ul className={css.listButtonUserPages}>
+            <li>
+              <ButtonUserDate value="addUser" onClick={handleClick}>
+                Add user
+              </ButtonUserDate>
+            </li>
+            <li>
+              <ButtonUserDate value="updateUser" onClick={handleClick}>
+                update User
+              </ButtonUserDate>
+            </li>
+            <li>
+              <ButtonUserDate value="deleteUser" onClick={handleClick}>
+                delete User
+              </ButtonUserDate>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div className={css.containerUserInfo}>
+        <h4 className={css.userCollectionsTitle}>User collections:</h4>
+        <UserTableList response={response} />
       </div>
     </div>
-
-    <div className={css.containerUserInfo}>
-    <h4 className={css.userCollectionsTitle}>User collections:</h4>
-    <UserTableList/>
-    </div>
-    </div>
-
   );
 }
