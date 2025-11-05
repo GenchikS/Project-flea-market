@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import css from "./App.module.css";
 import UserPages from "./pages/User/UserPages/UserPages.jsx";
 import UserDate from "./pages/User/UserDate/UserDate.jsx";
-// import axios from "axios";
+import axios from "axios";
 
 function App() {
   const [isClick, setIsClick] = useState(true);
@@ -12,9 +12,13 @@ function App() {
   const [color, setColor] = useState("");
 
   useEffect(() => {
-    // axios function fetchUser() {
-    //   const response = await axios.get(``)
-    // }
+    async function fetchUser() {
+      const response = await axios.get(
+        `https://project-flea-market-bd.onrender.com/users`
+      );
+      console.log('response', response);
+    }
+    fetchUser();
   }, [isClick, userAdd, userUpdate, deleteUser]);
 
   return (
