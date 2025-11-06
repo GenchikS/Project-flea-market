@@ -1,6 +1,6 @@
-import AddUserPages from "../../../components/FormUserDate/AddUserPages/AddUserPages.jsx";
-import DeleteUserPages from "../../../components/FormUserDate/DeleteUserPages/DeleteUserPages.jsx";
-import UpdateUserPages from "../../../components/FormUserDate/UpdateUserPages/UpdateUserPages.jsx";
+import AddUserPages from "../../../components/User/FormUserDate/AddUserPages/AddUserPages.jsx";
+import DeleteUserPages from "../../../components/User/FormUserDate/DeleteUserPages/DeleteUserPages.jsx";
+import UpdateUserPages from "../../../components/User/FormUserDate/UpdateUserPages/UpdateUserPages.jsx";
 import IsClick from "../../../components/IsClick/IsClick.jsx";
 
 export default function UserDate({

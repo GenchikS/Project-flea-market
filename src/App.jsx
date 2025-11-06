@@ -3,6 +3,7 @@ import css from "./App.module.css";
 import UserPages from "./pages/User/UserPages/UserPages.jsx";
 import UserDate from "./pages/User/UserDate/UserDate.jsx";
 import axios from "axios";
+import { fetchArticleUserAll } from "./articles-api.js";
 
 // http://localhost:3000/users
 function App() {
@@ -17,12 +18,11 @@ function App() {
 
   useEffect(() => {
     async function fetchUser() {
-       setResponse([]);
+      setResponse([]);
+      
 try {
   setLoading(true);
-      const response = await axios.get(
-        "https://project-flea-market-bd.onrender.com/users"
-      );
+  const response = await fetchArticleUserAll();
       setResponse(response.data.data);
       // console.log('response', response.data.data);
 } catch (error) {

@@ -1,6 +1,6 @@
 import css from "./UserPages.module.css";
 import { ButtonUserDate } from "../../../components/Button/ButtonUserDate.jsx";
-import UserInfoCard from "../../../components/UserInfoTable/UserInfoCard.jsx";
+import UserInfoCard from "../../../components/User/UserInfoTable/UserInfoCard.jsx";
 import MyComponent from "../../../components/Loader/Loader.jsx";
 // import MyComponent from "../../../components/Loader/MyComponent.jsx";
 
