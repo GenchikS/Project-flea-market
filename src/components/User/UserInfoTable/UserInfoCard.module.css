@@ -3,13 +3,17 @@ table {
     background-color: var(--color-white-grey);
     width: 100%;
 }
-
-td, tr, th {
-    font-size: 8px;
+ th{
+   font-size: 10px; 
+   border: 2px solid var(--color-border);
+   margin: 0 auto;
+   padding: 4px;
+}
+td, tr {
+    font-size: 9px;
     border: 2px solid var(--color-border);
-    padding: 8px;
     text-align: left;
-    margin: 0;
+    margin: 0 auto;
     padding: 4px;
 }
 
