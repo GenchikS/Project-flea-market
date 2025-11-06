@@ -16,12 +16,12 @@ export default function UserInfoCard({ response }) {
             <th className={css.roleTh} scope="col">
               role
             </th>
-            <th className={css.phoneTh} scope="col">
+            {/* <th className={css.phoneTh} scope="col">
               phone
-            </th>
-            {/* <th className={css.roleTh} scope="col">
-              id
             </th> */}
+            <th className={css.roleTh} scope="col">
+              id
+            </th>
           </tr>
         </thead>
         {response.map((user) => (
@@ -30,8 +30,8 @@ export default function UserInfoCard({ response }) {
               <td>{user.name}</td>
               <td>{user.email}</td>
               <td>{user.role}</td>
-              <td>{user.phone}</td>
-              {/* <td>{user._id}</td> */}
+              {/* <td>{user.phone}</td> */}
+              <td>{user._id}</td>
             </tr>
           </tbody>
         ))}
