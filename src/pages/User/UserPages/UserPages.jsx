@@ -1,7 +1,8 @@
 import css from "./UserPages.module.css";
-import { ButtonUserDate } from "../../../components/Button/ButtonUserDate.jsx";
 import UserInfoCard from "../../../components/User/UserInfoTable/UserInfoCard.jsx";
 import MyComponent from "../../../components/Loader/Loader.jsx";
+import UserChange from "../../../components/User/FormUserDate/UserChange/UserChange.jsx";
+import UserFormSearch from "../../../components/User/UserFormSearch/UserFormSearchName.jsx";
 // import MyComponent from "../../../components/Loader/MyComponent.jsx";
 
 export default function UserPages({
@@ -37,29 +38,15 @@ export default function UserPages({
 
   return (
     <div className={css.containerUserPages}>
+      <h4>UserPages</h4>
       <div className={css.containerUserFilterListButtonUserPages}>
-        <div>
-          <h4>UserPages</h4>
+        <div className={css.containerUserPageTitleSearch}>
+          <div className={css.containerUserSearch}>
+            <UserFormSearch placeholder="Search name" />
+            <UserFormSearch placeholder="Search email" />
+          </div>
         </div>
-        <div>
-          <ul className={css.listButtonUserPages}>
-            <li>
-              <ButtonUserDate value="addUser" onClick={handleClick}>
-                Add user
-              </ButtonUserDate>
-            </li>
-            <li>
-              <ButtonUserDate value="updateUser" onClick={handleClick}>
-                update User
-              </ButtonUserDate>
-            </li>
-            <li>
-              <ButtonUserDate value="deleteUser" onClick={handleClick}>
-                delete User
-              </ButtonUserDate>
-            </li>
-          </ul>
-        </div>
+        <UserChange handleClick={handleClick} />
       </div>
 
       <div className={css.containerUserInfo}>

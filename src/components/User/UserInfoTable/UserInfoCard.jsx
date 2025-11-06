@@ -1,7 +1,7 @@
 import css from "./UserInfoCard.module.css";
 
 export default function UserInfoCard({ response }) {
-      console.log(`response`, response);
+      // console.log(`response`, response);
   return (
     <div>
       <table>
