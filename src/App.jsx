@@ -17,8 +17,9 @@ function App() {
 
   useEffect(() => {
     async function fetchUser() {
+       setResponse([]);
 try {
-        setLoading(true);
+  setLoading(true);
       const response = await axios.get(
         "https://project-flea-market-bd.onrender.com/users"
       );
@@ -53,7 +54,7 @@ finally {
           setUserAdd={setUserAdd}
           setUserUpdate={setUserUpdate}
           setDeleteUser={setDeleteUser}
-          constants={{ userAdd, userUpdate, deleteUser, isClick, color, response }}
+          constants={{ userAdd, userUpdate, deleteUser, isClick, color }}
         />
       )}
     </div>

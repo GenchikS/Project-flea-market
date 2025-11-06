@@ -25,6 +25,7 @@ export const FormAddUser = ({
     setUserAdd(false);
     setUserUpdate(false);
     setDeleteUser(false);
+    // setResponse([])
     actions.resetForm();
   };
   return (

@@ -40,9 +40,7 @@ export default function UserDate({
         />
       )}
       {!constants.userAdd && !constants.userUpdate && !constants.deleteUser && (
-        <IsClick
-          setIsClick={setIsClick}
-      />
+        <IsClick setIsClick={setIsClick} />
       )}
     </div>
   );
