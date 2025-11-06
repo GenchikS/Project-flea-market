@@ -13,29 +13,29 @@ export default function UserInfoCard({ response }) {
             <th className={css.emailTh} scope="col">
               email
             </th>
-            <th className={css.phoneTh} scope="col">
-              phone
-            </th>
             <th className={css.roleTh} scope="col">
               role
             </th>
-            <th className={css.roleTh} scope="col">
-              id
+            <th className={css.phoneTh} scope="col">
+              phone
             </th>
+            {/* <th className={css.roleTh} scope="col">
+              id
+            </th> */}
           </tr>
         </thead>
         {response.map((user) => (
-           <tbody key={user._id}>
-                <tr className={css.userList}>
-                  <td>{user.name}</td>
-                  <td>{user.email}</td>
-                  <td>{user.phone}</td>
-                  <td>{user.role}</td>
-                  <td>{user._id}</td>
-                </tr>
+          <tbody key={user._id}>
+            <tr className={css.userList}>
+              <td>{user.name}</td>
+              <td>{user.email}</td>
+              <td>{user.role}</td>
+              <td>{user.phone}</td>
+              {/* <td>{user._id}</td> */}
+            </tr>
           </tbody>
-            ))}
-        </table>
+        ))}
+      </table>
     </div>
   );
 }

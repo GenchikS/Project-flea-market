@@ -25,12 +25,12 @@
 }
 
 .containerUserInfo{
-    min-width: 320px;
+    min-width: 290px;
     height: 530px;
     border: 1px solid var(--border-color-black);
     border-radius: 14px;
     background-color: var(--bg-color);
-    margin: 8px 28px 0 28px;
+    margin: 8px 12px 0 12px;
     padding: 8px;
 }
 
