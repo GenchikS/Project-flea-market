@@ -11,15 +11,25 @@ function App() {
   const [userUpdate, setUserUpdate] = useState(false);
   const [deleteUser, setDeleteUser] = useState(false);
   const [color, setColor] = useState("");
-  const [response, setResponse]= useState([])
+  const [loadig, setLoading]= useState(false)
+  const [response, setResponse] = useState([]);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     async function fetchUser() {
+try {
+        setLoading(true);
       const response = await axios.get(
         "https://project-flea-market-bd.onrender.com/users"
       );
       setResponse(response.data.data);
       // console.log('response', response.data.data);
+} catch (error) {
+  setError(true);
+}
+finally {
+  setLoading(false);
+}
     }
     fetchUser();
   }, [isClick, userAdd, userUpdate, deleteUser]);
@@ -33,6 +43,8 @@ function App() {
           setUserUpdate={setUserUpdate}
           setDeleteUser={setDeleteUser}
           response={response}
+          loadig={loadig}
+          error={error}
         />
       )}
       {!isClick && (

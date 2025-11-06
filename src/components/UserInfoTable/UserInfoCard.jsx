@@ -25,19 +25,17 @@ export default function UserInfoCard({ response }) {
           </tr>
         </thead>
         {response.map((user) => (
-          <ul>
-            <tbody>
-              <tr className={css.userList}>
-                <td >{user.name}</td>
-                <td>{user.email}</td>
-                <td>{user.phone}</td>
-                <td>{user.role}</td>
-                <td>{user._id}</td>
-              </tr>
-            </tbody>
-          </ul>
-        ))}
-      </table>
+           <tbody key={user._id}>
+                <tr className={css.userList}>
+                  <td>{user.name}</td>
+                  <td>{user.email}</td>
+                  <td>{user.phone}</td>
+                  <td>{user.role}</td>
+                  <td>{user._id}</td>
+                </tr>
+          </tbody>
+            ))}
+        </table>
     </div>
   );
 }

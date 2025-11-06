@@ -38,3 +38,13 @@
     font-size: 20px;
     margin: 16px 0 16px 12px;
 }
+
+.containerLoadingData{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.textLoadingData{
+    margin-bottom: 32px;
+}

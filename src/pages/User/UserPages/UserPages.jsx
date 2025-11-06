@@ -1,6 +1,8 @@
 import css from "./UserPages.module.css";
 import { ButtonUserDate } from "../../../components/Button/ButtonUserDate.jsx";
-import UserTableList from "../../../components/UserInfoTable/UserInfoTable.jsx";
+import UserInfoCard from "../../../components/UserInfoTable/UserInfoCard.jsx";
+import MyComponent from "../../../components/Loader/Loader.jsx";
+// import MyComponent from "../../../components/Loader/MyComponent.jsx";
 
 export default function UserPages({
   setIsClick,
@@ -8,6 +10,8 @@ export default function UserPages({
   setUserUpdate,
   setDeleteUser,
   response,
+  loadig,
+  error
 }) {
   const handleClick = (evn) => {
     setIsClick(false);
@@ -60,7 +64,14 @@ export default function UserPages({
 
       <div className={css.containerUserInfo}>
         <h4 className={css.userCollectionsTitle}>User collections:</h4>
-        <UserTableList response={response} />
+        {loadig && (
+          <div className={css.containerLoadingData}>
+            <p className={css.textLoadingData}>Loding data ...</p>
+            <MyComponent />
+          </div>
+        )}
+        {response.length > 0 && <UserInfoCard response={response} />}
+        {error && <p>Server error!</p>}
       </div>
     </div>
   );
