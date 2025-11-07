@@ -57,11 +57,11 @@ function App() {
       setLoading(true);
       setError(false);
       const response = await fetchArticleUserName(name);
-      console.log(`response`, response);
+      // console.log(`response`, response);
       if (!response) {
         setResponse([]);
         setError(true);
-        console.log(`error`, error)
+        // console.log(`error`, error)
       return }
       const responseOne = response;
       setUserData(responseOne);
