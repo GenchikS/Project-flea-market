@@ -21,8 +21,8 @@ export const fetchArticleUserName = async(name) => {
 }
 
 export const fetchArticleUserEmail = async (name) => {
-  console.log(`name`, name);
+//   console.log(`name`, name);
   const response = await axios.get(`/users/?email=${name}`);
-  console.log(`response`, response.data.data);
+//   console.log(`response`, response.data.data);
   return response.data.data[0];
 };

@@ -82,7 +82,7 @@ export default function UserPages({
         {response.length > 0 && (
           <UserInfoCard userData={userData} response={response} />
         )}
-        {error && <p>Server error!</p>}
+        {error && <p>User not found!</p>}
       </div>
     </div>
   );

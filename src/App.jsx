@@ -33,7 +33,13 @@ function App() {
       const response = await fetchArticleUserId(name);
       
       const responseOne = response.data.data;
-      console.log(`response`, response);
+      // console.log(`response`, response);
+      if (!response) {
+        setResponse([]);
+        setError(true);
+        console.log(`error`, error);
+        return;
+      }
       setUserData(responseOne);
     } catch (error) {
       setError(true);
@@ -46,12 +52,17 @@ function App() {
   const handleSearchName = async (name) => {
     // console.log(`name`, name);
     try {
+      
       setUserData([]);
       setLoading(true);
       setError(false);
       const response = await fetchArticleUserName(name);
-      // console.log(`response`, response);
-      
+      console.log(`response`, response);
+      if (!response) {
+        setResponse([]);
+        setError(true);
+        console.log(`error`, error)
+      return }
       const responseOne = response;
       setUserData(responseOne);
     } catch (error) {
@@ -71,8 +82,13 @@ function App() {
        setError(false);
        const response = await fetchArticleUserEmail(name);
        //  console.log(`response`, response);
-
-       const responseOne = response;
+       if (!response) {
+         setResponse([]);
+         setError(true);
+         console.log(`error`, error);
+         return;
+       }
+      const responseOne = response;
        setUserData(responseOne);
      } catch (error) {
        setError(true);
@@ -125,24 +141,6 @@ function App() {
             )
           }
         />
-        {/* <Route
-          path="/:userId"
-          element={
-            isClick && (
-              <UserPages
-                setIsClick={setIsClick}
-                setUserAdd={setUserAdd}
-                setUserUpdate={setUserUpdate}
-                setDeleteUser={setDeleteUser}
-                response={response}
-                loadig={loadig}
-                error={error}
-                handleSearch={handleSearch}
-              />
-            )
-          }
-        /> */}
-
         <Route
           path="/update"
           element={
