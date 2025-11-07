@@ -1,5 +1,6 @@
 import css from "./IsClick.module.css";
 import { ButtonUserDate } from "../Button/ButtonUserDate.jsx";
+import { NavLink } from "react-router-dom";
 
 export default function IsClick({ setIsClick }) {
   const handleClick = () => {
@@ -8,9 +9,12 @@ export default function IsClick({ setIsClick }) {
   };
 
   return (
-    <div className={css.containerClose}>
+    <nav className={css.containerClose}>
       <p className={css.green}>Done!</p>
-      <ButtonUserDate type="button" onClick={handleClick}>Cencel</ButtonUserDate>
-    </div>
+      <NavLink to="/">
+            <ButtonUserDate type="button" onClick={handleClick}>Cencel</ButtonUserDate>
+      </NavLink>
+      
+    </nav>
   );
 }

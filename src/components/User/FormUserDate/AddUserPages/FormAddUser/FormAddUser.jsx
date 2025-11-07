@@ -1,7 +1,7 @@
 import css from "./FormAddUser.module.css";
 import { Field, Form, Formik } from "formik";
-import ButtonModalAddUser from "./ButtonModalAddUser.jsx";
 import { useId } from "react";
+import ButtonModalUser from "./ButtonModalUser/ButtonModalUser.jsx";
 
 export const FormAddUser = ({
   setIsClick,
@@ -25,7 +25,6 @@ export const FormAddUser = ({
     setUserAdd(false);
     setUserUpdate(false);
     setDeleteUser(false);
-    // setResponse([])
     actions.resetForm();
   };
   return (
@@ -78,7 +77,7 @@ export const FormAddUser = ({
               />
             </div>
           )}
-          <ButtonModalAddUser
+          <ButtonModalUser
             setIsClick={setIsClick}
             setUserAdd={setUserAdd}
             setUserUpdate={setUserUpdate}

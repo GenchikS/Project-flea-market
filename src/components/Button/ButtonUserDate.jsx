@@ -1,7 +1,6 @@
 import clsx from "clsx";
 import "./ButtonUserDate.css";
 
-// export const ButtonUserPage = ({ value, onClick, children }) => {
 export const ButtonUserDate = ({ value, onClick, children, type }) => {
     return (
       <div>

@@ -1,4 +1,3 @@
-import IsClick from "../../../IsClick/IsClick.jsx";
 import css from "./AddUserPages.module.css";
 import { FormAddUser } from "./FormAddUser/FormAddUser.jsx";
 
