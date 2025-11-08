@@ -9,13 +9,13 @@ import {
   fetchArticleUserId,
 } from "../../../articles-api.js";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 export default function UserPages({
   item,
   component}) {
   // console.log(`items2`, items.length);
- const navigate = useNavigate();
+//  const navigate = useNavigate();
   const [itemsSourch, setItemsSourch] = useState(null);
   const [error, setError] = useState(false);
   const { loadig } = component;
@@ -57,7 +57,7 @@ export default function UserPages({
   };
 
   const handleSearchId = async (name) => {
-    console.log(`name`, name);
+    // console.log(`name`, name);
 
     try {
     const response = await fetchArticleUserId(name);
@@ -76,29 +76,7 @@ export default function UserPages({
     }
   };
 
-  const handleClick = (evn) => {
-    // console.log(`evn`, evn);
-    switch (evn) {
-      case `addUser`:
-        navigate(`/adduser`);
-        // console.log(`evn addUser`, evn);
-        break;
-      // case `updateUser`:
-    //     // console.log(`evn updateUser`, evn);
-    //     setUserUpdate(true);
-    //     break;
-      case `deleteUser`:
-        navigate(`/delete`);
-        console.log(`evn deleteUser`, evn);
-      break;
-    //   default:
-    //     // console.log(`evn userPage`, evn);
-    //     break;
-    }
-    return;
-  };
-
-  return (
+ return (
     <div className={css.containerUserPages}>
       <h4>UserPages</h4>
       <div className={css.containerUserFilterListButtonUserPages}>
@@ -121,7 +99,7 @@ export default function UserPages({
             />
           </div>
         </div>
-            <UserChange handleClick={handleClick} />
+            <UserChange/>
         </div>
         <div className={css.containerUserInfo}>
         <h4 className={css.userCollectionsTitle}>User collections:</h4>

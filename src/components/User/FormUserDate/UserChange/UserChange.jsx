@@ -1,7 +1,33 @@
 import { ButtonUserDate } from "../../../Button/ButtonUserDate.jsx";
 import css from "./UserChange.module.css"
-export default function UserChange({ handleClick }) {
-  return (
+import { useNavigate } from "react-router-dom";
+
+
+export default function UserChange() {
+  const navigate = useNavigate();
+
+  const handleClick = (evn) => {
+  // console.log(`evn`, evn);
+  switch (evn) {
+    case `addUser`:
+      navigate(`/adduser`);
+      // console.log(`evn addUser`, evn);
+      break;
+    // case `updateUser`:
+    //     // console.log(`evn updateUser`, evn);
+    //     break;
+    case `deleteUser`:
+      navigate(`/delete`);
+      console.log(`evn deleteUser`, evn);
+      break;
+    //   default:
+    //     // console.log(`evn userPage`, evn);
+    //     break;
+  }
+  return;
+};
+
+return (
     <div className={css.buttonUserContainer}>
       <ul className={css.listButtonUser}>
         <li>

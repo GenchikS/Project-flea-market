@@ -31,7 +31,13 @@ export const FormAddUser = () => {
   const phoneFieldId = useId();
 
   const hahdleSubmit = (value, actions) => {
-    fetchArticleAddUser(value);
+    console.log(`value`, value);
+    console.log(`value`, value);
+    const { name, email, phone } = value;
+    const nameEnd = name.toLowerCase();
+    const emailEnd = email.toLowerCase();
+
+    fetchArticleAddUser({ name: nameEnd, email: emailEnd, phone });
     // console.log(`value`, value);
     actions.resetForm();
     navigate(`/done`);
