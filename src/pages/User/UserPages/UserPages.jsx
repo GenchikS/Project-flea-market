@@ -3,40 +3,97 @@ import UserInfoCard from "../../../components/User/UserInfoTable/UserInfoCard.js
 import MyComponent from "../../../components/Loader/Loader.jsx";
 import UserChange from "../../../components/User/FormUserDate/UserChange/UserChange.jsx";
 import UserFormSearch from "../../../components/User/UserFormSearch/UserFormSearch.jsx";
-import { NavLink } from "react-router-dom";
-// import MyComponent from "../../../components/Loader/MyComponent.jsx";
+import {
+  fetchArticleUserName,
+  fetchArticleUserEmail,
+  fetchArticleUserId,
+} from "../../../articles-api.js";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function UserPages({
-  setIsClick,
-  setUserAdd,
-  setUserUpdate,
-  setDeleteUser,
-  response,
-  loadig,
-  error,
-  handleSearchId,
-  handleSearchName,
-  handleSearchEmail,
-  userData,
-}) {
+  item,
+  component}) {
+  // console.log(`items2`, items.length);
+ const navigate = useNavigate();
+  const [itemsSourch, setItemsSourch] = useState(null);
+  const [error, setError] = useState(false);
+  const { loadig } = component;
+
+ const handleSearchName = async (name) => {
+    // console.log(`name`, name);
+    try {
+    const response = await fetchArticleUserName(name);
+      // console.log(`response`, response);
+      setItemsSourch(response);
+     if (!response) {
+      setItemsSourch([]);
+       (true);
+      return;
+      }
+    } catch (error) {
+      setError(true);
+    } finally {
+      // setLoading(false);
+    }
+  };
+
+  const handleSearchEmail = async (name) => {
+    //  console.log(`name`, name);
+    try {
+      const response = await fetchArticleUserEmail(name);
+      setItemsSourch(response);
+      
+      if (!response) {
+        setItemsSourch([]);
+        setError(true);
+      return;
+      }
+  } catch (error) {
+      setError(true);
+    } finally {
+      // setLoading(false);
+    }
+  };
+
+  const handleSearchId = async (name) => {
+    console.log(`name`, name);
+
+    try {
+    const response = await fetchArticleUserId(name);
+      // console.log(`response`, response);
+
+      setItemsSourch(response);
+      if (!response) {
+        setItemsSourch([]);
+        setError(true);
+        return;
+      }
+    } catch (error) {
+      setError(true);
+    } finally {
+      // setLoading(false);
+    }
+  };
+
   const handleClick = (evn) => {
-    setIsClick(false);
+    // console.log(`evn`, evn);
     switch (evn) {
       case `addUser`:
+        navigate(`/adduser`);
         // console.log(`evn addUser`, evn);
-        setUserAdd(true);
         break;
-      case `updateUser`:
-        // console.log(`evn updateUser`, evn);
-        setUserUpdate(true);
-        break;
+      // case `updateUser`:
+    //     // console.log(`evn updateUser`, evn);
+    //     setUserUpdate(true);
+    //     break;
       case `deleteUser`:
-        // console.log(`evn deleteUser`, evn);
-        setDeleteUser(true);
-        break;
-      default:
-        // console.log(`evn userPage`, evn);
-        break;
+        navigate(`/delete`);
+        console.log(`evn deleteUser`, evn);
+      break;
+    //   default:
+    //     // console.log(`evn userPage`, evn);
+    //     break;
     }
     return;
   };
@@ -64,23 +121,22 @@ export default function UserPages({
             />
           </div>
         </div>
-        <nav>
-          <NavLink to="/update">
             <UserChange handleClick={handleClick} />
-          </NavLink>
-        </nav>
-      </div>
-
-      <div className={css.containerUserInfo}>
+        </div>
+        <div className={css.containerUserInfo}>
         <h4 className={css.userCollectionsTitle}>User collections:</h4>
+
+        {item &&
+          (!itemsSourch ? (
+            <UserInfoCard item={item} />
+          ) : (
+            <UserInfoCard itemsArrey={itemsSourch} />
+          ))}
         {loadig && (
           <div className={css.containerLoadingData}>
             <p className={css.textLoadingData}>Loding data ...</p>
             <MyComponent />
           </div>
-        )}
-        {response.length > 0 && (
-          <UserInfoCard userData={userData} response={response} />
         )}
         {error && <p>User not found!</p>}
       </div>

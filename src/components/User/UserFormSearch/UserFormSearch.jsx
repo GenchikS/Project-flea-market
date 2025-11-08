@@ -1,12 +1,5 @@
-import { Formik } from "formik";
 import { ButtonUserDate } from "../../Button/ButtonUserDate.jsx";
 import css from "./UserFormSearch.module.css"
-import * as Yup from "yup";
-
-
-const SourchValidationSchema = Yup.object().shape({
-  name: Yup.string().min(2, "To short!").max(15, "To long").required("Requred!")
-});
 
 export default function UserFormSearch({ handleSearch, placeholder, name }) {
   // console.log(`name`, name);

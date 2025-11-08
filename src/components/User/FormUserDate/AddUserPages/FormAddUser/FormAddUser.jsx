@@ -1,17 +1,27 @@
 import css from "./FormAddUser.module.css";
-import { Field, Form, Formik } from "formik";
+import { Field, Form, Formik} from "formik";
 import { useId } from "react";
 import ButtonModalUser from "./ButtonModalUser/ButtonModalUser.jsx";
+import { useNavigate } from "react-router-dom";
+import * as Yup from "yup";
+import { fetchArticleAddUser } from "../../../../../articles-api.js";
 
-export const FormAddUser = ({
-  setIsClick,
-  setUserAdd,
-  setUserUpdate,
-  setDeleteUser,
-  textTitleDelete,
-}) => {
+
+
+const validationUserSchema = Yup.object().shape({
+  name: Yup.string()
+    .min(2, "To short!")
+    .max(15, "To long")
+    .required("Requred!"),
+  email: Yup.string().email().required("Requred!"),
+});
+
+
+export const FormAddUser = () => {
+  const navigate = useNavigate();
+
   const initialValues = {
-    username: "",
+    name: "",
     email: "",
     phone: "",
   };
@@ -21,23 +31,22 @@ export const FormAddUser = ({
   const phoneFieldId = useId();
 
   const hahdleSubmit = (value, actions) => {
-    console.log(`value`, value);
-    setUserAdd(false);
-    setUserUpdate(false);
-    setDeleteUser(false);
+    fetchArticleAddUser(value);
+    // console.log(`value`, value);
     actions.resetForm();
+    navigate(`/done`);
   };
+
   return (
     <div
-      className={
-        !textTitleDelete
-          ? css.containerModalAddUser
-          : css.containerModalDeleteUser
-      }
+      className={css.containerModalAddUser}
     >
-      <Formik initialValues={initialValues} onSubmit={hahdleSubmit}>
+      <Formik
+        initialValues={initialValues}
+        onSubmit={hahdleSubmit}
+        validationSchema={validationUserSchema}
+      >
         <Form className={css.formContainer}>
-          {!textTitleDelete && (
             <div className={css.listContainer}>
               <p className={css.markerRed}>*</p>
               <label className={css.label} htmlFor={nameFieldId}>
@@ -46,11 +55,11 @@ export const FormAddUser = ({
               <Field
                 className={css.username}
                 type="text"
-                name="username"
+                name="name"
                 id={nameFieldId}
+                placeholder="min 2 symbol"
               />
             </div>
-          )}
           <div className={css.listContainer}>
             <p className={css.markerRed}>*</p>
             <label className={css.label} htmlFor={emailFieldId}>
@@ -61,10 +70,10 @@ export const FormAddUser = ({
               type="email"
               name="email"
               id={emailFieldId}
+              placeholder="email@email.com"
             />
           </div>
-          {!textTitleDelete && (
-            <div className={css.listContainer}>
+          <div className={css.listContainer}>
               <p className={css.markerGreen}>*</p>
               <label className={css.label} htmlFor={phoneFieldId}>
                 phone
@@ -76,13 +85,7 @@ export const FormAddUser = ({
                 id={phoneFieldId}
               />
             </div>
-          )}
-          <ButtonModalUser
-            setIsClick={setIsClick}
-            setUserAdd={setUserAdd}
-            setUserUpdate={setUserUpdate}
-            setDeleteUser={setDeleteUser}
-          />
+          <ButtonModalUser />
         </Form>
       </Formik>
     </div>

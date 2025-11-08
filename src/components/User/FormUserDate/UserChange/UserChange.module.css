@@ -1,12 +1,16 @@
-.buttonUserPages{
+.buttonUserContainer{
+    display: flex;
     width: 120px;
     border: 1px solid var(--border-color-black);
     border-radius: 14px;
     background-color: var(--bg-color);
     margin-left: 60px;
+    align-items: center;
 }
 
-.listButtonUserPages{
+.listButtonUser{
+    display: flex;
+    flex-direction: column;
     list-style-type: none;
 }
 

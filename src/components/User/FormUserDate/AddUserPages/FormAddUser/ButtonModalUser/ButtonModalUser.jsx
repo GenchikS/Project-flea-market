@@ -1,32 +1,17 @@
 import css from "./ButtonModalUser.module.css";
-import { ButtonUserDate } from "../../../../../Button/ButtonUserDate.jsx";
 import { NavLink } from "react-router-dom";
 
-export default function ButtonModalUser({
-  setIsClick,
-  setUserAdd,
-  setUserUpdate,
-  setDeleteUser,
-}) {
-  const handleClick = () => {
-    setIsClick(true);
-    setUserAdd(false);
-    setUserUpdate(false);
-    setDeleteUser(false);
-    return;
-  };
+export default function ButtonModalUser() {
   return (
-    <div>
-      <nav className={css.containerModalUser}>
-        <div>
-          <ButtonUserDate type="submit" value="green">
-            Done
-          </ButtonUserDate>
-        </div>
+    <div className={css.containerModalUser}>
+      <button className={css.green} type="submit">
+        Done
+      </button>
+      <nav>
         <NavLink to="/">
-          <ButtonUserDate type="button" value="red" onClick={handleClick}>
+          <button className={css.red} type="button">
             Cencel
-          </ButtonUserDate>
+          </button>
         </NavLink>
       </nav>
     </div>
