@@ -13,9 +13,10 @@ export default function UserChange() {
       navigate(`/adduser`);
       // console.log(`evn addUser`, evn);
       break;
-    // case `updateUser`:
-    //     // console.log(`evn updateUser`, evn);
-    //     break;
+    case `updataUser`:
+      navigate(`/updata`);
+        console.log(`evn updateUser`, evn);
+        break;
     case `deleteUser`:
       navigate(`/delete`);
       console.log(`evn deleteUser`, evn);
@@ -36,8 +37,8 @@ return (
           </ButtonUserDate>
         </li>
         <li>
-          <ButtonUserDate value="updateUser" onClick={handleClick}>
-            update User
+          <ButtonUserDate value="updataUser" onClick={handleClick}>
+            updata User
           </ButtonUserDate>
         </li>
         <li>

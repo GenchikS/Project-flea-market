@@ -41,7 +41,7 @@
     background-color: var(--color-button-red-hover);
 }
 
-.addUser, .updateUser, .deleteUser{
+.addUser, .updataUser, .deleteUser{
   width: 100px;
   height: 32px;
   font-size: 12px;
@@ -60,7 +60,7 @@
 background-color: var(--color-button-green);
 }
 
-.updateUser{
+.updataUser{
 background-color: var(--color-button-blue);
 }
 

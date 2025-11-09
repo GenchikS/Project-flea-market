@@ -6,6 +6,7 @@ import {fetchArticleUserAll} from "./articles-api.js";
 import Done from "./components/Done/Done.jsx";
 import DeleteUser from "./components/User/FormUserDate/DeleteUser/DeleteUser.jsx";
 import AddUser from "./components/User/FormUserDate/AddUserPages/AddUser.jsx";
+import UpdataUser from "./components/User/FormUserDate/UpdateUser/UpdataUser.jsx";
 
 // http://localhost:3000/users
 function App() {
@@ -37,6 +38,7 @@ function App() {
           element={<UserPages item={item} component={{ loadig }} />}
         />
         <Route path="/adduser" element={<AddUser />} />
+        <Route path="/updata" element={<UpdataUser />} />
         <Route path="/delete" element={<DeleteUser />} />
         <Route path="/done" element={<Done />} />
         {/* </Route> */}

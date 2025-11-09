@@ -1,10 +1,10 @@
-import css from "./FormAddUser.module.css";
+import css from "./FormUpdataUser.module.css";
 import { Field, Form, Formik} from "formik";
 import { useId } from "react";
-import ButtonModalUser from "./ButtonModalUser/ButtonModalUser.jsx";
+import ButtonModalUser from "../../AddUserPages/FormAddUser/ButtonModalUser/ButtonModalUser";
 import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
-import { fetchArticleAddUser } from "../../../../../articles-api.js";
+// import { fetchArticleAddUser } from "../../../../../articles-api.js";
 
 
 
@@ -17,7 +17,7 @@ const validationUserSchema = Yup.object().shape({
 });
 
 
-export const FormAddUser = () => {
+export const FormUpdataUser = () => {
   const navigate = useNavigate();
 
   const initialValues = {
@@ -36,7 +36,7 @@ export const FormAddUser = () => {
     const nameEnd = name.toLowerCase();
     const emailEnd = email.toLowerCase();
 
-    fetchArticleAddUser({ name: nameEnd, email: emailEnd, phone });
+    // fetchArticleAddUser({ name: nameEnd, email: emailEnd, phone });
     // console.log(`value`, value);
     actions.resetForm();
     navigate(`/done`);
@@ -53,7 +53,7 @@ export const FormAddUser = () => {
       >
         <Form className={css.formContainer}>
             <div className={css.listContainer}>
-              <p className={css.markerRed}>*</p>
+              <p className={css.markerGreen}>*</p>
               <label className={css.label} htmlFor={nameFieldId}>
                 name
               </label>
@@ -66,7 +66,7 @@ export const FormAddUser = () => {
               />
             </div>
           <div className={css.listContainer}>
-            <p className={css.markerRed}>*</p>
+            <p className={css.markerGreen}>*</p>
             <label className={css.label} htmlFor={emailFieldId}>
               email
             </label>
