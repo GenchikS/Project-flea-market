@@ -35,8 +35,9 @@ export const FormAddUser = () => {
     const { name, email, phone } = value;
     const nameEnd = name.toLowerCase();
     const emailEnd = email.toLowerCase();
+    const phonelEnd = phone.toLowerCase();
 
-    fetchArticleAddUser({ name: nameEnd, email: emailEnd, phone });
+    fetchArticleAddUser({ name: nameEnd, email: emailEnd, phonelEnd });
     // console.log(`value`, value);
     actions.resetForm();
     navigate(`/done`);

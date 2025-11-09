@@ -35,6 +35,16 @@ export const fetchArticleAddUser = async (payload) => {
     return;
 }
 
+export const fetchArticleUpdataUser = async (payload) => {
+  
+  const { id} = payload;
+console.log(`payload`, id)
+  console.log(`payload`, payload)
+    const response = await axios.patch(`/users/${id}`, payload);
+    // console.log(`response`, response);
+    return;
+}
+
 export const fetchArticleDeleteUser = async (id) => {
   console.log(`id`, id)
     const response = await axios.delete(`/users/${id}`);
