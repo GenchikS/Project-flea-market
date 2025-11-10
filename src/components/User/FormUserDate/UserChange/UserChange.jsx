@@ -19,7 +19,7 @@ export default function UserChange() {
         break;
     case `deleteUser`:
       navigate(`/delete`);
-      console.log(`evn deleteUser`, evn);
+      // console.log(`evn deleteUser`, evn);
       break;
     //   default:
     //     // console.log(`evn userPage`, evn);

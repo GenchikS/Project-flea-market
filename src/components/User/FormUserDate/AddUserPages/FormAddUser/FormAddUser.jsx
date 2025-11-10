@@ -31,7 +31,7 @@ export const FormAddUser = () => {
   const phoneFieldId = useId();
 
   const hahdleSubmit = (value, actions) => {
-    console.log(`value`, value);
+    // console.log(`value`, value);
     const { name, email, phone } = value;
     const nameEnd = name.toLowerCase();
     const emailEnd = email.toLowerCase();

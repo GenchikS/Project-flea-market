@@ -46,7 +46,7 @@ console.log(`payload`, id)
 }
 
 export const fetchArticleDeleteUser = async (id) => {
-  console.log(`id`, id)
+  // console.log(`id`, id)
     const response = await axios.delete(`/users/${id}`);
     // console.log(`response`, response.data.data);
     return;

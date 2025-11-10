@@ -1,4 +1,5 @@
 import css from "./UserPages.module.css";
+import { useEffect, useState } from "react";
 import UserInfoCard from "../../../components/User/UserInfoTable/UserInfoCard.jsx";
 import MyComponent from "../../../components/Loader/Loader.jsx";
 import UserChange from "../../../components/User/FormUserDate/UserChange/UserChange.jsx";
@@ -7,18 +8,33 @@ import {
   fetchArticleUserName,
   fetchArticleUserEmail,
   fetchArticleUserId,
+  fetchArticleUserAll,
 } from "../../../articles-api.js";
-import { useState } from "react";
-// import { useNavigate } from "react-router-dom";
 
-export default function UserPages({
-  item,
-  component}) {
-  // console.log(`items2`, items.length);
-//  const navigate = useNavigate();
+
+export default function UserPages() {
   const [itemsSourch, setItemsSourch] = useState(null);
   const [error, setError] = useState(false);
-  const { loadig } = component;
+  const [item, setItems] = useState([]);
+  const [loadig, setLoading] = useState(false);
+ 
+  {useEffect(() => {
+    async function fetchUser() {
+      setItems([]);
+      setLoading(true);
+      try {
+        const response = await fetchArticleUserAll();
+        setItems(response);
+      } catch (error) {
+        // setError(true);
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchUser();
+  }, [itemsSourch]);
+  }
+// console.log(`items1`, items);
 
  const handleSearchName = async (name) => {
     // console.log(`name`, name);
