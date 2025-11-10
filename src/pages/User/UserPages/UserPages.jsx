@@ -26,25 +26,26 @@ export default function UserPages() {
         const response = await fetchArticleUserAll();
         setItems(response);
       } catch (error) {
-        // setError(true);
+        setError(true);
       } finally {
         setLoading(false);
       }
     }
     fetchUser();
-  }, [itemsSourch]);
+  }, []);
   }
 // console.log(`items1`, items);
 
  const handleSearchName = async (name) => {
     // console.log(`name`, name);
     try {
+    setError(false);  
     const response = await fetchArticleUserName(name);
-      // console.log(`response`, response);
+    // console.log(`response`, response);
       setItemsSourch(response);
      if (!response) {
       setItemsSourch([]);
-       (true);
+      setError(true);
       return;
       }
     } catch (error) {
@@ -57,6 +58,7 @@ export default function UserPages() {
   const handleSearchEmail = async (name) => {
     //  console.log(`name`, name);
     try {
+      setError(false); 
       const response = await fetchArticleUserEmail(name);
       setItemsSourch(response);
       
@@ -74,8 +76,8 @@ export default function UserPages() {
 
   const handleSearchId = async (name) => {
     // console.log(`name`, name);
-
     try {
+    setError(false);  
     const response = await fetchArticleUserId(name);
       // console.log(`response`, response);
 
@@ -94,7 +96,7 @@ export default function UserPages() {
 
  return (
     <div className={css.containerUserPages}>
-      <h4>UserPages</h4>
+      <h4>Admin pages users</h4>
       <div className={css.containerUserFilterListButtonUserPages}>
         <div className={css.containerUserPageTitleSearch}>
           <div className={css.containerUserSearch}>
