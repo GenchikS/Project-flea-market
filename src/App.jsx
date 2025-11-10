@@ -17,7 +17,6 @@ function App() {
         <Route path="/updata" element={<UpdataUser />} />
         <Route path="/delete" element={<DeleteUser />} />
         <Route path="/done" element={<Done />} />
-        {/* </Route> */}
         {/* <Route path="*" element={<NotFound />} /> */}
       </Routes>
     </div>
