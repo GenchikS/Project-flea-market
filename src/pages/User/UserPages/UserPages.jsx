@@ -96,7 +96,7 @@ export default function UserPages() {
 
  return (
     <div className={css.containerUserPages}>
-      <h4>Admin pages users</h4>
+      <h4 className={css.title}>Admin pages users</h4>
       <div className={css.containerUserFilterListButtonUserPages}>
         <div className={css.containerUserPageTitleSearch}>
           <div className={css.containerUserSearch}>

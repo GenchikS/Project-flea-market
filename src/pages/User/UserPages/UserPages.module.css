@@ -6,6 +6,12 @@
     height: 100%;
 }
 
+.title{
+    font-size: 20px;
+    font-style: italic;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 .containerUserFilterListButtonUserPages{
     display: flex;
     flex-direction: row;
@@ -39,7 +45,7 @@
 
 .userCollectionsTitle{
     font-size: 20px;
-    margin: 16px 0 16px 12px;
+    margin: 4px 0 6px 6px;
 }
 
 .containerLoadingData{
