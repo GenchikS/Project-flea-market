@@ -36,13 +36,22 @@ export const fetchArticleAddUser = async (payload) => {
 }
 
 export const fetchArticleUpdataUser = async (payload) => {
-  
-  const { id} = payload;
-console.log(`payload`, id)
-  console.log(`payload`, payload)
-    const response = await axios.patch(`/users/${id}`, payload);
-    // console.log(`response`, response);
-    return;
+  const { id } = payload;
+  // console.log(`payload`, payload)
+  const responseSorceId = await axios.get(`/users/${id}`);
+  const responseEnd = responseSorceId.data.data;
+  // console.log(`responseEnd`, responseEnd);
+ 
+  const payloadObject = {
+    email: payload.email.trim().length > 0 ? payload.email : responseEnd.email,
+    name: payload.name.trim().length > 0 ? payload.name : responseEnd.name,
+    phone: payload.phone.trim().length > 0 ? payload.phone : responseEnd.phone,
+  };
+
+  // console.log(`payloadObject`, payloadObject);
+const response = await axios.patch(`/users/${id}`, payloadObject);
+  // console.log(`response`, response);
+  return;
 }
 
 export const fetchArticleDeleteUser = async (id) => {

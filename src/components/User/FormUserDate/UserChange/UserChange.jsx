@@ -15,15 +15,16 @@ export default function UserChange() {
       break;
     case `updataUser`:
       navigate(`/updata`);
-        console.log(`evn updateUser`, evn);
+        // console.log(`evn updateUser`, evn);
         break;
     case `deleteUser`:
       navigate(`/delete`);
       // console.log(`evn deleteUser`, evn);
       break;
-    //   default:
-    //     // console.log(`evn userPage`, evn);
-    //     break;
+      default:
+      //     // console.log(`evn userPage`, evn);
+      navigate(`/`);
+        break;
   }
   return;
 };

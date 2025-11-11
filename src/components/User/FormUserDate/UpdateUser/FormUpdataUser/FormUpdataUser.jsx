@@ -34,55 +34,58 @@ export const FormUpdataUser = () => {
   const phoneFieldId = useId();
 
   const hahdleSubmit = (value, actions) => {
-    console.log(`value`, value);
+    // console.log(`value`, value);
     const { id, name, email, phone } = value;
-    const idEnd = id.toLowerCase();
+    // const idEnd = id.toLowerCase();
     const nameEnd = name.toLowerCase();
     const emailEnd = email.toLowerCase();
     const phoneEnd = phone.toLowerCase();
 
-    fetchArticleUpdataUser({ id: id, name: nameEnd, email: emailEnd, phone:phone });
-    console.log(`value`, value);
+    fetchArticleUpdataUser({
+      id: id,
+      name: nameEnd,
+      email: emailEnd,
+      phone: phoneEnd,
+    });
+    // console.log(`value`, value);
     actions.resetForm();
     navigate(`/done`);
   };
 
   return (
-    <div
-      className={css.containerModalAddUser}
-    >
+    <div className={css.containerModalAddUser}>
       <Formik
         initialValues={initialValues}
         onSubmit={hahdleSubmit}
         validationSchema={validationUserSchema}
       >
         <Form className={css.formContainer}>
-            <div className={css.listContainer}>
-              <p className={css.markerRed}>*</p>
-              <label className={css.label} htmlFor={nameFieldId}>
-                id user
-              </label>
-              <Field
-                className={css.userid}
-                type="text"
-                name="id"
-                id={nameFieldId}
-                placeholder="id user"
-              />
-            </div>
-            <div className={css.listContainer}>
-              <p className={css.markerGreen}>*</p>
-              <label className={css.label} htmlFor={nameFieldId}>
-                name
-              </label>
-              <Field
-                className={css.username}
-                type="text"
-                name="name"
-                id={nameFieldId}
-                placeholder="min 2 symbol"
-              />
-            </div>
+          <div className={css.listContainer}>
+            <p className={css.markerRed}>*</p>
+            <label className={css.label} htmlFor={idFieldId}>
+              id user
+            </label>
+            <Field
+              className={css.userid}
+              type="text"
+              name="id"
+              id={nameFieldId}
+              placeholder="id user"
+            />
+          </div>
+          <div className={css.listContainer}>
+            <p className={css.markerGreen}>*</p>
+            <label className={css.label} htmlFor={nameFieldId}>
+              name
+            </label>
+            <Field
+              className={css.username}
+              type="text"
+              name="name"
+              id={nameFieldId}
+              placeholder="min 2 symbol"
+            />
+          </div>
           <div className={css.listContainer}>
             <p className={css.markerGreen}>*</p>
             <label className={css.label} htmlFor={emailFieldId}>
@@ -97,17 +100,17 @@ export const FormUpdataUser = () => {
             />
           </div>
           <div className={css.listContainer}>
-              <p className={css.markerGreen}>*</p>
-              <label className={css.label} htmlFor={phoneFieldId}>
-                phone
-              </label>
-              <Field
-                className={css.phone}
-                type="phone"
-                name="phone"
-                id={phoneFieldId}
-              />
-            </div>
+            <p className={css.markerGreen}>*</p>
+            <label className={css.label} htmlFor={phoneFieldId}>
+              phone
+            </label>
+            <Field
+              className={css.phone}
+              type="phone"
+              name="phone"
+              id={phoneFieldId}
+            />
+          </div>
           <ButtonModalUser />
         </Form>
       </Formik>
