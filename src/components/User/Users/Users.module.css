@@ -1,0 +1,22 @@
+.containerUsers{
+    display: flex;
+    width: 120px;
+    height: 32px;
+    color: var(--color-white);
+    border: 1px solid var(--border-color-black);
+    border-radius: 8px;
+    background-color: var(--color-button-blue);
+    margin-left: 60px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.titleUsers{
+    font-size: 10px;
+    text-align: center;
+}
+
+.containerUsers:hover{
+    background-color: var(--color-button-green-hover);
+}

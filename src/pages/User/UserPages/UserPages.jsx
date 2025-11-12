@@ -10,6 +10,7 @@ import {
   fetchArticleUserId,
   fetchArticleUserAll,
 } from "../../../articles-api.js";
+import Announcement from "../../../components/Announcement/Announcement/Announcement.jsx";
 
 
 export default function UserPages() {
@@ -95,47 +96,48 @@ export default function UserPages() {
   };
 
  return (
-    <div className={css.containerUserPages}>
-      <h4 className={css.title}>Admin pages users</h4>
-      <div className={css.containerUserFilterListButtonUserPages}>
-        <div className={css.containerUserPageTitleSearch}>
-          <div className={css.containerUserSearch}>
-            <UserFormSearch
-              placeholder="Search name"
-              name="name"
-              handleSearch={handleSearchName}
-            />
-            <UserFormSearch
-              placeholder="Search email"
-              name="name"
-              handleSearch={handleSearchEmail}
-            />
-            <UserFormSearch
-              placeholder="Search id"
-              name={"name"}
-              handleSearch={handleSearchId}
-            />
-          </div>
+   <div className={css.containerUserPages}>
+     <h4 className={css.title}>Admin pages users</h4>
+     <div className={css.containerUserFilterListButtonUserPages}>
+        <div className={css.containerUserSearch}>
+         <UserFormSearch
+           placeholder="Search name"
+           name="name"
+           handleSearch={handleSearchName}
+         />
+         <UserFormSearch
+           placeholder="Search email"
+           name="name"
+           handleSearch={handleSearchEmail}
+         />
+         <UserFormSearch
+           placeholder="Search id"
+           name={"name"}
+           handleSearch={handleSearchId}
+         />
         </div>
-            <UserChange/>
-        </div>
-        <div className={css.containerUserInfo}>
-        <h4 className={css.userCollectionsTitle}>User collections:</h4>
+       <div className={css.containerUserUpdataAnnouncement}>
+         <UserChange />
+         <Announcement/>
+       </div>
+     </div>
+     <div className={css.containerUserInfo}>
+       <h4 className={css.userCollectionsTitle}>Users collections:</h4>
 
-        {item &&
-          (!itemsSourch ? (
-            <UserInfoCard item={item} />
-          ) : (
-            <UserInfoCard itemsArrey={itemsSourch} />
-          ))}
-        {loadig && (
-          <div className={css.containerLoadingData}>
-            <p className={css.textLoadingData}>Loding data ...</p>
-            <MyComponent />
-          </div>
-        )}
-        {error && <p>User not found!</p>}
-      </div>
-    </div>
-  );
+       {item &&
+         (!itemsSourch ? (
+           <UserInfoCard item={item} />
+         ) : (
+           <UserInfoCard itemsArrey={itemsSourch} />
+         ))}
+       {loadig && (
+         <div className={css.containerLoadingData}>
+           <p className={css.textLoadingData}>Loding data ...</p>
+           <MyComponent />
+         </div>
+       )}
+       {error && <p>User not found!</p>}
+     </div>
+   </div>
+ );
 }

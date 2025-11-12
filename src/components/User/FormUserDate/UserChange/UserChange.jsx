@@ -30,24 +30,25 @@ export default function UserChange() {
 };
 
 return (
-    <div className={css.buttonUserContainer}>
-      <ul className={css.listButtonUser}>
-        <li>
-          <ButtonUserDate value="addUser" onClick={handleClick}>
-            Add user
-          </ButtonUserDate>
-        </li>
-        <li>
-          <ButtonUserDate value="updataUser" onClick={handleClick}>
-            updata User
-          </ButtonUserDate>
-        </li>
-        <li>
-          <ButtonUserDate value="deleteUser" onClick={handleClick}>
-            delete User
-          </ButtonUserDate>
-        </li>
-      </ul>
-    </div>
-  );
+  <div className={css.buttonUserContainer}>
+    <ul className={css.listButtonUser}>
+      <li>
+        <ButtonUserDate value="addUser" onClick={handleClick}>
+          Add user
+        </ButtonUserDate>
+      </li>
+      <li>
+        <ButtonUserDate value="updataUser" onClick={handleClick}>
+          updata User
+        </ButtonUserDate>
+      </li>
+      <li>
+        <ButtonUserDate value="deleteUser" onClick={handleClick}>
+          delete User
+        </ButtonUserDate>
+      </li>
+    </ul>
+
+  </div>
+);
 }

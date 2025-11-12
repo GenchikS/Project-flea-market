@@ -1,4 +1,4 @@
-.buttonUserContainer{
+.buttonAnnouncementContainer{
     display: flex;
     width: 120px;
     height: 132px;
@@ -10,9 +10,8 @@
     margin-bottom: 8px;
 }
 
-.listButtonUser{
+.listButtonAnnouncement{
     display: flex;
     flex-direction: column;
     list-style-type: none;
 }
-

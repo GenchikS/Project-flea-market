@@ -1,4 +1,4 @@
-.containerUserPages{
+.containerAnnouncementPages{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,7 +20,7 @@
 }
 
 
-.containerUserUpdataAnnouncement{
+.containerUserUpdataUsers{
     display: flex;
     flex-direction: column;
     align-items: center;
