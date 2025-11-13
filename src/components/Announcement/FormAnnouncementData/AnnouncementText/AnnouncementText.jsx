@@ -9,7 +9,7 @@ export default function AnnouncementText({setText}) {
         name="AnnouncementText"
         cols="20"
         rows="5"
-        placeholder="input announcement text..."
+        placeholder="input text announcement ..."
       ></textarea>
     </div>
   );
