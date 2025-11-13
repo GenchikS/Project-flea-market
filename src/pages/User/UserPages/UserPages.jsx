@@ -35,7 +35,6 @@ export default function UserPages() {
     fetchUser();
   }, []);
   }
-// console.log(`items1`, items);
 
  const handleSearchName = async (name) => {
     // console.log(`name`, name);
