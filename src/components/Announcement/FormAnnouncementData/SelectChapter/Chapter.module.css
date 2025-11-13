@@ -1,4 +1,4 @@
-.containerCharter{
+.containerChapter{
     display: flex;
     flex-direction: column;
     /* justify-content: left; */
@@ -13,7 +13,7 @@
     text-align: left;
 }
 
-.selectCharter{
+.selectChapter{
     width: 100px;
     height: 24px;
     font-size: 12px;
@@ -27,11 +27,11 @@
     margin-bottom: 12px;
 }
 
-.selectCharter:hover{
+.selectChapter:hover{
      background-color: var(--bg-color-hover);
 }
 
-.selectCharter:focus{
+.selectChapter:focus{
      background-color: var(--bg-color-hover);
 }
 

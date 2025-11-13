@@ -5,12 +5,12 @@ import { useId } from "react";
 export default function Chapter({ setChapter, chapter }) {
   const selectCarterId = useId();
   return (
-    <div className={css.containerCharter}>
+    <div className={css.containerChapter}>
       <label className={css.label} htmlFor={selectCarterId}>
         choose chapter
       </label>
       <select
-        className={css.selectCharter}
+        className={css.selectChapter}
         id="selectCarterId"
         name={chapter}
         onChange={(evt) => setChapter(evt.target.value)}
