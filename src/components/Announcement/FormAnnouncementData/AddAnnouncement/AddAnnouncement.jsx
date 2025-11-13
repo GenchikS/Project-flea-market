@@ -14,22 +14,26 @@ export default function AddAnnouncement() {
   const [category, setCategory] = useState("")
   const [purchaseSale, setPurchaseSale] = useState("")
   const [text, setText] = useState("")
-    const navigate = useNavigate();
+  const [photo, setPhoto] = useState("");
+  const [objectAll, setObjectAll] =useState({})
 
-  const handleSubmit = (event) => {
+    const navigate = useNavigate();
+    
+    const handleSubmit = (event) => {
     event.preventDefault();
     const searche = { charter, category, purchaseSale, text };
     console.log(`evt submit`, searche);
+    setObjectAll(searche);
      document.formAnnouncement.reset();
-    navigate(`/done/announcement`);
+    // navigate(`/done/announcement`);
     return;
   };
   
 
   return (
-    <div className={css.containerAddAnnouncement}>
-      <h3 className={css.title}>Form add announcement</h3>
-      <div>
+    <div>
+      <div className={css.containerAddAnnouncement}>
+        <h3 className={css.title}>Form add announcement</h3>
         <form
           className={css.listAddAnnouncement}
           name="formAnnouncement"
@@ -68,11 +72,10 @@ export default function AddAnnouncement() {
           <ButtonModalAnnouncement type="submit" />
         </form>
       </div>
-      {/* 
-      {console.log(`charter`, charter)}
-      {console.log(`purchaseSale`, purchaseSale)}
-      {console.log(`category`, category)}
-      {console.log(`text`, text)} */}
+      <div>
+        <h4>add photo</h4>
+        {console.log(`objectAll`, objectAll)}
+      </div>
     </div>
   );
 }
