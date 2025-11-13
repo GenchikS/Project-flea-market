@@ -5,7 +5,7 @@ export default function PurchaseSale({ set, purchaseSale }) {
   const PurchaseSaleId = useId();
   return (
     <div className={css.containerCategory}>
-     <label className={css.label} htmlFor={PurchaseSaleId}>
+      <label className={css.label} htmlFor={PurchaseSaleId}>
         choose optoins
       </label>
       <select
@@ -14,6 +14,9 @@ export default function PurchaseSale({ set, purchaseSale }) {
         name={purchaseSale}
         onChange={(evt) => setPurchaseSale(evt.target.value)}
       >
+                <option className={css.option} value="">
+          - - -
+        </option>
         <option className={css.option} value="purchase">
           Purchase
         </option>

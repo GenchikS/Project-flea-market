@@ -17,8 +17,8 @@ export default function CategoryAuto({ set, category, purchaseSale }) {
         name={category}
         onChange={(evt) => setCategory(evt.target.value)}
       >
-        <option className={css.option} value="all">
-          All
+        <option className={css.option} value="">
+          - - -
         </option>
         <option className={css.option} value="car">
           Car
