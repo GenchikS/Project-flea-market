@@ -1,13 +1,10 @@
+// import { useId } from "react";
 import { useId } from "react";
-import css from "./CategoryAuto.module.css";
-import PurchaseSale from "../PurchaseSale/PurchaseSale.jsx";
-export default function CategoryAuto({ set, category, purchaseSale }) {
-  const { setCategory } = set;
-  // const { category } = category;
+import css from "./CategoryServices.module.css";
+export default function CategoryServices({ setCategory, category }) {
   const selectCategoryId = useId();
   return (
     <div className={css.containerCategory}>
-      <PurchaseSale set={set} purchaseSale={purchaseSale} />
       <label className={css.label} htmlFor={selectCategoryId}>
         choose category
       </label>
@@ -20,11 +17,11 @@ export default function CategoryAuto({ set, category, purchaseSale }) {
         <option className={css.option} value="all">
           All
         </option>
-        <option className={css.option} value="car">
-          Car
+        <option className={css.option} value="taxi">
+          Auto/Taxi
         </option>
-        <option className={css.option} value="motorcycle">
-          Motorcycle
+        <option className={css.option} value="beauty">
+          Beauty
         </option>
         <option className={css.option} value="other">
           Other

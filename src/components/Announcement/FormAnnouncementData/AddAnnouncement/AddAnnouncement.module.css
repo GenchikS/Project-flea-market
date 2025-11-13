@@ -2,7 +2,9 @@
     display: flex;
     flex-direction: column;
     width: 222px;
+    height: 370px;
     text-align: center;
+    align-items: center;
     border: 1px solid var(--border-color-black);
     border-radius: 14px;
     background-color: var(--bg-color);
