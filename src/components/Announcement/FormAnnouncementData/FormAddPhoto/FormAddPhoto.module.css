@@ -1,0 +1,37 @@
+.containerAddPhotoAnnouncement{
+    display: flex;
+    flex-direction: column;
+    width: 222px;
+    /* height: 370px; */
+    /* text-align: center; */
+    /* align-items: center; */
+    border: 1px solid var(--border-color-black);
+    border-radius: 14px;
+    background-color: var(--bg-color);
+    padding: 12px;
+    margin-top: 24px;
+}
+
+.inputPhotoFile{
+  font-size: 10px;
+  margin-bottom: 8px;
+ }
+
+.buttonPhotoFile{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 64px;
+  height: 22px;
+  font-size: 14px;
+  padding: 4px 6px;
+  border-radius: 20px;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-button-blue);
+  color: var(--color-white);
+  cursor: pointer;
+}
+
+.buttonPhotoFile:hover{
+background-color: var(--color-button-green-hover);
+}

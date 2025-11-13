@@ -8,13 +8,14 @@ import AnnouncementText from "../AnnouncementText/AnnouncementText.jsx";
 import ButtonModalAnnouncement from "../ButtonModalAnnouncement/ButtonModalAnnouncement.jsx";
 import CategoryServices from "../SelectCategory/CategoryServices/CategoryServices.jsx";
 import { useNavigate } from "react-router-dom";
+import FormAddPhoto from "../FormAddPhoto/FormAddPhoto.jsx";
 
 export default function AddAnnouncement() {
   const [chapter, setChapter] = useState("");
   const [category, setCategory] = useState("")
   const [purchaseSale, setPurchaseSale] = useState("")
   const [text, setText] = useState("")
-  const [photo, setPhoto] = useState("");
+  // const [photo, setPhoto] = useState("");
   const [objectAll, setObjectAll] =useState({})
 
     const navigate = useNavigate();
@@ -24,10 +25,15 @@ export default function AddAnnouncement() {
     const searche = { chapter, category, purchaseSale, text };
     console.log(`evt submit`, searche);
     setObjectAll(searche);
-     document.formAnnouncement.reset();
-    // navigate(`/done/announcement`);
+      document.formAnnouncement.reset();
+      navigate(`/done/announcement`);
     return;
   };
+
+  // const saveFiles = (value) => {
+  //   console.log("value", value);
+  //   navigate(`/done/announcement`);
+  // }
   
 
   return (
@@ -72,10 +78,8 @@ export default function AddAnnouncement() {
           <ButtonModalAnnouncement type="submit" />
         </form>
       </div>
-      <div>
-        <h4>add photo</h4>
-        {console.log(`objectAll`, objectAll)}
-      </div>
+      {/* <FormAddPhoto saveFiles={saveFiles} /> */}
+      {console.log(`objectAll`, objectAll)}
     </div>
   );
 }
