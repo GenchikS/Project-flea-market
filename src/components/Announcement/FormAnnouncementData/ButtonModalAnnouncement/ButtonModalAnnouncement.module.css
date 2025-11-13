@@ -1,0 +1,37 @@
+.containerModalUser{
+    display: flex;
+    flex-direction: row;
+}
+
+button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 8px;
+  width: 64px;
+  height: 32px;
+  font-size: 14px;
+  padding: 12px 16px;
+  border-radius: 20px;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-button-blue);
+  color: var(--color-white);
+  cursor: pointer;
+}
+
+.green{
+     background-color: var(--color-button-green);
+}
+ 
+
+.red{
+    background-color: var(--color-button-red);
+}
+
+.green:hover{
+    background-color: var(--color-button-green-hover);
+}
+
+.red:hover{
+    background-color: var(--color-button-red-hover);
+}
