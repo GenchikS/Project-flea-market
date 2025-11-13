@@ -21,6 +21,9 @@ export default function Chapter({ setChapter, chapter }) {
         <option className={css.option} value="auto">
           Auto
         </option>
+        <option className={css.option} value="work">
+          Work
+        </option>
         <option className={css.option} value="housing">
           Housing
         </option>
@@ -30,11 +33,11 @@ export default function Chapter({ setChapter, chapter }) {
         <option className={css.option} value="animals">
           Animals
         </option>
-        <option className={css.option} value="different">
-          Different
+        <option className={css.option} value="differents">
+          Differents
         </option>
-        <option className={css.option} value="gift">
-          Gift
+        <option className={css.option} value="gifts">
+          Gifts
         </option>
       </select>
     </div>

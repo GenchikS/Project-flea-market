@@ -15,7 +15,7 @@ export default function CategoryHousing({ set, category, purchaseSale }) {
         name={category}
         onChange={(evt) => setCategory(evt.target.value)}
       >
-        <option className={css.option} value="all">- - - </option>
+        <option className={css.option} value="">- - - </option>
         <option className={css.option} value="house">House</option>
         <option className={css.option} value="apartment">Apartment</option>
         <option className={css.option} value="other">Other</option>

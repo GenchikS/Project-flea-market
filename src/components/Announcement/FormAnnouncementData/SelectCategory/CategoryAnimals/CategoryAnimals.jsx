@@ -1,7 +1,7 @@
 // import { useId } from "react";
 import { useId } from "react";
-import css from "./CategoryServices.module.css";
-export default function CategoryServices({ setCategory, category }) {
+import css from "./CategoryAnimals.module.css";
+export default function CategoryAnimals({ setCategory, category }) {
   const selectCategoryId = useId();
   return (
     <div className={css.containerCategory}>
@@ -17,11 +17,11 @@ export default function CategoryServices({ setCategory, category }) {
         <option className={css.option} value="">
           - - - 
         </option>
-        <option className={css.option} value="taxi">
-          Auto/Taxi
+        <option className={css.option} value="dogs">
+          Dog
         </option>
-        <option className={css.option} value="beauty">
-          Beauty
+        <option className={css.option} value="cats">
+          Cats
         </option>
         <option className={css.option} value="other">
           Other

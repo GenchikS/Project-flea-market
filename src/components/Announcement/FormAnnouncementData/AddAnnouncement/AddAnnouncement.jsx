@@ -6,9 +6,13 @@ import Chapter from "../SelectChapter/Chapter.jsx";
 import CategoryHousing from "../SelectCategory/CategoryHousing/CategoryHousing.jsx";
 import AnnouncementText from "../AnnouncementText/AnnouncementText.jsx";
 import ButtonModalAnnouncement from "../ButtonModalAnnouncement/ButtonModalAnnouncement.jsx";
+import CategoryAnimals from "../SelectCategory/CategoryAnimals/CategoryAnimals.jsx"
 import CategoryServices from "../SelectCategory/CategoryServices/CategoryServices.jsx";
+import CategoryDifferents from "../SelectCategory/CategoryDifferents/CategoryDifferents.jsx"
+import CategoryGifts from "../SelectCategory/CategoryGifts/CategoryGifts.jsx"
+import CategoryWork from "../SelectCategory/CategoryWork/CategoryWork.jsx"
 import { useNavigate } from "react-router-dom";
-import FormAddPhoto from "../FormAddPhoto/FormAddPhoto.jsx";
+// import FormAddPhoto from "../FormAddPhoto/FormAddPhoto.jsx";
 
 export default function AddAnnouncement() {
   const [chapter, setChapter] = useState("");
@@ -55,6 +59,12 @@ export default function AddAnnouncement() {
               purchaseSale={purchaseSale}
             />
           )}
+          {chapter === "work" && (
+            <CategoryWork
+              set={{ setCategory }}
+              category={category}
+             />
+          )}
           {chapter === "housing" && (
             <CategoryHousing
               set={{ setCategory, setPurchaseSale }}
@@ -66,13 +76,21 @@ export default function AddAnnouncement() {
             <CategoryServices setCategory={setCategory} category={category} />
           )}
           {chapter === "animals" && (
-            <CategoryHousing setCategory={setCategory} category={category} />
+            <CategoryAnimals setCategory={setCategory} category={category} />
           )}
-          {chapter === "different" && (
-            <CategoryHousing setCategory={setCategory} category={category} />
+          {chapter === "differents" && (
+            <CategoryDifferents
+              set={{ setCategory, setPurchaseSale }}
+              // category={category}
+              purchaseSale={purchaseSale}
+            />
           )}
-          {chapter === "gift" && (
-            <CategoryHousing setCategory={setCategory} category={category} />
+          {chapter === "gifts" && (
+            <CategoryGifts
+              set={{ setCategory, setPurchaseSale }}
+              // category={category}
+              purchaseSale={purchaseSale}
+            />
           )}
           <AnnouncementText setText={setText} />
           <ButtonModalAnnouncement type="submit" />
