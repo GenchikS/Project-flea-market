@@ -1,19 +1,19 @@
-import css from "./Charter.module.css"
+import css from "./Chapter.module.css"
 import { useId } from "react";
 
 
-export default function Charter({ setCharter, charter }) {
+export default function Chapter({ setChapter, chapter }) {
   const selectCarterId = useId();
   return (
     <div className={css.containerCharter}>
       <label className={css.label} htmlFor={selectCarterId}>
-        choose charter
+        choose chapter
       </label>
       <select
         className={css.selectCharter}
         id="selectCarterId"
-        name={charter}
-        onChange={(evt) => setCharter(evt.target.value)}
+        name={chapter}
+        onChange={(evt) => setChapter(evt.target.value)}
       >
         <option className={css.option} value="">
           - - - 

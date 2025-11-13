@@ -2,7 +2,7 @@ import css from "./AddAnnouncement.module.css";
 import { FormAddId } from "../FormAddId/FormAddId.jsx";
 import { useState } from "react";
 import CategoryAuto from "../SelectCategory/CategoryAuto/CategoryAuto.jsx";
-import Charter from "../SelectCharter/Charter.jsx";
+import Chapter from "../SelectChapter/Chapter.jsx";
 import CategoryHousing from "../SelectCategory/CategoryHousing/CategoryHousing.jsx";
 import AnnouncementText from "../AnnouncementText/AnnouncementText.jsx";
 import ButtonModalAnnouncement from "../ButtonModalAnnouncement/ButtonModalAnnouncement.jsx";
@@ -10,7 +10,7 @@ import CategoryServices from "../SelectCategory/CategoryServices/CategoryService
 import { useNavigate } from "react-router-dom";
 
 export default function AddAnnouncement() {
-  const [charter, setCharter] = useState("");
+  const [chapter, setChapter] = useState("");
   const [category, setCategory] = useState("")
   const [purchaseSale, setPurchaseSale] = useState("")
   const [text, setText] = useState("")
@@ -21,7 +21,7 @@ export default function AddAnnouncement() {
     
     const handleSubmit = (event) => {
     event.preventDefault();
-    const searche = { charter, category, purchaseSale, text };
+    const searche = { chapter, category, purchaseSale, text };
     console.log(`evt submit`, searche);
     setObjectAll(searche);
      document.formAnnouncement.reset();
@@ -41,31 +41,31 @@ export default function AddAnnouncement() {
           onSubmit={handleSubmit}
         >
           <FormAddId />
-          <Charter setCharter={setCharter} charter={charter} />
-          {charter === "auto" && (
+          <Chapter setChapter={setChapter} charter={chapter} />
+          {chapter === "auto" && (
             <CategoryAuto
               set={{ setCategory, setPurchaseSale }}
               category={category}
               purchaseSale={purchaseSale}
             />
           )}
-          {charter === "housing" && (
+          {chapter === "housing" && (
             <CategoryHousing
               set={{ setCategory, setPurchaseSale }}
               category={category}
               purchaseSale={purchaseSale}
             />
           )}
-          {charter === "services" && (
+          {chapter === "services" && (
             <CategoryServices setCategory={setCategory} category={category} />
           )}
-          {charter === "animals" && (
+          {chapter === "animals" && (
             <CategoryHousing setCategory={setCategory} category={category} />
           )}
-          {charter === "different" && (
+          {chapter === "different" && (
             <CategoryHousing setCategory={setCategory} category={category} />
           )}
-          {charter === "gift" && (
+          {chapter === "gift" && (
             <CategoryHousing setCategory={setCategory} category={category} />
           )}
           <AnnouncementText setText={setText} />
