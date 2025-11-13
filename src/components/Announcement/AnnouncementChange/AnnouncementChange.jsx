@@ -11,18 +11,16 @@ export default function AnnouncementChange() {
         switch (evn) {
           case `addAnnouncement`:
             navigate(`/add/announcement`);
-            console.log(`evn addUser`, evn);
+            // console.log(`evn addUser`, evn);
             break;
           case `updataAnnouncement`:
             // navigate(`/updata/announcement`);
-            console.log(`evn updateUser`, evn);
+            // console.log(`evn updateUser`, evn);
             break;
           case `deleteAnnouncement`:
             // navigate(`/delete/announcement`);
-            console.log(`evn deleteUser`, evn);
             break;
           default:
-            //     // console.log(`evn userPage`, evn);
             navigate(`/announcement`);
             break;
         }

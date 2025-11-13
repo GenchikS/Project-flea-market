@@ -29,8 +29,13 @@ export default function AddAnnouncement() {
   return (
     <div className={css.containerAddAnnouncement}>
       <h3 className={css.title}>Form add announcement</h3>
-      <div className={css.listAddAnnouncement}>
-        <form name="formAnnouncement" type="submit" onSubmit={handleSubmit}>
+      <div>
+        <form
+          className={css.listAddAnnouncement}
+          name="formAnnouncement"
+          type="submit"
+          onSubmit={handleSubmit}
+        >
           <FormAddId />
           <Charter setCharter={setCharter} charter={charter} />
           {charter === "auto" && (
@@ -63,11 +68,11 @@ export default function AddAnnouncement() {
           <ButtonModalAnnouncement type="submit" />
         </form>
       </div>
-
+      {/* 
       {console.log(`charter`, charter)}
       {console.log(`purchaseSale`, purchaseSale)}
       {console.log(`category`, category)}
-      {console.log(`text`, text)}
+      {console.log(`text`, text)} */}
     </div>
   );
 }

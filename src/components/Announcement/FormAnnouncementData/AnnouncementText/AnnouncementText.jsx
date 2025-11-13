@@ -1,10 +1,11 @@
 import css from "./AnnouncementText.module.css"
 
-export default function AnnouncementText( ) {
+export default function AnnouncementText({setText}) {
   return (
     <div>
       <textarea
-       className={css.containerText}
+        onBlur={(value) => setText(value.target.value)}
+        className={css.containerText}
         name="AnnouncementText"
         cols="20"
         rows="5"
@@ -13,5 +14,3 @@ export default function AnnouncementText( ) {
     </div>
   );
 }
-
-// (value) => setText(value)
