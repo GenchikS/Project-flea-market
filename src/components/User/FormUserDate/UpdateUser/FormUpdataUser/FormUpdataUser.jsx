@@ -1,7 +1,7 @@
 import css from "./FormUpdataUser.module.css";
 import { Field, Form, Formik } from "formik";
 import { useId } from "react";
-import ButtonModalUser from "../../AddUserPages/FormAddUser/ButtonModalUser/ButtonModalUser";
+import ButtonModalUser from "../../ButtonModalUser/ButtonModalUser";
 import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import { fetchArticleUpdataUser } from "../../../../../api/articles-api";

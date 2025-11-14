@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
-import css from "./Announcement.module.css"
+import css from "./AnnouncementToNavLink.module.css";
 
-export default function Announcement() {
+export default function AnnouncementToNavLink() {
     return (
       <nav>
         <NavLink to="/announcements">

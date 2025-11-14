@@ -5,7 +5,7 @@ import { useId } from "react";
 import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import { fetchArticleDeleteUser } from "../../../../../api/articles-api.js";
-import ButtonModalUser from "../../AddUserPages/FormAddUser/ButtonModalUser/ButtonModalUser.jsx";
+import ButtonModalUser from "../../ButtonModalUser/ButtonModalUser.jsx";
 
 const validationUserSchema = Yup.object().shape({
   id: Yup.string().required("Requred!"),

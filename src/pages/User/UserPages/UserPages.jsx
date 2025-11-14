@@ -10,7 +10,7 @@ import {
   fetchArticleUserId,
   fetchArticleUserAll,
 } from "../../../api/articles-api.js";
-import Announcement from "../../../components/Announcement/Announcement/Announcement.jsx";
+import AnnouncementToNavLink from "../../../components/User/AnnouncementToNavLink/AnnouncementToNavLink.jsx";
 
 export default function UserPages() {
   const [itemsSourch, setItemsSourch] = useState(null);
@@ -117,7 +117,7 @@ export default function UserPages() {
         </div>
         <div className={css.containerUserUpdataAnnouncement}>
           <UserChange />
-          <Announcement />
+          <AnnouncementToNavLink />
         </div>
       </div>
       <div className={css.containerUserInfo}>
