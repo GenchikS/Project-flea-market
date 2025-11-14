@@ -1,6 +1,5 @@
 import clsx from "clsx";
 import "./ButtonUserDate.css";
-import { NavLink } from "react-router-dom";
 
 export const ButtonUserDate = ({ value, onClick, children, type }) => {
     return (

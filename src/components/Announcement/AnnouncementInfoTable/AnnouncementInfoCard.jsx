@@ -3,7 +3,7 @@ export default function AnnouncementInfoCard({ item, itemsArrey }) {
   return (
     <table>
       <caption className={css.announcementCollectionsTitle}>
-        Announcement collections:
+        Announcement collection:
       </caption>
       <thead>
         <tr>

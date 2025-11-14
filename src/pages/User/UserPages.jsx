@@ -2,7 +2,7 @@ import css from "./UserPages.module.css";
 import { useEffect, useState } from "react";
 import UserInfoCard from "../../components/User/UserInfoTable/UserInfoCard.jsx";
 import MyComponent from "../../components/Loader/Loader.jsx";
-import UserChange from "../../components/User/FormUserDate/UserChange/UserChange.jsx";
+import UserChange from "../../components/User/FormUserData/UserChange/UserChange.jsx";
 import UserFormSearch from "../../components/User/UserFormSearch/UserFormSearch.jsx";
 import {
   fetchArticleUserName,

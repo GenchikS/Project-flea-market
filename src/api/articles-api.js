@@ -2,9 +2,10 @@ import axios from "axios";
 
 axios.defaults.baseURL = "https://project-flea-market-bd.onrender.com/"
 
-export const fetchArticleUserAll = async() => {
-    const response = await axios.get(`/users`);
-    // console.log(`response`, response);
+export const fetchArticleUserAll = async () => {
+  console.log(`response`);
+    const response = await axios.get(`/`);
+    console.log(`response`, response);
     return response.data.data;
 }
 
@@ -30,7 +31,7 @@ export const fetchArticleUserId = async (id) => {
 
 export const fetchArticleAddUser = async (payload) => {
   // console.log(`payload`, payload)
-    const response = await axios.post(`/users`, payload);
+    const response = await axios.post(`/user/add`, payload);
     // console.log(`response`, response);
     return;
 }

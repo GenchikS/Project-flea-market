@@ -8,7 +8,7 @@ export default function ButtonModalUser() {
         Done
       </button>
       <nav>
-        <NavLink to="/">
+        <NavLink to="/users">
           <button className={css.red} type="button">
             Cencel
           </button>

@@ -10,7 +10,7 @@ export default function UserChange() {
   // console.log(`evn`, evn);
   switch (evn) {
     case `addUser`:
-      navigate(`/adduser`);
+      navigate(`/user/add`);
       // console.log(`evn addUser`, evn);
       break;
     case `updataUser`:
@@ -23,7 +23,7 @@ export default function UserChange() {
       break;
       default:
       //     // console.log(`evn userPage`, evn);
-      navigate(`/`);
+      navigate(`/users`);
         break;
   }
   return;

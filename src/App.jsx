@@ -2,9 +2,9 @@ import { Routes, Route } from "react-router-dom";
 import css from "./App.module.css";
 import UserPages from "./pages/User/UserPages.jsx";
 import Done from "./components/Done/Done.jsx";
-import DeleteUser from "./components/User/FormUserDate/DeleteUser/DeleteUser.jsx";
-import AddUser from "./components/User/FormUserDate/AddUser/AddUser.jsx";
-import UpdataUser from "./components/User/FormUserDate/UpdateUser/UpdataUser.jsx";
+import DeleteUser from "./components/User/FormUserData/DeleteUser/DeleteUser.jsx";
+import AddUser from "./components/User/FormUserData/AddUser/AddUser.jsx";
+import UpdataUser from "./components/User/FormUserData/UpdateUser/UpdataUser.jsx";
 import AnnouncementPages from "./pages/AnnouncementPages/AnnouncementPages.jsx";
 import AddAnnouncement from "./components/Announcement/FormAnnouncementData/AddAnnouncement/AddAnnouncement.jsx";
 import DoneAnnouncement from "./components/Announcement/FormAnnouncementData/DoneAnnouncement/DoneAnnouncement.jsx";
@@ -16,15 +16,15 @@ function App() {
     <div className={css.containerApp}>
       <Routes>
         <Route path="/" element={<UserPages />} />
-        <Route path="/adduser" element={<AddUser />} />
-        <Route path="/updata" element={<UpdataUser />} />
-        <Route path="/delete" element={<DeleteUser />} />
-        <Route path="/done" element={<Done />} />
-        <Route path="/announcements" element={<AnnouncementPages />} />
-        <Route path="/add/announcements" element={<AddAnnouncement />} />
+        {/* <Route path="/user/add" element={<AddUser />} /> */}
+        {/* <Route path="/updata" element={<UpdataUser />} /> */}
+        {/* <Route path="/delete" element={<DeleteUser />} /> */}
+        <Route path="/user/done" element={<Done />} />
+        {/* <Route path="/announcements" element={<AnnouncementPages />} /> */}
+        {/* <Route path="/add/announcements" element={<AddAnnouncement />} /> */}
         {/* <Route path="/updata/announcement" element={<UpdataUser />} /> */}
         {/* <Route path="/delete/announcement" element={<DeleteUser />} /> */}
-        <Route path="/done/announcements" element={<DoneAnnouncement />} />
+        {/* <Route path="/done/announcements" element={<DoneAnnouncement />} /> */}
 
         {/* <Route path="*" element={<NotFound />} /> */}
       </Routes>

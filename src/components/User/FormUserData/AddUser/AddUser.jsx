@@ -37,7 +37,7 @@ export default function AddUser() {
     fetchArticleAddUser({ name: nameEnd, email: emailEnd, phonelEnd });
     // console.log(`value`, value);
     actions.resetForm();
-    navigate(`/done`);
+    navigate(`/user/done`);
   };
 
   return (
