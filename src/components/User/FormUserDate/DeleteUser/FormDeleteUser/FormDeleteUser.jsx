@@ -4,11 +4,11 @@ import { useId } from "react";
 // import ButtonModalUser from "./ButtonModalUser/ButtonModalUser.jsx";
 import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
-import { fetchArticleDeleteUser } from "../../../../../articles-api.js";
+import { fetchArticleDeleteUser } from "../../../../../api/articles-api.js";
 import ButtonModalUser from "../../AddUserPages/FormAddUser/ButtonModalUser/ButtonModalUser.jsx";
 
 const validationUserSchema = Yup.object().shape({
-    id: Yup.string().required("Requred!"),
+  id: Yup.string().required("Requred!"),
 });
 
 export const FormDeleteUser = () => {
@@ -16,10 +16,9 @@ export const FormDeleteUser = () => {
 
   const initialValues = {
     id: "",
-  
   };
 
- const idFieldId = useId();
+  const idFieldId = useId();
 
   const hahdleSubmit = (value, actions) => {
     fetchArticleDeleteUser(value.id);

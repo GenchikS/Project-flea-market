@@ -3,6 +3,8 @@ import Users from "../../components/User/Users/Users.jsx";
 import AnnouncementChange from "../../components/Announcement/AnnouncementChange/AnnouncementChange.jsx";
 import UserFormSearch from "../../components/User/UserFormSearch/UserFormSearch.jsx";
 import { useEffect, useState } from "react";
+import MyComponent from "../../components/Loader/Loader.jsx";
+import { fetchArticleAnnouncementsAll } from "../../api/articlesAnnouncements-api.js";
 
 export default function AnnouncementPages() {
     const [itemsSourch, setItemsSourch] = useState(null);
@@ -10,27 +12,29 @@ export default function AnnouncementPages() {
     const [item, setItems] = useState([]);
     const [loadig, setLoading] = useState(false);
    
-    {useEffect(() => {
-      async function fetchUser() {
+  {
+    useEffect(() => {
+        async function fetchAnnouncement() {
         setItems([]);
         setLoading(true);
         try {
-          // const response = await fetchArticleUserAll();
-          // setItems(response);
+            const response = await fetchArticleAnnouncementsAll();
+          console.log(`response`, response);
+          setItems(response);
         } catch (error) {
           setError(true);
         } finally {
           setLoading(false);
         }
       }
-      fetchUser();
+      fetchAnnouncement();
     }, []);
     }
   
    const handleSearchName = async (name) => {
       console.log(`handleSearchName`, name);
       try {
-      setError(false);  
+      // setError(false);  
       // const response = await fetchArticleUserName(name);
       // console.log(`response`, response);
         // setItemsSourch(response);
@@ -40,7 +44,7 @@ export default function AnnouncementPages() {
       //   return;
       //   }
       } catch (error) {
-        setError(true);
+        // setError(true);
       } finally {
         // setLoading(false);
       }
@@ -49,7 +53,7 @@ export default function AnnouncementPages() {
     const handleSearchEmail = async (name) => {
        console.log(`handleSearchEmail`, name);
       try {
-        setError(false); 
+        // setError(false); 
         // const response = await fetchArticleUserEmail(name);
         // setItemsSourch(response);
         
@@ -59,7 +63,7 @@ export default function AnnouncementPages() {
         // return;
         // }
     } catch (error) {
-        setError(true);
+        // setError(true);
       } finally {
         // setLoading(false);
       }
@@ -68,7 +72,7 @@ export default function AnnouncementPages() {
     const handleSearchId = async (name) => {
       console.log(`handleSearchId`, name);
       try {
-      setError(false);  
+      // setError(false);  
       // const response = await fetchArticleUserId(name);
         // console.log(`response`, response);
   
@@ -79,7 +83,7 @@ export default function AnnouncementPages() {
         //   return;
         // }
       } catch (error) {
-        setError(true);
+        // setError(true);
       } finally {
         // setLoading(false);
       }

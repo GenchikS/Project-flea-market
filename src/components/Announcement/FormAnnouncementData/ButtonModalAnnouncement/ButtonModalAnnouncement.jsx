@@ -8,7 +8,7 @@ export default function ButtonModalAnnouncement() {
         Done
       </button>
       <nav>
-        <NavLink to="/announcement">
+        <NavLink to="/announcements">
           <button className={css.red} type="button">
             Cencel
           </button>

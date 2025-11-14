@@ -41,7 +41,7 @@
     background-color: var(--color-button-red-hover);
 }
 
-.addUser, .updataUser, .deleteUser, .addAnnouncement, .updataAnnouncement, .deleteAnnouncement{
+.addUser, .updataUser, .deleteUser, .addAnnouncements, .updataAnnouncements, .deleteAnnouncements{
   font-size: 10px;
   width: 84px;
   height: 28px;
@@ -57,14 +57,14 @@
     margin: 6px 0 0 0;
 }
 
-.addUser, .addAnnouncement{
+.addUser, .addAnnouncements{
 background-color: var(--color-button-green);
 }
 
-.updataUser, .updataAnnouncement{
+.updataUser, .updataAnnouncements{
 background-color: var(--color-button-blue);
 }
 
-.deleteUser, .deleteAnnouncement{
+.deleteUser, .deleteAnnouncements{
 background-color: var(--color-button-red);
 }

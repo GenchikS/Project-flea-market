@@ -34,17 +34,17 @@ return (
     <ul className={css.listButtonUser}>
       <li>
         <ButtonUserDate value="addUser" onClick={handleClick}>
-          Add user
+          add user
         </ButtonUserDate>
       </li>
       <li>
         <ButtonUserDate value="updataUser" onClick={handleClick}>
-          updata User
+          updata user
         </ButtonUserDate>
       </li>
       <li>
         <ButtonUserDate value="deleteUser" onClick={handleClick}>
-          delete User
+          delete user
         </ButtonUserDate>
       </li>
     </ul>

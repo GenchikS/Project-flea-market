@@ -20,11 +20,11 @@ function App() {
         <Route path="/updata" element={<UpdataUser />} />
         <Route path="/delete" element={<DeleteUser />} />
         <Route path="/done" element={<Done />} />
-        <Route path="/announcement" element={<AnnouncementPages />} />
-        <Route path="/add/announcement" element={<AddAnnouncement />} />
+        <Route path="/announcements" element={<AnnouncementPages />} />
+        <Route path="/add/announcements" element={<AddAnnouncement />} />
         {/* <Route path="/updata/announcement" element={<UpdataUser />} /> */}
         {/* <Route path="/delete/announcement" element={<DeleteUser />} /> */}
-        <Route path="/done/announcement" element={<DoneAnnouncement />} />
+        <Route path="/done/announcements" element={<DoneAnnouncement />} />
 
         {/* <Route path="*" element={<NotFound />} /> */}
       </Routes>

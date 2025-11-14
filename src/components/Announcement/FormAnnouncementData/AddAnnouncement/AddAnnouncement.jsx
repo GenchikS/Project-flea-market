@@ -30,7 +30,7 @@ export default function AddAnnouncement() {
     console.log(`evt submit`, searche);
     setObjectAll(searche);
       document.formAnnouncement.reset();
-      navigate(`/done/announcement`);
+      navigate(`/done/announcements`);
     return;
   };
 

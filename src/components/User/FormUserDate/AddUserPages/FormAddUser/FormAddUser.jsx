@@ -1,12 +1,10 @@
 import css from "./FormAddUser.module.css";
-import { Field, Form, Formik} from "formik";
+import { Field, Form, Formik } from "formik";
 import { useId } from "react";
 import ButtonModalUser from "./ButtonModalUser/ButtonModalUser.jsx";
 import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
-import { fetchArticleAddUser } from "../../../../../articles-api.js";
-
-
+import { fetchArticleAddUser } from "../../../../../api/articles-api.js";
 
 const validationUserSchema = Yup.object().shape({
   name: Yup.string()
@@ -15,7 +13,6 @@ const validationUserSchema = Yup.object().shape({
     .required("Requred!"),
   email: Yup.string().email().required("Requred!"),
 });
-
 
 export const FormAddUser = () => {
   const navigate = useNavigate();
@@ -44,28 +41,26 @@ export const FormAddUser = () => {
   };
 
   return (
-    <div
-      className={css.containerModalAddUser}
-    >
+    <div className={css.containerModalAddUser}>
       <Formik
         initialValues={initialValues}
         onSubmit={hahdleSubmit}
         validationSchema={validationUserSchema}
       >
         <Form className={css.formContainer}>
-            <div className={css.listContainer}>
-              <p className={css.markerRed}>*</p>
-              <label className={css.label} htmlFor={nameFieldId}>
-                name
-              </label>
-              <Field
-                className={css.username}
-                type="text"
-                name="name"
-                id={nameFieldId}
-                placeholder="min 2 symbol"
-              />
-            </div>
+          <div className={css.listContainer}>
+            <p className={css.markerRed}>*</p>
+            <label className={css.label} htmlFor={nameFieldId}>
+              name
+            </label>
+            <Field
+              className={css.username}
+              type="text"
+              name="name"
+              id={nameFieldId}
+              placeholder="min 2 symbol"
+            />
+          </div>
           <div className={css.listContainer}>
             <p className={css.markerRed}>*</p>
             <label className={css.label} htmlFor={emailFieldId}>
@@ -80,17 +75,17 @@ export const FormAddUser = () => {
             />
           </div>
           <div className={css.listContainer}>
-              <p className={css.markerGreen}>*</p>
-              <label className={css.label} htmlFor={phoneFieldId}>
-                phone
-              </label>
-              <Field
-                className={css.phone}
-                type="phone"
-                name="phone"
-                id={phoneFieldId}
-              />
-            </div>
+            <p className={css.markerGreen}>*</p>
+            <label className={css.label} htmlFor={phoneFieldId}>
+              phone
+            </label>
+            <Field
+              className={css.phone}
+              type="phone"
+              name="phone"
+              id={phoneFieldId}
+            />
+          </div>
           <ButtonModalUser />
         </Form>
       </Formik>

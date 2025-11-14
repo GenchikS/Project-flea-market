@@ -1,22 +1,16 @@
 import css from "./FormUpdataUser.module.css";
-import { Field, Form, Formik} from "formik";
+import { Field, Form, Formik } from "formik";
 import { useId } from "react";
 import ButtonModalUser from "../../AddUserPages/FormAddUser/ButtonModalUser/ButtonModalUser";
 import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
-import { fetchArticleUpdataUser } from "../../../../../articles-api";
+import { fetchArticleUpdataUser } from "../../../../../api/articles-api";
 // import { fetchArticleAddUser } from "../../../../../articles-api.js";
 
-
-
 const validationUserSchema = Yup.object().shape({
-  id: Yup.string()
-    .min(24)
-    .max(24)
-    .required("Requred!"),
+  id: Yup.string().min(24).max(24).required("Requred!"),
   email: Yup.string().email(),
 });
-
 
 export const FormUpdataUser = () => {
   const navigate = useNavigate();

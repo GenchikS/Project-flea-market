@@ -9,19 +9,19 @@ export default function AnnouncementChange() {
       const handleClick = (evn) => {
         // console.log(`evn`, evn);
         switch (evn) {
-          case `addAnnouncement`:
-            navigate(`/add/announcement`);
+          case `addAnnouncements`:
+            navigate(`/add/announcements`);
             // console.log(`evn addUser`, evn);
             break;
-          case `updataAnnouncement`:
-            // navigate(`/updata/announcement`);
+          case `updataAnnouncements`:
+            // navigate(`/updata/announcements`);
             // console.log(`evn updateUser`, evn);
             break;
-          case `deleteAnnouncement`:
-            // navigate(`/delete/announcement`);
+          case `deleteAnnouncements`:
+            // navigate(`/delete/announcements`);
             break;
           default:
-            navigate(`/announcement`);
+            navigate(`/announcements`);
             break;
         }
         return;
@@ -30,17 +30,17 @@ export default function AnnouncementChange() {
       <div className={css.buttonAnnouncementContainer}>
         <ul className={css.listButtonAnnouncement}>
           <li>
-            <ButtonUserDate value="addAnnouncement" onClick={handleClick}>
+            <ButtonUserDate value="addAnnouncements" onClick={handleClick}>
               add announcement
             </ButtonUserDate>
           </li>
           <li>
-            <ButtonUserDate value="updataAnnouncement" onClick={handleClick}>
+            <ButtonUserDate value="updataAnnouncements" onClick={handleClick}>
               updata announcement
             </ButtonUserDate>
           </li>
           <li>
-            <ButtonUserDate value="deleteAnnouncement" onClick={handleClick}>
+            <ButtonUserDate value="deleteAnnouncements" onClick={handleClick}>
               delete announcement{" "}
             </ButtonUserDate>
           </li>
