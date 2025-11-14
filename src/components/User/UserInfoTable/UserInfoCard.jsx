@@ -4,51 +4,50 @@ export default function UserInfoCard({ item, itemsArrey }) {
   // console.log(`items3`, items);
   const itemsSourch = [itemsArrey];
   return (
-    <div>
-      <table>
-          <thead>
-            <tr>
-              <th className={css.nameTh} scope="col">
-                name
-              </th>
-              <th className={css.emailTh} scope="col">
-                email
-              </th>
-              <th className={css.roleTh} scope="col">
-                role
-              </th>
-              {/* <th className={css.phoneTh} scope="col">
+    <table>
+      <caption className={css.userCollectionsTitle}>Users collections:</caption>
+      <thead>
+        <tr>
+          <th className={css.nameTh} scope="col">
+            name
+          </th>
+          <th className={css.emailTh} scope="col">
+            email
+          </th>
+          <th className={css.roleTh} scope="col">
+            role
+          </th>
+          {/* <th className={css.phoneTh} scope="col">
               phone
             </th> */}
-              <th className={css.roleTh} scope="col">
-                id
-              </th>
-            </tr>
-          </thead>
-          {item
-            ? item.map((user) => (
-                <tbody key={user._id}>
-                  <tr className={css.userList}>
-                    <td>{user.name}</td>
-                    <td>{user.email}</td>
-                    <td>{user.role}</td>
-                    {/* <td>{user.phone}</td> */}
-                    <td>{user._id}</td>
-                  </tr>
-                </tbody>
-              ))
-            : itemsSourch.map((user) => (
-                <tbody key={user._id}>
-                  <tr className={css.userList}>
-                    <td>{user.name}</td>
-                    <td>{user.email}</td>
-                    <td>{user.role}</td>
-                    {/* <td>{user.phone}</td> */}
-                    <td>{user._id}</td>
-                  </tr>
-                </tbody>
-              ))}
-        </table>
-      </div>
+          <th className={css.roleTh} scope="col">
+            id
+          </th>
+        </tr>
+      </thead>
+      {item
+        ? item.map((user) => (
+            <tbody key={user._id}>
+              <tr className={css.userList}>
+                <td>{user.name}</td>
+                <td>{user.email}</td>
+                <td>{user.role}</td>
+                {/* <td>{user.phone}</td> */}
+                <td>{user._id}</td>
+              </tr>
+            </tbody>
+          ))
+        : itemsSourch.map((user) => (
+            <tbody key={user._id}>
+              <tr className={css.userList}>
+                <td>{user.name}</td>
+                <td>{user.email}</td>
+                <td>{user.role}</td>
+                {/* <td>{user.phone}</td> */}
+                <td>{user._id}</td>
+              </tr>
+            </tbody>
+          ))}
+    </table>
   );
 }

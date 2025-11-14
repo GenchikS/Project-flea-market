@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import css from "./App.module.css";
-import UserPages from "./pages/User/UserPages/UserPages.jsx";
+import UserPages from "./pages/User/UserPages.jsx";
 import Done from "./components/Done/Done.jsx";
 import DeleteUser from "./components/User/FormUserDate/DeleteUser/DeleteUser.jsx";
 import AddUser from "./components/User/FormUserDate/AddUser/AddUser.jsx";

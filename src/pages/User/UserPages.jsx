@@ -1,16 +1,16 @@
 import css from "./UserPages.module.css";
 import { useEffect, useState } from "react";
-import UserInfoCard from "../../../components/User/UserInfoTable/UserInfoCard.jsx";
-import MyComponent from "../../../components/Loader/Loader.jsx";
-import UserChange from "../../../components/User/FormUserDate/UserChange/UserChange.jsx";
-import UserFormSearch from "../../../components/User/UserFormSearch/UserFormSearch.jsx";
+import UserInfoCard from "../../components/User/UserInfoTable/UserInfoCard.jsx";
+import MyComponent from "../../components/Loader/Loader.jsx";
+import UserChange from "../../components/User/FormUserDate/UserChange/UserChange.jsx";
+import UserFormSearch from "../../components/User/UserFormSearch/UserFormSearch.jsx";
 import {
   fetchArticleUserName,
   fetchArticleUserEmail,
   fetchArticleUserId,
   fetchArticleUserAll,
-} from "../../../api/articles-api.js";
-import AnnouncementToNavLink from "../../../components/User/AnnouncementToNavLink/AnnouncementToNavLink.jsx";
+} from "../../api/articles-api.js";
+import AnnouncementToNavLink from "../../components/User/AnnouncementToNavLink/AnnouncementToNavLink.jsx";
 
 export default function UserPages() {
   const [itemsSourch, setItemsSourch] = useState(null);
@@ -121,8 +121,6 @@ export default function UserPages() {
         </div>
       </div>
       <div className={css.containerUserInfo}>
-        <h4 className={css.userCollectionsTitle}>Users collections:</h4>
-
         {item &&
           (!itemsSourch ? (
             <UserInfoCard item={item} />

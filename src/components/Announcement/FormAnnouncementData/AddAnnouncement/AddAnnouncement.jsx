@@ -41,63 +41,58 @@ export default function AddAnnouncement() {
   
 
   return (
-    <div>
-      <div className={css.containerAddAnnouncement}>
-        <h3 className={css.title}>Form add announcement</h3>
-        <form
-          className={css.listAddAnnouncement}
-          name="formAnnouncement"
-          type="submit"
-          onSubmit={handleSubmit}
-        >
-          <FormAddId />
-          <Chapter setChapter={setChapter} charter={chapter} />
-          {chapter === "auto" && (
-            <CategoryAuto
-              set={{ setCategory, setPurchaseSale }}
-              category={category}
-              purchaseSale={purchaseSale}
-            />
-          )}
-          {chapter === "work" && (
-            <CategoryWork
-              set={{ setCategory }}
-              category={category}
-             />
-          )}
-          {chapter === "housing" && (
-            <CategoryHousing
-              set={{ setCategory, setPurchaseSale }}
-              category={category}
-              purchaseSale={purchaseSale}
-            />
-          )}
-          {chapter === "services" && (
-            <CategoryServices setCategory={setCategory} category={category} />
-          )}
-          {chapter === "animals" && (
-            <CategoryAnimals setCategory={setCategory} category={category} />
-          )}
-          {chapter === "differents" && (
-            <CategoryDifferents
-              set={{ setCategory, setPurchaseSale }}
-              // category={category}
-              purchaseSale={purchaseSale}
-            />
-          )}
-          {chapter === "gifts" && (
-            <CategoryGifts
-              set={{ setCategory, setPurchaseSale }}
-              // category={category}
-              purchaseSale={purchaseSale}
-            />
-          )}
-          <AnnouncementText setText={setText} />
-          <ButtonModalAnnouncement type="submit" />
-        </form>
-      </div>
+    <div className={css.containerAddAnnouncement}>
+      <h3 className={css.title}>Form add announcement</h3>
+      <form
+        className={css.listAddAnnouncement}
+        name="formAnnouncement"
+        type="submit"
+        onSubmit={handleSubmit}
+      >
+        <FormAddId />
+        <Chapter setChapter={setChapter} charter={chapter} />
+        {chapter === "auto" && (
+          <CategoryAuto
+            set={{ setCategory, setPurchaseSale }}
+            category={category}
+            purchaseSale={purchaseSale}
+          />
+        )}
+        {chapter === "work" && (
+          <CategoryWork set={{ setCategory }} category={category} />
+        )}
+        {chapter === "housing" && (
+          <CategoryHousing
+            set={{ setCategory, setPurchaseSale }}
+            category={category}
+            purchaseSale={purchaseSale}
+          />
+        )}
+        {chapter === "services" && (
+          <CategoryServices setCategory={setCategory} category={category} />
+        )}
+        {chapter === "animals" && (
+          <CategoryAnimals setCategory={setCategory} category={category} />
+        )}
+        {chapter === "differents" && (
+          <CategoryDifferents
+            set={{ setCategory, setPurchaseSale }}
+            // category={category}
+            purchaseSale={purchaseSale}
+          />
+        )}
+        {chapter === "gifts" && (
+          <CategoryGifts
+            set={{ setCategory, setPurchaseSale }}
+            // category={category}
+            purchaseSale={purchaseSale}
+          />
+        )}
+        <AnnouncementText setText={setText} />
+        <ButtonModalAnnouncement type="submit" />
+      </form>
+      {/* {console.log(`objectAll`, objectAll)} */}
       {/* <FormAddPhoto saveFiles={saveFiles} /> */}
-      {console.log(`objectAll`, objectAll)}
     </div>
   );
 }

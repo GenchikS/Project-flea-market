@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import MyComponent from "../../components/Loader/Loader.jsx";
 import { fetchArticleAnnouncementsAll } from "../../api/articlesAnnouncements-api.js";
 import UsersToNavLink from "../../components/Announcement/UsersToNavLink/UsersToNavLink.jsx";
+import AnnouncementInfoCard from "../../components/Announcement/AnnouncementInfoTable/AnnouncementInfoCard.jsx";
 
 export default function AnnouncementPages() {
     const [itemsSourch, setItemsSourch] = useState(null);
@@ -115,16 +116,12 @@ export default function AnnouncementPages() {
           </div>
         </div>
         <div className={css.containerUserInfo}>
-          <h4 className={css.userCollectionsTitle}>
-            Announcement collections:
-          </h4>
-
-          {/* {item &&
-         (!itemsSourch ? (
-           <UserInfoCard item={item} />
-         ) : (
-           <UserInfoCard itemsArrey={itemsSourch} />
-         ))}*/}
+          {item &&
+            (!itemsSourch ? (
+              <AnnouncementInfoCard item={item} />
+            ) : (
+              <AnnouncementInfoCard itemsArrey={itemsSourch} />
+            ))}
           {loadig && (
             <div className={css.containerLoadingData}>
               <p className={css.textLoadingData}>Loding data ...</p>
