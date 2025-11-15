@@ -10,8 +10,10 @@ import CategoryServices from "../SelectCategory/CategoryServices/CategoryService
 import CategoryAnimals from "../SelectCategory/CategoryAnimals/CategoryAnimals.jsx";
 import AnnouncementText from "../AnnouncementText/AnnouncementText.jsx";
 import ButtonModalAnnouncement from "../ButtonModalAnnouncement/ButtonModalAnnouncement.jsx";
+import CategoryDifferents from "../SelectCategory/CategoryDifferents/CategoryDifferents.jsx";
+import CategoryGifts from "../SelectCategory/CategoryGifts/CategoryGifts.jsx";
 
-export default function UpdataAnnouncement() {
+export default function UpdataAnnouncement({ marker }) {
   const [idUser, setIdUser] = useState("");
   const [chapter, setChapter] = useState("");
   const [category, setCategory] = useState("");
@@ -19,6 +21,7 @@ export default function UpdataAnnouncement() {
   const [text, setText] = useState("");
   // const [photo, setPhoto] = useState("");
   const [objectAll, setObjectAll] = useState({});
+  // const mar
 
   const navigate = useNavigate();
 
@@ -35,7 +38,7 @@ export default function UpdataAnnouncement() {
 
   return (
     <div className={css.containerUpdataAnnouncement}>
-      <h3 className={css.title}>Form add announcement</h3>
+      <h3 className={css.title}>Form updata announcement</h3>
       <form
         className={css.listAddAnnouncement}
         name="formAnnouncement"
@@ -43,48 +46,64 @@ export default function UpdataAnnouncement() {
         onSubmit={handleSubmit}
       >
         <FormAddId setIdUser={setIdUser} idUser={idUser} />
-        <Chapter setChapter={setChapter} charter={chapter} />
+        <Chapter setChapter={setChapter} charter={chapter} marker={marker} />
         {chapter === "auto" && (
           <CategoryAuto
             set={{ setCategory, setPurchaseSale }}
             category={category}
             purchaseSale={purchaseSale}
+            marker={marker}
           />
         )}
         {chapter === "work" && (
-          <CategoryWork set={{ setCategory }} category={category} />
+          <CategoryWork
+            set={{ setCategory }}
+            category={category}
+            marker={marker}
+          />
         )}
         {chapter === "housing" && (
           <CategoryHousing
             set={{ setCategory, setPurchaseSale }}
             category={category}
             purchaseSale={purchaseSale}
+            marker={marker}
           />
         )}
         {chapter === "services" && (
-          <CategoryServices setCategory={setCategory} category={category} />
+          <CategoryServices
+            setCategory={setCategory}
+            category={category}
+            marker={marker}
+          />
         )}
         {chapter === "animals" && (
-          <CategoryAnimals setCategory={setCategory} category={category} />
+          <CategoryAnimals
+            setCategory={setCategory}
+            category={category}
+            marker={marker}
+          />
         )}
         {chapter === "differents" && (
           <CategoryDifferents
             set={{ setCategory, setPurchaseSale }}
-            // category={category}
+            category={category}
             purchaseSale={purchaseSale}
+            marker={marker}
           />
         )}
         {chapter === "gifts" && (
           <CategoryGifts
             set={{ setCategory, setPurchaseSale }}
-            // category={category}
+            category={category}
             purchaseSale={purchaseSale}
+            marker={marker}
           />
         )}
-        <AnnouncementText setText={setText} />
+        <AnnouncementText setText={setText} marker={marker} />
         <ButtonModalAnnouncement type="submit" />
       </form>
-      {/* {console.log(`objectAll`, objectAll)} */}
+      {console.log(`objectAll`, objectAll)}
       {/* <FormAddPhoto saveFiles={saveFiles} /> */}
     </div>
   );

@@ -1,18 +1,17 @@
 // import { useId } from "react";
-// import { useId } from "react";
 import css from "./CategoryGifts.module.css";
 import PurchaseSale from "../PurchaseSale/PurchaseSale.jsx";
 
 
-export default function CategoryAnimals({
+export default function CategoryGifts({
   set,
   // category,
-  purchaseSale }) {
+  purchaseSale, marker }) {
   // const { setCategory } = set;
   // const selectCategoryId = useId();
   return (
     <div className={css.containerCategory}>
-      <PurchaseSale set={set} purchaseSale={purchaseSale} />
+      <PurchaseSale set={set} purchaseSale={purchaseSale} marker={ marker} />
       {/* <label className={css.label} htmlFor={selectCategoryId}>
         choose category
       </label>

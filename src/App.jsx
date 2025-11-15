@@ -10,10 +10,13 @@ import AddAnnouncement from "./components/Announcement/FormAnnouncementData/AddA
 import DoneAnnouncement from "./components/Announcement/FormAnnouncementData/DoneAnnouncement/DoneAnnouncement.jsx";
 import LoginPages from "./pages/LoginPages/LoginPages.jsx";
 import UpdataAnnouncement from "./components/Announcement/FormAnnouncementData/UpdataAnnouncement/UpdataAnnouncement.jsx";
+import { use, useState } from "react";
 
 // http://localhost:3000/users
 // http://localhost:3000/announcements
 function App() {
+  const [marker, setMarker] = useState(false);
+
   return (
     <div className={css.containerApp}>
       <Routes>
@@ -23,9 +26,18 @@ function App() {
         <Route path="/user/updata" element={<UpdataUser />} />
         <Route path="/user/delete" element={<DeleteUser />} />
         <Route path="/user/done" element={<Done />} />
-        <Route path="/announcements" element={<AnnouncementPages />} />
-        <Route path="/announcement/add" element={<AddAnnouncement />} />
-        <Route path="/updata/announcement" element={<UpdataAnnouncement />} />
+        <Route
+          path="/announcements"
+          element={<AnnouncementPages setMarker={setMarker} />}
+        />
+        <Route
+          path="/announcement/add"
+          element={<AddAnnouncement marker={marker} />}
+        />
+        <Route
+          path="/updata/announcement"
+          element={<UpdataAnnouncement marker={marker} />}
+        />
         {/* <Route path="/delete/announcement" element={<DeleteUser />} /> */}
         <Route path="/announcement/done" element={<DoneAnnouncement />} />
 

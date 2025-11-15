@@ -1,11 +1,12 @@
 // import { useId } from "react";
 import { useId } from "react";
 import css from "./CategoryWork.module.css";
-export default function CategoryHousing({ set, category }) {
+export default function CategoryHousing({ set, category, marker }) {
    const { setCategory } = set;
   const selectCategoryId = useId();
   return (
     <div className={css.containerCategory}>
+      <p className={!marker ? css.markerRed : css.markerGreen}>*</p>
       <label className={css.label} htmlFor={selectCategoryId}>
         choose category
       </label>

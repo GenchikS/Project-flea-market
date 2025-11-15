@@ -15,7 +15,7 @@ import { useNavigate } from "react-router-dom";
 import { fetchArticleAddAnnouncement } from "../../../../api/articlesAnnouncements-api.js";
 // import FormAddPhoto from "../FormAddPhoto/FormAddPhoto.jsx";
 
-export default function AddAnnouncement() {
+export default function AddAnnouncement({ marker }) {
   const [idUser, setIdUser] = useState("")
   const [chapter, setChapter] = useState("");
   const [category, setCategory] = useState("")
@@ -47,7 +47,7 @@ export default function AddAnnouncement() {
         onSubmit={handleSubmit}
       >
         <FormAddId setIdUser={setIdUser} idUser={idUser} />
-        <Chapter setChapter={setChapter} charter={chapter} />
+        <Chapter setChapter={setChapter} charter={chapter} marker={marker} />
         {chapter === "auto" && (
           <CategoryAuto
             set={{ setCategory, setPurchaseSale }}
@@ -85,7 +85,7 @@ export default function AddAnnouncement() {
             purchaseSale={purchaseSale}
           />
         )}
-        <AnnouncementText setText={setText} />
+        <AnnouncementText setText={setText} marker={ marker} />
         <ButtonModalAnnouncement type="submit" />
       </form>
       {/* {console.log(`objectAll`, objectAll)} */}

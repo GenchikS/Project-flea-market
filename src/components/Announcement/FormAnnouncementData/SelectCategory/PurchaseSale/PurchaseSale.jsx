@@ -1,11 +1,11 @@
 import { useId } from "react";
 import css from "./PurchaseSale.module.css";
-export default function PurchaseSale({ set, purchaseSale }) {
+export default function PurchaseSale({ set, purchaseSale, marker }) {
   const { setPurchaseSale } = set;
   const PurchaseSaleId = useId();
   return (
     <div className={css.containerCategory}>
-      <p className={css.markerRed}>*</p>
+      <p className={!marker ? css.markerRed : css.markerGreen}>*</p>
       <label className={css.label} htmlFor={PurchaseSaleId}>
         choose optoins
       </label>

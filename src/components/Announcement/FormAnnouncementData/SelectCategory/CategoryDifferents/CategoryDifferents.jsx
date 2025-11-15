@@ -2,17 +2,18 @@
 // import { useId } from "react";
 import css from "./CategoryDifferents.module.css";
 import PurchaseSale from "../PurchaseSale/PurchaseSale.jsx";
+import { useId } from "react";
 
 
-export default function CategoryAnimals({
+export default function CategoryDifferents({
   set,
   // category,
-  purchaseSale }) {
+  purchaseSale, marker }) {
   // const { setCategory } = set;
   // const selectCategoryId = useId();
   return (
     <div className={css.containerCategory}>
-      <PurchaseSale set={set} purchaseSale={purchaseSale} />
+      <PurchaseSale set={set} purchaseSale={purchaseSale} marker={marker}/>
       {/* <label className={css.label} htmlFor={selectCategoryId}>
         choose category
       </label>

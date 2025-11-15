@@ -1,10 +1,11 @@
 // import { useId } from "react";
 import { useId } from "react";
 import css from "./CategoryServices.module.css";
-export default function CategoryServices({ setCategory, category }) {
+export default function CategoryServices({ setCategory, category, marker }) {
   const selectCategoryId = useId();
   return (
     <div className={css.containerCategory}>
+      <p className={!marker ? css.markerRed : css.markerGreen}>*</p>
       <label className={css.label} htmlFor={selectCategoryId}>
         choose category
       </label>

@@ -1,14 +1,14 @@
 import { useId } from "react";
 import css from "./CategoryAuto.module.css";
 import PurchaseSale from "../PurchaseSale/PurchaseSale.jsx";
-export default function CategoryAuto({ set, category, purchaseSale }) {
+export default function CategoryAuto({ set, category, purchaseSale, marker }) {
   const { setCategory } = set;
   // const { category } = category;
   const selectCategoryId = useId();
   return (
     <div className={css.containerCategory}>
-      <PurchaseSale set={set} purchaseSale={purchaseSale} />
-      <p className={css.markerRed}>*</p>
+      <PurchaseSale set={set} purchaseSale={purchaseSale} marker={ marker} />
+      <p className={!marker ? css.markerRed : css.markerGreen}>*</p>
       <label className={css.label} htmlFor={selectCategoryId}>
         choose category
       </label>
