@@ -6,6 +6,7 @@ export default function Chapter({ setChapter, chapter }) {
   const selectCarterId = useId();
   return (
     <div className={css.containerChapter}>
+      <p className={css.markerRed}>*</p>
       <label className={css.label} htmlFor={selectCarterId}>
         choose chapter
       </label>

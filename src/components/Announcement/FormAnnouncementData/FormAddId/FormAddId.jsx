@@ -3,6 +3,7 @@ import css from "./FormAddId.module.css"
 export const FormAddId = ({ setIdUser, idUser }) => {
   return (
     <div className={css.containerFormAddId}>
+      <p className={css.markerRed}>*</p>
       <label className={css.labelId}>id user:</label>
       <input
         className={css.inputAddId}

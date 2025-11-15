@@ -46,19 +46,19 @@
     color: red;
 }
 
-.label{
-    font-size: 10px;
-    margin-left: 10px;
-    opacity: 80;
-    margin-bottom: 2px;
-}
-
 .markerGreen{
     font-size: 10px;
     position: relative;
     top:8px;
     left: 42px;
     color: green;
+}
+
+.label{
+    font-size: 10px;
+    margin-left: 10px;
+    opacity: 80;
+    margin-bottom: 2px;
 }
 
 .username, .email, .phone{

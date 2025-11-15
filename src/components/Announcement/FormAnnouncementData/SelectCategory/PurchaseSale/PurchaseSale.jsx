@@ -5,6 +5,7 @@ export default function PurchaseSale({ set, purchaseSale }) {
   const PurchaseSaleId = useId();
   return (
     <div className={css.containerCategory}>
+      <p className={css.markerRed}>*</p>
       <label className={css.label} htmlFor={PurchaseSaleId}>
         choose optoins
       </label>

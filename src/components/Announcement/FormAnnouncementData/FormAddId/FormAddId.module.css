@@ -3,6 +3,14 @@
     flex-direction: column;
 }
 
+.markerRed{
+    font-size: 10px;
+    position: relative;
+    top:6px;
+    left: 20px;
+    color: red;
+}
+
 .labelId{
     font-size: 10px;
     margin-bottom: 2px;
@@ -19,7 +27,7 @@
     background-color: var(--bg-color);
     cursor: pointer;
     text-align: center;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .inputAddId:hover{

@@ -5,6 +5,14 @@
     align-items: center;
 }
 
+.markerRed{
+    font-size: 10px;
+    position: relative;
+    top:6px;
+    left: 40px;
+    color: red;
+}
+
 .label{
     font-size: 8px;
     margin-left: 10px;

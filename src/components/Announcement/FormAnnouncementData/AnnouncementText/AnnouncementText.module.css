@@ -1,3 +1,10 @@
+.markerRed{
+    font-size: 12px;
+    position: relative;
+    left: 80px;
+    color: red;
+}
+
 .containerText{
     width: 180px;
     height: 74px;

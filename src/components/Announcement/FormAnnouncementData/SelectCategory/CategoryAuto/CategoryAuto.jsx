@@ -8,6 +8,7 @@ export default function CategoryAuto({ set, category, purchaseSale }) {
   return (
     <div className={css.containerCategory}>
       <PurchaseSale set={set} purchaseSale={purchaseSale} />
+      <p className={css.markerRed}>*</p>
       <label className={css.label} htmlFor={selectCategoryId}>
         choose category
       </label>

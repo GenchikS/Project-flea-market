@@ -3,6 +3,7 @@ import css from "./AnnouncementText.module.css"
 export default function AnnouncementText({setText}) {
   return (
     <div>
+      <p className={css.markerRed}>*</p>
       <textarea
         onBlur={(value) => setText(value.target.value)}
         className={css.containerText}
