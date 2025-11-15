@@ -14,11 +14,11 @@ export default function UserChange() {
       // console.log(`evn addUser`, evn);
       break;
     case `updataUser`:
-      navigate(`/updata`);
+      navigate(`/user/updata`);
         // console.log(`evn updateUser`, evn);
         break;
     case `deleteUser`:
-      navigate(`/delete`);
+      navigate(`/user/delete`);
       // console.log(`evn deleteUser`, evn);
       break;
       default:

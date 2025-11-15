@@ -24,7 +24,7 @@ export const FormDeleteUser = () => {
     fetchArticleDeleteUser(value.id);
     // console.log(`value`, value.id);
     actions.resetForm();
-    navigate(`/done`);
+    navigate(`/user/done`);
   };
 
   return (

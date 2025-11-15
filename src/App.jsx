@@ -15,16 +15,16 @@ function App() {
   return (
     <div className={css.containerApp}>
       <Routes>
-        <Route path="/" element={<UserPages />} />
-        {/* <Route path="/user/add" element={<AddUser />} /> */}
-        {/* <Route path="/updata" element={<UpdataUser />} /> */}
-        {/* <Route path="/delete" element={<DeleteUser />} /> */}
+        <Route path="/users" element={<UserPages />} />
+        <Route path="/user/add" element={<AddUser />} />
+        <Route path="/user/updata" element={<UpdataUser />} />
+        <Route path="/user/delete" element={<DeleteUser />} />
         <Route path="/user/done" element={<Done />} />
-        {/* <Route path="/announcements" element={<AnnouncementPages />} /> */}
-        {/* <Route path="/add/announcements" element={<AddAnnouncement />} /> */}
+        <Route path="/announcements" element={<AnnouncementPages />} />
+        <Route path="/announcement/add" element={<AddAnnouncement />} />
         {/* <Route path="/updata/announcement" element={<UpdataUser />} /> */}
         {/* <Route path="/delete/announcement" element={<DeleteUser />} /> */}
-        {/* <Route path="/done/announcements" element={<DoneAnnouncement />} /> */}
+        <Route path="/announcement/done" element={<DoneAnnouncement />} />
 
         {/* <Route path="*" element={<NotFound />} /> */}
       </Routes>

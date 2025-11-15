@@ -5,3 +5,10 @@ export const fetchArticleAnnouncementsAll = async () => {
 //   console.log(`response`, response);
   return response.data.data;
 };
+
+export const fetchArticleAddAnnouncement = async (payload) => {
+  console.log(`payload`, payload);
+  const response = await axios.post(`/announcement/add`, payload);
+  console.log(`response`, response)
+  return;
+}

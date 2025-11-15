@@ -43,7 +43,7 @@ export const FormUpdataUser = () => {
     });
     // console.log(`value`, value);
     actions.resetForm();
-    navigate(`/done`);
+    navigate(`/user/done`);
   };
 
   return (

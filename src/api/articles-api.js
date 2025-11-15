@@ -3,14 +3,13 @@ import axios from "axios";
 axios.defaults.baseURL = "https://project-flea-market-bd.onrender.com/"
 
 export const fetchArticleUserAll = async () => {
-  console.log(`response`);
-    const response = await axios.get(`/`);
-    console.log(`response`, response);
+  const response = await axios.get(`/users`);
+    // console.log(`response`, response);
     return response.data.data;
 }
 
 export const fetchArticleUserName = async(name) => {
-    const response = await axios.get(`/user/?&name=${name}`);
+    const response = await axios.get(`/users/?&name=${name}`);
     // console.log(`response`, response.data.data);
     return response.data.data[0];
 }
@@ -30,7 +29,7 @@ export const fetchArticleUserId = async (id) => {
 }
 
 export const fetchArticleAddUser = async (payload) => {
-  // console.log(`payload`, payload)
+  console.log(`payload`, payload)
     const response = await axios.post(`/user/add`, payload);
     // console.log(`response`, response);
     return;
@@ -50,14 +49,14 @@ export const fetchArticleUpdataUser = async (payload) => {
   };
 
   // console.log(`payloadObject`, payloadObject);
-const response = await axios.patch(`/users/${id}`, payloadObject);
+const response = await axios.patch(`/user/updata/${id}`, payloadObject);
   // console.log(`response`, response);
   return;
 }
 
 export const fetchArticleDeleteUser = async (id) => {
   // console.log(`id`, id)
-    const response = await axios.delete(`/users/${id}`);
+    const response = await axios.delete(`/user/delete/${id}`);
     // console.log(`response`, response.data.data);
     return;
 }

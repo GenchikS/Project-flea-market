@@ -12,6 +12,7 @@ import CategoryDifferents from "../SelectCategory/CategoryDifferents/CategoryDif
 import CategoryGifts from "../SelectCategory/CategoryGifts/CategoryGifts.jsx"
 import CategoryWork from "../SelectCategory/CategoryWork/CategoryWork.jsx"
 import { useNavigate } from "react-router-dom";
+import { fetchArticleAddAnnouncement } from "../../../../api/articlesAnnouncements-api.js";
 // import FormAddPhoto from "../FormAddPhoto/FormAddPhoto.jsx";
 
 export default function AddAnnouncement() {
@@ -30,15 +31,10 @@ export default function AddAnnouncement() {
     console.log(`evt submit`, searche);
     setObjectAll(searche);
       document.formAnnouncement.reset();
-      navigate(`/done/announcements`);
+      fetchArticleAddAnnouncement(searche);
+      navigate(`/announcement/done`);
     return;
   };
-
-  // const saveFiles = (value) => {
-  //   console.log("value", value);
-  //   navigate(`/done/announcement`);
-  // }
-  
 
   return (
     <div className={css.containerAddAnnouncement}>

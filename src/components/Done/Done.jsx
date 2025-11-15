@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 export default function Done() {
       const navigate = useNavigate();
   const handleClick = () => {
-    navigate("/")  
+    navigate("/users")  
       return
   };
 

@@ -15,14 +15,14 @@ export default function AnnouncementInfoCard({ item, itemsArrey }) {
       {
         //   item ?
         item.map((list) => (
-          <tbody>
+          <tbody key={list._id}>
             <tr>
               <td className={css.chapter}>{list.chapter}</td>
               <td className={css.category}>{list.category}</td>
               <td className={css.idUser}>{list.idUser}</td>
             </tr>
             <tr>
-              <td scope="row" colspan="3">
+              <td scope="row" colSpan="3">
                 {list.text}
               </td>
             </tr>
