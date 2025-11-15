@@ -9,6 +9,7 @@ import AnnouncementPages from "./pages/AnnouncementPages/AnnouncementPages.jsx";
 import AddAnnouncement from "./components/Announcement/FormAnnouncementData/AddAnnouncement/AddAnnouncement.jsx";
 import DoneAnnouncement from "./components/Announcement/FormAnnouncementData/DoneAnnouncement/DoneAnnouncement.jsx";
 import LoginPages from "./pages/LoginPages/LoginPages.jsx";
+import UpdataAnnouncement from "./components/Announcement/FormAnnouncementData/UpdataAnnouncement/UpdataAnnouncement.jsx";
 
 // http://localhost:3000/users
 // http://localhost:3000/announcements
@@ -24,7 +25,7 @@ function App() {
         <Route path="/user/done" element={<Done />} />
         <Route path="/announcements" element={<AnnouncementPages />} />
         <Route path="/announcement/add" element={<AddAnnouncement />} />
-        {/* <Route path="/updata/announcement" element={<UpdataUser />} /> */}
+        <Route path="/updata/announcement" element={<UpdataAnnouncement />} />
         {/* <Route path="/delete/announcement" element={<DeleteUser />} /> */}
         <Route path="/announcement/done" element={<DoneAnnouncement />} />
 

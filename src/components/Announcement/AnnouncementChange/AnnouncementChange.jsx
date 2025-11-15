@@ -14,7 +14,7 @@ export default function AnnouncementChange() {
             // console.log(`evn addUser`, evn);
             break;
           case `updataAnnouncements`:
-            // navigate(`/updata/announcements`);
+            navigate(`/updata/announcement`);
             // console.log(`evn updateUser`, evn);
             break;
           case `deleteAnnouncements`:
