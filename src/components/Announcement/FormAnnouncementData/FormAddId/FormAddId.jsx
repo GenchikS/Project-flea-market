@@ -1,24 +1,18 @@
-// import css from "./FormAddIdAnnouncement.module.css";
-// import { Field, Form, Formik } from "formik";
-// import { useId, useState } from "react";
-// import { useNavigate } from "react-router-dom";
-// import * as Yup from "yup";
-// import ButtonModalAnnouncement from "../ButtonModalAnnouncement/ButtonModalAnnouncement.jsx";
-// import CategoryAuto from "../SelectCategory/CategoryAuto.jsx";
-// import { fetchArticleAddUser } from "../../../../../articles-api.js";
+import css from "./FormAddId.module.css"
 
-// const validationAnnouncementSchema = Yup.object().shape({
-//   idUser: Yup.string().required("Requred!"),
-//   // chapter: Yup.string(),
-//   // category: Yup.string(),
-//   // announcement: Yup.string(),
-// });
-
-export const FormAddId = () => {
- 
+export const FormAddId = ({ setIdUser, idUser }) => {
   return (
-    <div >
-        <h4>test</h4>
+    <div className={css.containerFormAddId}>
+      <label className={css.labelId}>id user:</label>
+      <input
+        className={css.inputAddId}
+        onBlur={(value)=>setIdUser(value.target.value)}
+        type="text"
+        id="idUser"
+        name={idUser}
+        placeholder="input id user"
+        required
+      />
     </div>
   );
 };

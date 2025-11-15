@@ -16,6 +16,7 @@ import { fetchArticleAddAnnouncement } from "../../../../api/articlesAnnouncemen
 // import FormAddPhoto from "../FormAddPhoto/FormAddPhoto.jsx";
 
 export default function AddAnnouncement() {
+  const [idUser, setIdUser] = useState("")
   const [chapter, setChapter] = useState("");
   const [category, setCategory] = useState("")
   const [purchaseSale, setPurchaseSale] = useState("")
@@ -27,8 +28,8 @@ export default function AddAnnouncement() {
     
     const handleSubmit = (event) => {
     event.preventDefault();
-    const searche = { chapter, category, purchaseSale, text };
-    console.log(`evt submit`, searche);
+    const searche = { idUser, chapter, category, purchaseSale, text };
+    // console.log(`evt submit`, searche);
     setObjectAll(searche);
       document.formAnnouncement.reset();
       fetchArticleAddAnnouncement(searche);
@@ -45,7 +46,7 @@ export default function AddAnnouncement() {
         type="submit"
         onSubmit={handleSubmit}
       >
-        <FormAddId />
+        <FormAddId setIdUser={setIdUser} idUser={idUser} />
         <Chapter setChapter={setChapter} charter={chapter} />
         {chapter === "auto" && (
           <CategoryAuto
