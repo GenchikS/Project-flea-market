@@ -20,7 +20,7 @@ export default function AnnouncementPages() {
         setLoading(true);
         try {
             const response = await fetchArticleAnnouncementsAll();
-          console.log(`response`, response);
+          // console.log(`response`, response);
           setItems(response);
         } catch (error) {
           setError(true);

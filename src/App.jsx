@@ -8,6 +8,7 @@ import UpdataUser from "./components/User/FormUserData/UpdateUser/UpdataUser.jsx
 import AnnouncementPages from "./pages/AnnouncementPages/AnnouncementPages.jsx";
 import AddAnnouncement from "./components/Announcement/FormAnnouncementData/AddAnnouncement/AddAnnouncement.jsx";
 import DoneAnnouncement from "./components/Announcement/FormAnnouncementData/DoneAnnouncement/DoneAnnouncement.jsx";
+import LoginPages from "./pages/LoginPages/LoginPages.jsx";
 
 // http://localhost:3000/users
 // http://localhost:3000/announcements
@@ -15,6 +16,7 @@ function App() {
   return (
     <div className={css.containerApp}>
       <Routes>
+        <Route path="/" element={<LoginPages />} />
         <Route path="/users" element={<UserPages />} />
         <Route path="/user/add" element={<AddUser />} />
         <Route path="/user/updata" element={<UpdataUser />} />
