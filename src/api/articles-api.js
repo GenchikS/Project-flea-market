@@ -3,7 +3,7 @@ import axios from "axios";
 axios.defaults.baseURL = "https://project-flea-market-bd.onrender.com/"
 
 export const fetchArticleUserAll = async () => {
-  console.log(`hello`)
+  // console.log(`hello`)
   const response = await axios.get(`/users`);
   return response.data.data;
 }

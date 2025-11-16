@@ -12,6 +12,7 @@ import AnnouncementText from "../AnnouncementText/AnnouncementText.jsx";
 import ButtonModalAnnouncement from "../ButtonModalAnnouncement/ButtonModalAnnouncement.jsx";
 import CategoryDifferents from "../SelectCategory/CategoryDifferents/CategoryDifferents.jsx";
 import CategoryGifts from "../SelectCategory/CategoryGifts/CategoryGifts.jsx";
+import { fetchArticleAddAnnouncement } from "../../../../api/articlesAnnouncements-api.js";
 
 export default function UpdataAnnouncement({ marker }) {
   const [idUser, setIdUser] = useState("");
@@ -31,7 +32,7 @@ export default function UpdataAnnouncement({ marker }) {
     // console.log(`evt submit`, searche);
     setObjectAll(searche);
     document.formAnnouncement.reset();
-    //   fetchArticleAddAnnouncement(searche);
+      fetchArticleAddAnnouncement(searche);
     navigate(`/announcement/done`);
     return;
   };
