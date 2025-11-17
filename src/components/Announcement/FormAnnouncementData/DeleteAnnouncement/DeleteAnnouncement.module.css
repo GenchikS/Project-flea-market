@@ -1,8 +1,9 @@
-.containerModalDeleteUser{
+.containerModalDeleteAnnouncement{
+    
     display: flex;
     flex-direction: column;
     width: 222px;
-    height: 190px;
+    height: 210px;
     text-align: center;
     border: 1px solid var(--border-color-black);
     border-radius: 14px;
@@ -29,17 +30,18 @@
     font-size: 10px;
     position: relative;
     top:14px;
-    left: 24px;
+    left: 48px;
     color: red;
 }
 
 .label{
     font-size: 10px;
     margin-left: 10px;
+    opacity: 80;
     margin-bottom: 2px;
 }
 
-.userId{
+.announcementId{
     font-size: 12px;
     border: 1px solid var(--color-border);
     outline: none;

@@ -7,7 +7,7 @@ export const FormAddId = ({ setIdUser, idUser }) => {
       <label className={css.labelId}>id user:</label>
       <input
         className={css.inputAddId}
-        onBlur={(value)=>setIdUser(value.target.value)}
+        onBlur={(value) => setIdUser(value.target.value)}
         type="text"
         id="idUser"
         name={idUser}

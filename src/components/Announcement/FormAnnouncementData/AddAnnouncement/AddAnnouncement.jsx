@@ -22,15 +22,13 @@ export default function AddAnnouncement({ marker }) {
   const [purchaseSale, setPurchaseSale] = useState("")
   const [text, setText] = useState("")
   // const [photo, setPhoto] = useState("");
-  const [objectAll, setObjectAll] =useState({})
-
+  
     const navigate = useNavigate();
     
     const handleSubmit = (event) => {
     event.preventDefault();
     const searche = { idUser, chapter, category, purchaseSale, text };
     // console.log(`evt submit`, searche);
-    setObjectAll(searche);
       document.formAnnouncement.reset();
       fetchArticleAddAnnouncement(searche);
       navigate(`/announcement/done`);

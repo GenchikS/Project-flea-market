@@ -33,7 +33,7 @@ export const fetchArticleAddUser = async (payload) => {
   console.log(`payload`, payload)
     const response = await axios.post(`/user/add`, payload);
     // console.log(`response`, response);
-    return;
+    return response.data.data;
 }
 
 export const fetchArticleUpdataUser = async (payload) => {
@@ -52,14 +52,15 @@ export const fetchArticleUpdataUser = async (payload) => {
   // console.log(`payloadObject`, payloadObject);
 const response = await axios.patch(`/user/updata/${id}`, payloadObject);
   // console.log(`response`, response);
-  return;
+  return response.data.data;
 }
 
 export const fetchArticleDeleteUser = async (id) => {
   // console.log(`id`, id)
     const response = await axios.delete(`/user/delete/${id}`);
-    // console.log(`response`, response.data.data);
-    return;
+  // console.log(`response`, response.data.data);
+  if (!response) return;
+return;
 }
 
 

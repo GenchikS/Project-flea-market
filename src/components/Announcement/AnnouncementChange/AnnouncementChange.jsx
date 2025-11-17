@@ -12,17 +12,17 @@ export default function AnnouncementChange({ setMarker }) {
           case `addAnnouncements`:
             setMarker(false);
             navigate(`/announcement/add`);
-            console.log(`evn addUser`, evn);
+            // console.log(`evn addUser`, evn);
             break;
           case `updataAnnouncements`:
             setMarker(true);
-            navigate(`/updata/announcement`);
+            navigate(`/announcement/updata`);
             // console.log(`evn updateUser`, evn);
             break;
           case `deleteAnnouncements`:
             setMarker(false);
+            navigate(`/announcement/delete`);
             // console.log(`evn deleteUser`, evn);
-            // navigate(`/delete/announcements`);
             break;
           default:
             navigate(`/announcements`);

@@ -22,7 +22,7 @@ export const FormDeleteUser = () => {
 
   const hahdleSubmit = (value, actions) => {
     fetchArticleDeleteUser(value.id);
-    // console.log(`value`, value.id);
+    console.log(`value`, value.id);
     actions.resetForm();
     navigate(`/user/done`);
   };

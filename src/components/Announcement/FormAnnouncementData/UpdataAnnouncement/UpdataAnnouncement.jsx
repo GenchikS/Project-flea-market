@@ -12,10 +12,10 @@ import AnnouncementText from "../AnnouncementText/AnnouncementText.jsx";
 import ButtonModalAnnouncement from "../ButtonModalAnnouncement/ButtonModalAnnouncement.jsx";
 import CategoryDifferents from "../SelectCategory/CategoryDifferents/CategoryDifferents.jsx";
 import CategoryGifts from "../SelectCategory/CategoryGifts/CategoryGifts.jsx";
-import { fetchArticleAddAnnouncement } from "../../../../api/articlesAnnouncements-api.js";
+import {  fetchArticleUpdataAnnouncement } from "../../../../api/articlesAnnouncements-api.js";
 
 export default function UpdataAnnouncement({ marker }) {
-  const [idUser, setIdUser] = useState("");
+  const [idAnnoun, setIdAnnoun] = useState("");
   const [chapter, setChapter] = useState("");
   const [category, setCategory] = useState("");
   const [purchaseSale, setPurchaseSale] = useState("");
@@ -28,11 +28,11 @@ export default function UpdataAnnouncement({ marker }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const searche = { idUser, chapter, category, purchaseSale, text };
+    const searche = { idAnnoun, chapter, category, purchaseSale, text };
     // console.log(`evt submit`, searche);
     setObjectAll(searche);
     document.formAnnouncement.reset();
-      fetchArticleAddAnnouncement(searche);
+      fetchArticleUpdataAnnouncement(searche);
     navigate(`/announcement/done`);
     return;
   };
@@ -46,7 +46,7 @@ export default function UpdataAnnouncement({ marker }) {
         type="submit"
         onSubmit={handleSubmit}
       >
-        <FormAddId setIdUser={setIdUser} idUser={idUser} />
+        <FormAddId setIdAnnoun={setIdAnnoun} idAnnoun={idAnnoun} />
         <Chapter setChapter={setChapter} charter={chapter} marker={marker} />
         {chapter === "auto" && (
           <CategoryAuto
@@ -104,7 +104,7 @@ export default function UpdataAnnouncement({ marker }) {
         <AnnouncementText setText={setText} marker={marker} />
         <ButtonModalAnnouncement type="submit" />
       </form>
-      {console.log(`objectAll`, objectAll)}
+      {/* {console.log(`objectAll`, objectAll)} */}
       {/* <FormAddPhoto saveFiles={saveFiles} /> */}
     </div>
   );

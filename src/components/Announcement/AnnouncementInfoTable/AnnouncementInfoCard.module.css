@@ -27,7 +27,7 @@ th {
 }
 
 .chapter, .category, .idUser{
-    font-size: 10px;
+    font-size: 8px;
     font-weight: 700;
     background-color: var(--bg-color-grey-light);
 }

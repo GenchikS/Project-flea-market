@@ -1,41 +1,48 @@
+import css from "./DeleteAnnouncement.module.css";
 import { NavLink, useNavigate } from "react-router-dom";
-import css from "./DeleteUser.module.css";
-import { fetchArticleDeleteUser } from "../../../../api/articles-api.js";
+// import * as Yup from "yup";
+import { fetchArticleDeleteAnnouncement } from "../../../../api/articlesAnnouncements-api.js";
 
-export const DeleteUser = () =>{
+// const validationUserSchema = Yup.object().shape({
+//   id: Yup.string().required("Requred!"),
+// });
+
+export const DeleteAnnouncement = () => {
   const navigate = useNavigate();
+
   const handleSubmit = (evt) => {
     evt.preventDefault();
     const form = evt.target;
-    const idUser = evt.target.id.value;
+    const idAnnouncement = evt.target.id.value;
     // console.log(`idAnnouncement`, idAnnouncement);
-    if (idUser.trim() === "") {
+    if (idAnnouncement.trim() === "") {
       alert("Please enter search term!");
       return;
     }
-    const name = idUser.toLowerCase();
-    fetchArticleDeleteUser(name);
+    const name = idAnnouncement.toLowerCase();
+    fetchArticleDeleteAnnouncement(name);
     form.reset();
-    navigate(`/user/done`);
+     navigate(`/announcement/done`);
   };
+
   return (
-    <div className={css.containerModalDeleteUser}>
-      <h3 className={css.title}>Form delete user</h3>
+    <div className={css.containerModalDeleteAnnouncement}>
+      <h3 className={css.title}>Form delete announcement</h3>
       <form className={css.formContainer} onSubmit={handleSubmit}>
         <p className={css.markerRed}>*</p>
-        <label className={css.label}>id user</label>
+        <label className={css.label}>id announcement</label>
         <input
-          className={css.userId}
+          className={css.announcementId}
           type="text"
           name="id"
-          placeholder="input id user"
+          placeholder="input id announcement"
         />
         <div className={css.containerModalDelete}>
           <button className={css.green} type="submit">
             Done
           </button>
           <nav>
-            <NavLink to="/users">
+            <NavLink to="/announcements">
               <button className={css.red} type="button">
                 Cencel
               </button>
@@ -45,4 +52,4 @@ export const DeleteUser = () =>{
       </form>
     </div>
   );
-}
+};

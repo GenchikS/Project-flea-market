@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import css from "./App.module.css";
 import UserPages from "./pages/UserPages/UserPages.jsx";
 import Done from "./components/Done/Done.jsx";
-import DeleteUser from "./components/User/FormUserData/DeleteUser/DeleteUser.jsx";
+import {DeleteUser} from "./components/User/FormUserData/DeleteUser/DeleteUser.jsx";
 import AddUser from "./components/User/FormUserData/AddUser/AddUser.jsx";
 import UpdataUser from "./components/User/FormUserData/UpdateUser/UpdataUser.jsx";
 import AnnouncementPages from "./pages/AnnouncementPages/AnnouncementPages.jsx";
@@ -10,7 +10,8 @@ import AddAnnouncement from "./components/Announcement/FormAnnouncementData/AddA
 import DoneAnnouncement from "./components/Announcement/FormAnnouncementData/DoneAnnouncement/DoneAnnouncement.jsx";
 import LoginPages from "./pages/LoginPages/LoginPages.jsx";
 import UpdataAnnouncement from "./components/Announcement/FormAnnouncementData/UpdataAnnouncement/UpdataAnnouncement.jsx";
-import { use, useState } from "react";
+import { useState } from "react";
+import { DeleteAnnouncement } from "./components/Announcement/FormAnnouncementData/DeleteAnnouncement/DeleteAnnouncement.jsx";
 
 // http://localhost:3000/users
 // http://localhost:3000/announcements
@@ -35,10 +36,10 @@ function App() {
           element={<AddAnnouncement marker={marker} />}
         />
         <Route
-          path="/updata/announcement"
+          path="/announcement/updata"
           element={<UpdataAnnouncement marker={marker} />}
         />
-        {/* <Route path="/delete/announcement" element={<DeleteUser />} /> */}
+        <Route path="/announcement/delete" element={<DeleteAnnouncement />} />
         <Route path="/announcement/done" element={<DoneAnnouncement />} />
 
         {/* <Route path="*" element={<NotFound />} /> */}
