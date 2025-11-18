@@ -1,7 +1,7 @@
 import { useState } from "react";
 import css from "./UpdataAnnouncement.module.css";
 import { useNavigate } from "react-router-dom";
-import { FormAddId } from "../FormAddId/FormAddId.jsx";
+import { FormUpdataId } from "./FormUpdataId/FormUpdataId.jsx";
 import Chapter from "../SelectChapter/Chapter.jsx";
 import CategoryAuto from "../SelectCategory/CategoryAuto/CategoryAuto.jsx";
 import CategoryWork from "../SelectCategory/CategoryWork/CategoryWork.jsx";
@@ -46,7 +46,7 @@ export default function UpdataAnnouncement({ marker }) {
         type="submit"
         onSubmit={handleSubmit}
       >
-        <FormAddId setIdAnnoun={setIdAnnoun} idAnnoun={idAnnoun} />
+        <FormUpdataId setIdAnnoun={setIdAnnoun} idAnnoun={idAnnoun} />
         <Chapter
           setChapter={setChapter}
           setCategory={setCategory}

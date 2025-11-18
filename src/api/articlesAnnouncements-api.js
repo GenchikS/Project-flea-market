@@ -32,3 +32,9 @@ export const fetchArticleDeleteAnnouncement = async (id) => {
   if (!response) return
   return;
 }
+
+export const fetchAnnouncementFilterChapter = async (payload) => { 
+  console.log(`payload`, payload);
+  // const response = await axios.post(`/announcements/`, payload);
+  // return response.data.data;
+}

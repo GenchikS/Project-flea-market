@@ -30,7 +30,7 @@ export const fetchArticleUserId = async (id) => {
 }
 
 export const fetchArticleAddUser = async (payload) => {
-  console.log(`payload`, payload)
+  // console.log(`payload`, payload)
     const response = await axios.post(`/user/add`, payload);
     // console.log(`response`, response);
     return response.data.data;

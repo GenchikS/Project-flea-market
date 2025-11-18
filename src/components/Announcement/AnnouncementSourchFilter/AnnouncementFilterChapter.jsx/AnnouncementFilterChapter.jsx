@@ -8,6 +8,7 @@ import CategoryAnimals from "../../FormAnnouncementData/SelectCategory/CategoryA
 import CategoryDifferents from "../../FormAnnouncementData/SelectCategory/CategoryDifferents/CategoryDifferents.jsx";
 import CategoryGifts from "../../FormAnnouncementData/SelectCategory/CategoryGifts/CategoryGifts.jsx";
 import { ButtonUserDate } from "../../../Button/ButtonUserDate.jsx";
+import { fetchAnnouncementFilterChapter } from "../../../../api/articlesAnnouncements-api.js";
 
 export default function AnnouncementFilterChapter({ chapter, setChapter }) {
   const selectCarterId = useId();
@@ -18,16 +19,17 @@ export default function AnnouncementFilterChapter({ chapter, setChapter }) {
 
 
   const handleChange = (evt) => {
-    console.log(`evt`, evt.target.value);
+    // console.log(`evt`, evt.target.value);
     // setSoursce(true);
     setChapter(evt.target.value);
   };
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    console.log(`chapter`, chapter);
-    console.log(`category`, category);
-    console.log(`purchaseSale`, purchaseSale);
+    // console.log(`chapter`, chapter);
+    // console.log(`category`, category);
+    // console.log(`purchaseSale`, purchaseSale);
+    fetchAnnouncementFilterChapter({ chapter : chapter, category: category, purchaseSale: purchaseSale });
     setPurchaseSale("");
     setCategory("");
     setChapter("");

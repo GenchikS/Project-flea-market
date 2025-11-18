@@ -1,0 +1,39 @@
+.containerFormAddId{
+    display: flex;
+    flex-direction: column;
+}
+
+.markerRed{
+    font-size: 10px;
+    position: relative;
+    top:6px;
+    left: 20px;
+    color: red;
+}
+
+.labelId{
+    font-size: 10px;
+    margin-bottom: 2px;
+}
+
+.inputAddId{
+    width: 160px;
+    height: 14px;
+    font-size: 10px;
+    border: 1px solid var(--color-border);
+    outline: none;
+    border-radius: 14px;
+    padding: 4px 8px;
+    background-color: var(--bg-color);
+    cursor: pointer;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.inputAddId:hover{
+     background-color: var(--bg-color-hover);
+}
+
+.inputAddId:focus{
+     background-color: var(--bg-color-hover);
+}
