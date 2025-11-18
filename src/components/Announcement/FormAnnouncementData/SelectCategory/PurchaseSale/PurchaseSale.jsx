@@ -19,13 +19,13 @@ export default function PurchaseSale({ set, purchaseSale, marker }) {
           - - -
         </option>
         <option className={css.option} value="purchase">
-          Purchase
+          purchase
         </option>
         <option className={css.option} value="sale">
-          Sale
+          sale
         </option>
         <option className={css.option} value="other">
-          Other
+          other
         </option>
       </select>
     </div>

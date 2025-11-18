@@ -19,13 +19,13 @@ export default function CategoryServices({ setCategory, category, marker }) {
           - - - 
         </option>
         <option className={css.option} value="taxi">
-          Auto/Taxi
+          auto/taxi
         </option>
         <option className={css.option} value="beauty">
-          Beauty
+          beauty
         </option>
         <option className={css.option} value="other">
-          Other
+          other
         </option>
       </select>
     </div>

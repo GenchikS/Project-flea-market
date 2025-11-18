@@ -24,13 +24,13 @@ export default function CategoryHousing({ set, category, purchaseSale, marker, s
           - - -{" "}
         </option>
         <option className={css.option} value="house">
-          House
+          house
         </option>
         <option className={css.option} value="apartment">
-          Apartment
+          apartment
         </option>
         <option className={css.option} value="other">
-          Other
+          other
         </option>
       </select>
     </div>

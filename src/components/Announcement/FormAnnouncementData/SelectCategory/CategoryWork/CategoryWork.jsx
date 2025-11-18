@@ -23,13 +23,13 @@ export default function CategoryWork({ setCategory, category, marker }) {
           - - -{" "}
         </option>
         <option className={css.option} value="offer">
-          Offer
+          offer
         </option>
         <option className={css.option} value="search">
-          Search
+          search
         </option>
         <option className={css.option} value="other">
-          Other
+          other
         </option>
       </select>
     </div>

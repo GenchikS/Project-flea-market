@@ -19,13 +19,13 @@ export default function CategoryAnimals({ setCategory, category, marker }) {
           - - - 
         </option>
         <option className={css.option} value="dogs">
-          Dog
+          dog
         </option>
         <option className={css.option} value="cats">
-          Cats
+          cats
         </option>
         <option className={css.option} value="other">
-          Other
+          other
         </option>
       </select>
     </div>
