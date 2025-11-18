@@ -1,9 +1,12 @@
 // import { useId } from "react";
 import { useId } from "react";
 import css from "./CategoryWork.module.css";
-export default function CategoryHousing({ set, category, marker }) {
-   const { setCategory } = set;
+export default function CategoryWork({ setCategory, category, marker }) {
   const selectCategoryId = useId();
+  const handleChange = (evt) => {
+    // console.log(`evt`, evt.target.value);
+    setCategory(evt.target.value);
+  };
   return (
     <div className={css.containerCategory}>
       <p className={!marker ? css.markerRed : css.markerGreen}>*</p>
@@ -12,9 +15,9 @@ export default function CategoryHousing({ set, category, marker }) {
       </label>
       <select
         className={css.selectCategory}
-        id="selectCategoryId"
+        id={selectCategoryId}
         name={category}
-        onChange={(evt) => setCategory(evt.target.value)}
+        onChange={handleChange}
       >
         <option className={css.option} value="">
           - - -{" "}

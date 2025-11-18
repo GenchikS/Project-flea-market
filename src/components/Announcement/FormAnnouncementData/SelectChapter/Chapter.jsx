@@ -2,8 +2,13 @@ import css from "./Chapter.module.css"
 import { useId } from "react";
 
 
-export default function Chapter({ setChapter, chapter, marker }) {
+export default function Chapter({ setChapter, setCategory, chapter, marker }) {
   const selectCarterId = useId();
+  const handleChange = (evt) => {
+    setCategory("");
+    setChapter(evt.target.value);
+   }
+  
   return (
     <div className={css.containerChapter}>
       <p className={!marker ? css.markerRed : css.markerGreen}>*</p>
@@ -14,7 +19,7 @@ export default function Chapter({ setChapter, chapter, marker }) {
         className={css.selectChapter}
         id="selectCarterId"
         name={chapter}
-        onChange={(evt) => setChapter(evt.target.value)}
+        onChange={handleChange}
       >
         <option className={css.option} value="">
           - - -

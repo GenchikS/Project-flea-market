@@ -1,35 +1,23 @@
-.containerCategory{
+.containerChapter{
     display: flex;
     flex-direction: column;
-    /* justify-content: left; */
     align-items: center;
 }
 
-.markerRed{
-    font-size: 10px;
-    position: relative;
-    top:6px;
-    left: 40px;
-    color: red;
-}
-
-.markerGreen{
-    font-size: 10px;
-    position: relative;
-    top:6px;
-    left: 40px;
-    color: green;
+.listAddAnnouncement{
+    display: flex;
+    flex-direction: column;
 }
 
 .label{
     font-size: 8px;
     margin-left: 10px;
     opacity: 80;
-    margin-bottom: 2px;
+    margin-bottom: 4px;
     text-align: left;
 }
 
-.selectCategory{
+.selectChapter{
     width: 100px;
     height: 24px;
     font-size: 10px;
@@ -40,14 +28,14 @@
     background-color: var(--bg-color);
     cursor: pointer;
     text-align: center;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
-.selectCategory:hover{
+.selectChapter:hover{
      background-color: var(--bg-color-hover);
 }
 
-.selectCategory:focus{
+.selectChapter:focus{
      background-color: var(--bg-color-hover);
 }
 
@@ -57,3 +45,4 @@
     opacity: 80;
     margin-bottom: 2px;
 }
+

@@ -11,7 +11,7 @@ export default function CategoryAnimals({ setCategory, category, marker }) {
       </label>
       <select
         className={css.selectCategory}
-        id="selectCategoryId"
+        id={selectCategoryId}
         name={category}
         onChange={(evt) => setCategory(evt.target.value)}
       >

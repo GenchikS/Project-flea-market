@@ -47,7 +47,12 @@ export default function UpdataAnnouncement({ marker }) {
         onSubmit={handleSubmit}
       >
         <FormAddId setIdAnnoun={setIdAnnoun} idAnnoun={idAnnoun} />
-        <Chapter setChapter={setChapter} charter={chapter} marker={marker} />
+        <Chapter
+          setChapter={setChapter}
+          setCategory={setCategory}
+          charter={chapter}
+          marker={marker}
+        />
         {chapter === "auto" && (
           <CategoryAuto
             set={{ setCategory, setPurchaseSale }}

@@ -15,23 +15,26 @@ import { useNavigate } from "react-router-dom";
 import { fetchArticleAddAnnouncement } from "../../../../api/articlesAnnouncements-api.js";
 // import FormAddPhoto from "../FormAddPhoto/FormAddPhoto.jsx";
 
-export default function AddAnnouncement({ marker }) {
-  const [idUser, setIdUser] = useState("")
+export default function AddAnnouncement({
+  marker,
+  // chapter,
+  // setChapter,
+}) {
+  const [idUser, setIdUser] = useState("");
+  const [category, setCategory] = useState("");
+  const [purchaseSale, setPurchaseSale] = useState("");
+  const [text, setText] = useState("");
   const [chapter, setChapter] = useState("");
-  const [category, setCategory] = useState("")
-  const [purchaseSale, setPurchaseSale] = useState("")
-  const [text, setText] = useState("")
-  // const [photo, setPhoto] = useState("");
-  
-    const navigate = useNavigate();
-    
-    const handleSubmit = (event) => {
+    // const [photo, setPhoto] = useState("");
+
+  const navigate = useNavigate();
+
+  const handleSubmit = (event) => {
     event.preventDefault();
     const searche = { idUser, chapter, category, purchaseSale, text };
-    // console.log(`evt submit`, searche);
-      document.formAnnouncement.reset();
-      fetchArticleAddAnnouncement(searche);
-      navigate(`/announcement/done`);
+    document.formAnnouncement.reset();
+    fetchArticleAddAnnouncement(searche);
+    navigate(`/announcement/done`);
     return;
   };
 
@@ -45,7 +48,12 @@ export default function AddAnnouncement({ marker }) {
         onSubmit={handleSubmit}
       >
         <FormAddId setIdUser={setIdUser} idUser={idUser} />
-        <Chapter setChapter={setChapter} charter={chapter} marker={marker} />
+        <Chapter
+          setChapter={setChapter}
+          setCategory={setCategory}
+          charter={chapter}
+          marker={marker}
+        />
         {chapter === "auto" && (
           <CategoryAuto
             set={{ setCategory, setPurchaseSale }}
@@ -78,12 +86,12 @@ export default function AddAnnouncement({ marker }) {
         )}
         {chapter === "gifts" && (
           <CategoryGifts
-            set={{ setCategory, setPurchaseSale }}
-            // category={category}
-            purchaseSale={purchaseSale}
+          // set={{ setCategory, setPurchaseSale }}
+          // category={category}
+          // purchaseSale={purchaseSale}
           />
         )}
-        <AnnouncementText setText={setText} marker={ marker} />
+        <AnnouncementText setText={setText} marker={marker} />
         <ButtonModalAnnouncement type="submit" />
       </form>
       {/* {console.log(`objectAll`, objectAll)} */}

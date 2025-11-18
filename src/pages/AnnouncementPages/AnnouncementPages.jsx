@@ -6,19 +6,21 @@ import MyComponent from "../../components/Loader/Loader.jsx";
 import { fetchArticleAnnouncementsAll } from "../../api/articlesAnnouncements-api.js";
 import UsersToNavLink from "../../components/Announcement/UsersToNavLink/UsersToNavLink.jsx";
 import AnnouncementInfoCard from "../../components/Announcement/AnnouncementInfoTable/AnnouncementInfoCard.jsx";
+import AnnouncementFilterChapter from "../../components/Announcement/AnnouncementSourchFilter/AnnouncementFilterChapter.jsx/AnnouncementFilterChapter.jsx";
 
 export default function AnnouncementPages({ setMarker }) {
   const [itemsSourch, setItemsSourch] = useState(null);
   const [error, setError] = useState(false);
   const [item, setItems] = useState([]);
   const [loadig, setLoading] = useState(false);
+  const [chapter, setChapter] = useState("");
 
   {
     useEffect(() => {
       async function fetchAnnouncement() {
         setItems([]);
         setLoading(true);
-        try {
+      try {
           const response = await fetchArticleAnnouncementsAll();
           // console.log(`response`, response);
           setItems(response);
@@ -92,21 +94,19 @@ export default function AnnouncementPages({ setMarker }) {
       <h4 className={css.title}>Announcement users pages</h4>
       <div className={css.containerUserFilterListButtonUserPages}>
         <div className={css.containerUserSearch}>
-          <UserFormSearch
-            placeholder="Search name"
-            name="name"
-            handleSearch={handleSearchName}
+          <AnnouncementFilterChapter
+            chapter={chapter}
+            setChapter={setChapter}
           />
-          <UserFormSearch
-            placeholder="Search email"
-            name="name"
-            handleSearch={handleSearchEmail}
-          />
-          <UserFormSearch
-            placeholder="Search id"
-            name={"name"}
-            handleSearch={handleSearchId}
-          />
+          {/* { */}
+            {/* // chapter === "all" && ( */}
+            {/* <UserFormSearch */}
+              {/* placeholder="Search id" */}
+              {/* // name={"name"} */}
+              {/* // handleSearch={handleSearchId} */}
+            {/* /> */}
+          {/* // ) */}
+          {/* } */}
         </div>
         <div className={css.containerUserUpdataUsers}>
           <AnnouncementChange setMarker={setMarker} />

@@ -3,15 +3,14 @@ import css from "./CategoryGifts.module.css";
 import PurchaseSale from "../PurchaseSale/PurchaseSale.jsx";
 
 
-export default function CategoryGifts({
-  set,
-  // category,
-  purchaseSale, marker }) {
+export default function CategoryGifts(
+  // { set, category, purchaseSale, marker }
+) {
   // const { setCategory } = set;
   // const selectCategoryId = useId();
   return (
     <div className={css.containerCategory}>
-      <PurchaseSale set={set} purchaseSale={purchaseSale} marker={ marker} />
+      {/* <PurchaseSale set={set} purchaseSale={purchaseSale} marker={ marker} /> */}
       {/* <label className={css.label} htmlFor={selectCategoryId}>
         choose category
       </label>

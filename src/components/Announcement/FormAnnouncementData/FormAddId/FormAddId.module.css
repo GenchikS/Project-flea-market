@@ -19,7 +19,7 @@
 .inputAddId{
     width: 160px;
     height: 14px;
-    font-size: 12px;
+    font-size: 10px;
     border: 1px solid var(--color-border);
     outline: none;
     border-radius: 14px;

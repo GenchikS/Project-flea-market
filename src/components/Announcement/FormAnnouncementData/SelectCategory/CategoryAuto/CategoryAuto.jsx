@@ -1,22 +1,26 @@
 import { useId } from "react";
 import css from "./CategoryAuto.module.css";
 import PurchaseSale from "../PurchaseSale/PurchaseSale.jsx";
-export default function CategoryAuto({ set, category, purchaseSale, marker }) {
-  const { setCategory } = set;
+export default function CategoryAuto({ set, category, purchaseSale, marker, sourse }) {
+  const { setCategory} = set;
   // const { category } = category;
   const selectCategoryId = useId();
+  const handleChange = (evt) => { 
+    // console.log(`evt`, evt.target.value);
+    setCategory(evt.target.value);
+  }
   return (
     <div className={css.containerCategory}>
-      <PurchaseSale set={set} purchaseSale={purchaseSale} marker={ marker} />
+      {sourse ?? <PurchaseSale set={set} purchaseSale={purchaseSale} marker={marker} />}
       <p className={!marker ? css.markerRed : css.markerGreen}>*</p>
       <label className={css.label} htmlFor={selectCategoryId}>
         choose category
       </label>
       <select
         className={css.selectCategory}
-        id="selectCategoryId"
+        id={selectCategoryId}
         name={category}
-        onChange={(evt) => setCategory(evt.target.value)}
+        onChange={handleChange}
       >
         <option className={css.option} value="">
           - - -
