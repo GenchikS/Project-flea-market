@@ -25,8 +25,8 @@ export default function UserPages() {
         setLoading(true);
         try {
           // console.log(`userPages`)
-          const response = await fetchArticleUserAll();
-          setItems(response);
+          // const response = await fetchArticleUserAll();
+          // setItems(response);
         } catch (error) {
           setError(true);
         } finally {

@@ -37,17 +37,19 @@ export default function AnnouncementPages({ setMarker }) {
   }
 
   const handleSearchId = async (id) => {
-    console.log(`id announ`, id);
     try {
       setError(false);
       const response = await fetchArticleAnnouncementId(id);
-      console.log(`response`, response);
-      setItemsSourch(response);
-      if (!response) {
-        setItemsSourch([]);
-        setError(true);
-        return;
+      if (!response.length) {
+        setItemsSourch([response]);
       }
+
+      setItems(response);
+
+      if (!response) {
+          setError(true);
+          return;
+        }
     } catch (error) {
       // setError(true);
     } finally {
@@ -66,14 +68,7 @@ export default function AnnouncementPages({ setMarker }) {
           />
           {chapter.length === 0 && (
             <AnnouncementFormSearchId
-              placeholder="Search id ammoun..."
-              name={"name"}
-              handleSearch={handleSearchId}
-            />
-          )}
-          {chapter.length === 0 && (
-            <AnnouncementFormSearchId
-              placeholder="Search id ammoun..."
+              placeholder="id user/ammoun..."
               name={"name"}
               handleSearch={handleSearchId}
             />
@@ -89,7 +84,7 @@ export default function AnnouncementPages({ setMarker }) {
           (!itemsSourch ? (
             <AnnouncementInfoCard item={item} />
           ) : (
-            <AnnouncementInfoCard itemsArrey={itemsSourch} />
+            <AnnouncementInfoCard item={itemsSourch} />
           ))}
         {loadig && (
           <div className={css.containerLoadingData}>

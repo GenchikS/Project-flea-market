@@ -7,6 +7,9 @@
   --color-black: black;
   --color-text: #2e2e2e;
   --color-text-blue: #639cf0;
+  --color-text-red: #d9534f;
+  --color-text-green: rgb(0, 190, 0);
+  --color-text-dark-blue: #155eb1;
 
   --color-border: #6d9cd2;
   --bg-color-body:rgba(217, 187, 148, 0.4);

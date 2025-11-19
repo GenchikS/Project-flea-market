@@ -6,7 +6,7 @@
 
 .formInput{
     width: 100px;
-    font-size: 12px;
+    font-size: 10px;
     padding: 4px 4px 4px 8px;
     border-radius: 10px;
     border: 1px solid var(--color-border);

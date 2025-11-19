@@ -12,6 +12,7 @@ import LoginPages from "./pages/LoginPages/LoginPages.jsx";
 import UpdataAnnouncement from "./components/Announcement/FormAnnouncementData/UpdataAnnouncement/UpdataAnnouncement.jsx";
 import { useState } from "react";
 import { DeleteAnnouncement } from "./components/Announcement/FormAnnouncementData/DeleteAnnouncement/DeleteAnnouncement.jsx";
+import { HomePages } from "./pages/HomePages/HomePages.jsx";
 
 // http://localhost:3000/users
 // http://localhost:3000/announcements
@@ -21,7 +22,10 @@ function App() {
   return (
     <div className={css.containerApp}>
       <Routes>
-        <Route path="/" element={<LoginPages />} />
+        <Route path="/" element={<HomePages />} />
+        <Route path="/user/login" element={<LoginPages />} />
+
+        
         <Route path="/users" element={<UserPages />} />
         <Route path="/user/add" element={<AddUser />} />
         <Route path="/user/updata" element={<UpdataUser />} />

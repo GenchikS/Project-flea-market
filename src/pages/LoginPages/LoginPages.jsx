@@ -6,11 +6,18 @@ export default function LoginPages() {
         console.log(`Click Login`)
         navigate(`/users`)
         return
-    }
+  }
+      const handleClickBack = () => {
+        console.log(`Click back`);
+        navigate(`/`);
+        return;
+      };
+
     return (
       <div>
         <h4>Login</h4>
-        <button onClick={handleClick} >Go</button>
+        <button onClick={handleClick}>Go</button>
+        <button onClick={handleClickBack}>back</button>
       </div>
     );
 }
