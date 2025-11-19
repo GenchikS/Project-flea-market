@@ -10,7 +10,12 @@ import CategoryGifts from "../../FormAnnouncementData/SelectCategory/CategoryGif
 import { ButtonUserDate } from "../../../Button/ButtonUserDate.jsx";
 import { fetchAnnouncementFilterChapter } from "../../../../api/articlesAnnouncements-api.js";
 
-export default function AnnouncementFilterChapter({ chapter, setChapter, setItems }) {
+export default function AnnouncementFilterChapter({
+  chapter,
+  setChapter,
+  setItems,
+  setItemsSourch,
+}) {
   const selectCarterId = useId();
   const [category, setCategory] = useState("");
   const [purchaseSale, setPurchaseSale] = useState("");
@@ -19,7 +24,6 @@ export default function AnnouncementFilterChapter({ chapter, setChapter, setItem
   const handleChange = (evt) => {
     // console.log(`evt`, evt.target.value);
     setChapter(evt.target.value);
-    
   };
 
   const handleSubmit = async (evt) => {
@@ -34,7 +38,7 @@ export default function AnnouncementFilterChapter({ chapter, setChapter, setItem
     });
     setItems(response);
     // console.log(`response`, response);
-
+    setItemsSourch(null);
     setPurchaseSale("");
     setCategory("");
     setChapter("");
@@ -58,7 +62,7 @@ export default function AnnouncementFilterChapter({ chapter, setChapter, setItem
           onChange={handleChange}
         >
           <option className={css.option} value="">
-            - - -
+            all
           </option>
           <option className={css.option} value="auto">
             auto

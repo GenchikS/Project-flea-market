@@ -65,6 +65,7 @@ export default function AnnouncementPages({ setMarker }) {
             chapter={chapter}
             setChapter={setChapter}
             setItems={setItems}
+            setItemsSourch={setItemsSourch}
           />
           {chapter.length === 0 && (
             <AnnouncementFormSearchId

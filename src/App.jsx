@@ -13,6 +13,14 @@ import UpdataAnnouncement from "./components/Announcement/FormAnnouncementData/U
 import { useState } from "react";
 import { DeleteAnnouncement } from "./components/Announcement/FormAnnouncementData/DeleteAnnouncement/DeleteAnnouncement.jsx";
 import { HomePages } from "./pages/HomePages/HomePages.jsx";
+import AutoPages from "./pages/AutoPages/AutoPages.jsx";
+import WorkPages from "./pages/WorkPages/WorkPages.jsx";
+import HousingPages from "./pages/HousingPages/HousingPages.jsx";
+import ServicesPages from "./pages/ServicesPages/ServicesPages.jsx";
+import AnimalsPages from "./pages/AnimalsPages/AnimalsPages.jsx";
+import DifferentsPages from "./pages/DifferentsPages/DifferentsPages.jsx";
+import GiftsPages from "./pages/GiftsPages/GiftsPages.jsx";
+import NotFound from "./components/NotFound/NotFound.jsx";  
 
 // http://localhost:3000/users
 // http://localhost:3000/announcements
@@ -25,7 +33,6 @@ function App() {
         <Route path="/" element={<HomePages />} />
         <Route path="/user/login" element={<LoginPages />} />
 
-        
         <Route path="/users" element={<UserPages />} />
         <Route path="/user/add" element={<AddUser />} />
         <Route path="/user/updata" element={<UpdataUser />} />
@@ -45,8 +52,14 @@ function App() {
         />
         <Route path="/announcement/delete" element={<DeleteAnnouncement />} />
         <Route path="/announcement/done" element={<DoneAnnouncement />} />
-
-        {/* <Route path="*" element={<NotFound />} /> */}
+        <Route path="/auto" element={<AutoPages />} />
+        <Route path="/work" element={<WorkPages />} />
+        <Route path="/housing" element={<HousingPages />} />
+        <Route path="/services" element={<ServicesPages />} />
+        <Route path="/animals" element={<AnimalsPages />} />
+        <Route path="/differents" element={<DifferentsPages />} />
+        <Route path="/gifts" element={<GiftsPages />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );
