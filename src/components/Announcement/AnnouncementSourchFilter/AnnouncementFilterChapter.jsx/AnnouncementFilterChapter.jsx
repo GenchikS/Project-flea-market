@@ -10,13 +10,11 @@ import CategoryGifts from "../../FormAnnouncementData/SelectCategory/CategoryGif
 import { ButtonUserDate } from "../../../Button/ButtonUserDate.jsx";
 import { fetchAnnouncementFilterChapter } from "../../../../api/articlesAnnouncements-api.js";
 
-export default function AnnouncementFilterChapter({ chapter, setChapter }) {
+export default function AnnouncementFilterChapter({ chapter, setChapter, setItems }) {
   const selectCarterId = useId();
   const [category, setCategory] = useState("");
   const [purchaseSale, setPurchaseSale] = useState("");
   const [sourse, setSoursce] = useState(false);
-  
-
 
   const handleChange = (evt) => {
     // console.log(`evt`, evt.target.value);
@@ -24,12 +22,19 @@ export default function AnnouncementFilterChapter({ chapter, setChapter }) {
     setChapter(evt.target.value);
   };
 
-  const handleSubmit = (evt) => {
+  const handleSubmit = async (evt) => {
     evt.preventDefault();
     // console.log(`chapter`, chapter);
     // console.log(`category`, category);
     // console.log(`purchaseSale`, purchaseSale);
-    fetchAnnouncementFilterChapter({ chapter : chapter, category: category, purchaseSale: purchaseSale });
+    const response = await fetchAnnouncementFilterChapter({
+      chapter: chapter,
+      category: category,
+      purchaseSale: purchaseSale,
+    });
+    setItems(response);
+    // console.log(`response`, response);
+
     setPurchaseSale("");
     setCategory("");
     setChapter("");

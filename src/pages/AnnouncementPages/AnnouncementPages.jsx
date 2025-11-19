@@ -34,43 +34,6 @@ export default function AnnouncementPages({ setMarker }) {
     }, []);
   }
 
-  const handleSearchName = async (name) => {
-    console.log(`handleSearchName`, name);
-    try {
-      // setError(false);
-      // const response = await fetchArticleUserName(name);
-      // console.log(`response`, response);
-      // setItemsSourch(response);
-      //  if (!response) {
-      //   setItemsSourch([]);
-      //   setError(true);
-      //   return;
-      //   }
-    } catch (error) {
-      // setError(true);
-    } finally {
-      // setLoading(false);
-    }
-  };
-
-  const handleSearchEmail = async (name) => {
-    console.log(`handleSearchEmail`, name);
-    try {
-      // setError(false);
-      // const response = await fetchArticleUserEmail(name);
-      // setItemsSourch(response);
-      // if (!response) {
-      // setItemsSourch([]);
-      // setError(true);
-      // return;
-      // }
-    } catch (error) {
-      // setError(true);
-    } finally {
-      // setLoading(false);
-    }
-  };
-
   const handleSearchId = async (name) => {
     console.log(`handleSearchId`, name);
     try {
@@ -97,14 +60,15 @@ export default function AnnouncementPages({ setMarker }) {
           <AnnouncementFilterChapter
             chapter={chapter}
             setChapter={setChapter}
+            setItems={setItems}
           />
           {/* { */}
-            {/* // chapter === "all" && ( */}
-            {/* <UserFormSearch */}
-              {/* placeholder="Search id" */}
-              {/* // name={"name"} */}
-              {/* // handleSearch={handleSearchId} */}
-            {/* /> */}
+          {/* // chapter === "all" && ( */}
+          {/* <UserFormSearch */}
+          {/* placeholder="Search id" */}
+          {/* // name={"name"} */}
+          {/* // handleSearch={handleSearchId} */}
+          {/* /> */}
           {/* // ) */}
           {/* } */}
         </div>

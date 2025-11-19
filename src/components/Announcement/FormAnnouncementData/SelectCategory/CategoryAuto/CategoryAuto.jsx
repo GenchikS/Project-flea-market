@@ -23,8 +23,8 @@ export default function CategoryHousing({ set, category, purchaseSale, marker, s
         <option className={css.option} value="">
           - - -{" "}
         </option>
-        <option className={css.option} value="auto">
-          auto
+        <option className={css.option} value="car">
+          car
         </option>
         <option className={css.option} value="motorcycle">
           motorcycle
