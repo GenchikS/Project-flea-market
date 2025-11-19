@@ -1,12 +1,12 @@
 import css from "./AnnouncementPages.module.css"
 import AnnouncementChange from "../../components/Announcement/AnnouncementChange/AnnouncementChange.jsx";
-// import UserFormSearch from "../../components/User/UserFormSearch/UserFormSearch.jsx";
 import { useEffect, useState } from "react";
 import MyComponent from "../../components/Loader/Loader.jsx";
-import { fetchArticleAnnouncementsAll } from "../../api/articlesAnnouncements-api.js";
+import { fetchArticleAnnouncementId, fetchArticleAnnouncementsAll } from "../../api/articlesAnnouncements-api.js";
 import UsersToNavLink from "../../components/Announcement/UsersToNavLink/UsersToNavLink.jsx";
 import AnnouncementInfoCard from "../../components/Announcement/AnnouncementInfoTable/AnnouncementInfoCard.jsx";
 import AnnouncementFilterChapter from "../../components/Announcement/AnnouncementSourchFilter/AnnouncementFilterChapter.jsx/AnnouncementFilterChapter.jsx";
+import AnnouncementFormSearchId from "../../components/Announcement/AnnouncementSourchFilter/AnnouncementFormSearchId/AnnouncementFormSearchId.jsx";
 
 export default function AnnouncementPages({ setMarker }) {
   const [itemsSourch, setItemsSourch] = useState(null);
@@ -14,6 +14,8 @@ export default function AnnouncementPages({ setMarker }) {
   const [item, setItems] = useState([]);
   const [loadig, setLoading] = useState(false);
   const [chapter, setChapter] = useState("");
+
+  // console.log(`chapter`, chapter.length);
 
   {
     useEffect(() => {
@@ -34,18 +36,18 @@ export default function AnnouncementPages({ setMarker }) {
     }, []);
   }
 
-  const handleSearchId = async (name) => {
-    console.log(`handleSearchId`, name);
+  const handleSearchId = async (id) => {
+    console.log(`id announ`, id);
     try {
-      // setError(false);
-      // const response = await fetchArticleUserId(name);
-      // console.log(`response`, response);
-      // setItemsSourch(response);
-      // if (!response) {
-      //   setItemsSourch([]);
-      //   setError(true);
-      //   return;
-      // }
+      setError(false);
+      const response = await fetchArticleAnnouncementId(id);
+      console.log(`response`, response);
+      setItemsSourch(response);
+      if (!response) {
+        setItemsSourch([]);
+        setError(true);
+        return;
+      }
     } catch (error) {
       // setError(true);
     } finally {
@@ -62,15 +64,20 @@ export default function AnnouncementPages({ setMarker }) {
             setChapter={setChapter}
             setItems={setItems}
           />
-          {/* { */}
-          {/* // chapter === "all" && ( */}
-          {/* <UserFormSearch */}
-          {/* placeholder="Search id" */}
-          {/* // name={"name"} */}
-          {/* // handleSearch={handleSearchId} */}
-          {/* /> */}
-          {/* // ) */}
-          {/* } */}
+          {chapter.length === 0 && (
+            <AnnouncementFormSearchId
+              placeholder="Search id ammoun..."
+              name={"name"}
+              handleSearch={handleSearchId}
+            />
+          )}
+          {chapter.length === 0 && (
+            <AnnouncementFormSearchId
+              placeholder="Search id ammoun..."
+              name={"name"}
+              handleSearch={handleSearchId}
+            />
+          )}
         </div>
         <div className={css.containerUserUpdataUsers}>
           <AnnouncementChange setMarker={setMarker} />

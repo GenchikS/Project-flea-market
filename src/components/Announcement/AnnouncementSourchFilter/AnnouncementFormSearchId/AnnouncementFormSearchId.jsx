@@ -1,0 +1,32 @@
+import { ButtonUserDate } from "../../../Button/ButtonUserDate.jsx";
+import css from "./AnnouncementFormSearchId.module.css";
+
+export default function AnnouncementFormSearchId({ handleSearch, placeholder, name }) {
+  // console.log(`name`, name);
+
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    const form = evt.target;
+    const userSearch = form.elements.name.value;
+    if (form.elements.name.value.trim() === "") {
+      alert("Please enter search term!");
+      return;
+    }
+    const name = userSearch.toLowerCase();
+    handleSearch(name);
+    form.reset();
+  };
+  return (
+    <form className={css.formSearch} onSubmit={handleSubmit}>
+      <input
+        className={css.formInput}
+        type="text"
+        name={name}
+        placeholder={placeholder}
+      />
+      <ButtonUserDate type="submit" value="search">
+        Search
+      </ButtonUserDate>
+    </form>
+  );
+}

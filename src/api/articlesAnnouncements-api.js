@@ -40,3 +40,10 @@ export const fetchAnnouncementFilterChapter = async (payload) => {
   // console.log(`response`, response.data.data);
   return response.data.data;
 }
+
+export const fetchArticleAnnouncementId = async (id) => {
+  // console.log(`id`, id);
+  const response = await axios.get(`/announcements/${id}`);
+  // console.log(`response`, response);
+  return response.data.data;
+};

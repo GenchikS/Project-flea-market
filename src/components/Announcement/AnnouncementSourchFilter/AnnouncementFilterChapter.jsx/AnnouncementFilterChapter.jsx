@@ -18,8 +18,8 @@ export default function AnnouncementFilterChapter({ chapter, setChapter, setItem
 
   const handleChange = (evt) => {
     // console.log(`evt`, evt.target.value);
-    // setSoursce(true);
     setChapter(evt.target.value);
+    
   };
 
   const handleSubmit = async (evt) => {
@@ -88,10 +88,15 @@ export default function AnnouncementFilterChapter({ chapter, setChapter, setItem
             category={category}
             purchaseSale={purchaseSale}
             sourse={sourse}
+            marker={true}
           />
         )}
         {chapter === "work" && (
-          <CategoryWork setCategory={setCategory} category={category} />
+          <CategoryWork
+            setCategory={setCategory}
+            category={category}
+            marker={true}
+          />
         )}
         {chapter === "housing" && (
           <CategoryHousing
@@ -99,19 +104,29 @@ export default function AnnouncementFilterChapter({ chapter, setChapter, setItem
             category={category}
             purchaseSale={purchaseSale}
             sourse={sourse}
+            marker={true}
           />
         )}
         {chapter === "services" && (
-          <CategoryServices setCategory={setCategory} category={category} />
+          <CategoryServices
+            setCategory={setCategory}
+            category={category}
+            marker={true}
+          />
         )}
         {chapter === "animals" && (
-          <CategoryAnimals setCategory={setCategory} category={category} />
+          <CategoryAnimals
+            setCategory={setCategory}
+            category={category}
+            marker={true}
+          />
         )}
         {chapter === "differents" && (
           <CategoryDifferents
             set={{ setCategory, setPurchaseSale }}
             // category={category}
             purchaseSale={purchaseSale}
+            marker={true}
           />
         )}
         {chapter === "gifts" && (

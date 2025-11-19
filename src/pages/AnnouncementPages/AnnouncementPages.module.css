@@ -15,22 +15,20 @@
 .containerUserFilterListButtonUserPages{
     display: flex;
     flex-direction: row;
-    justify-content:first baseline;
-
+    height: 178px
 }
 
 
 .containerUserUpdataUsers{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items:end;
 }
 
 .containerUserSearch{
     display: flex;
     flex-direction: column;
-    height: 170px;
-    justify-content: space-between;
+    height: 100%;
 }
 
 
