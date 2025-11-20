@@ -1,8 +1,8 @@
-import css from "./GiftsPages.module.css";
+// import css from "./ServicesComponent.module.css";
 
 import { useNavigate } from "react-router-dom";
 
-export default function GiftsPages() {
+export default function ServicesComponent() {
   const navigate = useNavigate();
   const handleClickBack = () => {
     console.log(`Click back`);
@@ -11,7 +11,7 @@ export default function GiftsPages() {
   };
   return (
     <div>
-      <h4>GiftsPages</h4>
+      <h4>ServicesPages</h4>
       <button onClick={handleClickBack}>back</button>
     </div>
   );

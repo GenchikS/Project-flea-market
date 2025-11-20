@@ -1,8 +1,8 @@
-import css from "./ServicesPages.module.css";
+// import css from "./AutoComponent.module.css";
 
 import { useNavigate } from "react-router-dom";
 
-export default function ServicesPages() {
+export default function AutoComponent() {
   const navigate = useNavigate();
   const handleClickBack = () => {
     console.log(`Click back`);
@@ -11,7 +11,7 @@ export default function ServicesPages() {
   };
   return (
     <div>
-      <h4>ServicesPages</h4>
+      <h4>AutoPages</h4>
       <button onClick={handleClickBack}>back</button>
     </div>
   );

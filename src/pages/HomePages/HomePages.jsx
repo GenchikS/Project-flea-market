@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import {NavLink, Outlet } from "react-router-dom";
 import css from "./HomePages.module.css";
 
 import auto from "../../image/car.png";
@@ -8,21 +8,12 @@ import services from "../../image/services.png";
 import animals from "../../image/animals.png";
 import differents from "../../image/differents.png";
 import gifts from "../../image/gifts.png";
+import { AppBar } from "../../components/AppBar/AppBar.jsx";
 
 export const HomePages = () => {
     return (
       <div className={css.containerAll}>
-        <nav className={css.containerNav}>
-          <Link className={css.link} to="/">
-            sVs
-          </Link>
-          <Link className={css.linkLogin} to="/user/register">
-            Register
-          </Link>
-          <Link className={css.linkLogin} to="/user/login">
-            Login
-          </Link>
-        </nav>
+        <AppBar />
         <div className={css.captersSvc}>
           <h4 className={css.titleHomePage}>
             Барахолка на <span className={css.spanS}>s</span>
@@ -34,43 +25,43 @@ export const HomePages = () => {
           </h4>
           <ul className={css.listAnnouncement}>
             <li className={css.titleList}>
-              <NavLink to="/auto" className={css.listTitle}>
+              <NavLink to="/announcement/auto" className={css.listTitle}>
                 <img src={auto} alt="auto" className={css.img} />
                 Авто
               </NavLink>
             </li>
             <li>
-              <NavLink to="/work" className={css.listTitle}>
+              <NavLink to="/announcement/work" className={css.listTitle}>
                 <img src={work} alt="робота" className={css.img} />
                 Робота
               </NavLink>
             </li>
             <li>
-              <NavLink to="/housing" className={css.listTitle}>
+              <NavLink to="/announcement/housing" className={css.listTitle}>
                 <img src={housing} alt="нерухомість" className={css.img} />
                 Нерухомість
               </NavLink>
             </li>
             <li>
-              <NavLink to="/services" className={css.listTitle}>
+              <NavLink to="/announcement/services" className={css.listTitle}>
                 <img src={services} alt="послуги" className={css.img} />
                 Послуги
               </NavLink>
             </li>
             <li>
-              <NavLink to="/animals" className={css.listTitle}>
+              <NavLink to="/announcement/animals" className={css.listTitle}>
                 <img src={animals} alt="тварини" className={css.img} />
                 Тварини
               </NavLink>
             </li>
             <li>
-              <NavLink to="/differents" className={css.listTitle}>
+              <NavLink to="/announcement/differents" className={css.listTitle}>
                 <img src={differents} alt="різне" className={css.img} />
                 Різне
               </NavLink>
             </li>
             <li>
-              <NavLink to="/gifts" className={css.listTitle}>
+              <NavLink to="/announcement/gifts" className={css.listTitle}>
                 <img src={gifts} alt="дарую" className={css.img} />
                 Дарую
               </NavLink>

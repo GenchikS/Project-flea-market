@@ -1,8 +1,8 @@
-import css from "./DifferentsPages.module.css";
+// import css from "./DifferentsComponent.module.css";
 
 import { useNavigate } from "react-router-dom";
 
-export default function DifferentsPages() {
+export default function DifferentsComponent() {
   const navigate = useNavigate();
   const handleClickBack = () => {
     console.log(`Click back`);

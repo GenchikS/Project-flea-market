@@ -7,41 +7,6 @@
     
 }
 
-
-.containerNav{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-between;
-    border: 1px solid var(--border-color-black);
-    border-radius: 4px;
-    background-color: var(--bg-color);
-    padding: 2px;
-}
-
-.link, .linkLogin{
-    display: flex;
-    width: 70px;
-    height: 20px;
-    justify-content: center;
-    align-items: center;
-    color: var(--color-text-dark-blue);
-    border: 1px solid var(--border-color-black);
-    border-radius: 4px;
-    background-color: var(--bg-color-body)
-    
-}
-
-.linkLogin{
-    font-size: 10px;
-}
-
-.link:hover, .linkLogin:hover{
-    color: var(--color-text);
-    
-    background-color: var(--bg-color-hover);
-}
-
 .captersSvc{
     display: flex;
     flex-direction: column;
@@ -89,6 +54,7 @@
     height: 100%;
     text-align: center;
     margin-top: 10px;
+    list-style-type: none;
 }
 
 .listTitle{

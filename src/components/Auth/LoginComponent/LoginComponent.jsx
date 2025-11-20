@@ -1,6 +1,7 @@
+// import css from "./LoginComponent.module.css";
 import { useNavigate } from "react-router-dom";
 
-export default function LoginPages() {
+export default function LoginComponent() {
     const navigate = useNavigate();
     const handleClick = () => {
         console.log(`Click Login`)

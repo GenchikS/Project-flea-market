@@ -1,8 +1,8 @@
-import css from "./HousingPages.module.css";
+// import css from "./WorkComponent.module.css";
 
 import { useNavigate } from "react-router-dom";
 
-export default function HousingPages() {
+export default function WorkComponent() {
   const navigate = useNavigate();
   const handleClickBack = () => {
     console.log(`Click back`);
@@ -11,7 +11,7 @@ export default function HousingPages() {
   };
   return (
     <div>
-      <h4>HousingPages</h4>
+      <h4>WorkPages</h4>
       <button onClick={handleClickBack}>back</button>
     </div>
   );
