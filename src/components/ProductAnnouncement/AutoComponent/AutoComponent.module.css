@@ -1,0 +1,64 @@
+.tableContainerAutoComponent{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 280px;
+    /* list-style-type: none; */
+    border: 1px solid var(--border-color-black);
+    border-radius: 6px;
+    background-color: var(--bg-color);
+    padding: 6px;
+    margin-bottom: 8px;
+}
+
+ul{
+list-style-type: none;
+}
+
+.containerDescriptionImage{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.listCardT{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.listDescriptionTitle{
+    display: flex;
+    flex-direction: column;
+}
+
+.listPurchaseSale{
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--color-text-dark-blue);
+    margin-bottom: 2px;
+}
+
+.listYar, .listPrice, .listCategory{
+    font-size: 12px;
+     margin-bottom: 2px;
+}
+
+.listTextAnnouncement{
+    margin-top: 4px;
+    border-top: 2px dotted  var(--border-color-black);
+}
+
+.image{
+    width: 120px;
+    height: 66px;
+    background-color: var(--color-button-blue);
+}
+
+
+.textAnnouncemnt{
+    font-size: 10px;
+    margin-top: 4px;
+    
+}

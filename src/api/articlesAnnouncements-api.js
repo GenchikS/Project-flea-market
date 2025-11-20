@@ -9,7 +9,7 @@ export const fetchArticleAnnouncementsAll = async () => {
 export const fetchArticleAddAnnouncement = async (payload) => {
   // console.log(`payload`, payload);
   const response = await axios.post(`/announcement/add`, payload);
-  if (!response) return console.log(`No response`);
+  // if (!response) return console.log(`No response`);
   // console.log(`response`, response)
   return response.data.data;
 }
@@ -36,6 +36,7 @@ export const fetchArticleDeleteAnnouncement = async (id) => {
 export const fetchAnnouncementFilterChapter = async (payload) => { 
   // console.log(`payload`, payload);
   const { chapter, category, purchaseSale } = payload;
+  // console.log(`chapter2`, chapter);
   const response = await axios.get(`/announcements/?chapter=${chapter}&category=${category}&purchaseSale=${purchaseSale}`);
   // console.log(`response`, response.data.data);
   return response.data.data;
