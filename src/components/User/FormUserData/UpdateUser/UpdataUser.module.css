@@ -1,8 +1,9 @@
-.containerUpdateUserPages{
+.containerUpdateUser{
     display: flex;
     flex-direction: column;
     width: 222px;
     text-align: center;
+    align-items: center;
     border: 1px solid var(--border-color-black);
     border-radius: 14px;
     background-color: var(--bg-color);
@@ -11,6 +12,51 @@
 }
 
 .title{
-    font-size: 20px;
+    font-style: italic;
+    font-size: 16px;
     margin-bottom: 16px;
+}
+
+.listContainer{
+    display: flex;
+    flex-direction: column;
+}
+.markerRed{
+    font-size: 10px;
+    position: relative;
+    top:6px;
+    left: 22px;
+    color: red;
+}
+
+.markerGreen{
+    font-size: 10px;
+    position: relative;
+    top:8px;
+    left: 22px;
+    color: green;
+}
+
+.label{
+    font-size: 8px;
+    margin-left: 10px;
+    opacity: 80;
+    margin-bottom: 2px;
+}
+
+.userId, .username, .email, .phone{
+    font-size: 12px;
+    border: 1px solid var(--color-border);
+    outline: none;
+    border-radius: 14px;
+    padding: 6px 12px;
+    background-color: var(--bg-color);
+    cursor: pointer;
+}
+
+.userId:hover, .username:hover, .email:hover, .phone:hover{
+    background-color: var(--bg-color-hover);
+}
+.userId:focus, .username:focus, .email:focus, .phone:focus{
+    background-color: var(--bg-color-focus);
 }

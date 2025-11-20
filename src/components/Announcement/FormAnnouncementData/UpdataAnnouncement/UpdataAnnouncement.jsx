@@ -29,7 +29,6 @@ export default function UpdataAnnouncement({ marker, pathTo, setIsModalOpen }) {
     event.preventDefault();
     const searche = { idAnnoun, chapter, category, purchaseSale, text };
     // console.log(`evt submit`, searche);
-    // setObjectAll(searche);
     document.formAnnouncement.reset();
     fetchArticleUpdataAnnouncement(searche);
     navigate(`/admin/announcement/done`);

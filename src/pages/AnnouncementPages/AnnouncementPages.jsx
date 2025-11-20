@@ -22,12 +22,11 @@ export default function AnnouncementPages({ setMarker, pathTo, setIsModalOpen })
     useEffect(() => {
       async function fetchAnnouncement() {
         setIsModalOpen(false);
-        // setItems([]);
         setLoading(true);
         try {
-          const response = await fetchArticleAnnouncementsAll();
+          // const response = await fetchArticleAnnouncementsAll();
           // console.log(`response`, response);
-          setItems(response);
+          // setItems(response);
         } catch (error) {
           setError(true);
         } finally {

@@ -31,9 +31,9 @@ export default function AddAnnouncement({
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const searche = { idUser, chapter, category, purchaseSale, text };
+    const value = { idUser, chapter, category, purchaseSale, text };
     document.formAnnouncement.reset();
-    fetchArticleAddAnnouncement(searche);
+    fetchArticleAddAnnouncement(value);
     navigate(`/admin/announcement/done`);
     return;
   };

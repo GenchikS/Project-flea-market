@@ -3,6 +3,7 @@
     flex-direction: column;
     width: 222px;
     text-align: center;
+    align-items: center;
     border: 1px solid var(--border-color-black);
     border-radius: 14px;
     background-color: var(--bg-color);
@@ -11,38 +12,23 @@
 }
 
 .title{
-    font-size: 20px;
+    font-style: italic;
+    font-size: 16px;
     margin-bottom: 16px;
 }
 
-.containerModalAddUser{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 236px;
-}
-
-.formContainer{
+.listAddUser{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 220px;
-    height: 24px;
-    gap: 8px;
 }
 
-.listContainer{
-    display: flex;
-    height: 90px;
-    flex-direction: column;
-    align-items: start;
-}
 
 .markerRed{
     font-size: 10px;
     position: relative;
     top:6px;
-    left: 40px;
+    left: 18px;
     color: red;
 }
 
@@ -50,31 +36,34 @@
     font-size: 10px;
     position: relative;
     top:8px;
-    left: 42px;
+    left: 18px;
     color: green;
 }
 
+
 .label{
-    font-size: 10px;
-    margin-left: 10px;
+    font-size: 8px;
     opacity: 80;
     margin-bottom: 2px;
 }
 
-.username, .email, .phone{
-    font-size: 12px;
+.username, .userEmail, .userPhone{
+    width: 160px;
+    height: 14px;
+    font-size: 10px;
     border: 1px solid var(--color-border);
     outline: none;
     border-radius: 14px;
-    padding: 6px 12px;
+    padding: 4px 8px;
     background-color: var(--bg-color);
     cursor: pointer;
+    text-align: center;
 }
 
-.username:hover, .email:hover, .phone:hover{
+.username:hover, .userEmail:hover, .userPhone:hover{
     background-color: var(--bg-color-hover);
 }
-.username:focus, .email:focus, .phone:focus{
+.username:focus, .userEmail:focus, .userPhone:focus{
     background-color: var(--bg-color-focus);
 }
 

@@ -1,8 +1,9 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import css from "./DeleteUser.module.css";
 import { fetchArticleDeleteUser } from "../../../../api/articles-api.js";
+import ButtonModalUser from "../ButtonModalUser/ButtonModalUser.jsx";
 
-export const DeleteUser = () =>{
+export const DeleteUser = ({ pathTo, setIsModalOpen }) =>{
   const navigate = useNavigate();
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -16,7 +17,7 @@ export const DeleteUser = () =>{
     const name = idUser.toLowerCase();
     fetchArticleDeleteUser(name);
     form.reset();
-    navigate(`/user/done`);
+    navigate(`/admin/users/done`);
   };
   return (
     <div className={css.containerModalDeleteUser}>
@@ -30,18 +31,7 @@ export const DeleteUser = () =>{
           name="id"
           placeholder="input id user"
         />
-        <div className={css.containerModalDelete}>
-          <button className={css.green} type="submit">
-            Done
-          </button>
-          <nav>
-            <NavLink to="/users">
-              <button className={css.red} type="button">
-                Cencel
-              </button>
-            </NavLink>
-          </nav>
-        </div>
+        <ButtonModalUser pathTo={pathTo} setIsModalOpen={setIsModalOpen} />
       </form>
     </div>
   );

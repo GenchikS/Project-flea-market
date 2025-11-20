@@ -1,11 +1,12 @@
-import css from "./Done.module.css";
+import css from "./DoneUser.module.css";
 import { useNavigate } from "react-router-dom";
 
-export default function Done() {
-      const navigate = useNavigate();
+export default function DoneUser({ setIsModalOpen }) {
+  const navigate = useNavigate();
   const handleClick = () => {
-    navigate("/users")  
-      return
+    setIsModalOpen(false);
+    navigate("/admin/users");
+    return;
   };
 
   return (
@@ -14,6 +15,6 @@ export default function Done() {
       <button type="button" onClick={handleClick}>
         Cencel
       </button>
-  </div>
+    </div>
   );
 }

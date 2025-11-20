@@ -1,10 +1,7 @@
 import css from "./ButtonModalAnnouncement.module.css";
 import { NavLink } from "react-router-dom";
 
-export default function ButtonModalAnnouncement({
-  pathTo,
-  setIsModalOpen
-}) {
+export default function ButtonModalAnnouncement({pathTo, setIsModalOpen }) {
   return (
     <div className={css.containerModalUser}>
       <button className={css.green} type="submit">

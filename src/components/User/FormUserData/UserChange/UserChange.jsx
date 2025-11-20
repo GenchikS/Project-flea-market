@@ -3,52 +3,54 @@ import css from "./UserChange.module.css"
 import { useNavigate } from "react-router-dom";
 
 
-export default function UserChange() {
+export default function UserChange({ pathTo, setIsModalOpen }) {
   const navigate = useNavigate();
 
   const handleClick = (evn) => {
-  // console.log(`evn`, evn);
-  switch (evn) {
-    case `addUser`:
-      navigate(`/user/add`);
-      // console.log(`evn addUser`, evn);
-      break;
-    case `updataUser`:
-      navigate(`/user/updata`);
+    // console.log(`evn`, evn);
+    switch (evn) {
+      case `addUser`:
+        setIsModalOpen(true);
+        navigate(`${pathTo}/add`);
+        // console.log(`evn addUser`, evn);
+        break;
+      case `updataUser`:
+        setIsModalOpen(true);
+        navigate(`${pathTo}/updata`);
         // console.log(`evn updateUser`, evn);
         break;
-    case `deleteUser`:
-      navigate(`/user/delete`);
-      // console.log(`evn deleteUser`, evn);
-      break;
-      default:
-      //     // console.log(`evn userPage`, evn);
-      navigate(`/users`);
+      case `deleteUser`:
+        setIsModalOpen(true);
+        navigate(`${pathTo}/delete`);
+        // console.log(`evn deleteUser`, evn);
         break;
-  }
-  return;
-};
+      default:
+        // console.log(`evn userPage`, evn);
+        navigate(`${pathTo}`);
+        break;
+    }
+    return;
+  };
 
-return (
-  <div className={css.buttonUserContainer}>
-    <ul className={css.listButtonUser}>
-      <li>
-        <ButtonUserDate value="addUser" onClick={handleClick}>
-          add user
-        </ButtonUserDate>
-      </li>
-      <li>
-        <ButtonUserDate value="updataUser" onClick={handleClick}>
-          updata user
-        </ButtonUserDate>
-      </li>
-      <li>
-        <ButtonUserDate value="deleteUser" onClick={handleClick}>
-          delete user
-        </ButtonUserDate>
-      </li>
-    </ul>
-
-  </div>
-);
+  return (
+    <div className={css.buttonUserContainer}>
+      <ul className={css.listButtonUser}>
+        <li>
+          <ButtonUserDate value="addUser" onClick={handleClick}>
+            add user
+          </ButtonUserDate>
+        </li>
+        <li>
+          <ButtonUserDate value="updataUser" onClick={handleClick}>
+            updata user
+          </ButtonUserDate>
+        </li>
+        <li>
+          <ButtonUserDate value="deleteUser" onClick={handleClick}>
+            delete user
+          </ButtonUserDate>
+        </li>
+      </ul>
+    </div>
+  );
 }

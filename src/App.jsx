@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import css from "./App.module.css";
 // import UserPages from "./pages/UserPages/UserPages.jsx";
-import Done from "./components/Done/Done.jsx";
+// import DoneUser from "./components/DoneUser/DoneUser.jsx";
 import {DeleteUser} from "./components/User/FormUserData/DeleteUser/DeleteUser.jsx";
 import AddUser from "./components/User/FormUserData/AddUser/AddUser.jsx";
 import UpdataUser from "./components/User/FormUserData/UpdateUser/UpdataUser.jsx";
@@ -28,6 +28,7 @@ import RegisterComponent from "./components/Auth/RegisterComponent/RegisterCompo
 import DoneAuth from "./components/Auth/DoneAuth/DoneAuth.jsx";
 import { AdminPages } from "./pages/AdminPages/AdminPages.jsx";
 import { AdminUserPages } from "./pages/AdminUserPages/AdminUserPages.jsx";
+import DoneUser from "./components/DoneUser/DoneUser.jsx";
 
 // http://localhost:3000/users
 // http://localhost:3000/announcements
@@ -64,8 +65,6 @@ function App() {
             />
           }
         >
-          <Route path="user/add" element={<AddUser />} />
-
           <Route
             path="announcement/add"
             element={
@@ -90,7 +89,6 @@ function App() {
             path="announcement/delete"
             element={
               <DeleteAnnouncement
-                marker={marker}
                 pathTo={"/admin"}
                 setIsModalOpen={setIsModalOpen}
               />
@@ -101,11 +99,50 @@ function App() {
             element={<DoneAnnouncement setIsModalOpen={setIsModalOpen} />}
           />
         </Route>
-
-        <Route path="/admin/users" element={<AdminUserPages />}>
-          <Route path="updata" element={<UpdataUser />} />
-          <Route path="delete" element={<DeleteUser />} />
-          <Route path="done" element={<Done />} />
+        <Route
+          path="/admin/users"
+          element={
+            <AdminUserPages
+              setMarker={setMarker}
+              pathTo={"/admin/users"}
+              isModalOpen={isModalOpen}
+              setIsModalOpen={setIsModalOpen}
+            />
+          }
+        >
+          <Route
+            path="add"
+            element={
+              <AddUser
+                marker={marker}
+                pathTo={"/admin/users"}
+                setIsModalOpen={setIsModalOpen}
+              />
+            }
+          />
+          <Route
+            path="updata"
+            element={
+              <UpdataUser
+                marker={marker}
+                pathTo={"/admin/users"}
+                setIsModalOpen={setIsModalOpen}
+              />
+            }
+          />
+          <Route
+            path="delete"
+            element={
+              <DeleteUser
+                pathTo={"/admin/users"}
+                setIsModalOpen={setIsModalOpen}
+              />
+            }
+          />
+          <Route
+            path="done"
+            element={<DoneUser setIsModalOpen={setIsModalOpen} />}
+          />
         </Route>
 
         <Route path="*" element={<NotFound />} />

@@ -12,7 +12,7 @@ import {
 } from "../../api/articles-api.js";
 import AnnouncementToNavLink from "../../components/User/AnnouncementToNavLink/AnnouncementToNavLink.jsx";
 
-export default function UserPages() {
+export default function UserPages({ setMarker, pathTo, setIsModalOpen }) {
   const [itemsSourch, setItemsSourch] = useState(null);
   const [error, setError] = useState(false);
   const [item, setItems] = useState([]);
@@ -21,7 +21,8 @@ export default function UserPages() {
   {
     useEffect(() => {
       async function fetchUser() {
-        setItems([]);
+        // setItems([]);
+        setIsModalOpen(false);
         setLoading(true);
         try {
           // console.log(`userPages`)
@@ -117,7 +118,11 @@ export default function UserPages() {
           />
         </div>
         <div className={css.containerUserUpdataAnnouncement}>
-          <UserChange />
+          <UserChange
+            setMarker={setMarker}
+            pathTo={pathTo}
+            setIsModalOpen={setIsModalOpen}
+          />
           <AnnouncementToNavLink />
         </div>
       </div>
