@@ -1,3 +1,7 @@
+.containerAppBar{
+    width: 100%;
+}
+
 .containerNav{
     display: flex;
     flex-direction: row;

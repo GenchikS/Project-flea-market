@@ -8,7 +8,7 @@ const appBarClass = ({ isActive }) => {
 
 export const AppBar = () => {
     return (
-      <div>
+      <div className={css.containerAppBar}>
         <nav className={css.containerNav}>
           <NavLink className={appBarClass} to="/">
             sVs
