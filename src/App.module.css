@@ -6,7 +6,9 @@
   /* justify-content: center; */
   min-width: 304px;
   max-width: 768px;
-  height: 800px;
+  height: 100%;
+  /* height: auto; */
+  /* min-height: 900px; */
   background-color: var(--bg-color-body);
   margin: 0 auto;
   padding: 8px;

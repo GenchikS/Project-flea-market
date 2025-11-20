@@ -2,12 +2,13 @@ import css from "./DeleteAnnouncement.module.css";
 import { NavLink, useNavigate } from "react-router-dom";
 // import * as Yup from "yup";
 import { fetchArticleDeleteAnnouncement } from "../../../../api/articlesAnnouncements-api.js";
+import ButtonModalAnnouncement from "../ButtonModalAnnouncement/ButtonModalAnnouncement.jsx";
 
 // const validationUserSchema = Yup.object().shape({
 //   id: Yup.string().required("Requred!"),
 // });
 
-export const DeleteAnnouncement = () => {
+export const DeleteAnnouncement = ({ pathTo, setIsModalOpen }) => {
   const navigate = useNavigate();
 
   const handleSubmit = (evt) => {
@@ -22,7 +23,7 @@ export const DeleteAnnouncement = () => {
     const name = idAnnouncement.toLowerCase();
     fetchArticleDeleteAnnouncement(name);
     form.reset();
-     navigate(`/announcement/done`);
+    navigate(`/admin/announcement/done`);
   };
 
   return (
@@ -37,18 +38,11 @@ export const DeleteAnnouncement = () => {
           name="id"
           placeholder="input id announcement"
         />
-        <div className={css.containerModalDelete}>
-          <button className={css.green} type="submit">
-            Done
-          </button>
-          <nav>
-            <NavLink to="/announcements">
-              <button className={css.red} type="button">
-                Cencel
-              </button>
-            </NavLink>
-          </nav>
-        </div>
+        <ButtonModalAnnouncement
+          type="submit"
+          pathTo={pathTo}
+          setIsModalOpen={setIsModalOpen}
+        />
       </form>
     </div>
   );

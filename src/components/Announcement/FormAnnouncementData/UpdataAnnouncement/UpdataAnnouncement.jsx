@@ -14,26 +14,25 @@ import CategoryDifferents from "../SelectCategory/CategoryDifferents/CategoryDif
 import CategoryGifts from "../SelectCategory/CategoryGifts/CategoryGifts.jsx";
 import {  fetchArticleUpdataAnnouncement } from "../../../../api/articlesAnnouncements-api.js";
 
-export default function UpdataAnnouncement({ marker }) {
+export default function UpdataAnnouncement({ marker, pathTo, setIsModalOpen }) {
   const [idAnnoun, setIdAnnoun] = useState("");
   const [chapter, setChapter] = useState("");
   const [category, setCategory] = useState("");
   const [purchaseSale, setPurchaseSale] = useState("");
   const [text, setText] = useState("");
   // const [photo, setPhoto] = useState("");
-  const [objectAll, setObjectAll] = useState({});
-  // const mar
-
+  // const [objectAll, setObjectAll] = useState({});
+  
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const searche = { idAnnoun, chapter, category, purchaseSale, text };
     // console.log(`evt submit`, searche);
-    setObjectAll(searche);
+    // setObjectAll(searche);
     document.formAnnouncement.reset();
-      fetchArticleUpdataAnnouncement(searche);
-    navigate(`/announcement/done`);
+    fetchArticleUpdataAnnouncement(searche);
+    navigate(`/admin/announcement/done`);
     return;
   };
 
@@ -107,7 +106,11 @@ export default function UpdataAnnouncement({ marker }) {
           />
         )}
         <AnnouncementText setText={setText} marker={marker} />
-        <ButtonModalAnnouncement type="submit" />
+        <ButtonModalAnnouncement
+          type="submit"
+          pathTo={pathTo}
+          setIsModalOpen={setIsModalOpen}
+        />
       </form>
       {/* {console.log(`objectAll`, objectAll)} */}
       {/* <FormAddPhoto saveFiles={saveFiles} /> */}

@@ -1,12 +1,10 @@
-import css from "./DoneAnnouncement.module.css";
+import css from "./DoneAuth.module.css";
 import { useNavigate } from "react-router-dom";
 
-export default function DoneAnnouncement({setIsModalOpen}) {
+export default function DoneAuth() {
   const navigate = useNavigate();
-  
   const handleClick = () => {
-    setIsModalOpen(false)
-    navigate("/admin");
+    navigate("/auth/login");
     return;
   };
 

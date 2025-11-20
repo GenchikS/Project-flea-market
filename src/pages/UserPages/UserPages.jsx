@@ -25,8 +25,8 @@ export default function UserPages() {
         setLoading(true);
         try {
           // console.log(`userPages`)
-          // const response = await fetchArticleUserAll();
-          // setItems(response);
+          const response = await fetchArticleUserAll();
+          setItems(response);
         } catch (error) {
           setError(true);
         } finally {
@@ -97,7 +97,7 @@ export default function UserPages() {
 
   return (
     <div className={css.containerUserPages}>
-      <h4 className={css.title}>Admin pages users</h4>
+      <h4 className={css.title}>Admin users pages</h4>
       <div className={css.containerUserFilterListButtonUserPages}>
         <div className={css.containerUserSearch}>
           <UserFormSearch

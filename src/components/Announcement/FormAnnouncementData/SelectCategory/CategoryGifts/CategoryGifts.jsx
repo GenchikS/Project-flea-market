@@ -1,17 +1,15 @@
-// import { useId } from "react";
+import { useId } from "react";
 import css from "./CategoryGifts.module.css";
 import PurchaseSale from "../PurchaseSale/PurchaseSale.jsx";
 
 
-export default function CategoryGifts(
-  // { set, category, purchaseSale, marker }
-) {
+export default function CategoryGifts({ setCategory, category, marker }) {
   // const { setCategory } = set;
-  // const selectCategoryId = useId();
+  const selectCategoryId = useId();
   return (
     <div className={css.containerCategory}>
-      {/* <PurchaseSale set={set} purchaseSale={purchaseSale} marker={ marker} /> */}
-      {/* <label className={css.label} htmlFor={selectCategoryId}>
+      <p className={!marker ? css.markerRed : css.markerGreen}>*</p>
+      <label className={css.label} htmlFor={selectCategoryId}>
         choose category
       </label>
       <select
@@ -23,16 +21,16 @@ export default function CategoryGifts(
         <option className={css.option} value="">
           - - -
         </option>
-        <option className={css.option} value="dogs">
-          Dog
+        <option className={css.option} value="animals">
+          animals
         </option>
-        <option className={css.option} value="cats">
-          Cats
+        <option className={css.option} value="tools">
+          tools
         </option>
         <option className={css.option} value="other">
-          Other
+          other
         </option>
-      </select> */}
+      </select>
     </div>
   );
 }

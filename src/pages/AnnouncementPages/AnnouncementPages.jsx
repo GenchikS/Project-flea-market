@@ -8,7 +8,7 @@ import AnnouncementInfoCard from "../../components/Announcement/AnnouncementInfo
 import AnnouncementFilterChapter from "../../components/Announcement/AnnouncementSourchFilter/AnnouncementFilterChapter.jsx/AnnouncementFilterChapter.jsx";
 import AnnouncementFormSearchId from "../../components/Announcement/AnnouncementSourchFilter/AnnouncementFormSearchId/AnnouncementFormSearchId.jsx";
 
-export default function AnnouncementPages({ setMarker }) {
+export default function AnnouncementPages({ setMarker, pathTo, setIsModalOpen }) {
   const [itemsSourch, setItemsSourch] = useState(null);
   const [error, setError] = useState(false);
   const [item, setItems] = useState([]);
@@ -20,12 +20,13 @@ export default function AnnouncementPages({ setMarker }) {
   {
     useEffect(() => {
       async function fetchAnnouncement() {
+        setIsModalOpen(false);
         setItems([]);
         setLoading(true);
-      try {
-          const response = await fetchArticleAnnouncementsAll();
+        try {
+          // const response = await fetchArticleAnnouncementsAll();
           // console.log(`response`, response);
-          setItems(response);
+          // setItems(response);
         } catch (error) {
           setError(true);
         } finally {
@@ -47,9 +48,9 @@ export default function AnnouncementPages({ setMarker }) {
       setItems(response);
 
       if (!response) {
-          setError(true);
-          return;
-        }
+        setError(true);
+        return;
+      }
     } catch (error) {
       // setError(true);
     } finally {
@@ -58,7 +59,7 @@ export default function AnnouncementPages({ setMarker }) {
   };
   return (
     <div className={css.containerAnnouncementPages}>
-      <h4 className={css.title}>Announcement users pages</h4>
+      <h4 className={css.title}>Admin announcement pages</h4>
       <div className={css.containerUserFilterListButtonUserPages}>
         <div className={css.containerUserSearch}>
           <AnnouncementFilterChapter
@@ -76,7 +77,11 @@ export default function AnnouncementPages({ setMarker }) {
           )}
         </div>
         <div className={css.containerUserUpdataUsers}>
-          <AnnouncementChange setMarker={setMarker} />
+          <AnnouncementChange
+            setMarker={setMarker}
+            pathTo={pathTo}
+            setIsModalOpen ={setIsModalOpen}
+          />
           <UsersToNavLink />
         </div>
       </div>

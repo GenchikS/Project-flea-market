@@ -1,8 +1,9 @@
 // import { useId } from "react";
 import { useId } from "react";
 import css from "./CategoryWork.module.css";
-export default function CategoryWork({ setCategory, category, marker }) {
+export default function CategoryWork({ set, category, marker }) {
   const selectCategoryId = useId();
+  const { setCategory } = set;
   const handleChange = (evt) => {
     // console.log(`evt`, evt.target.value);
     setCategory(evt.target.value);

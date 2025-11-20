@@ -1,18 +1,15 @@
-import css from "./ButtonModalAnnouncement.module.css";
+import css from "./ButtonRegisterAddUser.module.css";
 import { NavLink } from "react-router-dom";
 
-export default function ButtonModalAnnouncement({
-  pathTo,
-  setIsModalOpen
-}) {
+export default function ButtonRegisterAddUser() {
   return (
     <div className={css.containerModalUser}>
       <button className={css.green} type="submit">
         Done
       </button>
       <nav>
-        <NavLink to={pathTo}>
-          <button className={css.red} type="button" onClick={() => setIsModalOpen(false)}>
+        <NavLink to="/">
+          <button className={css.red} type="button">
             Cencel
           </button>
         </NavLink>

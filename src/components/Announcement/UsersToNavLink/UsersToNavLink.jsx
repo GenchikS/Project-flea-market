@@ -4,9 +4,9 @@ import css from "./UsersToNavLink.module.css";
 export default function UsersToNavLink() {
   return (
     <nav>
-      <NavLink to="/users">
+      <NavLink to="/admin/users">
         <div className={css.containerUsers}>
-          <p className={css.titleUsers}>Admin pages users</p>
+          <p className={css.titleUsers}>Admin users pages</p>
         </div>
       </NavLink>
     </nav>

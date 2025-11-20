@@ -4,9 +4,9 @@ import css from "./AnnouncementToNavLink.module.css";
 export default function AnnouncementToNavLink() {
     return (
       <nav>
-        <NavLink to="/announcements">
+        <NavLink to="/admin">
           <div className={css.containerAnnouncement}>
-            <p className={css.titleAnnouncement}>Announcements users pages</p>
+            <p className={css.titleAnnouncement}>Admin announcements pages</p>
           </div>
         </NavLink>
       </nav>

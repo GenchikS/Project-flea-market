@@ -5,7 +5,7 @@ export default function LoginComponent() {
     const navigate = useNavigate();
     const handleClick = () => {
         console.log(`Click Login`)
-        navigate(`/users`)
+        navigate(`/admin`)
         return
   }
       const handleClickBack = () => {

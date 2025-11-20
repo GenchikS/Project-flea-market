@@ -17,15 +17,15 @@ import { fetchArticleAddAnnouncement } from "../../../../api/articlesAnnouncemen
 
 export default function AddAnnouncement({
   marker,
-  // chapter,
-  // setChapter,
+  pathTo,
+  setIsModalOpen,
 }) {
   const [idUser, setIdUser] = useState("");
   const [category, setCategory] = useState("");
   const [purchaseSale, setPurchaseSale] = useState("");
   const [text, setText] = useState("");
   const [chapter, setChapter] = useState("");
-    // const [photo, setPhoto] = useState("");
+  // const [photo, setPhoto] = useState("");
 
   const navigate = useNavigate();
 
@@ -34,7 +34,7 @@ export default function AddAnnouncement({
     const searche = { idUser, chapter, category, purchaseSale, text };
     document.formAnnouncement.reset();
     fetchArticleAddAnnouncement(searche);
-    navigate(`/announcement/done`);
+    navigate(`/admin/announcement/done`);
     return;
   };
 
@@ -80,19 +80,19 @@ export default function AddAnnouncement({
         {chapter === "differents" && (
           <CategoryDifferents
             set={{ setCategory, setPurchaseSale }}
-            // category={category}
+            category={category}
             purchaseSale={purchaseSale}
           />
         )}
         {chapter === "gifts" && (
-          <CategoryGifts
-          // set={{ setCategory, setPurchaseSale }}
-          // category={category}
-          // purchaseSale={purchaseSale}
-          />
+          <CategoryGifts setCategory={setCategory} category={category} />
         )}
         <AnnouncementText setText={setText} marker={marker} />
-        <ButtonModalAnnouncement type="submit" />
+        <ButtonModalAnnouncement
+          type="submit"
+          pathTo={pathTo}
+          setIsModalOpen={setIsModalOpen}
+        />
       </form>
       {/* {console.log(`objectAll`, objectAll)} */}
       {/* <FormAddPhoto saveFiles={saveFiles} /> */}

@@ -7,14 +7,15 @@ import { useId } from "react";
 
 export default function CategoryDifferents({
   set,
-  // category,
+  category,
   purchaseSale, marker }) {
-  // const { setCategory } = set;
-  // const selectCategoryId = useId();
+  const { setCategory } = set;
+  const selectCategoryId = useId();
   return (
     <div className={css.containerCategory}>
-      <PurchaseSale set={set} purchaseSale={purchaseSale} marker={marker}/>
-      {/* <label className={css.label} htmlFor={selectCategoryId}>
+      <PurchaseSale set={set} purchaseSale={purchaseSale} marker={marker} />
+      <p className={!marker ? css.markerRed : css.markerGreen}>*</p>
+      <label className={css.label} htmlFor={selectCategoryId}>
         choose category
       </label>
       <select
@@ -26,16 +27,16 @@ export default function CategoryDifferents({
         <option className={css.option} value="">
           - - -
         </option>
-        <option className={css.option} value="dogs">
-          Dog
+        <option className={css.option} value="tools">
+          tools
         </option>
-        <option className={css.option} value="cats">
-          Cats
+        <option className={css.option} value="furniture">
+          furniture
         </option>
         <option className={css.option} value="other">
-          Other
+          other
         </option>
-      </select> */}
+      </select>
     </div>
   );
 }

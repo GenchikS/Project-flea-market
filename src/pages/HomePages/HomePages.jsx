@@ -21,7 +21,7 @@ export const HomePages = () => {
             <span className={css.spanV}>V</span>
             <span className={css.spanIn}>ynt</span>
             <span className={css.spanC}>s</span>
-            <span className={css.spanI}>i</span>:
+            <span className={css.spanI}>i </span>:
           </h4>
           <ul className={css.listAnnouncement}>
             <li className={css.titleList}>
