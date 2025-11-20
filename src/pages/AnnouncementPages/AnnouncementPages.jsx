@@ -9,9 +9,10 @@ import AnnouncementFilterChapter from "../../components/Announcement/Announcemen
 import AnnouncementFormSearchId from "../../components/Announcement/AnnouncementSourchFilter/AnnouncementFormSearchId/AnnouncementFormSearchId.jsx";
 
 export default function AnnouncementPages({ setMarker, pathTo, setIsModalOpen }) {
-  const [itemsSourch, setItemsSourch] = useState(null);
+  // const [itemsSourch, setItemsSourch] = useState(null);
   const [error, setError] = useState(false);
   const [item, setItems] = useState([]);
+  const [itemArray, setItemArray] = useState(null);
   const [loadig, setLoading] = useState(false);
   const [chapter, setChapter] = useState("");
 
@@ -21,12 +22,12 @@ export default function AnnouncementPages({ setMarker, pathTo, setIsModalOpen })
     useEffect(() => {
       async function fetchAnnouncement() {
         setIsModalOpen(false);
-        setItems([]);
+        // setItems([]);
         setLoading(true);
         try {
-          // const response = await fetchArticleAnnouncementsAll();
+          const response = await fetchArticleAnnouncementsAll();
           // console.log(`response`, response);
-          // setItems(response);
+          setItems(response);
         } catch (error) {
           setError(true);
         } finally {
@@ -39,10 +40,13 @@ export default function AnnouncementPages({ setMarker, pathTo, setIsModalOpen })
 
   const handleSearchId = async (id) => {
     try {
+      setItems([]);
+      setItemArray(null);
       setError(false);
       const response = await fetchArticleAnnouncementId(id);
+
       if (!response.length) {
-        setItemsSourch([response]);
+        setItemArray([response]);
       }
 
       setItems(response);
@@ -66,7 +70,6 @@ export default function AnnouncementPages({ setMarker, pathTo, setIsModalOpen })
             chapter={chapter}
             setChapter={setChapter}
             setItems={setItems}
-            setItemsSourch={setItemsSourch}
           />
           {chapter.length === 0 && (
             <AnnouncementFormSearchId
@@ -80,18 +83,18 @@ export default function AnnouncementPages({ setMarker, pathTo, setIsModalOpen })
           <AnnouncementChange
             setMarker={setMarker}
             pathTo={pathTo}
-            setIsModalOpen ={setIsModalOpen}
+            setIsModalOpen={setIsModalOpen}
           />
           <UsersToNavLink />
         </div>
       </div>
       <div className={css.containerUserInfo}>
-        {item &&
-          (!itemsSourch ? (
-            <AnnouncementInfoCard item={item} />
-          ) : (
-            <AnnouncementInfoCard item={itemsSourch} />
-          ))}
+        {item && (!itemArray ? (
+          <AnnouncementInfoCard item={item} />
+        ) : (
+          <AnnouncementInfoCard item={itemArray} />
+        ))}
+
         {loadig && (
           <div className={css.containerLoadingData}>
             <p className={css.textLoadingData}>Loding data ...</p>

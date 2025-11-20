@@ -14,7 +14,7 @@ export default function AnnouncementFilterChapter({
   chapter,
   setChapter,
   setItems,
-  setItemsSourch,
+  // setItemsSourch,
 }) {
   const selectCarterId = useId();
   const [category, setCategory] = useState("");
@@ -38,7 +38,7 @@ export default function AnnouncementFilterChapter({
     });
     setItems(response);
     // console.log(`response`, response);
-    setItemsSourch(null);
+    // setItemsSourch(null);
     setPurchaseSale("");
     setCategory("");
     setChapter("");
