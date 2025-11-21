@@ -39,7 +39,7 @@ export default function UpdataUser({ pathTo, setIsModalOpen }) {
       email: emailEnd,
       phone: phoneEnd,
     });
-    console.log(`value`, value);
+    // console.log(`value`, value);
     actions.resetForm();
     navigate(`/admin/users/done`);
   };

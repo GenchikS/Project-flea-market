@@ -22,7 +22,6 @@
     padding: 4px 8px;
     background-color: var(--bg-color);
     cursor: pointer;
-    margin-bottom: 12px;
 }
 
 :placeholder-shown{
