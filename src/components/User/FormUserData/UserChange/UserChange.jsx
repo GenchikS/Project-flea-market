@@ -37,17 +37,17 @@ export default function UserChange({ pathTo, setIsModalOpen }) {
       <ul className={css.listButtonUser}>
         <li>
           <ButtonUserDate value="addUser" onClick={handleClick}>
-            add user
+            дадати користувача
           </ButtonUserDate>
         </li>
         <li>
           <ButtonUserDate value="updataUser" onClick={handleClick}>
-            updata user
+            оновити користувача
           </ButtonUserDate>
         </li>
         <li>
           <ButtonUserDate value="deleteUser" onClick={handleClick}>
-            delete user
+            видалити користувача
           </ButtonUserDate>
         </li>
       </ul>

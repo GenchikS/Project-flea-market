@@ -1,4 +1,3 @@
-// import { useId } from "react";
 import { useId } from "react";
 import PurchaseSale from "../PurchaseSale/PurchaseSale.jsx";
 import css from "./CategoryHousing.module.css";
@@ -12,7 +11,7 @@ export default function CategoryHousing({ set, category, purchaseSale, marker, s
       )}
       <p className={!marker ? css.markerRed : css.markerGreen}>*</p>
       <label className={css.label} htmlFor={selectCategoryId}>
-        choose category
+        оберіть категорію:
       </label>
       <select
         className={css.selectCategory}
@@ -23,14 +22,14 @@ export default function CategoryHousing({ set, category, purchaseSale, marker, s
         <option className={css.option} value="">
           - - -
         </option>
-        <option className={css.option} value="house">
-          house
+        <option className={css.option} value="будинок">
+          будинок
         </option>
-        <option className={css.option} value="apartment">
-          apartment
+        <option className={css.option} value="квартира">
+          квартира
         </option>
-        <option className={css.option} value="other">
-          other
+        <option className={css.option} value="інше">
+          інше
         </option>
       </select>
     </div>

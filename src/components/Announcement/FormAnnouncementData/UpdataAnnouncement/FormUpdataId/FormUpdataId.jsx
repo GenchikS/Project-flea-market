@@ -4,14 +4,14 @@ export const FormUpdataId = ({ setIdAnnoun, idAnnoun }) => {
   return (
     <div className={css.containerFormAddId}>
       <p className={css.markerRed}>*</p>
-      <label className={css.labelId}>id announcement:</label>
+      <label className={css.labelId}>id оголошення:</label>
       <input
         className={css.inputAddId}
         onBlur={(value) => setIdAnnoun(value.target.value)}
         type="text"
         id="idUser"
         name={idAnnoun}
-        placeholder="input id announcement"
+        placeholder="вкажіть id оголошення"
         required
       />
     </div>

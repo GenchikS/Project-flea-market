@@ -1,0 +1,59 @@
+.containerCategory{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: left; */
+    align-items: center;
+}
+
+.markerRed{
+    font-size: 10px;
+    position: relative;
+    top:6px;
+    left: 40px;
+    color: red;
+}
+
+.markerGreen{
+    font-size: 10px;
+    position: relative;
+    top:6px;
+    left: 40px;
+    color: green;
+}
+
+.label{
+    font-size: 8px;
+    margin-left: 10px;
+    opacity: 80;
+    margin-bottom: 2px;
+    text-align: left;
+}
+
+.selectCategory{
+    width: 100px;
+    height: 24px;
+    font-size: 10px;
+    border: 1px solid var(--color-border);
+    outline: none;
+    border-radius: 14px;
+    padding: 4px 8px;
+    background-color: var(--bg-color);
+    cursor: pointer;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.selectCategory:hover{
+     background-color: var(--bg-color-hover);
+}
+
+.selectCategory:focus{
+     background-color: var(--bg-color-hover);
+}
+
+.option{
+    font-size: 10px;
+    margin-left: 10px;
+    opacity: 80;
+    margin-bottom: 2px;
+}

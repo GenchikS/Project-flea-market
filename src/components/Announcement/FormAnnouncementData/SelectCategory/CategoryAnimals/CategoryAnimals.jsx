@@ -7,7 +7,7 @@ export default function CategoryAnimals({ setCategory, category, marker }) {
     <div className={css.containerCategory}>
       <p className={!marker ? css.markerRed : css.markerGreen}>*</p>
       <label className={css.label} htmlFor={selectCategoryId}>
-        choose category
+        оберіть категорію:
       </label>
       <select
         className={css.selectCategory}
@@ -16,16 +16,16 @@ export default function CategoryAnimals({ setCategory, category, marker }) {
         onChange={(evt) => setCategory(evt.target.value)}
       >
         <option className={css.option} value="">
-          - - - 
+          - - -
         </option>
-        <option className={css.option} value="dogs">
-          dog
+        <option className={css.option} value="собака">
+          собака
         </option>
-        <option className={css.option} value="cats">
-          cats
+        <option className={css.option} value="кішка">
+          кішка
         </option>
-        <option className={css.option} value="other">
-          other
+        <option className={css.option} value="інше">
+          інше
         </option>
       </select>
     </div>

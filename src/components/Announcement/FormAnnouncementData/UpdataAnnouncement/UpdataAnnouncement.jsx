@@ -37,7 +37,7 @@ export default function UpdataAnnouncement({ marker, pathTo, setIsModalOpen }) {
 
   return (
     <div className={css.containerUpdataAnnouncement}>
-      <h3 className={css.title}>Form updata announcement</h3>
+      <h3 className={css.title}>Форма оновлення оголошення</h3>
       <form
         className={css.listAddAnnouncement}
         name="formAnnouncement"
@@ -51,7 +51,7 @@ export default function UpdataAnnouncement({ marker, pathTo, setIsModalOpen }) {
           charter={chapter}
           marker={marker}
         />
-        {chapter === "auto" && (
+        {chapter === "автомобіль" && (
           <CategoryAuto
             set={{ setCategory, setPurchaseSale }}
             category={category}
@@ -59,14 +59,14 @@ export default function UpdataAnnouncement({ marker, pathTo, setIsModalOpen }) {
             marker={marker}
           />
         )}
-        {chapter === "work" && (
+        {chapter === "робота" && (
           <CategoryWork
             set={{ setCategory }}
             category={category}
             marker={marker}
           />
         )}
-        {chapter === "housing" && (
+        {chapter === "нерухомість" && (
           <CategoryHousing
             set={{ setCategory, setPurchaseSale }}
             category={category}
@@ -74,21 +74,21 @@ export default function UpdataAnnouncement({ marker, pathTo, setIsModalOpen }) {
             marker={marker}
           />
         )}
-        {chapter === "services" && (
+        {chapter === "послуги" && (
           <CategoryServices
             setCategory={setCategory}
             category={category}
             marker={marker}
           />
         )}
-        {chapter === "animals" && (
+        {chapter === "тварини" && (
           <CategoryAnimals
             setCategory={setCategory}
             category={category}
             marker={marker}
           />
         )}
-        {chapter === "differents" && (
+        {chapter === "різне" && (
           <CategoryDifferents
             set={{ setCategory, setPurchaseSale }}
             category={category}
@@ -96,7 +96,7 @@ export default function UpdataAnnouncement({ marker, pathTo, setIsModalOpen }) {
             marker={marker}
           />
         )}
-        {chapter === "gifts" && (
+        {chapter === "дарую" && (
           <CategoryGifts
             set={{ setCategory, setPurchaseSale }}
             category={category}

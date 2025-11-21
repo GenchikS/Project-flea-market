@@ -21,15 +21,15 @@ export const DeleteUser = ({ pathTo, setIsModalOpen }) =>{
   };
   return (
     <div className={css.containerModalDeleteUser}>
-      <h3 className={css.title}>Form delete user</h3>
+      <h3 className={css.title}>Форма видалення користувача</h3>
       <form className={css.formContainer} onSubmit={handleSubmit}>
         <p className={css.markerRed}>*</p>
-        <label className={css.label}>id user</label>
+        <label className={css.label}>id користувача</label>
         <input
           className={css.userId}
           type="text"
           name="id"
-          placeholder="input id user"
+          placeholder="вкажіть id користувача"
         />
         <ButtonModalUser pathTo={pathTo} setIsModalOpen={setIsModalOpen} />
       </form>

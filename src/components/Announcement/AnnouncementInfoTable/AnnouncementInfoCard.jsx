@@ -4,12 +4,12 @@ export default function AnnouncementInfoCard({ item }) {
   return (
     <table>
       <caption className={css.announcementCollectionsTitle}>
-        Announcement collection:
+        Колекція оголошень:
       </caption>
       <thead>
         <tr>
-          <th className={css.nameTh}>chapter</th>
-          <th className={css.emailTh}>category</th>
+          <th className={css.nameTh}>розділ</th>
+          <th className={css.emailTh}>категорія</th>
           <th className={css.idTh}>id</th>
         </tr>
       </thead>
@@ -29,7 +29,7 @@ export default function AnnouncementInfoCard({ item }) {
               </td>
             </tr>
             <tr>
-              <td className={css.idUser}>announ: {list._id }</td>
+              <td className={css.idUser}>оголош: {list._id }</td>
             </tr>
             <tr>
               <td scope="row" colSpan="3">

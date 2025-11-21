@@ -7,7 +7,7 @@ export default function CategoryServices({ setCategory, category, marker }) {
     <div className={css.containerCategory}>
       <p className={!marker ? css.markerRed : css.markerGreen}>*</p>
       <label className={css.label} htmlFor={selectCategoryId}>
-        choose category
+        оберіть категорію:
       </label>
       <select
         className={css.selectCategory}
@@ -16,16 +16,16 @@ export default function CategoryServices({ setCategory, category, marker }) {
         onChange={(evt) => setCategory(evt.target.value)}
       >
         <option className={css.option} value="">
-          - - - 
+          - - -
         </option>
-        <option className={css.option} value="taxi">
-          auto/taxi
+        <option className={css.option} value="таксі">
+          авто/таксі
         </option>
-        <option className={css.option} value="beauty">
-          beauty
+        <option className={css.option} value="красота">
+          красота/здоров'я
         </option>
-        <option className={css.option} value="other">
-          other
+        <option className={css.option} value="інше">
+          інше
         </option>
       </select>
     </div>

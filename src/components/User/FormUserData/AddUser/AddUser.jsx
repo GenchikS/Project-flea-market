@@ -63,7 +63,7 @@ export default function AddUser({ marker, pathTo, setIsModalOpen }) {
  
   return (
     <div className={css.containerAddUser}>
-      <h3 className={css.title}>Form Add user</h3>
+      <h3 className={css.title}>Форма додавання користувача</h3>
       <form
         className={css.listAddUser}
         name="formUser"
@@ -72,7 +72,7 @@ export default function AddUser({ marker, pathTo, setIsModalOpen }) {
       >
         <p className={css.markerRed}>*</p>
         <label className={css.label} htmlFor={nameFieldId}>
-          name
+          ім'я
         </label>
         <input
           className={css.username}
@@ -94,7 +94,7 @@ export default function AddUser({ marker, pathTo, setIsModalOpen }) {
         />
         <p className={css.markerGreen}>*</p>
         <label className={css.label} htmlFor={phoneFieldId}>
-          phone
+          телефон
         </label>
         <input
           className={css.userPhone}

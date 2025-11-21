@@ -39,17 +39,17 @@ export default function AnnouncementChange({ setMarker, pathTo, setIsModalOpen }
       <ul className={css.listButtonAnnouncement}>
         <li>
           <ButtonUserDate value="addAnnouncements" onClick={handleClick}>
-            add announcement
+            додати оголошення
           </ButtonUserDate>
         </li>
         <li>
           <ButtonUserDate value="updataAnnouncements" onClick={handleClick}>
-            updata announcement
+            оновити оголошення
           </ButtonUserDate>
         </li>
         <li>
           <ButtonUserDate value="deleteAnnouncements" onClick={handleClick}>
-            delete announcement{" "}
+            видалити оголошення
           </ButtonUserDate>
         </li>
       </ul>

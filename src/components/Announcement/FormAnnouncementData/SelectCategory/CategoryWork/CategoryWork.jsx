@@ -11,7 +11,7 @@ export default function CategoryWork({ setCategory, category, marker }) {
     <div className={css.containerCategory}>
       <p className={!marker ? css.markerRed : css.markerGreen}>*</p>
       <label className={css.label} htmlFor={selectCategoryId}>
-        choose category
+        оберіть категорію:
       </label>
       <select
         className={css.selectCategory}
@@ -22,14 +22,14 @@ export default function CategoryWork({ setCategory, category, marker }) {
         <option className={css.option} value="">
           - - -{" "}
         </option>
-        <option className={css.option} value="offer">
-          offer
+        <option className={css.option} value="пропоную">
+          пропоную
         </option>
-        <option className={css.option} value="search">
-          search
+        <option className={css.option} value="шукаю">
+          шукаю
         </option>
-        <option className={css.option} value="other">
-          other
+        <option className={css.option} value="інше">
+          інше
         </option>
       </select>
     </div>

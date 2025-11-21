@@ -17,7 +17,7 @@ export default function AutoComponent() {
           setLoading(true);
           setError(false);
           const response = await fetchAnnouncementFilterChapter({
-            chapter: "auto",
+            chapter: "автомобіль",
             category: "",
             purchaseSale: "",
           });

@@ -13,7 +13,7 @@ export default function Chapter({ setChapter, setCategory, chapter, marker }) {
     <div className={css.containerChapter}>
       <p className={!marker ? css.markerRed : css.markerGreen}>*</p>
       <label className={css.label} htmlFor={selectCarterId}>
-        choose chapter
+        оберіть розділ оголошення
       </label>
       <select
         className={css.selectChapter}
@@ -24,26 +24,26 @@ export default function Chapter({ setChapter, setCategory, chapter, marker }) {
         <option className={css.option} value="">
           - - -
         </option>
-        <option className={css.option} value="auto">
-          Auto
+        <option className={css.option} value="автомобіль">
+          автомобіль
         </option>
-        <option className={css.option} value="work">
-          Work
+        <option className={css.option} value="робота">
+          робота
         </option>
-        <option className={css.option} value="housing">
-          Housing
+        <option className={css.option} value="нерухомість">
+          нерухомість
         </option>
-        <option className={css.option} value="services">
-          Services
+        <option className={css.option} value="послуги">
+          послуги
         </option>
-        <option className={css.option} value="animals">
-          Animals
+        <option className={css.option} value="тварини">
+          тварини
         </option>
-        <option className={css.option} value="differents">
-          Differents
+        <option className={css.option} value="різне">
+          різне
         </option>
-        <option className={css.option} value="gifts">
-          Gifts
+        <option className={css.option} value="дарую">
+          дарую
         </option>
       </select>
     </div>

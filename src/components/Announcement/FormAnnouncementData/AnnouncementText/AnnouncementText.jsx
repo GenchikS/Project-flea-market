@@ -10,7 +10,7 @@ export default function AnnouncementText({setText, marker}) {
         name="AnnouncementText"
         cols="20"
         rows="5"
-        placeholder="input text announcement ..."
+        placeholder="додайте опис оголошення ..."
       ></textarea>
     </div>
   );

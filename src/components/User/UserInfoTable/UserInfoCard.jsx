@@ -5,11 +5,11 @@ export default function UserInfoCard({ item, itemsArrey }) {
   const itemsSourch = [itemsArrey];
   return (
     <table>
-      <caption className={css.userCollectionsTitle}>Users collections:</caption>
+      <caption className={css.userCollectionsTitle}>Колекція користувачів:</caption>
       <thead>
         <tr>
           <th className={css.nameTh} scope="col">
-            name
+            ім'я
           </th>
           <th className={css.emailTh} scope="col">
             email

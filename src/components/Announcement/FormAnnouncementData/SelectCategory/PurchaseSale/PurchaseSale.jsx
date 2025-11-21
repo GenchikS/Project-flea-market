@@ -7,7 +7,7 @@ export default function PurchaseSale({ set, purchaseSale, marker }) {
     <div className={css.containerCategory}>
       <p className={!marker ? css.markerRed : css.markerGreen}>*</p>
       <label className={css.label} htmlFor={PurchaseSaleId}>
-        choose optoins
+        оберіть опцію:
       </label>
       <select
         className={css.selectCategory}
@@ -15,17 +15,17 @@ export default function PurchaseSale({ set, purchaseSale, marker }) {
         name={purchaseSale}
         onChange={(evt) => setPurchaseSale(evt.target.value)}
       >
-                <option className={css.option} value="">
+        <option className={css.option} value="">
           - - -
         </option>
-        <option className={css.option} value="purchase">
-          purchase
+        <option className={css.option} value="куплю">
+          куплю
         </option>
-        <option className={css.option} value="sale">
-          sale
+        <option className={css.option} value="продам">
+          продам
         </option>
         <option className={css.option} value="other">
-          other
+          інше
         </option>
       </select>
     </div>

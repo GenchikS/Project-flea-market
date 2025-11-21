@@ -53,7 +53,7 @@ export default function AnnouncementFilterChapter({
         onSubmit={handleSubmit}
       >
         <label className={css.label} htmlFor={selectCarterId}>
-          choose chapter
+          оберіть категорію:
         </label>
         <select
           className={css.selectChapter}
@@ -64,29 +64,33 @@ export default function AnnouncementFilterChapter({
           <option className={css.option} value="">
             all
           </option>
-          <option className={css.option} value="auto">
-            auto
+          <option className={css.option} value="автомобіль">
+            автомобіль
           </option>
-          <option className={css.option} value="work">
-            work
+          <option className={css.option} value="робота">
+            робота
           </option>
-          <option className={css.option} value="housing">
-            housing
+          <option className={css.option} value="нерухомість">
+            нерухомість
           </option>
-          <option className={css.option} value="services">
-            services
+          <option className={css.option} value="тварини">
+            тварини
           </option>
-          <option className={css.option} value="animals">
-            animals
+          <option className={css.option} value="сад">
+            сад та город
           </option>
-          <option className={css.option} value="differents">
-            differents
+          <option className={css.option} value="послуги">
+            послуги
           </option>
-          <option className={css.option} value="gifts">
-            gifts
+
+          <option className={css.option} value="різне">
+            різне
+          </option>
+          <option className={css.option} value="дарую">
+            дарую
           </option>
         </select>
-        {chapter === "auto" && (
+        {chapter === "автомобіль" && (
           <CategoryAuto
             set={{ setCategory, setPurchaseSale }}
             category={category}
@@ -95,14 +99,14 @@ export default function AnnouncementFilterChapter({
             marker={true}
           />
         )}
-        {chapter === "work" && (
+        {chapter === "робота" && (
           <CategoryWork
             setCategory={setCategory}
             category={category}
             marker={true}
           />
         )}
-        {chapter === "housing" && (
+        {chapter === "нерухомість" && (
           <CategoryHousing
             set={{ setCategory, setPurchaseSale }}
             category={category}
@@ -111,21 +115,28 @@ export default function AnnouncementFilterChapter({
             marker={true}
           />
         )}
-        {chapter === "services" && (
-          <CategoryServices
+        {chapter === "сад" && (
+          <CategoryGarden
             setCategory={setCategory}
             category={category}
             marker={true}
           />
         )}
-        {chapter === "animals" && (
+        {chapter === "тварини" && (
           <CategoryAnimals
             setCategory={setCategory}
             category={category}
             marker={true}
           />
         )}
-        {chapter === "differents" && (
+        {chapter === "послуги" && (
+          <CategoryServices
+            setCategory={setCategory}
+            category={category}
+            marker={true}
+          />
+        )}
+        {chapter === "різне" && (
           <CategoryDifferents
             set={{ setCategory, setPurchaseSale }}
             // category={category}
@@ -133,7 +144,7 @@ export default function AnnouncementFilterChapter({
             marker={true}
           />
         )}
-        {chapter === "gifts" && (
+        {chapter === "дарую" && (
           <CategoryGifts
             set={{ setCategory, setPurchaseSale }}
             // category={category}

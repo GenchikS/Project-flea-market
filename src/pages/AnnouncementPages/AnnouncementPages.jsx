@@ -72,7 +72,7 @@ export default function AnnouncementPages({ setMarker, pathTo, setIsModalOpen })
           />
           {chapter.length === 0 && (
             <AnnouncementFormSearchId
-              placeholder="id user/ammoun..."
+              placeholder="id корист/оголош..."
               name={"name"}
               handleSearch={handleSearchId}
             />
@@ -96,11 +96,11 @@ export default function AnnouncementPages({ setMarker, pathTo, setIsModalOpen })
 
         {loadig && (
           <div className={css.containerLoadingData}>
-            <p className={css.textLoadingData}>Loding data ...</p>
+            <p className={css.textLoadingData}>Завантаження оголошень ...</p>
             <MyComponent />
           </div>
         )}
-        {error && <p>User not found!</p>}
+        {error && <p>Оголошення не знайдено!</p>}
       </div>
     </div>
   );

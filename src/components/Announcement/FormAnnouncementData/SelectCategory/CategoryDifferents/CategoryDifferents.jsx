@@ -16,7 +16,7 @@ export default function CategoryDifferents({
       <PurchaseSale set={set} purchaseSale={purchaseSale} marker={marker} />
       <p className={!marker ? css.markerRed : css.markerGreen}>*</p>
       <label className={css.label} htmlFor={selectCategoryId}>
-        choose category
+        оберіть категорію:
       </label>
       <select
         className={css.selectCategory}
@@ -27,14 +27,14 @@ export default function CategoryDifferents({
         <option className={css.option} value="">
           - - -
         </option>
-        <option className={css.option} value="tools">
-          tools
+        <option className={css.option} value="інструмент">
+          інструмент
         </option>
-        <option className={css.option} value="furniture">
-          furniture
+        <option className={css.option} value="меблі">
+          меблі
         </option>
-        <option className={css.option} value="other">
-          other
+        <option className={css.option} value="інше">
+          інше
         </option>
       </select>
     </div>

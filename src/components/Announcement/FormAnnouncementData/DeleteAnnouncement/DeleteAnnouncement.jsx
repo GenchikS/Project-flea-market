@@ -28,15 +28,15 @@ export const DeleteAnnouncement = ({ pathTo, setIsModalOpen }) => {
 
   return (
     <div className={css.containerModalDeleteAnnouncement}>
-      <h3 className={css.title}>Form delete announcement</h3>
+      <h3 className={css.title}>Форма видалення оголошень</h3>
       <form className={css.formContainer} onSubmit={handleSubmit}>
         <p className={css.markerRed}>*</p>
-        <label className={css.label}>id announcement</label>
+        <label className={css.label}>id оголошення</label>
         <input
           className={css.announcementId}
           type="text"
           name="id"
-          placeholder="input id announcement"
+          placeholder="вкажіть id оголошення"
         />
         <ButtonModalAnnouncement
           type="submit"

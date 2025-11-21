@@ -102,17 +102,17 @@ export default function UserPages({ setMarker, pathTo, setIsModalOpen }) {
       <div className={css.containerUserFilterListButtonUserPages}>
         <div className={css.containerUserSearch}>
           <UserFormSearch
-            placeholder="Search name"
+            placeholder="пошук за ім'ям"
             name="name"
             handleSearch={handleSearchName}
           />
           <UserFormSearch
-            placeholder="Search email"
+            placeholder="пошук за email"
             name="name"
             handleSearch={handleSearchEmail}
           />
           <UserFormSearch
-            placeholder="Search id"
+            placeholder="пошук за id"
             name={"name"}
             handleSearch={handleSearchId}
           />
@@ -135,11 +135,11 @@ export default function UserPages({ setMarker, pathTo, setIsModalOpen }) {
           ))}
         {loadig && (
           <div className={css.containerLoadingData}>
-            <p className={css.textLoadingData}>Loding data ...</p>
+            <p className={css.textLoadingData}>Завантаження користувачів ...</p>
             <MyComponent />
           </div>
         )}
-        {error && <p>User not found!</p>}
+        {error && <p>Користувача не знайдено!</p>}
       </div>
     </div>
   );

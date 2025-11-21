@@ -12,7 +12,7 @@ export default function CategoryHousing({ set, category, purchaseSale, marker, s
       )}
       <p className={!marker ? css.markerRed : css.markerGreen}>*</p>
       <label className={css.label} htmlFor={selectCategoryId}>
-        choose category
+        оберіть категорію:
       </label>
       <select
         className={css.selectCategory}
@@ -23,14 +23,14 @@ export default function CategoryHousing({ set, category, purchaseSale, marker, s
         <option className={css.option} value="">
           - - -{" "}
         </option>
-        <option className={css.option} value="car">
-          car
+        <option className={css.option} value="автомобіль">
+          автомобіль
         </option>
-        <option className={css.option} value="motorcycle">
-          motorcycle
+        <option className={css.option} value="мотоцикл">
+          мотоцикл
         </option>
-        <option className={css.option} value="other">
-          other
+        <option className={css.option} value="інше">
+          інше
         </option>
       </select>
     </div>

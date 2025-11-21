@@ -40,7 +40,7 @@ export default function AddAnnouncement({
 
   return (
     <div className={css.containerAddAnnouncement}>
-      <h3 className={css.title}>Form add announcement</h3>
+      <h3 className={css.title}>Форма додавання оголошень</h3>
       <form
         className={css.listAddAnnouncement}
         name="formAnnouncement"
@@ -54,37 +54,37 @@ export default function AddAnnouncement({
           charter={chapter}
           marker={marker}
         />
-        {chapter === "auto" && (
+        {chapter === "автомобіль" && (
           <CategoryAuto
             set={{ setCategory, setPurchaseSale }}
             category={category}
             purchaseSale={purchaseSale}
           />
         )}
-        {chapter === "work" && (
+        {chapter === "робота" && (
           <CategoryWork set={{ setCategory }} category={category} />
         )}
-        {chapter === "housing" && (
+        {chapter === "нерухомість" && (
           <CategoryHousing
             set={{ setCategory, setPurchaseSale }}
             category={category}
             purchaseSale={purchaseSale}
           />
         )}
-        {chapter === "services" && (
+        {chapter === "послуги" && (
           <CategoryServices setCategory={setCategory} category={category} />
         )}
-        {chapter === "animals" && (
+        {chapter === "тварини" && (
           <CategoryAnimals setCategory={setCategory} category={category} />
         )}
-        {chapter === "differents" && (
+        {chapter === "різне" && (
           <CategoryDifferents
             set={{ setCategory, setPurchaseSale }}
             category={category}
             purchaseSale={purchaseSale}
           />
         )}
-        {chapter === "gifts" && (
+        {chapter === "дарую" && (
           <CategoryGifts setCategory={setCategory} category={category} />
         )}
         <AnnouncementText setText={setText} marker={marker} />

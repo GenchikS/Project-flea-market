@@ -45,7 +45,7 @@ export default function UpdataUser({ pathTo, setIsModalOpen }) {
   };
   return (
     <div className={css.containerUpdateUser}>
-      <h3 className={css.title}>Form updata user</h3>
+      <h3 className={css.title}>Форма оновлення користувача</h3>
         <Formik
           initialValues={initialValues}
           onSubmit={hahdleSubmit}
@@ -55,7 +55,7 @@ export default function UpdataUser({ pathTo, setIsModalOpen }) {
             <div className={css.listContainer}>
               <p className={css.markerRed}>*</p>
               <label className={css.label} htmlFor={idFieldId}>
-                id user
+                id користувача
               </label>
               <Field
                 className={css.userId}
@@ -68,7 +68,7 @@ export default function UpdataUser({ pathTo, setIsModalOpen }) {
             <div className={css.listContainer}>
               <p className={css.markerGreen}>*</p>
               <label className={css.label} htmlFor={nameFieldId}>
-                name
+                ім'я
               </label>
               <Field
                 className={css.username}
