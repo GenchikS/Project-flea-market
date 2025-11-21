@@ -62,7 +62,7 @@ export default function AnnouncementPages({ setMarker, pathTo, setIsModalOpen })
   };
   return (
     <div className={css.containerAnnouncementPages}>
-      <h4 className={css.title}>Admin announcement pages</h4>
+      <h4 className={css.title}>Админ панель оголошень</h4>
       <div className={css.containerUserFilterListButtonUserPages}>
         <div className={css.containerUserSearch}>
           <AnnouncementFilterChapter
@@ -96,7 +96,7 @@ export default function AnnouncementPages({ setMarker, pathTo, setIsModalOpen })
 
         {loadig && (
           <div className={css.containerLoadingData}>
-            <p className={css.textLoadingData}>Завантаження оголошень ...</p>
+            <p className={css.textLoadingData}>Завантажуємо оголошення ...</p>
             <MyComponent />
           </div>
         )}

@@ -9,6 +9,7 @@ import CategoryDifferents from "../../FormAnnouncementData/SelectCategory/Catego
 import CategoryGifts from "../../FormAnnouncementData/SelectCategory/CategoryGifts/CategoryGifts.jsx";
 import { ButtonUserDate } from "../../../Button/ButtonUserDate.jsx";
 import { fetchAnnouncementFilterChapter } from "../../../../api/articlesAnnouncements-api.js";
+import CategoryGarden from "../../FormAnnouncementData/SelectCategory/CategoryGarden/CategoryGarden.jsx";
 
 export default function AnnouncementFilterChapter({
   chapter,
@@ -82,7 +83,6 @@ export default function AnnouncementFilterChapter({
           <option className={css.option} value="послуги">
             послуги
           </option>
-
           <option className={css.option} value="різне">
             різне
           </option>
@@ -117,7 +117,7 @@ export default function AnnouncementFilterChapter({
         )}
         {chapter === "сад" && (
           <CategoryGarden
-            setCategory={setCategory}
+            set={{ setCategory, setPurchaseSale }}
             category={category}
             marker={true}
           />

@@ -13,12 +13,15 @@ import ButtonModalAnnouncement from "../ButtonModalAnnouncement/ButtonModalAnnou
 import CategoryDifferents from "../SelectCategory/CategoryDifferents/CategoryDifferents.jsx";
 import CategoryGifts from "../SelectCategory/CategoryGifts/CategoryGifts.jsx";
 import {  fetchArticleUpdataAnnouncement } from "../../../../api/articlesAnnouncements-api.js";
+import CategoryGarden from "../SelectCategory/CategoryGarden/CategoryGarden.jsx";
 
 export default function UpdataAnnouncement({ marker, pathTo, setIsModalOpen }) {
   const [idAnnoun, setIdAnnoun] = useState("");
   const [chapter, setChapter] = useState("");
   const [category, setCategory] = useState("");
   const [purchaseSale, setPurchaseSale] = useState("");
+   const [price, setPrice] = useState("");
+   const [yar, setYar] = useState("");
   const [text, setText] = useState("");
   // const [photo, setPhoto] = useState("");
   // const [objectAll, setObjectAll] = useState({});
@@ -53,7 +56,7 @@ export default function UpdataAnnouncement({ marker, pathTo, setIsModalOpen }) {
         />
         {chapter === "автомобіль" && (
           <CategoryAuto
-            set={{ setCategory, setPurchaseSale }}
+            set={{ setCategory, setPurchaseSale, setPrice, setYar }}
             category={category}
             purchaseSale={purchaseSale}
             marker={marker}
@@ -68,6 +71,14 @@ export default function UpdataAnnouncement({ marker, pathTo, setIsModalOpen }) {
         )}
         {chapter === "нерухомість" && (
           <CategoryHousing
+            set={{ setCategory, setPurchaseSale }}
+            category={category}
+            purchaseSale={purchaseSale}
+            marker={marker}
+          />
+        )}
+        {chapter === "сад" && (
+          <CategoryGarden
             set={{ setCategory, setPurchaseSale }}
             category={category}
             purchaseSale={purchaseSale}

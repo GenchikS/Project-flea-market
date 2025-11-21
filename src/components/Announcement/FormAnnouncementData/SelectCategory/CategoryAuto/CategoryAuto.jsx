@@ -2,8 +2,10 @@
 import { useId } from "react";
 import PurchaseSale from "../PurchaseSale/PurchaseSale.jsx";
 import css from "./CategoryAuto.module.css";
+import { PriceAnnouncement } from "../PriceAnnouncement/PriceAnnouncement.jsx";
+import { YarAnnouncement } from "../YarAnnouncement/YarAnnouncement.jsx";
 export default function CategoryHousing({ set, category, purchaseSale, marker, sourse }) {
-  const { setCategory } = set;
+  const { setCategory, setYar, setPrice } = set;
   const selectCategoryId = useId();
   return (
     <div className={css.containerCategory}>
@@ -33,6 +35,8 @@ export default function CategoryHousing({ set, category, purchaseSale, marker, s
           інше
         </option>
       </select>
+      <YarAnnouncement setYar={setYar} marker={marker} />
+      <PriceAnnouncement setPrice={setPrice} marker={marker} />
     </div>
   );
 }

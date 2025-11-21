@@ -98,7 +98,7 @@ export default function UserPages({ setMarker, pathTo, setIsModalOpen }) {
 
   return (
     <div className={css.containerUserPages}>
-      <h4 className={css.title}>Admin users pages</h4>
+      <h4 className={css.title}>Адмін панель користувачів</h4>
       <div className={css.containerUserFilterListButtonUserPages}>
         <div className={css.containerUserSearch}>
           <UserFormSearch
@@ -135,7 +135,7 @@ export default function UserPages({ setMarker, pathTo, setIsModalOpen }) {
           ))}
         {loadig && (
           <div className={css.containerLoadingData}>
-            <p className={css.textLoadingData}>Завантаження користувачів ...</p>
+            <p className={css.textLoadingData}>Завантажуємо користувачів ...</p>
             <MyComponent />
           </div>
         )}

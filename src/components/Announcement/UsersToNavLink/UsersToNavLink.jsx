@@ -6,7 +6,7 @@ export default function UsersToNavLink() {
     <nav>
       <NavLink to="/admin/users">
         <div className={css.containerUsers}>
-          <p className={css.titleUsers}>Admin users pages</p>
+          <p className={css.titleUsers}>Адмін панель користувачів</p>
         </div>
       </NavLink>
     </nav>

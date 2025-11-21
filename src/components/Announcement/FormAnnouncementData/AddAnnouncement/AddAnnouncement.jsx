@@ -13,6 +13,7 @@ import CategoryGifts from "../SelectCategory/CategoryGifts/CategoryGifts.jsx"
 import CategoryWork from "../SelectCategory/CategoryWork/CategoryWork.jsx"
 import { useNavigate } from "react-router-dom";
 import { fetchArticleAddAnnouncement } from "../../../../api/articlesAnnouncements-api.js";
+import CategoryGarden from "../SelectCategory/CategoryGarden/CategoryGarden.jsx";
 // import FormAddPhoto from "../FormAddPhoto/FormAddPhoto.jsx";
 
 export default function AddAnnouncement({
@@ -21,17 +22,20 @@ export default function AddAnnouncement({
   setIsModalOpen,
 }) {
   const [idUser, setIdUser] = useState("");
+  const [chapter, setChapter] = useState("");
   const [category, setCategory] = useState("");
   const [purchaseSale, setPurchaseSale] = useState("");
+  const [price, setPrice] = useState("");
+  const [yar, setYar] = useState("");
   const [text, setText] = useState("");
-  const [chapter, setChapter] = useState("");
+  
   // const [photo, setPhoto] = useState("");
 
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const value = { idUser, chapter, category, purchaseSale, text };
+    const value = { idUser, chapter, category, purchaseSale, price, text, yar };
     document.formAnnouncement.reset();
     fetchArticleAddAnnouncement(value);
     navigate(`/admin/announcement/done`);
@@ -56,7 +60,7 @@ export default function AddAnnouncement({
         />
         {chapter === "автомобіль" && (
           <CategoryAuto
-            set={{ setCategory, setPurchaseSale }}
+            set={{ setCategory, setPurchaseSale, setPrice, setYar }}
             category={category}
             purchaseSale={purchaseSale}
           />
@@ -66,6 +70,13 @@ export default function AddAnnouncement({
         )}
         {chapter === "нерухомість" && (
           <CategoryHousing
+            set={{ setCategory, setPurchaseSale }}
+            category={category}
+            purchaseSale={purchaseSale}
+          />
+        )}
+        {chapter === "сад" && (
+          <CategoryGarden
             set={{ setCategory, setPurchaseSale }}
             category={category}
             purchaseSale={purchaseSale}

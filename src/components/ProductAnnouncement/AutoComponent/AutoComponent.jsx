@@ -70,7 +70,7 @@ export default function AutoComponent() {
       <div>
         {loadig && (
           <div className={css.containerLoadingData}>
-            <p className={css.textLoadingData}>Loding data ...</p>
+            <p className={css.textLoadingData}>Пошук авто ...</p>
             <MyComponent />
           </div>
         )}

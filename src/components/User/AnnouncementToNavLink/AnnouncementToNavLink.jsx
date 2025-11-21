@@ -6,7 +6,7 @@ export default function AnnouncementToNavLink() {
       <nav>
         <NavLink to="/admin">
           <div className={css.containerAnnouncement}>
-            <p className={css.titleAnnouncement}>Admin announcements pages</p>
+            <p className={css.titleAnnouncement}>Адмін панель оголошень</p>
           </div>
         </NavLink>
       </nav>

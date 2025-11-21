@@ -33,6 +33,9 @@ export default function Chapter({ setChapter, setCategory, chapter, marker }) {
         <option className={css.option} value="нерухомість">
           нерухомість
         </option>
+        <option className={css.option} value="сад">
+          сад та город
+        </option>
         <option className={css.option} value="послуги">
           послуги
         </option>

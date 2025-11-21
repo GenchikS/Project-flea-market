@@ -10,7 +10,7 @@ export const fetchArticleAddAnnouncement = async (payload) => {
   // console.log(`payload`, payload);
   const response = await axios.post(`/announcement/add`, payload);
   // if (!response) return console.log(`No response`);
-  // console.log(`response`, response)
+  // console.log(`response2`, response)
   return response.data.data;
 }
 
