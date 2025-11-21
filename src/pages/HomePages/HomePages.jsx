@@ -105,11 +105,25 @@ export const HomePages = () => {
             <p className={css.textBanerOneTitle}>Віталій</p>
             <p className={css.textBanerOneText}>т. 050-632-55-95</p>
           </div>
-          <div className={css.containerBaner}>Baner 2</div>
+          <div className={css.containerBaner}>
+            <img src={banerOne} className={css.banerImage} />
+            <p className={css.textBanerOneTitle}>Віталій</p>
+            <p className={css.textBanerOneText}>т. 050-632-55-95</p>
+          </div>
         </section>
         <section className={css.containerSectionTwo}>
-          <div className={css.containerBaner}>Baner 3</div>
-          <div className={css.containerBaner}>Baner 4</div>
+          <div className={css.containerBaner}>
+            <img src={banerOne} className={css.banerImage} />
+            <p className={css.textBanerOneTitle}>Віталій</p>
+            <p className={css.textBanerOneText}>т. 050-632-55-95</p>
+            <p className={css.taxtBanerTwoText}>+ причіп</p>
+          </div>
+          <div className={css.containerBaner}>
+            <img src={banerOne} className={css.banerImage} />
+            <p className={css.textBanerOneTitle}>Віталій</p>
+            <p className={css.textBanerOneText}>т. 050-632-55-95</p>
+            <p className={css.taxtBanerTwoText}>+причіп</p>
+          </div>
         </section>
         {/* <section></section> */}
         {/* <section></section> */}
