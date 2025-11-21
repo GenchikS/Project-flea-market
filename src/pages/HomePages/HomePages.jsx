@@ -31,7 +31,7 @@ export const HomePages = () => {
               <ul className={css.containerListAnnouncement}>
                 <li className={css.titleList}>
                   <NavLink to="/announcement/auto" className={css.listTitle}>
-                    <img src={auto} alt="auto" className={css.img} />
+                    <img src={auto} alt="авто" className={css.img} />
                     Авто
                   </NavLink>
                 </li>
@@ -54,7 +54,7 @@ export const HomePages = () => {
                 <li>
                   <NavLink to="/announcement/garden" className={css.listTitle}>
                     <img src={garden} alt="сад та город" className={css.img} />
-                    сад та город
+                    Сад та город
                   </NavLink>
                 </li>
               </ul>

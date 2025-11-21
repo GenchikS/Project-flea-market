@@ -46,8 +46,8 @@ function App() {
           <Route path="work" element={<WorkComponent />} />
           <Route path="housing" element={<HousingComponent />} />
           <Route path="garden" element={<GardenComponent />} />
-          <Route path="animals" element={<AnimalsComponent />} />
           <Route path="services" element={<ServicesComponent />} />
+          <Route path="animals" element={<AnimalsComponent />} />
           <Route path="differents" element={<DifferentsComponent />} />
           <Route path="gifts" element={<GiftsComponent />} />
         </Route>
