@@ -15,23 +15,27 @@
 .containerUserFilterListButtonUserPages{
     display: flex;
     flex-direction: row;
-    height: 178px
+    width: 100%;
+    /* height: 178px; */
+    /* justify-content:space-around; */
+    justify-content: space-between;
 }
+
+.containerUserSearch{
+    margin-left: 10px;
+}
+
 
 .containerUserUpdataUsers{
     display: flex;
     flex-direction: column;
-    align-items:end;
+    margin-right: 10px;
 }
 
-.containerUserSearch{
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
+
 
 .containerUserInfo{
-    min-width: 278px;
+    /* min-width: 278px; */
     height: 100%;
     border: 1px solid var(--border-color-black);
     border-radius: 14px;

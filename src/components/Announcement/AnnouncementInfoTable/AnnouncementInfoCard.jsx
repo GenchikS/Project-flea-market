@@ -2,7 +2,7 @@ import css from "./AnnouncementInfoCard.module.css"
 export default function AnnouncementInfoCard({ item }) {
 // console.log(`item`, item);
   return (
-    <table>
+    <table className={css.tableAnnouncement}>
       <caption className={css.announcementCollectionsTitle}>
         Колекція оголошень:
       </caption>

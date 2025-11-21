@@ -30,10 +30,17 @@ export default function UpdataAnnouncement({ marker, pathTo, setIsModalOpen }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const searche = { idAnnoun, chapter, category, purchaseSale, text };
+    const searche = {
+      idAnnoun,
+      chapter,
+      category,
+      purchaseSale,
+      price,
+      yar, text,
+    };
     // console.log(`evt submit`, searche);
     document.formAnnouncement.reset();
-    fetchArticleUpdataAnnouncement(searche);
+    fetchArticleUpdataAnnouncement({ idAnnoun: idAnnoun, chapter: chapter, category: category, purchaseSale: purchaseSale, price: price, yar: yar, text: text });
     navigate(`/admin/announcement/done`);
     return;
   };

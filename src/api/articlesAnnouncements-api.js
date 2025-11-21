@@ -17,11 +17,31 @@ export const fetchArticleAddAnnouncement = async (payload) => {
 export const fetchArticleUpdataAnnouncement = async (payload) => {
   const [idAnnoun] = [payload.idAnnoun];
   // console.log(`payload`, payload);
-  const response = await axios.patch(
-    `/announcement/updata/${idAnnoun}`,
-    payload
-  );
-  // console.log(`response`, response)
+  const responseSourseId = await axios.get(`/announcements/${idAnnoun}`);
+  const responseEnd = responseSourseId.data.data;
+  const payloadObject = {
+    category:
+      payload.category.trim().length > 0
+        ? payload.category
+        : responseEnd.category,
+    chapter:
+      payload.chapter.trim().length > 0 ? payload.chapter : responseEnd.chapter,
+    idAnnoun: idAnnoun,
+    price: payload.price.trim().length > 0 ? payload.price : responseEnd.price,
+    purchaseSale:
+      payload.purchaseSale.trim().length > 0
+        ? payload.purchaseSale
+        : responseEnd.purchaseSale,
+    yar: payload.yar.trim().length > 0 ? payload.yar : responseEnd.yar,
+    text: payload.text.trim().length > 0 ? payload.text : responseEnd.text,
+  };
+  // console.log(`responseId`, responseSourseId)
+
+const response = await axios.patch(
+  `/announcement/updata/${idAnnoun}`,
+  payloadObject
+);
+  // console.log(`response`, response.data.data)
   return response.data.data;
 };
 

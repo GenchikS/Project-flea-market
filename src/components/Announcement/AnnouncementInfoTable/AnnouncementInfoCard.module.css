@@ -1,7 +1,7 @@
-table {
+.tableAnnouncement {
    border-collapse: collapse;
     background-color: var(--color-white-grey);
-    width: 290px;
+    min-width: 290px;
 }
 
 .announcementCollectionsTitle{
