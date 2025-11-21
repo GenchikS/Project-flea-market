@@ -6,14 +6,15 @@
     border: 1px solid var(--border-color-black);
     border-radius: 8px;
     background-color: var(--color-button-blue);
-    margin-left: 60px;
     align-items: center;
+
 }
 
 
 .titleAnnouncement{
     font-size: 10px;
     text-align: center;
+    padding: 4px;
 }
 
 .containerAnnouncement:hover{

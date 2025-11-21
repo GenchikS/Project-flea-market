@@ -5,7 +5,7 @@ table {
 }
 
 .userCollectionsTitle{
-    font-size: 20px;
+    font-size: 14px;
 }
 
  th{
@@ -28,18 +28,6 @@ th {
 td{
       height: 10px;;
 }   
-
-.nameTh, .roleTh{
-    /* width: 40px; */
-}
-
-.emailTh{
-    /* width: 60px; */
-}
-
-.phoneTh{
-    /* width: 60px; */
-}
 
 tbody>tr:hover {
     background-color: var(--bg-color-hover);

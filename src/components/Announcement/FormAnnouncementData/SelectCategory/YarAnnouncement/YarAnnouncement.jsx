@@ -12,7 +12,6 @@ export const YarAnnouncement = ({ setYar, marker }) => {
         id="idYar"
         name="yar"
         placeholder="вкажіть рік ... (2012)"
-        required
       />
     </div>
   );

@@ -15,7 +15,7 @@ import { FormAddId } from "../../../Announcement/FormAnnouncementData/FormAddId/
 //   email: Yup.string().email().required("Requred!"),
 // });
 
-export default function AddUser({ marker, pathTo, setIsModalOpen }) {
+export default function AddUser({ pathTo, setIsModalOpen }) {
   const navigate = useNavigate();
 
   // const [idUser, setIdUser] = useState("");

@@ -23,14 +23,13 @@
 .containerUserUpdataAnnouncement{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    margin-left: 60px;
 }
 
 .containerUserSearch{
     display: flex;
     flex-direction: column;
     height: 170px;
-    justify-content: space-between;
 }
 
 

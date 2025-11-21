@@ -17,19 +17,19 @@
     flex-direction: row;
     width: 100%;
     /* height: 178px; */
+    justify-content:center;
     /* justify-content:space-around; */
-    justify-content: space-between;
 }
 
-.containerUserSearch{
+/* .containerUserSearch{
     margin-left: 10px;
-}
+} */
 
 
 .containerUserUpdataUsers{
     display: flex;
     flex-direction: column;
-    margin-right: 10px;
+    margin-left: 60px;
 }
 
 

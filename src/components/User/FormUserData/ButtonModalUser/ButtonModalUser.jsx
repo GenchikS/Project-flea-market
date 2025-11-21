@@ -5,12 +5,12 @@ export default function ButtonModalUser({pathTo, setIsModalOpen }) {
   return (
       <div className={css.containerModalUser}>
         <button className={css.green} type="submit">
-          Done
+          Ok
         </button>
         <nav>
           <NavLink to={pathTo}>
             <button className={css.red} type="button" onClick={() => setIsModalOpen(false)}>
-              Cencel
+              Скасувати
             </button>
           </NavLink>
         </nav>

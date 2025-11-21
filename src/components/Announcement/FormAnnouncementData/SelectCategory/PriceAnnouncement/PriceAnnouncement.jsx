@@ -12,7 +12,6 @@ export const PriceAnnouncement = ({ setPrice, marker }) => {
         id="idPrice"
         name="price"
         placeholder="вкажіть бажану ціну"
-        required
       />
     </div>
   );

@@ -35,8 +35,8 @@ export default function CategoryHousing({ set, category, purchaseSale, marker, s
           інше
         </option>
       </select>
-      {/* <YarAnnouncement setYar={setYar} marker={marker} /> */}
-      {/* <PriceAnnouncement setPrice={setPrice} marker={marker} /> */}
+      <YarAnnouncement setYar={setYar} marker={marker} />
+      <PriceAnnouncement setPrice={setPrice} marker={marker} />
     </div>
   );
 }

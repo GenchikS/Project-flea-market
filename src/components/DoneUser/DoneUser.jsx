@@ -11,9 +11,9 @@ export default function DoneUser({ setIsModalOpen }) {
 
   return (
     <div className={css.containerClose}>
-      <p className={css.green}>Done!</p>
-      <button type="button" onClick={handleClick}>
-        Cencel
+      <p className={css.green}>Завантажено!</p>
+      <button className={css.buttonGreen} type="button" onClick={handleClick}>
+        Ok
       </button>
     </div>
   );

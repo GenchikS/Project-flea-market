@@ -10,7 +10,7 @@ button{
   margin: 8px;
   width: 64px;
   height: 32px;
-  font-size: 14px;
+  font-size: 12px;
   padding: 12px 16px;
   border-radius: 20px;
   border: 1px solid var(--color-border);
@@ -25,6 +25,7 @@ button{
  
 
 .red{
+    font-size: 10px;
     background-color: var(--color-button-red);
 }
 
