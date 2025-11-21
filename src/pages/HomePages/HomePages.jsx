@@ -99,7 +99,7 @@ export const HomePages = () => {
             </li>
           </ul>
         </div>
-        <section className={css.containerSectionOne}>
+        <section className={css.containerSection}>
           <div className={css.containerBaner}>
             <img src={banerOne} className={css.banerImage} />
             <p className={css.textBanerOneTitle}>Віталій</p>
@@ -110,8 +110,6 @@ export const HomePages = () => {
             <p className={css.textBanerOneTitle}>Віталій</p>
             <p className={css.textBanerOneText}>т. 050-632-55-95</p>
           </div>
-        </section>
-        <section className={css.containerSectionTwo}>
           <div className={css.containerBaner}>
             <img src={banerOne} className={css.banerImage} />
             <p className={css.textBanerOneTitle}>Віталій</p>
@@ -125,8 +123,6 @@ export const HomePages = () => {
             <p className={css.taxtBanerTwoText}>+причіп</p>
           </div>
         </section>
-        {/* <section></section> */}
-        {/* <section></section> */}
       </div>
     );
 }

@@ -77,16 +77,19 @@
     border-radius: 50%;
 }
 
-.containerSectionOne, .containerSectionTwo{
+
+
+
+
+
+.containerSection{
     display: flex;
+    justify-content: center;
     flex-direction: row;
-    column-gap: 10px;
-    margin-top: 12px;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 4px;
 }
-
-
-
-
 
 .containerBaner{
     width: 140px;
@@ -120,6 +123,7 @@
     font-size: 12px;
     font-weight: 700;
     position: relative;
-    top: -70px;
+    top: -68px;
     left: 64px;
 }
+
