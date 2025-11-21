@@ -4,11 +4,14 @@ import css from "./HomePages.module.css";
 import auto from "../../image/car.png";
 import work from "../../image/work.png";
 import housing from "../../image/housing.png";
+import garden from "../../image/garden.png"
 import services from "../../image/services.png";
 import animals from "../../image/animals.png";
 import differents from "../../image/differents.png";
 import gifts from "../../image/gifts.png";
 import { AppBar } from "../../components/AppBar/AppBar.jsx";
+
+import banerOne from "../../imageBaner/banerOne.jpg"
 
 export const HomePages = () => {
     return (
@@ -23,51 +26,93 @@ export const HomePages = () => {
             <span className={css.spanC}>s</span>
             <span className={css.spanI}>i </span>:
           </h4>
-          <ul className={css.listAnnouncement}>
-            <li className={css.titleList}>
-              <NavLink to="/announcement/auto" className={css.listTitle}>
-                <img src={auto} alt="auto" className={css.img} />
-                Авто
-              </NavLink>
+          <ul className={css.containerAnnouncement}>
+            <li>
+              <ul className={css.containerListAnnouncement}>
+                <li className={css.titleList}>
+                  <NavLink to="/announcement/auto" className={css.listTitle}>
+                    <img src={auto} alt="auto" className={css.img} />
+                    Авто
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/announcement/work" className={css.listTitle}>
+                    <img src={work} alt="робота" className={css.img} />
+                    Робота
+                  </NavLink>
+                </li>
+              </ul>
             </li>
             <li>
-              <NavLink to="/announcement/work" className={css.listTitle}>
-                <img src={work} alt="робота" className={css.img} />
-                Робота
-              </NavLink>
+              <ul className={css.containerListAnnouncement}>
+                <li>
+                  <NavLink to="/announcement/housing" className={css.listTitle}>
+                    <img src={housing} alt="нерухомість" className={css.img} />
+                    Нерухомість
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/announcement/garden" className={css.listTitle}>
+                    <img src={garden} alt="сад та город" className={css.img} />
+                    сад та город
+                  </NavLink>
+                </li>
+              </ul>
             </li>
             <li>
-              <NavLink to="/announcement/housing" className={css.listTitle}>
-                <img src={housing} alt="нерухомість" className={css.img} />
-                Нерухомість
-              </NavLink>
+              <ul className={css.containerListAnnouncement}>
+                <li>
+                  <NavLink
+                    to="/announcement/services"
+                    className={css.listTitle}
+                  >
+                    <img src={services} alt="послуги" className={css.img} />
+                    Послуги
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/announcement/animals" className={css.listTitle}>
+                    <img src={animals} alt="тварини" className={css.img} />
+                    Тварини
+                  </NavLink>
+                </li>
+              </ul>
             </li>
             <li>
-              <NavLink to="/announcement/services" className={css.listTitle}>
-                <img src={services} alt="послуги" className={css.img} />
-                Послуги
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/announcement/animals" className={css.listTitle}>
-                <img src={animals} alt="тварини" className={css.img} />
-                Тварини
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/announcement/differents" className={css.listTitle}>
-                <img src={differents} alt="різне" className={css.img} />
-                Різне
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/announcement/gifts" className={css.listTitle}>
-                <img src={gifts} alt="дарую" className={css.img} />
-                Дарую
-              </NavLink>
+              <ul className={css.containerListAnnouncement}>
+                <li>
+                  <NavLink
+                    to="/announcement/differents"
+                    className={css.listTitle}
+                  >
+                    <img src={differents} alt="різне" className={css.img} />
+                    Різне
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/announcement/gifts" className={css.listTitle}>
+                    <img src={gifts} alt="дарую" className={css.img} />
+                    Дарую
+                  </NavLink>
+                </li>
+              </ul>
             </li>
           </ul>
         </div>
+        <section className={css.containerSectionOne}>
+          <div className={css.containerBaner}>
+            <img src={banerOne} className={css.banerImage} />
+            <p className={css.textBanerOneTitle}>Віталій</p>
+            <p className={css.textBanerOneText}>т. 050-632-55-95</p>
+          </div>
+          <div className={css.containerBaner}>Baner 2</div>
+        </section>
+        <section className={css.containerSectionTwo}>
+          <div className={css.containerBaner}>Baner 3</div>
+          <div className={css.containerBaner}>Baner 4</div>
+        </section>
+        {/* <section></section> */}
+        {/* <section></section> */}
       </div>
     );
 }

@@ -19,6 +19,8 @@
   --bg-color-grey: rgba(176, 53, 53, 0.45);
   --bg-color-grey-light: rgba(176, 53, 53, 0.05);
 
+  --bg-color-stub: rgba(244, 198, 198, 0.15);
+
   --color-button-green: rgb(87, 197, 53);
   --color-button-blue:rgb(157, 102, 239);
   --color-button-red:rgb(236, 26, 26);

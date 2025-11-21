@@ -29,6 +29,7 @@ import DoneAuth from "./components/Auth/DoneAuth/DoneAuth.jsx";
 import { AdminPages } from "./pages/AdminPages/AdminPages.jsx";
 import { AdminUserPages } from "./pages/AdminUserPages/AdminUserPages.jsx";
 import DoneUser from "./components/DoneUser/DoneUser.jsx";
+import GardenComponent from "./components/ProductAnnouncement/GardenComponent/GardenComponent.jsx";
 
 // http://localhost:3000/users
 // http://localhost:3000/announcements
@@ -44,6 +45,7 @@ function App() {
           <Route path="auto" element={<AutoComponent />} />
           <Route path="work" element={<WorkComponent />} />
           <Route path="housing" element={<HousingComponent />} />
+          <Route path="garden" element={<GardenComponent />} />
           <Route path="animals" element={<AnimalsComponent />} />
           <Route path="services" element={<ServicesComponent />} />
           <Route path="differents" element={<DifferentsComponent />} />
