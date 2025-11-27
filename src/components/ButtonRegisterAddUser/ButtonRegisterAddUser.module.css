@@ -26,6 +26,7 @@ button{
  
 
 .red{
+    font-size: 10px;
     background-color: var(--color-button-red);
 }
 

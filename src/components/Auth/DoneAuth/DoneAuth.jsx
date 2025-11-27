@@ -10,9 +10,9 @@ export default function DoneAuth() {
 
   return (
     <div className={css.containerClose}>
-      <p className={css.green}>Done!</p>
+      <p className={css.green}>Зареєстровано!</p>
       <button type="button" onClick={handleClick}>
-        Cencel
+        Ок
       </button>
     </div>
   );

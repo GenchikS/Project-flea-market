@@ -1,50 +1,41 @@
 import { useNavigate } from "react-router-dom";
-import css from "./RegisterAddUser.module.css";
+import css from "./LoginUser.module.css";
 import { Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import { useId } from "react";
-import ButtonRegisterAddUser from "../ButtonRegisterAddUser/ButtonRegisterAddUser.jsx";
-import { fetchArticleRegisterUser } from "../../api/articles-api.js";
+import ButtonRegisterAddUser from "../../../ButtonRegisterAddUser/ButtonRegisterAddUser.jsx";
+import { fetchArticleLoginUser } from "../../../../api/articles-api.js";
 
 const validationUserSchema = Yup.object().shape({
-  name: Yup.string()
-    .min(2, "Занадто коротке!")
-    .max(15, "Занадто довге")
-    .required("Обов'язково!"),
-  email: Yup.string().email().required("Обов'язково!"),
-  password: Yup.string().min(5, "Занадто коротке!").required("Обов'язково!"),
+    email: Yup.string().email().required("Обов'язково!"),
+    password: Yup.string().min(5, "Занадто коротке!").required("Обов'язково!"),
 });
 
-export default function RegisterAddUser() {
+export default function LoginUser() {
   const navigate = useNavigate();
-// console.log(`pathTo`, pathTo);
-
+  
   const initialValues = {
-    name: "",
     email: "",
     password: "",
   };
 
-  const nameFieldId = useId();
   const emailFieldId = useId();
   const passwordFieldId = useId();
 
   const hahdleSubmit = async (value, actions) => {
     console.log(`value`, value);
-    const { name, email, password } = value;
-    const nameEnd = name.toLowerCase();
+    const {email, password } = value;
     const emailEnd = email.toLowerCase();
     const passwordEnd = password.toLowerCase();
 
-    const userAdd = await fetchArticleRegisterUser({
-      name: nameEnd,
+    const userAdd = await fetchArticleLoginUser({
       email: emailEnd,
       password: passwordEnd,
     });
-    console.log(`userAdd`, userAdd);
+    // console.log(`userAdd`, userAdd);
     // console.log(`value`, value);
     actions.resetForm();
-    navigate(`/auth/done`);
+    navigate(`/`);
   };
 
   return (
@@ -55,20 +46,7 @@ export default function RegisterAddUser() {
         validationSchema={validationUserSchema}
       >
         <Form className={css.formContainer}>
-          <div className={css.listContainer}>
-            <p className={css.markerRedName}>*</p>
-            <label className={css.label} htmlFor={nameFieldId}>
-              ім'я
-            </label>
-            <Field
-              className={css.username}
-              type="text"
-              name="name"
-              id={nameFieldId}
-              placeholder="вкажіть ім'я"
-            />
-          </div>
-          <div className={css.listContainer}>
+        <div className={css.listContainer}>
             <p className={css.markerRedEmail}>*</p>
             <label className={css.label} htmlFor={emailFieldId}>
               email
@@ -78,7 +56,6 @@ export default function RegisterAddUser() {
               type="email"
               name="email"
               id={emailFieldId}
-              placeholder="email@email.com"
             />
           </div>
           <div className={css.listContainer}>
@@ -91,7 +68,6 @@ export default function RegisterAddUser() {
               type="text"
               name="password"
               id={passwordFieldId}
-              placeholder="мін 6 символів"
             />
           </div>
           <ButtonRegisterAddUser />

@@ -30,12 +30,14 @@ import { AdminPages } from "./pages/AdminPages/AdminPages.jsx";
 import { AdminUserPages } from "./pages/AdminUserPages/AdminUserPages.jsx";
 import DoneUser from "./components/DoneUser/DoneUser.jsx";
 import GardenComponent from "./components/ProductAnnouncement/GardenComponent/GardenComponent.jsx";
+import ErrorUser from "./components/User/FormUserData/ErrorUser/ErrorUser.jsx";
 
 // http://localhost:3000/users
 // http://localhost:3000/announcements
 function App() {
   const [marker, setMarker] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [error, setError] = useState(``)
 
   return (
     <div className={css.containerApp}>
@@ -138,12 +140,19 @@ function App() {
               <DeleteUser
                 pathTo={"/admin/users"}
                 setIsModalOpen={setIsModalOpen}
+                setError={setError}
               />
             }
           />
           <Route
             path="done"
             element={<DoneUser setIsModalOpen={setIsModalOpen} />}
+          />
+          <Route
+            path="error"
+            element={
+              <ErrorUser error={error} setIsModalOpen={setIsModalOpen} />
+            }
           />
         </Route>
 

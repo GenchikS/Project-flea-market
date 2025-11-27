@@ -14,10 +14,10 @@ export const AppBar = () => {
             sVs
           </NavLink>
           <NavLink className={appBarClass} to="/auth/register">
-            Register
+            Реєстрація
           </NavLink>
           <NavLink className={appBarClass} to="/auth/login">
-            Login
+            Вхід
           </NavLink>
         </nav>
         <Outlet />

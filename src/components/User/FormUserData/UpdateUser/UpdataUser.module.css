@@ -25,7 +25,7 @@
     font-size: 10px;
     position: relative;
     top:6px;
-    left: 22px;
+    left: 38px;
     color: red;
 }
 
@@ -37,6 +37,14 @@
     color: green;
 }
 
+.markerNameGreen{
+        font-size: 10px;
+    position: relative;
+    top:8px;
+    left: 16px;
+    color: green;
+}
+
 .label{
     font-size: 8px;
     margin-left: 10px;
@@ -44,7 +52,7 @@
     margin-bottom: 2px;
 }
 
-.userId, .username, .email, .phone{
+.userId, .username, .email, .password, .phone{
     font-size: 12px;
     border: 1px solid var(--color-border);
     outline: none;
@@ -54,9 +62,9 @@
     cursor: pointer;
 }
 
-.userId:hover, .username:hover, .email:hover, .phone:hover{
+.userId:hover, .username:hover, .email:hover, .password:hover, .phone:hover{
     background-color: var(--bg-color-hover);
 }
-.userId:focus, .username:focus, .email:focus, .phone:focus{
+.userId:focus, .username:focus, .email:focus, .password:hover, .phone:focus{
     background-color: var(--bg-color-focus);
 }

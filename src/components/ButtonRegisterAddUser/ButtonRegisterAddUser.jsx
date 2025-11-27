@@ -5,12 +5,12 @@ export default function ButtonRegisterAddUser() {
   return (
     <div className={css.containerModalUser}>
       <button className={css.green} type="submit">
-        Done
+        Ок
       </button>
       <nav>
         <NavLink to="/">
           <button className={css.red} type="button">
-            Cencel
+            Скасувати
           </button>
         </NavLink>
       </nav>

@@ -18,14 +18,6 @@
     align-items: start;
 }
 
-.markerRedName{
-    font-size: 10px;
-    position: relative;
-    top:6px;
-    left: 30px;
-    color: red;
-}
-
 
 .markerRedEmail{
     font-size: 10px;
@@ -43,14 +35,6 @@
     color: red;
 }
 
-/* .markerGreen{
-    font-size: 10px;
-    position: relative;
-    top:8px;
-    left: 42px;
-    color: green;
-} */
-
 .label{
     font-size: 10px;
     margin-left: 10px;
@@ -58,7 +42,7 @@
     margin-bottom: 2px;
 }
 
-.username, .email, .password{
+.email, .password{
     font-size: 12px;
     border: 1px solid var(--color-border);
     outline: none;
@@ -68,10 +52,9 @@
     cursor: pointer;
 }
 
-.username:hover, .email:hover, .password:hover{
+.email:hover, .password:hover{
     background-color: var(--bg-color-hover);
 }
-.username:focus, .email:focus, .password:focus{
+.email:focus, .password:focus{
     background-color: var(--bg-color-focus);
 }
-

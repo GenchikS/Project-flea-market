@@ -31,8 +31,8 @@ export const fetchArticleUserId = async (id) => {
 
 export const fetchArticleAddUser = async (payload) => {
   // console.log(`payload`, payload)
-    const response = await axios.post(`/user/add`, payload);
-    // console.log(`response`, response);
+  const response = await axios.post(`/user/add`, payload);
+  // console.log(`response`, response);
     return response.data.data;
 }
 
@@ -57,11 +57,33 @@ const response = await axios.patch(`/user/updata/${id}`, payloadObject);
 
 export const fetchArticleDeleteUser = async (id) => {
   // console.log(`id`, id)
+  try {
     const response = await axios.delete(`/user/delete/${id}`);
-  // console.log(`response`, response.data.data);
-  if (!response) return;
-return;
+    // console.log(`response`, response);
+    return response;
+  } catch (error) {
+    // console.log(`error`, error.response.data);
+    return error.response.data;
+  }
+  
 }
 
+
+export const fetchArticleRegisterUser = async (payload) => {
+  console.log(`payload`, payload)
+  const response = await axios.post(`/auth/register`, payload);
+  if (!response) {
+    console.log(`error`);
+  }
+  console.log(`response`, response);
+  return response.data.data;
+};
+
+export const fetchArticleLoginUser = async (payload) => {
+  console.log(`payload login`, payload);
+  // const response = await axios.post(`/auth/login`, payload);
+  // console.log(`response login`, response);
+  return 
+}
 
 

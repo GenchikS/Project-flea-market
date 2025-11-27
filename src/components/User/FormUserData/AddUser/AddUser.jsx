@@ -22,7 +22,7 @@ export default function AddUser({ pathTo, setIsModalOpen }) {
   const [AddUserValue, setAddUserValue] = useState({
     name: "",
     email: "",
-    phone: "",
+    password: "",
   });
 
   // const [nameUser, setNameUser] = useState("");
@@ -37,7 +37,7 @@ export default function AddUser({ pathTo, setIsModalOpen }) {
 
   const nameFieldId = useId();
   const emailFieldId = useId();
-  const phoneFieldId = useId();
+  const passwordFieldId = useId();
 
   const handleChange = (event) => {
     // event.preventDefault();
@@ -49,11 +49,11 @@ export default function AddUser({ pathTo, setIsModalOpen }) {
 
   const hahdleSubmit = (event) => {
     event.preventDefault();
-    const { name, email, phone } = AddUserValue;
+    const { name, email, password } = AddUserValue;
     const nameEnd = name.toLowerCase();
     const emailEnd = email.toLowerCase();
-    const phonelEnd = phone.toLowerCase();
-    const value = { name: nameEnd, email: emailEnd, phone: phonelEnd };
+    const passwordEnd = password.toLowerCase();
+    const value = { name: nameEnd, email: emailEnd, password: passwordEnd };
     console.log(`value`, value);
     fetchArticleAddUser(value);
     document.formUser.reset();
@@ -70,7 +70,7 @@ export default function AddUser({ pathTo, setIsModalOpen }) {
         type="submit"
         onSubmit={hahdleSubmit}
       >
-        <p className={css.markerRed}>*</p>
+        <p className={css.markerNameRed}>*</p>
         <label className={css.label} htmlFor={nameFieldId}>
           ім'я
         </label>
@@ -92,23 +92,20 @@ export default function AddUser({ pathTo, setIsModalOpen }) {
           value={AddUserValue.email}
           onChange={handleChange}
         />
-        <p className={css.markerGreen}>*</p>
-        <label className={css.label} htmlFor={phoneFieldId}>
-          телефон
+        <p className={css.markerRed}>*</p>
+        <label className={css.label} htmlFor={passwordFieldId}>
+          пароль
         </label>
         <input
-          className={css.userPhone}
+          className={css.userPassword}
           type="text"
-          name="phone"
-          value={AddUserValue.phone}
+          name="password"
+          value={AddUserValue.password}
           onChange={handleChange}
         />
-        
-        <ButtonModalUser
-          pathTo={pathTo}
-          setIsModalOpen={setIsModalOpen}
-        />
-    </form>
-   </div>
+
+        <ButtonModalUser pathTo={pathTo} setIsModalOpen={setIsModalOpen} />
+      </form>
+    </div>
   );
 }

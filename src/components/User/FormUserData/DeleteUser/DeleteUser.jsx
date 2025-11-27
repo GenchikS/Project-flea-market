@@ -3,19 +3,25 @@ import css from "./DeleteUser.module.css";
 import { fetchArticleDeleteUser } from "../../../../api/articles-api.js";
 import ButtonModalUser from "../ButtonModalUser/ButtonModalUser.jsx";
 
-export const DeleteUser = ({ pathTo, setIsModalOpen }) =>{
+export const DeleteUser = ({ pathTo, setIsModalOpen, setError }) => {
   const navigate = useNavigate();
-  const handleSubmit = (evt) => {
+  const handleSubmit = async (evt) => {
     evt.preventDefault();
     const form = evt.target;
     const idUser = evt.target.id.value;
-    // console.log(`idAnnouncement`, idAnnouncement);
     if (idUser.trim() === "") {
       alert("Please enter search term!");
       return;
     }
-    const name = idUser.toLowerCase();
-    fetchArticleDeleteUser(name);
+    const id = idUser.toLowerCase();
+    const user = await fetchArticleDeleteUser(id);
+    if (user.message) {
+      setError(user.data);
+      // console.log(`user`, user.data);
+      form.reset();
+      return navigate(`/admin/users/error`);
+    }
+
     form.reset();
     navigate(`/admin/users/done`);
   };
@@ -35,4 +41,4 @@ export const DeleteUser = ({ pathTo, setIsModalOpen }) =>{
       </form>
     </div>
   );
-}
+};

@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     width: 222px;
+    height: 260px;
     text-align: center;
     border: 1px solid var(--border-color-black);
     border-radius: 14px;
@@ -11,69 +12,6 @@
 }
 
 .title{
-    font-size: 20px;
-    margin-bottom: 16px;
-}
-
-.containerModalAddUser{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 236px;
-}
-
-.formContainer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 220px;
-    height: 24px;
-    gap: 8px;
-}
-
-.listContainer{
-    display: flex;
-    height: 90px;
-    flex-direction: column;
-    align-items: start;
-}
-
-.markerRed{
-    font-size: 10px;
-    position: relative;
-    top:6px;
-    left: 40px;
-    color: red;
-}
-
-.markerGreen{
-    font-size: 10px;
-    position: relative;
-    top:8px;
-    left: 42px;
-    color: green;
-}
-
-.label{
-    font-size: 10px;
-    margin-left: 10px;
-    opacity: 80;
-    margin-bottom: 2px;
-}
-
-.username, .email, .phone{
-    font-size: 12px;
-    border: 1px solid var(--color-border);
-    outline: none;
-    border-radius: 14px;
-    padding: 6px 12px;
-    background-color: var(--bg-color);
-    cursor: pointer;
-}
-
-.username:hover, .email:hover, .phone:hover{
-    background-color: var(--bg-color-hover);
-}
-.username:focus, .email:focus, .phone:focus{
-    background-color: var(--bg-color-focus);
+    font-size: 14px;
+    margin-bottom: 10px;
 }

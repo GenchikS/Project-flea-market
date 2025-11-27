@@ -5,8 +5,8 @@ import RegisterAddUser from "../../RegisterAddUser/RegisterAddUser.jsx";
 export default function RegisterComponent() {
   return (
     <div className={css.containerAddUser}>
-      <h3 className={css.title}>Form register user</h3>
-        <RegisterAddUser pathTo={"/auth/login"}/>
+      <h3 className={css.title}>Форма реєстрації користувача</h3>
+        <RegisterAddUser/>
     </div>
   );
 }
