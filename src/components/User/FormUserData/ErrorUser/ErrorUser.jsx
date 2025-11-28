@@ -11,7 +11,7 @@ export default function ErrorUser({ setIsModalOpen, error }) {
 
   return (
     <div className={css.containerClose}>
-      <p className={css.red}>{error}!</p>
+      <p className={css.red}>{error}</p>
       <button className={css.buttonRed} type="button" onClick={handleClick}>
         Ok
       </button>

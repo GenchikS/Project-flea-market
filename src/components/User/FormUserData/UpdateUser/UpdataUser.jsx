@@ -11,14 +11,13 @@ const validationUserSchema = Yup.object().shape({
   email: Yup.string().email(),
 });
 
-export default function UpdataUser({ pathTo, setIsModalOpen }) {
+export default function UpdataUser({ pathTo, setIsModalOpen, setError }) {
   const navigate = useNavigate();
 
   const initialValues = {
     id: "",
     name: "",
     email: "",
-    phone: "",
     password: "",
     phone: "",
   };
@@ -29,7 +28,7 @@ export default function UpdataUser({ pathTo, setIsModalOpen }) {
   const passwordFieldId = useId();
   const phoneFieldId = useId();
 
-  const hahdleSubmit = (value, actions) => {
+  const hahdleSubmit = async (value, actions) => {
     // console.log(`value`, value);
     const { id, name, email, password, phone } = value;
     const nameEnd = name.toLowerCase();
@@ -37,14 +36,21 @@ export default function UpdataUser({ pathTo, setIsModalOpen }) {
     const passwordEnd = password.toLowerCase();
     const phoneEnd = phone.toLowerCase();
 
-    fetchArticleUpdataUser({
+    const user = await fetchArticleUpdataUser({
       id: id,
       name: nameEnd,
       email: emailEnd,
       password: passwordEnd,
       phone: phoneEnd,
     });
-    // console.log(`value`, value);
+
+    if (user.message) {
+      setError(user.data);
+      // console.log(`user`, user.data);
+      actions.resetForm();
+      return navigate(`/admin/users/error`);
+    }
+
     actions.resetForm();
     navigate(`/admin/users/done`);
   };

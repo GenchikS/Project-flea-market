@@ -131,6 +131,7 @@ function App() {
                 marker={marker}
                 pathTo={"/admin/users"}
                 setIsModalOpen={setIsModalOpen}
+                setError={setError}
               />
             }
           />

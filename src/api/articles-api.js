@@ -37,22 +37,32 @@ export const fetchArticleAddUser = async (payload) => {
 }
 
 export const fetchArticleUpdataUser = async (payload) => {
-  const { id } = payload;
   // console.log(`payload`, payload)
-  const responseSorceId = await axios.get(`/users/${id}`);
-  const responseEnd = responseSorceId.data.data;
-  // console.log(`responseEnd`, responseEnd);
- 
-  const payloadObject = {
-    email: payload.email.trim().length > 0 ? payload.email : responseEnd.email,
-    name: payload.name.trim().length > 0 ? payload.name : responseEnd.name,
-    phone: payload.phone.trim().length > 0 ? payload.phone : responseEnd.phone,
-  };
+  const { id } = payload;
+  try {
+    const responseSorceId = await axios.get(`/users/${id}`);
+    const responseEnd = responseSorceId.data.data;
+    // console.log(`responseEnd`, responseEnd);
 
-  // console.log(`payloadObject`, payloadObject);
-const response = await axios.patch(`/user/updata/${id}`, payloadObject);
-  // console.log(`response`, response);
-  return response.data.data;
+    const payloadObject = {
+      email:
+        payload.email.trim().length > 0 ? payload.email : responseEnd.email,
+      name: payload.name.trim().length > 0 ? payload.name : responseEnd.name,
+      password:
+        payload.password.trim().length > 0
+          ? payload.password
+          : responseEnd.password,
+      phone:
+        payload.phone.trim().length > 0 ? payload.phone : responseEnd.phone,
+    };
+    // console.log(`payloadObject`, payloadObject);
+    const response = await axios.patch(`/user/updata/${id}`, payloadObject);
+    // console.log(`response`, response);
+    return response.data.data;
+  } catch (error) {
+    // console.log(`error updata`, error);
+    return error.response.data;
+  }
 }
 
 export const fetchArticleDeleteUser = async (id) => {
