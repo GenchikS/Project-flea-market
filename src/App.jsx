@@ -31,6 +31,7 @@ import { AdminUserPages } from "./pages/AdminUserPages/AdminUserPages.jsx";
 import DoneUser from "./components/DoneUser/DoneUser.jsx";
 import GardenComponent from "./components/ProductAnnouncement/GardenComponent/GardenComponent.jsx";
 import ErrorUser from "./components/User/FormUserData/ErrorUser/ErrorUser.jsx";
+import ErrorAnnouncement from "./components/Announcement/FormAnnouncementData/ErrorAnnouncement/ErrorAnnouncement.jsx";
 
 // http://localhost:3000/users
 // http://localhost:3000/announcements
@@ -76,6 +77,7 @@ function App() {
                 marker={marker}
                 pathTo={"/admin"}
                 setIsModalOpen={setIsModalOpen}
+                setError={setError}
               />
             }
           />
@@ -86,6 +88,7 @@ function App() {
                 marker={marker}
                 pathTo={"/admin"}
                 setIsModalOpen={setIsModalOpen}
+                setError={setError}
               />
             }
           />
@@ -95,12 +98,22 @@ function App() {
               <DeleteAnnouncement
                 pathTo={"/admin"}
                 setIsModalOpen={setIsModalOpen}
+                setError={setError}
               />
             }
           />
           <Route
             path="announcement/done"
             element={<DoneAnnouncement setIsModalOpen={setIsModalOpen} />}
+          />
+          <Route
+            path="announcement/error"
+            element={
+              <ErrorAnnouncement
+                error={error}
+                setIsModalOpen={setIsModalOpen}
+              />
+            }
           />
         </Route>
         <Route

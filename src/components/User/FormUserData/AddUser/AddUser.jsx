@@ -54,7 +54,7 @@ export default function AddUser({ pathTo, setIsModalOpen }) {
     const emailEnd = email.toLowerCase();
     const passwordEnd = password.toLowerCase();
     const value = { name: nameEnd, email: emailEnd, password: passwordEnd };
-    console.log(`value`, value);
+    // console.log(`value`, value);
     fetchArticleAddUser(value);
     document.formUser.reset();
     navigate(`/admin/users/done`);

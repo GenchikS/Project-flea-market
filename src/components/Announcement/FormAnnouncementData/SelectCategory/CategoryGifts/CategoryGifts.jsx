@@ -4,7 +4,6 @@ import PurchaseSale from "../PurchaseSale/PurchaseSale.jsx";
 
 
 export default function CategoryGifts({ setCategory, category, marker }) {
-  // const { setCategory } = set;
   const selectCategoryId = useId();
   return (
     <div className={css.containerCategory}>

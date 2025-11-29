@@ -8,20 +8,26 @@ import ButtonModalAnnouncement from "../ButtonModalAnnouncement/ButtonModalAnnou
 //   id: Yup.string().required("Requred!"),
 // });
 
-export const DeleteAnnouncement = ({ pathTo, setIsModalOpen }) => {
+export const DeleteAnnouncement = ({ pathTo, setIsModalOpen, setError }) => {
   const navigate = useNavigate();
 
-  const handleSubmit = (evt) => {
+  const handleSubmit = async (evt) => {
     evt.preventDefault();
     const form = evt.target;
     const idAnnouncement = evt.target.id.value;
     // console.log(`idAnnouncement`, idAnnouncement);
     if (idAnnouncement.trim() === "") {
-      alert("Please enter search term!");
+      alert("Вкажіть id оголошення!");
       return;
     }
-    const name = idAnnouncement.toLowerCase();
-    fetchArticleDeleteAnnouncement(name);
+    const id = idAnnouncement.toLowerCase();
+
+    const responseDelete = await fetchArticleDeleteAnnouncement(id);
+    if (responseDelete.message) {
+      setError(responseDelete.data);
+      return navigate(`/admin/announcement/error`);
+    }
+
     form.reset();
     navigate(`/admin/announcement/done`);
   };

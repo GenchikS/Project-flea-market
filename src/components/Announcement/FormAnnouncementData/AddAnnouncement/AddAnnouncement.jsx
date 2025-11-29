@@ -16,11 +16,7 @@ import { fetchArticleAddAnnouncement } from "../../../../api/articlesAnnouncemen
 import CategoryGarden from "../SelectCategory/CategoryGarden/CategoryGarden.jsx";
 // import FormAddPhoto from "../FormAddPhoto/FormAddPhoto.jsx";
 
-export default function AddAnnouncement({
-  marker,
-  pathTo,
-  setIsModalOpen,
-}) {
+export default function AddAnnouncement({ marker, pathTo, setIsModalOpen, setError }) {
   const [idUser, setIdUser] = useState("");
   const [chapter, setChapter] = useState("");
   const [category, setCategory] = useState("");
@@ -28,16 +24,22 @@ export default function AddAnnouncement({
   const [price, setPrice] = useState("");
   const [yar, setYar] = useState("");
   const [text, setText] = useState("");
-  
+
   // const [photo, setPhoto] = useState("");
 
   const navigate = useNavigate();
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const value = { idUser, chapter, category, purchaseSale, price, text, yar };
+    const announcement = await fetchArticleAddAnnouncement(value);
+    // console.log(`announcement`, announcement);
+    if (announcement.message) {
+          setError(announcement.data);
+          return navigate(`/admin/announcement/error`);
+    }
+  
     document.formAnnouncement.reset();
-    fetchArticleAddAnnouncement(value);
     navigate(`/admin/announcement/done`);
     return;
   };
@@ -66,7 +68,7 @@ export default function AddAnnouncement({
           />
         )}
         {chapter === "робота" && (
-          <CategoryWork set={{ setCategory }} category={category} />
+          <CategoryWork setCategory={setCategory} category={category} />
         )}
         {chapter === "нерухомість" && (
           <CategoryHousing

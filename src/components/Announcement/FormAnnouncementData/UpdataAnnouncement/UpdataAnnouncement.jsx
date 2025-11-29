@@ -15,20 +15,20 @@ import CategoryGifts from "../SelectCategory/CategoryGifts/CategoryGifts.jsx";
 import {  fetchArticleUpdataAnnouncement } from "../../../../api/articlesAnnouncements-api.js";
 import CategoryGarden from "../SelectCategory/CategoryGarden/CategoryGarden.jsx";
 
-export default function UpdataAnnouncement({ marker, pathTo, setIsModalOpen }) {
+export default function UpdataAnnouncement({ marker, pathTo, setIsModalOpen, setError }) {
   const [idAnnoun, setIdAnnoun] = useState("");
   const [chapter, setChapter] = useState("");
   const [category, setCategory] = useState("");
   const [purchaseSale, setPurchaseSale] = useState("");
-   const [price, setPrice] = useState("");
-   const [yar, setYar] = useState("");
+  const [price, setPrice] = useState("");
+  const [yar, setYar] = useState("");
   const [text, setText] = useState("");
   // const [photo, setPhoto] = useState("");
   // const [objectAll, setObjectAll] = useState({});
-  
+
   const navigate = useNavigate();
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     // const searche = {
     //   idAnnoun,
@@ -39,8 +39,23 @@ export default function UpdataAnnouncement({ marker, pathTo, setIsModalOpen }) {
     //   yar, text,
     // };
     // console.log(`evt submit`, searche);
+
+    const responseAnnouncement = await fetchArticleUpdataAnnouncement({
+      idAnnoun: idAnnoun,
+      chapter: chapter,
+      category: category,
+      purchaseSale: purchaseSale,
+      price: price,
+      yar: yar,
+      text: text,
+    });
+    // console.log(`responseAnnouncement`, responseAnnouncement);
+    if (responseAnnouncement.message) {
+      setError(responseAnnouncement.data);
+      return navigate(`/admin/announcement/error`);
+    }
+
     document.formAnnouncement.reset();
-    fetchArticleUpdataAnnouncement({ idAnnoun: idAnnoun, chapter: chapter, category: category, purchaseSale: purchaseSale, price: price, yar: yar, text: text });
     navigate(`/admin/announcement/done`);
     return;
   };
@@ -71,7 +86,7 @@ export default function UpdataAnnouncement({ marker, pathTo, setIsModalOpen }) {
         )}
         {chapter === "робота" && (
           <CategoryWork
-            set={{ setCategory }}
+            setCategory={setCategory}
             category={category}
             marker={marker}
           />
@@ -116,7 +131,7 @@ export default function UpdataAnnouncement({ marker, pathTo, setIsModalOpen }) {
         )}
         {chapter === "дарую" && (
           <CategoryGifts
-            set={{ setCategory, setPurchaseSale }}
+            setCategory={setCategory}
             category={category}
             purchaseSale={purchaseSale}
             marker={marker}
