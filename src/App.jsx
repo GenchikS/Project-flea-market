@@ -5,10 +5,8 @@ import css from "./App.module.css";
 import {DeleteUser} from "./components/User/FormUserData/DeleteUser/DeleteUser.jsx";
 import AddUser from "./components/User/FormUserData/AddUser/AddUser.jsx";
 import UpdataUser from "./components/User/FormUserData/UpdateUser/UpdataUser.jsx";
-// import AnnouncementPages from "./pages/AnnouncementPages/AnnouncementPages.jsx";
 import AddAnnouncement from "./components/Announcement/FormAnnouncementData/AddAnnouncement/AddAnnouncement.jsx";
 import DoneAnnouncement from "./components/Announcement/FormAnnouncementData/DoneAnnouncement/DoneAnnouncement.jsx";
-// import LoginPages from "./components/Auth/LoginComponent/LoginComponent.jsx";
 import UpdataAnnouncement from "./components/Announcement/FormAnnouncementData/UpdataAnnouncement/UpdataAnnouncement.jsx";
 import { useState } from "react";
 import { DeleteAnnouncement } from "./components/Announcement/FormAnnouncementData/DeleteAnnouncement/DeleteAnnouncement.jsx";
@@ -23,8 +21,6 @@ import AnimalsComponent from "./components/ProductAnnouncement/AnimalsComponent/
 import DifferentsComponent from "./components/ProductAnnouncement/DifferentsComponent/DifferentsComponent.jsx";
 import GiftsComponent from "./components/ProductAnnouncement/GiftsComponent/GiftsComponent.jsx";  
 import { AuthPages } from "./pages/AuthPages/AuthPages.jsx";
-import LoginComponent from "./components/Auth/LoginComponent/LoginComponent.jsx";
-import RegisterComponent from "./components/Auth/RegisterComponent/RegisterComponent.jsx";
 import DoneAuth from "./components/Auth/DoneAuth/DoneAuth.jsx";
 import { AdminPages } from "./pages/AdminPages/AdminPages.jsx";
 import { AdminUserPages } from "./pages/AdminUserPages/AdminUserPages.jsx";
@@ -32,6 +28,9 @@ import DoneUser from "./components/DoneUser/DoneUser.jsx";
 import GardenComponent from "./components/ProductAnnouncement/GardenComponent/GardenComponent.jsx";
 import ErrorUser from "./components/User/FormUserData/ErrorUser/ErrorUser.jsx";
 import ErrorAnnouncement from "./components/Announcement/FormAnnouncementData/ErrorAnnouncement/ErrorAnnouncement.jsx";
+import ErrorAuth from "./components/Auth/ErrorAuth/ErrorAuth.jsx";
+import RegisterAddUser from "./components/Auth/RegisterAddUser/RegisterAddUser.jsx";
+import LoginUser from "./components/Auth/LoginUser/LoginUser.jsx";
 
 // http://localhost:3000/users
 // http://localhost:3000/announcements
@@ -54,10 +53,20 @@ function App() {
           <Route path="differents" element={<DifferentsComponent />} />
           <Route path="gifts" element={<GiftsComponent />} />
         </Route>
+
         <Route path="/auth" element={<AuthPages />}>
-          <Route path="login" element={<LoginComponent />} />
-          <Route path="register" element={<RegisterComponent />} />
+          <Route path="login" element={<LoginUser />} />
+          <Route
+            path="register"
+            element={<RegisterAddUser setError={setError} />}
+          />
           <Route path="done" element={<DoneAuth />} />
+          <Route
+            path="error"
+            element={
+              <ErrorAuth error={error} setIsModalOpen={setIsModalOpen} />
+            }
+          />
         </Route>
         <Route
           path="/admin"
@@ -134,6 +143,7 @@ function App() {
                 marker={marker}
                 pathTo={"/admin/users"}
                 setIsModalOpen={setIsModalOpen}
+                setError={setError}
               />
             }
           />

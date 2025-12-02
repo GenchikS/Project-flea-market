@@ -31,9 +31,15 @@ export const fetchArticleUserId = async (id) => {
 
 export const fetchArticleAddUser = async (payload) => {
   // console.log(`payload`, payload)
-  const response = await axios.post(`/user/add`, payload);
-  // console.log(`response`, response);
+try {
+    const response = await axios.post(`/user/add`, payload);
+    console.log(`response`, response);
     return response.data.data;
+} catch (error) {
+  return error.response.data;
+}
+
+
 }
 
 export const fetchArticleUpdataUser = async (payload) => {
@@ -80,13 +86,13 @@ export const fetchArticleDeleteUser = async (id) => {
 
 
 export const fetchArticleRegisterUser = async (payload) => {
-  console.log(`payload`, payload)
-  const response = await axios.post(`/auth/register`, payload);
-  if (!response) {
-    console.log(`error`);
+  // console.log(`payload`, payload)
+  try {
+    const response = await axios.post(`/auth/register`, payload);
+    return response.data.data;
+  } catch (error) {
+    return error.response.data
   }
-  console.log(`response`, response);
-  return response.data.data;
 };
 
 export const fetchArticleLoginUser = async (payload) => {

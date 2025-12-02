@@ -1,11 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import css from "./AddUser.module.css";
-import { Field, Form, Formik } from "formik";
 // import * as Yup from "yup";
 import { useId, useState } from "react";
 import { fetchArticleAddUser } from "../../../../api/articles-api.js";
 import ButtonModalUser from "../ButtonModalUser/ButtonModalUser.jsx";
-import { FormAddId } from "../../../Announcement/FormAnnouncementData/FormAddId/FormAddId.jsx";
 
 // const validationUserSchema = Yup.object().shape({
 //   name: Yup.string()
@@ -15,7 +13,7 @@ import { FormAddId } from "../../../Announcement/FormAnnouncementData/FormAddId/
 //   email: Yup.string().email().required("Requred!"),
 // });
 
-export default function AddUser({ pathTo, setIsModalOpen }) {
+export default function AddUser({ pathTo, setIsModalOpen, setError }) {
   const navigate = useNavigate();
 
   // const [idUser, setIdUser] = useState("");
@@ -45,9 +43,9 @@ export default function AddUser({ pathTo, setIsModalOpen }) {
       ...AddUserValue,
       [event.target.name]: event.target.value,
     });
-  }
+  };
 
-  const hahdleSubmit = (event) => {
+  const hahdleSubmit = async (event) => {
     event.preventDefault();
     const { name, email, password } = AddUserValue;
     const nameEnd = name.toLowerCase();
@@ -55,12 +53,21 @@ export default function AddUser({ pathTo, setIsModalOpen }) {
     const passwordEnd = password.toLowerCase();
     const value = { name: nameEnd, email: emailEnd, password: passwordEnd };
     // console.log(`value`, value);
-    fetchArticleAddUser(value);
+
+    const userAdd = await fetchArticleAddUser(value);
+      console.log(`userAdd`, userAdd.data);
+
+    if (userAdd.message) {
+      console.log(`userAdd`, userAdd.data);
+      setError(userAdd.data);
+      document.formUser.reset();
+      return navigate(`/admin/users/error`);
+    }
+
     document.formUser.reset();
-    navigate(`/admin/users/done`);
-    return;
-  }
- 
+    return navigate(`/admin/users/done`);
+  };
+
   return (
     <div className={css.containerAddUser}>
       <h3 className={css.title}>Форма додавання користувача</h3>
