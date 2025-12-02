@@ -6,14 +6,14 @@ import { useId } from "react";
 import { fetchArticleRegisterUser } from "../../../api/articles-api.js";
 import ButtonRegisterAddUser from "../../ButtonRegisterAddUser/ButtonRegisterAddUser.jsx";
 
-const validationUserSchema = Yup.object().shape({
-  name: Yup.string()
-    .min(2, "Занадто коротке!")
-    .max(15, "Занадто довге")
-    .required("Обов'язково!"),
-  email: Yup.string().email().required("Обов'язково!"),
-  password: Yup.string().min(5, "Занадто коротке!").required("Обов'язково!"),
-});
+// const validationUserSchema = Yup.object().shape({
+//   name: Yup.string()
+//     .min(2, "Занадто коротке!")
+//     .max(15, "Занадто довге")
+//     .required("Обов'язково!"),
+//   email: Yup.string().email().required("Обов'язково!"),
+//   password: Yup.string().min(5, "Занадто коротке!").required("Обов'язково!"),
+// });
 
 export default function RegisterAddUser({ setError }) {
   const navigate = useNavigate();
@@ -59,7 +59,7 @@ export default function RegisterAddUser({ setError }) {
       <Formik
         initialValues={initialValues}
         onSubmit={hahdleSubmit}
-        validationSchema={validationUserSchema}
+        // validationSchema={validationUserSchema}
       >
         <Form className={css.formContainer}>
           <div className={css.listContainer}>

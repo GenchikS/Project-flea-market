@@ -55,10 +55,8 @@ export default function AddUser({ pathTo, setIsModalOpen, setError }) {
     // console.log(`value`, value);
 
     const userAdd = await fetchArticleAddUser(value);
-      console.log(`userAdd`, userAdd.data);
-
     if (userAdd.message) {
-      console.log(`userAdd`, userAdd.data);
+      // console.log(`userAdd`, userAdd.data);
       setError(userAdd.data);
       document.formUser.reset();
       return navigate(`/admin/users/error`);

@@ -1,7 +1,5 @@
 import { Routes, Route } from "react-router-dom";
 import css from "./App.module.css";
-// import UserPages from "./pages/UserPages/UserPages.jsx";
-// import DoneUser from "./components/DoneUser/DoneUser.jsx";
 import {DeleteUser} from "./components/User/FormUserData/DeleteUser/DeleteUser.jsx";
 import AddUser from "./components/User/FormUserData/AddUser/AddUser.jsx";
 import UpdataUser from "./components/User/FormUserData/UpdateUser/UpdataUser.jsx";
@@ -31,10 +29,13 @@ import ErrorAnnouncement from "./components/Announcement/FormAnnouncementData/Er
 import ErrorAuth from "./components/Auth/ErrorAuth/ErrorAuth.jsx";
 import RegisterAddUser from "./components/Auth/RegisterAddUser/RegisterAddUser.jsx";
 import LoginUser from "./components/Auth/LoginUser/LoginUser.jsx";
+import { LogoutUser } from "./components/Auth/LogoutUser/LogoutUser.jsx";
 
 // http://localhost:3000/users
 // http://localhost:3000/announcements
 function App() {
+  const [user, setUser] = useState({});
+  const [isLogin, setIsLogin] = useState(false)
   const [marker, setMarker] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [error, setError] = useState(``)
@@ -42,8 +43,11 @@ function App() {
   return (
     <div className={css.containerApp}>
       <Routes>
-        <Route path="/" element={<HomePages />} />
-        <Route path="/announcement" element={<ProductAnnouncementPages />}>
+        <Route path="/" element={<HomePages user={user} isLogin={isLogin} />} />
+        <Route
+          path="/announcement"
+          element={<ProductAnnouncementPages user={user} isLogin={isLogin} />}
+        >
           <Route path="auto" element={<AutoComponent />} />
           <Route path="work" element={<WorkComponent />} />
           <Route path="housing" element={<HousingComponent />} />
@@ -55,10 +59,17 @@ function App() {
         </Route>
 
         <Route path="/auth" element={<AuthPages />}>
-          <Route path="login" element={<LoginUser />} />
+          <Route
+            path="login"
+            element={<LoginUser setUser={setUser} setIsLogin={setIsLogin} />}
+          />
           <Route
             path="register"
             element={<RegisterAddUser setError={setError} />}
+          />
+          <Route
+            path="logout"
+            element={<LogoutUser />}
           />
           <Route path="done" element={<DoneAuth />} />
           <Route

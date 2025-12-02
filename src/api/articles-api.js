@@ -95,11 +95,12 @@ export const fetchArticleRegisterUser = async (payload) => {
   }
 };
 
+
 export const fetchArticleLoginUser = async (payload) => {
-  console.log(`payload login`, payload);
-  // const response = await axios.post(`/auth/login`, payload);
+  // console.log(`payload login`, payload);
+  const response = await axios.post(`/auth/login`, payload);
   // console.log(`response login`, response);
-  return 
+  return response.data.data;
 }
 
 

@@ -12,117 +12,115 @@ import gifts from "../../image/gifts.png";
 import { AppBar } from "../../components/AppBar/AppBar.jsx";
 
 import banerOne from "../../imageBaner/banerOne.jpg"
+import { UserName } from "../../components/UserName/UserName.jsx";
 
-export const HomePages = () => {
-    return (
-      <div className={css.containerAll}>
-        <AppBar />
-        <div className={css.captersSvc}>
-          <h4 className={css.titleHomePage}>
-            Барахолка на <span className={css.spanS}>s</span>
-            <span className={css.spanA}>a</span>
-            <span className={css.spanV}>V</span>
-            <span className={css.spanIn}>ynt</span>
-            <span className={css.spanC}>s</span>
-            <span className={css.spanI}>i </span>:
-          </h4>
-          <ul className={css.containerAnnouncement}>
-            <li>
-              <ul className={css.containerListAnnouncement}>
-                <li className={css.titleList}>
-                  <NavLink to="/announcement/auto" className={css.listTitle}>
-                    <img src={auto} alt="авто" className={css.img} />
-                    Авто
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/announcement/work" className={css.listTitle}>
-                    <img src={work} alt="робота" className={css.img} />
-                    Робота
-                  </NavLink>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <ul className={css.containerListAnnouncement}>
-                <li>
-                  <NavLink to="/announcement/housing" className={css.listTitle}>
-                    <img src={housing} alt="нерухомість" className={css.img} />
-                    Нерухомість
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/announcement/garden" className={css.listTitle}>
-                    <img src={garden} alt="сад та город" className={css.img} />
-                    Сад та город
-                  </NavLink>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <ul className={css.containerListAnnouncement}>
-                <li>
-                  <NavLink
-                    to="/announcement/services"
-                    className={css.listTitle}
-                  >
-                    <img src={services} alt="послуги" className={css.img} />
-                    Послуги
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/announcement/animals" className={css.listTitle}>
-                    <img src={animals} alt="тварини" className={css.img} />
-                    Тварини
-                  </NavLink>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <ul className={css.containerListAnnouncement}>
-                <li>
-                  <NavLink
-                    to="/announcement/differents"
-                    className={css.listTitle}
-                  >
-                    <img src={differents} alt="різне" className={css.img} />
-                    Різне
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/announcement/gifts" className={css.listTitle}>
-                    <img src={gifts} alt="дарую" className={css.img} />
-                    Дарую
-                  </NavLink>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-        <section className={css.containerSection}>
-          <div className={css.containerBaner}>
-            <img src={banerOne} className={css.banerImage} />
-            <p className={css.textBanerOneTitle}>Віталій</p>
-            <p className={css.textBanerOneText}>т. 050-632-55-95</p>
-          </div>
-          <div className={css.containerBaner}>
-            <img src={banerOne} className={css.banerImage} />
-            <p className={css.textBanerOneTitle}>Віталій</p>
-            <p className={css.textBanerOneText}>т. 050-632-55-95</p>
-          </div>
-          <div className={css.containerBaner}>
-            <img src={banerOne} className={css.banerImage} />
-            <p className={css.textBanerOneTitle}>Віталій</p>
-            <p className={css.textBanerOneText}>т. 050-632-55-95</p>
-            <p className={css.taxtBanerTwoText}>+ причіп</p>
-          </div>
-          <div className={css.containerBaner}>
-            <img src={banerOne} className={css.banerImage} />
-            <p className={css.textBanerOneTitle}>Віталій</p>
-            <p className={css.textBanerOneText}>т. 050-632-55-95</p>
-            <p className={css.taxtBanerTwoText}>+причіп</p>
-          </div>
-        </section>
+export const HomePages = ({ user, isLogin }) => {
+  return (
+    <div className={css.containerAll}>
+      {!isLogin ? <AppBar /> : <UserName user={user} />}
+      <div className={css.captersSvc}>
+        <h4 className={css.titleHomePage}>
+          Барахолка на <span className={css.spanS}>s</span>
+          <span className={css.spanA}>a</span>
+          <span className={css.spanV}>V</span>
+          <span className={css.spanIn}>ynt</span>
+          <span className={css.spanC}>s</span>
+          <span className={css.spanI}>i </span>:
+        </h4>
+        <ul className={css.containerAnnouncement}>
+          <li>
+            <ul className={css.containerListAnnouncement}>
+              <li className={css.titleList}>
+                <NavLink to="/announcement/auto" className={css.listTitle}>
+                  <img src={auto} alt="авто" className={css.img} />
+                  Авто
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/announcement/work" className={css.listTitle}>
+                  <img src={work} alt="робота" className={css.img} />
+                  Робота
+                </NavLink>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <ul className={css.containerListAnnouncement}>
+              <li>
+                <NavLink to="/announcement/housing" className={css.listTitle}>
+                  <img src={housing} alt="нерухомість" className={css.img} />
+                  Нерухомість
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/announcement/garden" className={css.listTitle}>
+                  <img src={garden} alt="сад та город" className={css.img} />
+                  Сад та город
+                </NavLink>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <ul className={css.containerListAnnouncement}>
+              <li>
+                <NavLink to="/announcement/services" className={css.listTitle}>
+                  <img src={services} alt="послуги" className={css.img} />
+                  Послуги
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/announcement/animals" className={css.listTitle}>
+                  <img src={animals} alt="тварини" className={css.img} />
+                  Тварини
+                </NavLink>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <ul className={css.containerListAnnouncement}>
+              <li>
+                <NavLink
+                  to="/announcement/differents"
+                  className={css.listTitle}
+                >
+                  <img src={differents} alt="різне" className={css.img} />
+                  Різне
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/announcement/gifts" className={css.listTitle}>
+                  <img src={gifts} alt="дарую" className={css.img} />
+                  Дарую
+                </NavLink>
+              </li>
+            </ul>
+          </li>
+        </ul>
       </div>
-    );
-}
+      <section className={css.containerSection}>
+        <div className={css.containerBaner}>
+          <img src={banerOne} className={css.banerImage} />
+          <p className={css.textBanerOneTitle}>Віталій</p>
+          <p className={css.textBanerOneText}>т. 050-632-55-95</p>
+        </div>
+        <div className={css.containerBaner}>
+          <img src={banerOne} className={css.banerImage} />
+          <p className={css.textBanerOneTitle}>Віталій</p>
+          <p className={css.textBanerOneText}>т. 050-632-55-95</p>
+        </div>
+        <div className={css.containerBaner}>
+          <img src={banerOne} className={css.banerImage} />
+          <p className={css.textBanerOneTitle}>Віталій</p>
+          <p className={css.textBanerOneText}>т. 050-632-55-95</p>
+          <p className={css.taxtBanerTwoText}>+ причіп</p>
+        </div>
+        <div className={css.containerBaner}>
+          <img src={banerOne} className={css.banerImage} />
+          <p className={css.textBanerOneTitle}>Віталій</p>
+          <p className={css.textBanerOneText}>т. 050-632-55-95</p>
+          <p className={css.taxtBanerTwoText}>+причіп</p>
+        </div>
+      </section>
+    </div>
+  );
+};

@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import css from "./AutoComponent.module.css";
 import { fetchAnnouncementFilterChapter } from "../../../api/articlesAnnouncements-api.js";
 import MyComponent from "../../Loader/Loader.jsx";
-// import { useNavigate } from "react-router-dom";
 
 export default function AutoComponent() {
 
