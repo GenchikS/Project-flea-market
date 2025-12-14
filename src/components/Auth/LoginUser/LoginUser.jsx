@@ -1,12 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import css from "./LoginUser.module.css";
 import { Field, Form, Formik } from "formik";
-import * as Yup from "yup";
+// import * as Yup from "yup";
 import { useId, useState } from "react";
 import { fetchArticleLoginUser } from "../../../api/articles-api.js";
 import ButtonRegisterAddUser from "../../ButtonRegisterAddUser/ButtonRegisterAddUser.jsx";
 import MyComponent from "../../Loader/Loader.jsx";
-import { AxiosHeaders } from "axios";
+// import { AxiosHeaders } from "axios";
 
 
 
@@ -15,10 +15,6 @@ import { AxiosHeaders } from "axios";
 //     email: Yup.string().email().required("Обов'язково!"),
 //     password: Yup.string().min(5, "Занадто коротке!").required("Обов'язково!"),
 // });
-
-
-
-
 
 
 export default function LoginUser({ setUser, setIsLogin }) {
@@ -48,15 +44,12 @@ export default function LoginUser({ setUser, setIsLogin }) {
     });
 
     if (user) {
-      // console.log(`user`, user);
-      // await cookieStore.set("sessionId", user.sessionId);
+      // console.log(`login user.sessionId`, user.sessionId);
       localStorage.setItem("sessionId", JSON.stringify(user.sessionId));
-      // await cookieStore.set("refreshToken", user.token);
       setUser(user.data);
       setIsLogin(true);
       setLoading(false);
     }
-
     // console.log(`value`, value);
     actions.resetForm();
     navigate(`/`);

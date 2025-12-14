@@ -101,27 +101,17 @@ export const fetchArticleRegisterUser = async (payload) => {
 };
 
 export const fetchArticleLoginUser = async (payload) => {
-  // console.log(`payload login`, payload);
   const response = await axios.post(`/auth/login`, payload);
-  // console.log(`response login`, );
-  // setAuthHeder(response.data.token);
-  // setToken(response.data.token);
+  // console.log(`response login`, response);
   return response.data;
 };
 
 
 export const fetchArticleLogoutUser = async (payload) => {
-  // console.log(`cookieStore`, await cookieStore.get(`sessionId`));
-  // const payload = await cookieStore.get(`sessionId`);
-  // console.log(`cookieStore`, payload.value);
-
-  console.log(`payload:`, payload);
-
-  try {
-    const response = await axios.post(`/auth/logout`, payload);
-    // cookieStore.delete("sessionId");
-    // cookieStore.delete("refreshToken");
-    console.log(`response`, response);
+   try {
+   const response = await axios.post(`/auth/logout`, payload);
+   localStorage.removeItem("sessionId");
+  //  console.log(`response`, response);
     return response;
   } catch (error) {
     return error.response.data;

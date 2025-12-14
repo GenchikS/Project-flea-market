@@ -1,6 +1,5 @@
-import {NavLink, Outlet } from "react-router-dom";
+import {NavLink } from "react-router-dom";
 import css from "./HomePages.module.css";
-
 import auto from "../../image/car.png";
 import work from "../../image/work.png";
 import housing from "../../image/housing.png";
@@ -9,25 +8,14 @@ import services from "../../image/services.png";
 import animals from "../../image/animals.png";
 import differents from "../../image/differents.png";
 import gifts from "../../image/gifts.png";
-import { AppBar } from "../../components/AppBar/AppBar.jsx";
+
 
 import banerOne from "../../imageBaner/banerOne.jpg"
-import { UserName } from "../../components/UserName/UserName.jsx";
 
-export const HomePages = ({ user, isLogin, setUser, setIsLogin, token }) => {
+export const HomePages = () => {
   // console.log(`isLogin HomePages`, isLogin);
   return (
     <div className={css.containerAll}>
-      {!isLogin ? (
-        <AppBar />
-      ) : (
-        <UserName
-          user={user}
-          setUser={setUser}
-          setIsLogin={setIsLogin}
-          token={token}
-        />
-      )}
       <div className={css.captersSvc}>
         <h4 className={css.titleHomePage}>
           Барахолка на <span className={css.spanS}>s</span>
