@@ -30,20 +30,34 @@ import ErrorAuth from "./components/Auth/ErrorAuth/ErrorAuth.jsx";
 import RegisterAddUser from "./components/Auth/RegisterAddUser/RegisterAddUser.jsx";
 import LoginUser from "./components/Auth/LoginUser/LoginUser.jsx";
 import { LogoutUser } from "./components/Auth/LogoutUser/LogoutUser.jsx";
+// import axios from "axios";
 
 // http://localhost:3000/users
 // http://localhost:3000/announcements
+
 function App() {
   const [user, setUser] = useState({});
   const [isLogin, setIsLogin] = useState(false)
   const [marker, setMarker] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [token, setToken] = useState(null);
   const [error, setError] = useState(``)
 
   return (
     <div className={css.containerApp}>
       <Routes>
-        <Route path="/" element={<HomePages user={user} isLogin={isLogin} />} />
+        <Route
+          path="/"
+          element={
+            <HomePages
+              user={user}
+              isLogin={isLogin}
+              setUser={setUser}
+              setIsLogin={setIsLogin}
+              token={token}
+            />
+          }
+        />
         <Route
           path="/announcement"
           element={<ProductAnnouncementPages user={user} isLogin={isLogin} />}
@@ -58,10 +72,16 @@ function App() {
           <Route path="gifts" element={<GiftsComponent />} />
         </Route>
 
-        <Route path="/auth" element={<AuthPages />}>
+        <Route path="/auth" element={<AuthPages user={user} />}>
           <Route
             path="login"
-            element={<LoginUser setUser={setUser} setIsLogin={setIsLogin} />}
+            element={
+              <LoginUser
+                setUser={setUser}
+                setIsLogin={setIsLogin}
+                setToken={setToken}
+              />
+            }
           />
           <Route
             path="register"
@@ -69,7 +89,14 @@ function App() {
           />
           <Route
             path="logout"
-            element={<LogoutUser />}
+            element={
+              <LogoutUser
+                // user={user}
+                token={token}
+                setUser={setUser}
+                setIsLogin={setIsLogin}
+              />
+            }
           />
           <Route path="done" element={<DoneAuth />} />
           <Route
@@ -87,6 +114,7 @@ function App() {
               pathTo={"/admin"}
               isModalOpen={isModalOpen}
               setIsModalOpen={setIsModalOpen}
+              user={user}
             />
           }
         >
@@ -144,6 +172,7 @@ function App() {
               pathTo={"/admin/users"}
               isModalOpen={isModalOpen}
               setIsModalOpen={setIsModalOpen}
+              user={user}
             />
           }
         >

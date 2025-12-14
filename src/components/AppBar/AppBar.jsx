@@ -7,16 +7,17 @@ const appBarClass = ({ isActive }) => {
 }
 
 export const AppBar = () => {
+  // console.log(`user AppBar`, user);
   return (
     <div className={css.containerAppBar}>
       <nav className={css.containerNav}>
         <NavLink className={appBarClass} to="/">
           sVs
         </NavLink>
-          <NavLink className={appBarClass} to="/auth/register">
-            Реєстрація
-          </NavLink>
-          <NavLink className={appBarClass} to="/auth/login">
+        <NavLink className={appBarClass} to="/auth/register">
+          Реєстрація
+        </NavLink>
+        <NavLink className={appBarClass} to="/auth/login">
           Вхід
         </NavLink>
       </nav>

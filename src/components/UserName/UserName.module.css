@@ -41,8 +41,3 @@
     color: var(--color-text-blue);
     background-color: var(--bg-color-hover);
 }
-
-.activeLink{
-    font-size: 12px;
-    background-color: var(--bg-color-hover);
-}

@@ -14,10 +14,20 @@ import { AppBar } from "../../components/AppBar/AppBar.jsx";
 import banerOne from "../../imageBaner/banerOne.jpg"
 import { UserName } from "../../components/UserName/UserName.jsx";
 
-export const HomePages = ({ user, isLogin }) => {
+export const HomePages = ({ user, isLogin, setUser, setIsLogin, token }) => {
+  // console.log(`isLogin HomePages`, isLogin);
   return (
     <div className={css.containerAll}>
-      {!isLogin ? <AppBar /> : <UserName user={user} />}
+      {!isLogin ? (
+        <AppBar />
+      ) : (
+        <UserName
+          user={user}
+          setUser={setUser}
+          setIsLogin={setIsLogin}
+          token={token}
+        />
+      )}
       <div className={css.captersSvc}>
         <h4 className={css.titleHomePage}>
           Барахолка на <span className={css.spanS}>s</span>
