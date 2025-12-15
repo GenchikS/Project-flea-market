@@ -32,6 +32,7 @@
     font-size: 8px;
     justify-content: center;
     align-items: center;
+    text-align: center;
     color: var(--color-text-dark-blue);
     border: 1px solid var(--border-color-black);
     border-radius: 4px;
@@ -45,5 +46,10 @@
 
 .activeLink{
     font-size: 10px;
+    background-color: var(--bg-color-hover);
+}
+
+.activeLinkUser{
+    font-size: 8px;
     background-color: var(--bg-color-hover);
 }
