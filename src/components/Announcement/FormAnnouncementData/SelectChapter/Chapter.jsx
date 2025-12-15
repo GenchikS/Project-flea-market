@@ -13,7 +13,7 @@ export default function Chapter({ setChapter, setCategory, chapter, marker }) {
     <div className={css.containerChapter}>
       <p className={!marker ? css.markerRed : css.markerGreen}>*</p>
       <label className={css.label} htmlFor={selectCarterId}>
-        оберіть розділ оголошення
+        оберіть розділ
       </label>
       <select
         className={css.selectChapter}

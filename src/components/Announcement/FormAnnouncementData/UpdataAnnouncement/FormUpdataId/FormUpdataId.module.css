@@ -7,13 +7,15 @@
     font-size: 10px;
     position: relative;
     top:6px;
-    left: 40px;
+    left: 68px;
     color: red;
 }
 
 .labelId{
-    font-size: 10px;
+    font-size: 8px;
+    margin-left: 10px;
     margin-bottom: 2px;
+    text-align: left;
 }
 
 .inputAddId{

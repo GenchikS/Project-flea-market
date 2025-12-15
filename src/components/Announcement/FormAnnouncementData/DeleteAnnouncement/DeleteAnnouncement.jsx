@@ -37,7 +37,7 @@ export const DeleteAnnouncement = ({ pathTo, setIsModalOpen, setError }) => {
       <h3 className={css.title}>Форма видалення оголошень</h3>
       <form className={css.formContainer} onSubmit={handleSubmit}>
         <p className={css.markerRed}>*</p>
-        <label className={css.label}>id оголошення</label>
+        <label className={css.labelId}>id оголошення</label>
         <input
           className={css.announcementId}
           type="text"

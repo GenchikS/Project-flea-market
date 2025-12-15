@@ -47,12 +47,7 @@ function App() {
       <Layout user={user}>
         <Suspense fallback={null}>
           <Routes>
-            <Route
-              path="/"
-              element={
-                <HomePages />
-              }
-            />
+            <Route path="/" element={<HomePages />} />
             <Route path="/announcement/auto" element={<AutoComponent />} />
             <Route path="/announcement/work" element={<WorkComponent />} />
             <Route
@@ -75,12 +70,7 @@ function App() {
             <Route path="/announcement/gifts" element={<GiftsComponent />} />
             <Route
               path="/auth/login"
-              element={
-                <LoginUser
-                  setUser={setUser}
-                  setIsLogin={setIsLogin}
-                />
-              }
+              element={<LoginUser setUser={setUser} setIsLogin={setIsLogin} />}
             />
             <Route
               path="/auth/register"
@@ -88,12 +78,7 @@ function App() {
             />
             <Route
               path="/auth/logout"
-              element={
-                <LogoutUser
-                  setUser={setUser}
-                  setIsLogin={setIsLogin}
-                />
-              }
+              element={<LogoutUser setUser={setUser} setIsLogin={setIsLogin} />}
             />
             <Route path="/auth/done" element={<DoneAuth />} />
             <Route
@@ -111,53 +96,53 @@ function App() {
                   setIsModalOpen={setIsModalOpen}
                 />
               }
-            >
-              <Route
-                path="announcement/add"
-                element={
-                  <AddAnnouncement
-                    marker={marker}
-                    pathTo={"/admin"}
-                    setIsModalOpen={setIsModalOpen}
-                    setError={setError}
-                  />
-                }
-              />
-              <Route
-                path="announcement/updata"
-                element={
-                  <UpdataAnnouncement
-                    marker={marker}
-                    pathTo={"/admin"}
-                    setIsModalOpen={setIsModalOpen}
-                    setError={setError}
-                  />
-                }
-              />
-              <Route
-                path="announcement/delete"
-                element={
-                  <DeleteAnnouncement
-                    pathTo={"/admin"}
-                    setIsModalOpen={setIsModalOpen}
-                    setError={setError}
-                  />
-                }
-              />
-              <Route
-                path="announcement/done"
-                element={<DoneAnnouncement setIsModalOpen={setIsModalOpen} />}
-              />
-              <Route
-                path="announcement/error"
-                element={
-                  <ErrorAnnouncement
-                    error={error}
-                    setIsModalOpen={setIsModalOpen}
-                  />
-                }
-              />
-            </Route>
+            />
+            <Route
+              path="/admin/announcement/add"
+              element={
+                <AddAnnouncement
+                  marker={marker}
+                  pathTo={"/admin"}
+                  setIsModalOpen={setIsModalOpen}
+                  setError={setError}
+                />
+              }
+            />
+            <Route
+              path="/admin/announcement/updata"
+              element={
+                <UpdataAnnouncement
+                  marker={marker}
+                  pathTo={"/admin"}
+                  setIsModalOpen={setIsModalOpen}
+                  setError={setError}
+                />
+              }
+            />
+            <Route
+              path="/admin/announcement/delete"
+              element={
+                <DeleteAnnouncement
+                  pathTo={"/admin"}
+                  setIsModalOpen={setIsModalOpen}
+                  setError={setError}
+                />
+              }
+            />
+            <Route
+              path="/admin/announcement/done"
+              element={<DoneAnnouncement setIsModalOpen={setIsModalOpen} />}
+            />
+            <Route
+              path="announcement/error"
+              element={
+                <ErrorAnnouncement
+                  error={error}
+                  setIsModalOpen={setIsModalOpen}
+                />
+              }
+            />
+            {/* </Route> */}
             <Route
               path="/admin/users"
               element={

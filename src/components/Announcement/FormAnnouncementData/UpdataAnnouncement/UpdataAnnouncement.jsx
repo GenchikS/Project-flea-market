@@ -24,8 +24,7 @@ export default function UpdataAnnouncement({ marker, pathTo, setIsModalOpen, set
   const [yar, setYar] = useState("");
   const [text, setText] = useState("");
   // const [photo, setPhoto] = useState("");
-  // const [objectAll, setObjectAll] = useState({});
-
+  
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {

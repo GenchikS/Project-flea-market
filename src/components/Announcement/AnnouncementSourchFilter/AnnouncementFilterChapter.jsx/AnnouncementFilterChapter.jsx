@@ -90,11 +90,7 @@ export default function AnnouncementFilterChapter({
             дарую
           </option>
         </select>
-        {chapter === "всі" && (
-          <CategoryAll
-            set={ setCategory}
-          />
-        )}
+        {chapter === "всі" && <CategoryAll setCategory={setCategory} />}
         {chapter === "автомобіль" && (
           <CategoryAuto
             set={{ setCategory, setPurchaseSale }}
@@ -144,7 +140,6 @@ export default function AnnouncementFilterChapter({
         {chapter === "різне" && (
           <CategoryDifferents
             set={{ setCategory, setPurchaseSale }}
-            // category={category}
             purchaseSale={purchaseSale}
             marker={true}
           />
@@ -152,8 +147,8 @@ export default function AnnouncementFilterChapter({
         {chapter === "дарую" && (
           <CategoryGifts
             set={{ setCategory, setPurchaseSale }}
-            // category={category}
             purchaseSale={purchaseSale}
+            marker={true}
           />
         )}
         <ButtonUserDate type="submit" value="search">

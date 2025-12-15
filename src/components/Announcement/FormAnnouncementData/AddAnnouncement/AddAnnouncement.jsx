@@ -98,7 +98,11 @@ export default function AddAnnouncement({ marker, pathTo, setIsModalOpen, setErr
           />
         )}
         {chapter === "дарую" && (
-          <CategoryGifts setCategory={setCategory} category={category} />
+          <CategoryGifts
+            setCategory={setCategory}
+            category={category}
+            // marker={marker}
+          />
         )}
         <AnnouncementText setText={setText} marker={marker} />
         <ButtonModalAnnouncement
