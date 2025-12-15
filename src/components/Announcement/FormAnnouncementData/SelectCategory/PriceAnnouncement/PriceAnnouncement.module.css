@@ -7,7 +7,7 @@
     font-size: 10px;
     position: relative;
     top:6px;
-    left: 12px;
+    left: 54px;
     color: red;
 }
 
@@ -15,17 +15,18 @@
     font-size: 10px;
     position: relative;
     top:6px;
-    left: 12px;
+    left: 54px;
     color: green;
 }
 
 .labelPrice{
     font-size: 8px;
     margin-bottom: 2px;
+    margin-left: 36px;
 }
 
 .inputAddPrice{
-    width: 160px;
+    width: 80px;
     height: 14px;
     font-size: 10px;
     border: 1px solid var(--color-border);
@@ -37,6 +38,7 @@
     text-align: center;
     margin-bottom: 10px;
 }
+
 
 .inputAddPrice:hover{
      background-color: var(--bg-color-hover);

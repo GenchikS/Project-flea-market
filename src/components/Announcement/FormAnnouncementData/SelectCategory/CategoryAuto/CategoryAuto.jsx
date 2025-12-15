@@ -1,4 +1,3 @@
-// import { useId } from "react";
 import { useId } from "react";
 import PurchaseSale from "../PurchaseSale/PurchaseSale.jsx";
 import css from "./CategoryAuto.module.css";

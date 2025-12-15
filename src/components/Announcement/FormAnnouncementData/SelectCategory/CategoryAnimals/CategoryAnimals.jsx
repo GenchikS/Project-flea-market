@@ -1,4 +1,3 @@
-// import { useId } from "react";
 import { useId } from "react";
 import css from "./CategoryAnimals.module.css";
 export default function CategoryAnimals({ setCategory, category, marker }) {

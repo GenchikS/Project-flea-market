@@ -10,6 +10,7 @@ import CategoryGifts from "../../FormAnnouncementData/SelectCategory/CategoryGif
 import { ButtonUserDate } from "../../../Button/ButtonUserDate.jsx";
 import { fetchAnnouncementFilterChapter } from "../../../../api/articlesAnnouncements-api.js";
 import CategoryGarden from "../../FormAnnouncementData/SelectCategory/CategoryGarden/CategoryGarden.jsx";
+import CategoryAll from "../../FormAnnouncementData/SelectCategory/CategoryAll/CategoryAll.jsx";
 
 export default function AnnouncementFilterChapter({
   chapter,
@@ -29,7 +30,7 @@ export default function AnnouncementFilterChapter({
 
   const handleSubmit = async (evt) => {
     evt.preventDefault();
-    // console.log(`chapter`, chapter);
+    console.log(`chapter`, chapter);
     // console.log(`category`, category);
     // console.log(`purchaseSale`, purchaseSale);
     const response = await fetchAnnouncementFilterChapter({
@@ -39,7 +40,6 @@ export default function AnnouncementFilterChapter({
     });
     setItems(response);
     // console.log(`response`, response);
-    // setItemsSourch(null);
     setPurchaseSale("");
     setCategory("");
     setChapter("");
@@ -62,8 +62,8 @@ export default function AnnouncementFilterChapter({
           name={chapter}
           onChange={handleChange}
         >
-          <option className={css.option} value="">
-            all
+          <option className={css.option} value="всі">
+            всі категорії
           </option>
           <option className={css.option} value="автомобіль">
             автомобіль
@@ -90,6 +90,11 @@ export default function AnnouncementFilterChapter({
             дарую
           </option>
         </select>
+        {chapter === "всі" && (
+          <CategoryAll
+            set={ setCategory}
+          />
+        )}
         {chapter === "автомобіль" && (
           <CategoryAuto
             set={{ setCategory, setPurchaseSale }}
