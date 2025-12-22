@@ -6,9 +6,6 @@ import { useId, useState } from "react";
 import { fetchArticleLoginUser } from "../../../api/articles-api.js";
 import ButtonRegisterAddUser from "../../ButtonRegisterAddUser/ButtonRegisterAddUser.jsx";
 import MyComponent from "../../Loader/Loader.jsx";
-// import { AxiosHeaders } from "axios";
-
-
 
 
 // const validationUserSchema = Yup.object().shape({
@@ -17,7 +14,7 @@ import MyComponent from "../../Loader/Loader.jsx";
 // });
 
 
-export default function LoginUser({ setUser, setIsLogin }) {
+export default function LoginUser({ setUser, setIsLogin}) {
   const [loadig, setLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -26,10 +23,8 @@ export default function LoginUser({ setUser, setIsLogin }) {
     password: "",
   };
 
-  
   const emailFieldId = useId();
   const passwordFieldId = useId();
-
 
   const hahdleSubmit = async (value, actions) => {
     // console.log(`value`, value);
@@ -43,9 +38,9 @@ export default function LoginUser({ setUser, setIsLogin }) {
       password: passwordEnd,
     });
 
+    // console.log(`user Login`, user);
+
     if (user) {
-      // console.log(`login user.sessionId`, user.sessionId);
-      localStorage.setItem("sessionId", JSON.stringify(user.sessionId));
       setUser(user.data);
       setIsLogin(true);
       setLoading(false);

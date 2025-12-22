@@ -6,7 +6,7 @@ import UpdataUser from "./components/User/FormUserData/UpdateUser/UpdataUser.jsx
 import AddAnnouncement from "./components/Announcement/FormAnnouncementData/AddAnnouncement/AddAnnouncement.jsx";
 import DoneAnnouncement from "./components/Announcement/FormAnnouncementData/DoneAnnouncement/DoneAnnouncement.jsx";
 import UpdataAnnouncement from "./components/Announcement/FormAnnouncementData/UpdataAnnouncement/UpdataAnnouncement.jsx";
-import { Suspense, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { DeleteAnnouncement } from "./components/Announcement/FormAnnouncementData/DeleteAnnouncement/DeleteAnnouncement.jsx";
 import { HomePages } from "./pages/HomePages/HomePages.jsx";
 import NotFound from "./components/NotFound/NotFound.jsx";  
@@ -29,25 +29,49 @@ import RegisterAddUser from "./components/Auth/RegisterAddUser/RegisterAddUser.j
 import LoginUser from "./components/Auth/LoginUser/LoginUser.jsx";
 import { LogoutUser } from "./components/Auth/LogoutUser/LogoutUser.jsx";
 import Layout from "./components/Layout/Layout.jsx";
-// import axios from "axios";
+import { fetchArticleRefreshUser } from "./api/articles-api.js";
+import axios from "axios";
 
 // http://localhost:3000/users
 // http://localhost:3000/announcements
 
 function App() {
   const [user, setUser] = useState({});
-  const [isLogin, setIsLogin] = useState(false)
+  const [isLogin, setIsLogin] = useState(false);
+  // const [loadig, setLoading] = useState(false);
   const [marker, setMarker] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  // const [token, setToken] = useState(null);
   const [error, setError] = useState(``)
 
+  const token = JSON.parse(localStorage.getItem("Project-flea-market"));
+  // console.log(`token`, token);
+ 
+
+  useEffect(() => {
+    if (token) {
+    // console.log(`token useEf 1`, token);
+      sessionUser(token.token);
+      // console.log(`token useEf 2`, token);
+    }
+  }, []);
+
+  const sessionUser = async (token) => {
+  //  console.log(`token func`, token);
+   const response = await fetchArticleRefreshUser(token);
+  //  console.log(`response`, response);
+   setUser(response);
+   return;
+  };
+
+  // console.log(`user Home`, user);
+  
   return (
     <div className={css.containerApp}>
       <Layout user={user}>
         <Suspense fallback={null}>
           <Routes>
             <Route path="/" element={<HomePages />} />
+
             <Route path="/announcement/auto" element={<AutoComponent />} />
             <Route path="/announcement/work" element={<WorkComponent />} />
             <Route
@@ -70,12 +94,18 @@ function App() {
             <Route path="/announcement/gifts" element={<GiftsComponent />} />
             <Route
               path="/auth/login"
-              element={<LoginUser setUser={setUser} setIsLogin={setIsLogin} />}
+              element={
+                <LoginUser
+                  setUser={setUser}
+                  setIsLogin={setIsLogin}
+                />
+              }
             />
             <Route
               path="/auth/register"
               element={<RegisterAddUser setError={setError} />}
             />
+
             <Route
               path="/auth/logout"
               element={<LogoutUser setUser={setUser} setIsLogin={setIsLogin} />}

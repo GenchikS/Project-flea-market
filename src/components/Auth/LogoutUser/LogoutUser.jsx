@@ -6,10 +6,14 @@ export const LogoutUser = ({ setUser, setIsLogin }) => {
   const navigate = useNavigate();
   
   const handleClick = async () => {
-    const sessionId = localStorage.getItem("sessionId");
-    const payload = {sessionId: JSON.parse(sessionId)};
-    // console.log(`payload`, payload);
-     await fetchArticleLogoutUser(payload);
+    const sessionIdParse = JSON.parse(
+      localStorage.getItem("Project-flea-market")
+    );
+    
+    const sessionId = sessionIdParse.sessionId;
+    // const payload = {sessionId: JSON.parse(sessionId)};
+    // console.log(`sessionId`, sessionId);
+     await fetchArticleLogoutUser({ sessionId: sessionId });
       setUser({});
       setIsLogin(false);
       navigate("/");

@@ -3,7 +3,7 @@ import axios from "axios";
 axios.defaults.baseURL = "https://project-flea-market-bd.onrender.com/";
 // axios.defaults.withCredentials = true;
 
-// const setAuthHeder = (token) => {
+// const setAuthHeader = (token) => {
 //   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
 // };
 
@@ -102,18 +102,35 @@ export const fetchArticleRegisterUser = async (payload) => {
 
 export const fetchArticleLoginUser = async (payload) => {
   const response = await axios.post(`/auth/login`, payload);
-  // console.log(`response login`, response);
+  // console.log(`response login`, response.data.data);
+  // const token = response.data.data.accessToken;
+  const data = {
+    token: response.data.data.accessToken,
+    sessionId: response.data.data.sessionId,
+  };
+  localStorage.setItem("Project-flea-market", JSON.stringify(data));
+  // setAuthHeader(token);
   return response.data;
 };
 
 
 export const fetchArticleLogoutUser = async (payload) => {
-   try {
-   const response = await axios.post(`/auth/logout`, payload);
-   localStorage.removeItem("sessionId");
-  //  console.log(`response`, response);
-    return response;
+  // console.log(`payload logout`, payload);
+  localStorage.removeItem("Project-flea-market");
+  try {
+    const response = await axios.post(`/auth/logout`, payload);
+    //  console.log(`response`, response.data);
+    // clearAuthHeader();
+    return response.data;
   } catch (error) {
     return error.response.data;
   }
+};
+
+export const fetchArticleRefreshUser = async (token) => {
+  const accessToken = { accessToken: token };
+  // console.log(`accessToken`, accessToken);
+  const response = await axios.post(`/session/refresh`, accessToken);
+  // console.log(`response refresh`, response.data.data);
+  return response.data.data;
 };
