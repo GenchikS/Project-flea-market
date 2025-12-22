@@ -1,3 +1,9 @@
+
+
+.titleAutoComponent{
+    font-size: 14px;
+}
+
 .tableContainerAutoComponent{
     display: flex;
     flex-direction: column;

@@ -1,0 +1,21 @@
+/* .containerUserHome{
+background-color: var(--bg-color);
+} */
+
+.listAnnouncements{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.titleAnnouncement{
+    font-size: 14px;
+}
+
+.errorAnnouncement{
+    font-size: 10px;
+    color: var(--color-text-red);
+}

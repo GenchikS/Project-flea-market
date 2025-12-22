@@ -77,8 +77,13 @@ export const fetchAnnouncementFilterChapter = async (payload) => {
 }
 
 export const fetchArticleAnnouncementId = async (id) => {
-  // console.log(`id`, id);
-  const response = await axios.get(`/announcements/${id}`);
-  // console.log(`response`, response);
-  return response.data.data;
+  console.log(`id`, id);
+  try {
+      const response = await axios.get(`/announcements/${id}`);
+      console.log(`response`, response.data);
+      return response.data.data;
+  } catch (error) {
+    // console.log(`error`, error)
+    return error.response.data;
+  }
 };

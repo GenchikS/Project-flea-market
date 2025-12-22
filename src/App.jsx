@@ -31,6 +31,7 @@ import { LogoutUser } from "./components/Auth/LogoutUser/LogoutUser.jsx";
 import Layout from "./components/Layout/Layout.jsx";
 import { fetchArticleRefreshUser } from "./api/articles-api.js";
 import axios from "axios";
+import { UserHome } from "./pages/UserHome/UserHome.jsx";
 
 // http://localhost:3000/users
 // http://localhost:3000/announcements
@@ -71,7 +72,6 @@ function App() {
         <Suspense fallback={null}>
           <Routes>
             <Route path="/" element={<HomePages />} />
-
             <Route path="/announcement/auto" element={<AutoComponent />} />
             <Route path="/announcement/work" element={<WorkComponent />} />
             <Route
@@ -94,12 +94,7 @@ function App() {
             <Route path="/announcement/gifts" element={<GiftsComponent />} />
             <Route
               path="/auth/login"
-              element={
-                <LoginUser
-                  setUser={setUser}
-                  setIsLogin={setIsLogin}
-                />
-              }
+              element={<LoginUser setUser={setUser} setIsLogin={setIsLogin} />}
             />
             <Route
               path="/auth/register"
@@ -117,6 +112,8 @@ function App() {
                 <ErrorAuth error={error} setIsModalOpen={setIsModalOpen} />
               }
             />
+            <Route path="/user/home" element={<UserHome user={user} />} />
+
             <Route
               path="/admin"
               element={
@@ -172,7 +169,6 @@ function App() {
                 />
               }
             />
-            {/* </Route> */}
             <Route
               path="/admin/users"
               element={

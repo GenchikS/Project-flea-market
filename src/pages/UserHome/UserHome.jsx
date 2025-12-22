@@ -1,45 +1,43 @@
 import { useEffect, useState } from "react";
-import css from "./AutoComponent.module.css";
-import { fetchAnnouncementFilterChapter } from "../../../api/articlesAnnouncements-api.js";
-import MyComponent from "../../Loader/Loader.jsx";
+import css from "./UserHome.module.css";
+import { fetchArticleAnnouncementId } from "../../api/articlesAnnouncements-api.js";
+import MyComponent from "../../components/Loader/Loader.jsx";
 
-export default function AutoComponent() {
-
+export const UserHome = ({ user }) => {
   const [items, setItems] = useState([]);
   const [error, setError] = useState(false);
   const [loadig, setLoading] = useState(false);
-{
+  
+    console.log(`user UserHome1`, user);
+
+  {
     useEffect(() => {
-      async function fetchDataChapter() {
-        try {
-          setLoading(true);
-          setError(false);
-          const response = await fetchAnnouncementFilterChapter({
-            chapter: "автомобіль",
-            category: "",
-            purchaseSale: "",
-          });
-          // console.log(`retponse`, response);
-          setItems(response);
-        } catch (error) {
-          setError(true);
+        async function fetchDataChapter() {
+          try {
+            setLoading(true);
+              setError(false);
+            // console.log(`user UserHome2`, user._id);
+            const response = await fetchArticleAnnouncementId(user._id);
+            // console.log(`response`, response.data);
+            setItems(response);
+          } catch (error) {
+              setError(true);
+         }
+          finally {
+            setLoading(false);
+          }
         }
-        finally {
-          setLoading(false);
-        }
-      }
-      fetchDataChapter();
-    },
-    []);
+        fetchDataChapter();
+    }, []);
   }
   return (
-    <div >
-      <h4 className={css.titleAutoComponent} >Пошук автотранспорту</h4>
+    <div>
+      <h4 className={css.titleAnnouncement}>Ваші оголошення:</h4>
       <div>
         <h5>Фільтр</h5>
       </div>
-      <div>
-        {items.length > 0 &&
+      <div className={css.listAnnouncements}>
+        {items.length > 0 ?
           items.map((item) => (
             <ul key={item._id} className={css.tableContainerAutoComponent}>
               <li className={css.containerDescriptionImage}>
@@ -63,7 +61,7 @@ export default function AutoComponent() {
                 <p className={css.textAnnouncemnt}>{item.text}</p>
               </li>
             </ul>
-          ))}
+          )) : <p className={css.errorAnnouncement}>{items.data}</p>}
       </div>
       <div>
         {loadig && (
@@ -75,4 +73,12 @@ export default function AutoComponent() {
       </div>
     </div>
   );
-}
+  // return (
+  //   <div>
+
+  // <div className={css.listAnnouncements}>
+
+  // </div>
+  //   </div>
+  // );
+};
