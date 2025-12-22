@@ -41,7 +41,7 @@ const [items, setItems] = useState([]);
       <div>
         {items.length > 0 &&
           items.map((item) => (
-            <ul key={item.id} className={css.tableContainerGardenComponent}>
+            <ul key={item._id} className={css.tableContainerGardenComponent}>
               <li className={css.listCard}>
                 <p className={css.chapter}>Категорія: {item.chapter}</p>
               </li>

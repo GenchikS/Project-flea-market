@@ -39,7 +39,7 @@ export default function DifferentsComponent() {
       <div>
         {items.length > 0 &&
           items.map((item) => (
-            <ul key={item.id} className={css.tableContainerDifferentsComponent}>
+            <ul key={item._id} className={css.tableContainerDifferentsComponent}>
               <li className={css.listCard}>
                 <p className={css.chapter}>Категорія: {item.chapter}</p>
               </li>

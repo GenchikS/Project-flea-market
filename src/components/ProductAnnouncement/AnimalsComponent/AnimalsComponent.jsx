@@ -39,7 +39,7 @@ export default function AnimalsComponent() {
       <div>
         {items.length > 0 &&
           items.map((item) => (
-            <ul key={item.id} className={css.tableContainerAnimalsComponent}>
+            <ul key={item._id} className={css.tableContainerAnimalsComponent}>
               <li className={css.listCard}>
                 <p className={css.chapter}>Категорія: {item.chapter}</p>
               </li>

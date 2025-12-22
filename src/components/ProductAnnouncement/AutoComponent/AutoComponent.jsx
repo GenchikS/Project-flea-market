@@ -8,8 +8,7 @@ export default function AutoComponent() {
   const [items, setItems] = useState([]);
   const [error, setError] = useState(false);
   const [loadig, setLoading] = useState(false);
-
-  {
+{
     useEffect(() => {
       async function fetchDataChapter() {
         try {
@@ -42,7 +41,7 @@ export default function AutoComponent() {
       <div>
         {items.length > 0 &&
           items.map((item) => (
-            <ul key={item.id} className={css.tableContainerAutoComponent}>
+            <ul key={item._id} className={css.tableContainerAutoComponent}>
               <li className={css.containerDescriptionImage}>
                 <ul className={css.listDescriptionTitle}>
                   <li className={css.listCard}>

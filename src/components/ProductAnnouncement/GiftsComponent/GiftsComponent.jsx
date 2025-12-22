@@ -39,7 +39,7 @@ export default function GiftsComponent() {
       <div>
         {items.length > 0 &&
           items.map((item) => (
-            <ul key={item.id} className={css.tableContainerGiftsComponent}>
+            <ul key={item._id} className={css.tableContainerGiftsComponent}>
               <li className={css.listCard}>
                 <p className={css.chapter}>Категорія: {item.chapter}</p>
               </li>
