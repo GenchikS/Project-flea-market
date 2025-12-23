@@ -32,6 +32,7 @@ import Layout from "./components/Layout/Layout.jsx";
 import { fetchArticleRefreshUser } from "./api/articles-api.js";
 import axios from "axios";
 import { UserHome } from "./pages/UserHome/UserHome.jsx";
+import UserLoading from "./components/UserHomeComponent/UserLoading.jsx";
 
 // http://localhost:3000/users
 // http://localhost:3000/announcements
@@ -39,7 +40,6 @@ import { UserHome } from "./pages/UserHome/UserHome.jsx";
 function App() {
   const [user, setUser] = useState({});
   const [isLogin, setIsLogin] = useState(false);
-  // const [loadig, setLoading] = useState(false);
   const [marker, setMarker] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [error, setError] = useState(``)
@@ -47,22 +47,18 @@ function App() {
   const token = JSON.parse(localStorage.getItem("Project-flea-market"));
   // console.log(`token`, token);
  
-
-  useEffect(() => {
-    if (token) {
-    // console.log(`token useEf 1`, token);
-      sessionUser(token.token);
-      // console.log(`token useEf 2`, token);
-    }
-  }, []);
-
-  const sessionUser = async (token) => {
-  //  console.log(`token func`, token);
-   const response = await fetchArticleRefreshUser(token);
-  //  console.log(`response`, response);
-   setUser(response);
-   return;
-  };
+   useEffect(() => {
+        async function fetchData() {
+          try {
+            const response = await fetchArticleRefreshUser(token.token);
+            // console.log(`response`, response);
+            setUser(response);
+            } catch (error) {
+            setError(true);
+          } 
+        }
+        fetchData();
+    }, []);
 
   // console.log(`user Home`, user);
   
@@ -94,7 +90,13 @@ function App() {
             <Route path="/announcement/gifts" element={<GiftsComponent />} />
             <Route
               path="/auth/login"
-              element={<LoginUser setUser={setUser} setIsLogin={setIsLogin} />}
+              element={
+                <LoginUser
+                  setUser={setUser}
+                  setIsLogin={setIsLogin}
+                  setError={setError}
+                />
+              }
             />
             <Route
               path="/auth/register"
@@ -112,7 +114,10 @@ function App() {
                 <ErrorAuth error={error} setIsModalOpen={setIsModalOpen} />
               }
             />
-            <Route path="/user/home" element={<UserHome user={user} />} />
+            <Route
+              path="/user/home"
+              element={user._id ? <UserHome user={user} /> : <UserLoading />}
+            />
 
             <Route
               path="/admin"

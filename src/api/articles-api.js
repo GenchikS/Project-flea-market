@@ -101,16 +101,18 @@ export const fetchArticleRegisterUser = async (payload) => {
 };
 
 export const fetchArticleLoginUser = async (payload) => {
-  const response = await axios.post(`/auth/login`, payload);
-  // console.log(`response login`, response.data.data);
-  // const token = response.data.data.accessToken;
-  const data = {
-    token: response.data.data.accessToken,
-    sessionId: response.data.data.sessionId,
-  };
-  localStorage.setItem("Project-flea-market", JSON.stringify(data));
-  // setAuthHeader(token);
+  try {
+    const response = await axios.post(`/auth/login`, payload);
+    // console.log(`response login`, response.data.data);
+    const data = {
+      token: response.data.data.accessToken,
+      sessionId: response.data.data.sessionId,
+    };
+    localStorage.setItem("Project-flea-market", JSON.stringify(data));
   return response.data;
+  } catch (error) {
+   return error.response.data;
+}
 };
 
 

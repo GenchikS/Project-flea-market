@@ -14,7 +14,7 @@ import MyComponent from "../../Loader/Loader.jsx";
 // });
 
 
-export default function LoginUser({ setUser, setIsLogin}) {
+export default function LoginUser({ setUser, setIsLogin, setError }) {
   const [loadig, setLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -40,10 +40,17 @@ export default function LoginUser({ setUser, setIsLogin}) {
 
     // console.log(`user Login`, user);
 
-    if (user) {
+    if (user.data.sessionId) {
       setUser(user.data);
       setIsLogin(true);
       setLoading(false);
+      // console.log(`user Login2`, user);
+    }
+
+    if (user.status === 401) {
+      actions.resetForm();
+      setError(user.data);
+      return navigate(`/auth/error`);
     }
     // console.log(`value`, value);
     actions.resetForm();

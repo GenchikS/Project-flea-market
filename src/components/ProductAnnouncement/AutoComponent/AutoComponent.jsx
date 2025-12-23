@@ -33,8 +33,8 @@ export default function AutoComponent() {
     []);
   }
   return (
-    <div >
-      <h4 className={css.titleAutoComponent} >Пошук автотранспорту</h4>
+    <div>
+      <h4 className={css.titleAutoComponent}>Пошук автотранспорту</h4>
       <div>
         <h5>Фільтр</h5>
       </div>
@@ -46,6 +46,9 @@ export default function AutoComponent() {
                 <ul className={css.listDescriptionTitle}>
                   <li className={css.listCard}>
                     <p className={css.listPurchaseSale}>{item.purchaseSale}</p>
+                  </li>
+                  <li className={css.listCard}>
+                    <p className={css.chapter}>Категорія: {item.chapter}</p>
                   </li>
                   <li className={css.listCard}>
                     <p className={css.listCategory}>Тип: {item.category}</p>
