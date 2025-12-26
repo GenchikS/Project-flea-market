@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import css from "./UserHome.module.css";
 import { fetchArticleAnnouncementId } from "../../api/articlesAnnouncements-api.js";
 import MyComponent from "../../components/Loader/Loader.jsx";
+import { NavLink } from "react-router-dom";
 
 export const UserHome = ({ user }) => {
   const [items, setItems] = useState([]);
@@ -9,7 +10,7 @@ export const UserHome = ({ user }) => {
   const [loadig, setLoading] = useState();
 
 
-    useEffect(() => {
+  useEffect(() => {
       async function fetchData() {
         try {
           setLoading(true);
@@ -24,9 +25,16 @@ export const UserHome = ({ user }) => {
       }
       fetchData();
   }, []);
+
+  // console.log(`items`, items);
 return (
   <div className={css.containerUserHome}>
-    <h4 className={css.titleAnnouncement}>Ваші оголошення:</h4>
+    <div className={css.containerTitle}>
+      <h4 className={css.titleAnnouncement}>Ваші оголошення:</h4>
+      <NavLink className={css.addAnnouncement} to="/user/announcement/add">
+        Додати оголошення
+      </NavLink>
+    </div>
     {/* <div>
       <h5>Фільтр</h5>
     </div> */}
@@ -42,16 +50,21 @@ return (
                 <li className={css.listCard}>
                   <p className={css.chapter}>Категорія: {item.chapter}</p>
                 </li>
-                  {item.category && <li className={css.listCard}>
+                {item.category && (
+                  <li className={css.listCard}>
                     <p className={css.listCategory}>Тип: {item.category}</p>
-                  </li>}
-                {item.yar && <li className={css.listCard}>
-                  <p className={css.listYar}>Рік випуску: {item.yar}</p>
-                </li>}
-                  {item.price && <li className={css.listCard}>
-                  <p className={css.listPrice}>Ціна: {item.price} $</p>
-                  </li>}
-                
+                  </li>
+                )}
+                {item.yar && (
+                  <li className={css.listCard}>
+                    <p className={css.listYar}>Рік випуску: {item.yar}</p>
+                  </li>
+                )}
+                {item.price && (
+                  <li className={css.listCard}>
+                    <p className={css.listPrice}>Ціна: {item.price} $</p>
+                  </li>
+                )}
               </ul>
               {item.photo && <div className={css.image}></div>}
             </li>

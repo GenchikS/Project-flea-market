@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import css from "./App.module.css";
-import {DeleteUser} from "./components/User/FormUserData/DeleteUser/DeleteUser.jsx";
+import { DeleteUser } from "./components/User/FormUserData/DeleteUser/DeleteUser.jsx";
 import AddUser from "./components/User/FormUserData/AddUser/AddUser.jsx";
 import UpdataUser from "./components/User/FormUserData/UpdateUser/UpdataUser.jsx";
 import AddAnnouncement from "./components/Announcement/FormAnnouncementData/AddAnnouncement/AddAnnouncement.jsx";
@@ -9,14 +9,14 @@ import UpdataAnnouncement from "./components/Announcement/FormAnnouncementData/U
 import { Suspense, useEffect, useState } from "react";
 import { DeleteAnnouncement } from "./components/Announcement/FormAnnouncementData/DeleteAnnouncement/DeleteAnnouncement.jsx";
 import { HomePages } from "./pages/HomePages/HomePages.jsx";
-import NotFound from "./components/NotFound/NotFound.jsx";  
+import NotFound from "./components/NotFound/NotFound.jsx";
 import AutoComponent from "./components/ProductAnnouncement/AutoComponent/AutoComponent.jsx";
 import WorkComponent from "./components/ProductAnnouncement/WorkComponent/WorkComponent.jsx";
 import HousingComponent from "./components/ProductAnnouncement/HousingComponent/HousingComponent.jsx";
 import ServicesComponent from "./components/ProductAnnouncement/ServicesComponent/ServicesComponent.jsx";
 import AnimalsComponent from "./components/ProductAnnouncement/AnimalsComponent/AnimalsComponent.jsx";
 import DifferentsComponent from "./components/ProductAnnouncement/DifferentsComponent/DifferentsComponent.jsx";
-import GiftsComponent from "./components/ProductAnnouncement/GiftsComponent/GiftsComponent.jsx";  
+import GiftsComponent from "./components/ProductAnnouncement/GiftsComponent/GiftsComponent.jsx";
 import DoneAuth from "./components/Auth/DoneAuth/DoneAuth.jsx";
 import { AdminPages } from "./pages/AdminPages/AdminPages.jsx";
 import { AdminUserPages } from "./pages/AdminUserPages/AdminUserPages.jsx";
@@ -30,9 +30,12 @@ import LoginUser from "./components/Auth/LoginUser/LoginUser.jsx";
 import { LogoutUser } from "./components/Auth/LogoutUser/LogoutUser.jsx";
 import Layout from "./components/Layout/Layout.jsx";
 import { fetchArticleRefreshUser } from "./api/articles-api.js";
-import axios from "axios";
+// import axios from "axios";
 import { UserHome } from "./pages/UserHome/UserHome.jsx";
 import UserLoading from "./components/UserHomeComponent/UserLoading.jsx";
+import AddAnnouncementUser from "./components/Announcement/AddAnnouncementUser/FormAnnouncementUser/AddAnnouncementUser.jsx";
+import DoneAnnouncementUser from "./components/Announcement/AddAnnouncementUser/DoneAnnouncementUser/DoneAnnouncementUser.jsx";
+import ErrorAnnouncementUser from "./components/Announcement/AddAnnouncementUser/ErrorAnnouncementUser/ErrorAnnouncementUser.jsx";
 
 // http://localhost:3000/users
 // http://localhost:3000/announcements
@@ -42,26 +45,26 @@ function App() {
   const [isLogin, setIsLogin] = useState(false);
   const [marker, setMarker] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [error, setError] = useState(``)
+  const [error, setError] = useState(``);
 
   const token = JSON.parse(localStorage.getItem("Project-flea-market"));
   // console.log(`token`, token);
- 
-   useEffect(() => {
-        async function fetchData() {
-          try {
-            const response = await fetchArticleRefreshUser(token.token);
-            // console.log(`response`, response);
-            setUser(response);
-            } catch (error) {
-            setError(true);
-          } 
-        }
-        fetchData();
-    }, []);
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const response = await fetchArticleRefreshUser(token.token);
+        // console.log(`response`, response);
+        setUser(response);
+      } catch (error) {
+        setError(true);
+      }
+    }
+    fetchData();
+  }, []);
 
   // console.log(`user Home`, user);
-  
+
   return (
     <div className={css.containerApp}>
       <Layout user={user}>
@@ -117,6 +120,43 @@ function App() {
             <Route
               path="/user/home"
               element={user._id ? <UserHome user={user} /> : <UserLoading />}
+            />
+            <Route
+              path="/user/announcement/add"
+              element={
+                <AddAnnouncementUser
+                  marker={marker}
+                  pathTo={"/user/home"}
+                  setIsModalOpen={setIsModalOpen}
+                  setError={setError}
+                  user={user}
+                />
+              }
+            />
+
+
+            {/* <Route
+              path="/admin/announcement/delete"
+              element={
+                <DeleteAnnouncement
+                  pathTo={"/admin"}
+                  setIsModalOpen={setIsModalOpen}
+                  setError={setError}
+                />
+              }
+            /> */}
+            <Route
+              path="/user/announcement/done"
+              element={<DoneAnnouncementUser setIsModalOpen={setIsModalOpen} />}
+            />
+            <Route
+              path="/user/announcement/error"
+              element={
+                <ErrorAnnouncementUser
+                  error={error}
+                  setIsModalOpen={setIsModalOpen}
+                />
+              }
             />
 
             <Route

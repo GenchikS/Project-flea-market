@@ -1,23 +1,27 @@
-import css from "./AddAnnouncement.module.css";
-import { FormAddId } from "../FormAddId/FormAddId.jsx";
 import { useState } from "react";
-import Chapter from "../SelectChapter/Chapter.jsx";
-import CategoryAuto from "../SelectCategory/CategoryAuto/CategoryAuto.jsx";
-import CategoryHousing from "../SelectCategory/CategoryHousing/CategoryHousing.jsx";
-import AnnouncementText from "../AnnouncementText/AnnouncementText.jsx";
-import CategoryGarden from "../SelectCategory/CategoryGarden/CategoryGarden.jsx";
-import CategoryAnimals from "../SelectCategory/CategoryAnimals/CategoryAnimals.jsx"
-import CategoryServices from "../SelectCategory/CategoryServices/CategoryServices.jsx";
-import CategoryDifferents from "../SelectCategory/CategoryDifferents/CategoryDifferents.jsx"
-import CategoryGifts from "../SelectCategory/CategoryGifts/CategoryGifts.jsx"
-import CategoryWork from "../SelectCategory/CategoryWork/CategoryWork.jsx"
-import ButtonModalAnnouncement from "../ButtonModalAnnouncement/ButtonModalAnnouncement.jsx";
+import css from "./AddAnnouncementUser.module.css";
 import { useNavigate } from "react-router-dom";
 import { fetchArticleAddAnnouncement } from "../../../../api/articlesAnnouncements-api.js";
-// import FormAddPhoto from "../FormAddPhoto/FormAddPhoto.jsx";
+import Chapter from "../../FormAnnouncementData/SelectChapter/Chapter.jsx";
+import CategoryWork from "../../FormAnnouncementData/SelectCategory/CategoryWork/CategoryWork.jsx";
+import CategoryHousing from "../../FormAnnouncementData/SelectCategory/CategoryHousing/CategoryHousing.jsx";
+import CategoryGarden from "../../FormAnnouncementData/SelectCategory/CategoryGarden/CategoryGarden.jsx";
+import CategoryServices from "../../FormAnnouncementData/SelectCategory/CategoryServices/CategoryServices.jsx";
+import CategoryAnimals from "../../FormAnnouncementData/SelectCategory/CategoryAnimals/CategoryAnimals.jsx";
+import CategoryDifferents from "../../FormAnnouncementData/SelectCategory/CategoryDifferents/CategoryDifferents.jsx";
+import CategoryGifts from "../../FormAnnouncementData/SelectCategory/CategoryGifts/CategoryGifts.jsx";
+import AnnouncementText from "../../FormAnnouncementData/AnnouncementText/AnnouncementText.jsx";
+import ButtonModalAnnouncement from "../../FormAnnouncementData/ButtonModalAnnouncement/ButtonModalAnnouncement.jsx";
+import CategoryAuto from "../../FormAnnouncementData/SelectCategory/CategoryAuto/CategoryAuto.jsx";
 
-export default function AddAnnouncement({ marker, pathTo, setIsModalOpen, setError }) {
-  const [idUser, setIdUser] = useState("");
+export default function AddAnnouncementUser({
+  marker,
+  pathTo,
+  setIsModalOpen,
+  setError,
+  user,
+}) {
+  const [idUser, setIdUser] = useState(user._id);
   const [chapter, setChapter] = useState("");
   const [category, setCategory] = useState("");
   const [purchaseSale, setPurchaseSale] = useState("");
@@ -30,17 +34,19 @@ export default function AddAnnouncement({ marker, pathTo, setIsModalOpen, setErr
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
+    // console.log(`idUser`, user._id);
+    // const idUser = user._id;
     event.preventDefault();
     const value = { idUser, chapter, category, purchaseSale, price, text, yar };
     const announcement = await fetchArticleAddAnnouncement(value);
     // console.log(`announcement`, announcement);
     if (announcement.message) {
-          setError(announcement.data);
-          return navigate(`/admin/announcement/error`);
+      setError(announcement.data);
+      return navigate(`/user/announcement/error`);
     }
-  
+
     document.formAnnouncement.reset();
-    navigate(`/admin/announcement/done`);
+    navigate(`/user/announcement/done`);
     return;
   };
 
@@ -53,7 +59,6 @@ export default function AddAnnouncement({ marker, pathTo, setIsModalOpen, setErr
         type="submit"
         onSubmit={handleSubmit}
       >
-        <FormAddId setIdUser={setIdUser} idUser={idUser} />
         <Chapter
           setChapter={setChapter}
           setCategory={setCategory}

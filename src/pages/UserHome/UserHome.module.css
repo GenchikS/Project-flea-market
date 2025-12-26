@@ -1,19 +1,44 @@
-.containerUserHome{
-    width:100%;
+/* .containerUserHome{ */
+    /* width:100%; */
 /* background-color: var(--bg-color); */
-}
+/* } */
 
 .listAnnouncements{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100%;
     
 }
 
+.containerTitle{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
 .titleAnnouncement{
     font-size: 14px;
 }
+
+.addAnnouncement{
+    display: flex;
+    width: 64px;
+    height: 20px;
+    font-size: 8px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--color-text-dark-blue);
+    border: 1px solid var(--border-color-black);
+    border-radius: 4px;
+    background-color: var(--bg-color-body)
+}
+
 
 .tableContainerComponent{
     display: flex;
