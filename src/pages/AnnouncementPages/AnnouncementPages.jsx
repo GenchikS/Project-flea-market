@@ -26,7 +26,7 @@ export default function AnnouncementPages({ setMarker, pathTo, setIsModalOpen })
         try {
           const response = await fetchArticleAnnouncementsAll();
           // console.log(`response`, response);
-          setItems(response);
+          setItems(response.data);
         } catch (error) {
           setError(true);
         } finally {

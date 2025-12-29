@@ -27,6 +27,7 @@ export default function UserPages({ setMarker, pathTo, setIsModalOpen }) {
         try {
           // console.log(`userPages`)
           const response = await fetchArticleUserAll();
+          // console.log(`response`, response);
           setItems(response);
         } catch (error) {
           setError(true);
