@@ -30,7 +30,6 @@ import LoginUser from "./components/Auth/LoginUser/LoginUser.jsx";
 import { LogoutUser } from "./components/Auth/LogoutUser/LogoutUser.jsx";
 import Layout from "./components/Layout/Layout.jsx";
 import { fetchArticleRefreshUser } from "./api/articles-api.js";
-// import axios from "axios";
 import { UserHome } from "./pages/UserHome/UserHome.jsx";
 import UserLoading from "./components/UserHomeComponent/UserLoading.jsx";
 import AddAnnouncementUser from "./components/Announcement/AddAnnouncementUser/FormAnnouncementUser/AddAnnouncementUser.jsx";

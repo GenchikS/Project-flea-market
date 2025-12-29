@@ -44,7 +44,7 @@ input::placeholder{
 }
 
 body {
-  min-width: 320px;
+  min-width: 380px;
   max-width: 1440px;
   /* min-height: 100vh; */
   height: 100% ;
