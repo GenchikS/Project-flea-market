@@ -20,7 +20,7 @@ export default function DifferentsComponent() {
             purchaseSale: "",
           });
           // console.log(`retponse`, response);
-          setItems(response);
+          setItems(response.data);
         } catch (error) {
           setError(true);
         } finally {

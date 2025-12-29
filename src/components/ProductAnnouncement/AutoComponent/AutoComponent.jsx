@@ -20,7 +20,7 @@ export default function AutoComponent() {
             purchaseSale: "",
           });
           // console.log(`retponse`, response);
-          setItems(response);
+          setItems(response.data);
         } catch (error) {
           setError(true);
         }

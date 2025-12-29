@@ -20,7 +20,7 @@ export default function AnimalsComponent() {
             purchaseSale: "",
           });
           // console.log(`retponse`, response);
-          setItems(response);
+          setItems(response.data);
         } catch (error) {
           setError(true);
         } finally {

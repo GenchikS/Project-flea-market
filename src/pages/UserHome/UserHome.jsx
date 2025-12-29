@@ -6,6 +6,7 @@ import { NavLink } from "react-router-dom";
 
 export const UserHome = ({ user }) => {
   const [items, setItems] = useState([]);
+  const [message, setMessage] = useState("");
   const [error, setError] = useState(false);
   const [loadig, setLoading] = useState();
 
@@ -16,7 +17,8 @@ export const UserHome = ({ user }) => {
           setLoading(true);
           setError(false);
           const response = await fetchArticleAnnouncementId(user._id);
-          setItems(response);
+          setItems(response.data.data);
+          setMessage(response.message);
         } catch (error) {
           setError(true);
         } finally {
@@ -27,10 +29,12 @@ export const UserHome = ({ user }) => {
   }, []);
 
   // console.log(`items`, items);
+  // console.log(`message`, message);
+
 return (
   <div className={css.containerUserHome}>
     <div className={css.containerTitle}>
-      <h4 className={css.titleAnnouncement}>Ваші оголошення:</h4>
+      <h4 className={css.titleAnnouncement}>{message}</h4>
       <NavLink className={css.addAnnouncement} to="/user/announcement/add">
         Додати оголошення
       </NavLink>

@@ -20,7 +20,7 @@ const [items, setItems] = useState([]);
             purchaseSale: "",
           });
           // console.log(`retponse`, response);
-          setItems(response);
+          setItems(response.data);
         } catch (error) {
           setError(true);
         }

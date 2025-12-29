@@ -81,7 +81,7 @@ export const fetchArticleAnnouncementId = async (id) => {
   try {
       const response = await axios.get(`/announcements/${id}`);
       // console.log(`response`, response.data);
-      return response.data.data;
+      return response.data;
   } catch (error) {
     // console.log(`error`, error)
     return error.response.data;
