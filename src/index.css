@@ -46,10 +46,10 @@ input::placeholder{
 body {
   width: 100%;
   max-width: 1440px;
-  /* min-height: 100vh; */
-  height: 100% ;
+  min-height: 560px;
   place-items: top;
   margin: 0 auto;
+  background-color: var(--bg-color-body);
 }
 h1, h2, h3, h4, h5, ul, li, a, p{
   margin: 0;
