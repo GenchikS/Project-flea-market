@@ -82,11 +82,12 @@
 
 
 
-.containerSection{
+/* .containerSection{
     display: flex;
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
+    width: 100%;
     gap: 8px;
     margin-top: 4px;
 }
@@ -125,5 +126,5 @@
     position: relative;
     top: -68px;
     left: 64px;
-}
+} */
 

@@ -95,30 +95,41 @@ export const HomePages = () => {
           </li>
         </ul>
       </div>
-      <section className={css.containerSection}>
-        <div className={css.containerBaner}>
-          <img src={banerOne} className={css.banerImage} />
-          <p className={css.textBanerOneTitle}>Віталій</p>
-          <p className={css.textBanerOneText}>т. 050-632-55-95</p>
-        </div>
-        <div className={css.containerBaner}>
-          <img src={banerOne} className={css.banerImage} />
-          <p className={css.textBanerOneTitle}>Віталій</p>
-          <p className={css.textBanerOneText}>т. 050-632-55-95</p>
-        </div>
-        <div className={css.containerBaner}>
-          <img src={banerOne} className={css.banerImage} />
-          <p className={css.textBanerOneTitle}>Віталій</p>
-          <p className={css.textBanerOneText}>т. 050-632-55-95</p>
-          <p className={css.taxtBanerTwoText}>+ причіп</p>
-        </div>
-        <div className={css.containerBaner}>
-          <img src={banerOne} className={css.banerImage} />
-          <p className={css.textBanerOneTitle}>Віталій</p>
-          <p className={css.textBanerOneText}>т. 050-632-55-95</p>
-          <p className={css.taxtBanerTwoText}>+причіп</p>
-        </div>
-      </section>
+      {/* <ul className={css.containerSection}>
+        <li>
+          <div className={css.containerBaner}>
+            <img src={banerOne} className={css.banerImage} />
+            <p className={css.textBanerOneTitle}>Віталій</p>
+            <p className={css.textBanerOneText}>т. 050-632-55-95</p>
+          </div>
+        </li>
+
+        <li>
+          <div className={css.containerBaner}>
+            <img src={banerOne} className={css.banerImage} />
+            <p className={css.textBanerOneTitle}>Віталій</p>
+            <p className={css.textBanerOneText}>т. 050-632-55-95</p>
+          </div>
+        </li>
+
+        <li>
+          <div className={css.containerBaner}>
+            <img src={banerOne} className={css.banerImage} />
+            <p className={css.textBanerOneTitle}>Віталій</p>
+            <p className={css.textBanerOneText}>т. 050-632-55-95</p>
+            <p className={css.taxtBanerTwoText}>+ причіп</p>
+          </div>
+        </li>
+
+        <li>
+          <div className={css.containerBaner}>
+            <img src={banerOne} className={css.banerImage} />
+            <p className={css.textBanerOneTitle}>Віталій</p>
+            <p className={css.textBanerOneText}>т. 050-632-55-95</p>
+            <p className={css.taxtBanerTwoText}>+причіп</p>
+          </div>
+        </li>
+      </ul> */}
     </div>
   );
 };
