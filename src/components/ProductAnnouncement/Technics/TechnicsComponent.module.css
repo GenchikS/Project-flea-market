@@ -1,4 +1,4 @@
-.containerDifferentsComponent{
+.containerTechnicsComponent{
     min-width: 294px;
 }
 
@@ -17,16 +17,17 @@
 }
 
 
-
-.titleDifferentsComponent{
+.titleHousingComponent{
     font-size: 14px;
 }
 
-.tableContainerDifferentsComponent{
+
+.tableContainerHousingComponent{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     width: 280px;
+    /* list-style-type: none; */
     border: 1px solid var(--border-color-black);
     border-radius: 6px;
     background-color: var(--bg-color);

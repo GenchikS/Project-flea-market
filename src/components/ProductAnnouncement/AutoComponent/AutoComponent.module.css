@@ -1,4 +1,8 @@
 
+.containerAutoComponent{
+    min-width: 294px;
+}
+
 .containerTitle{
     display: flex;
     flex-direction: row;

@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import css from "./DifferentsComponent.module.css";
+import css from "./TechnicsComponent.module.css";
 import { fetchAnnouncementFilterChapter } from "../../../api/articlesAnnouncements-api.js";
 import MyComponent from "../../Loader/Loader.jsx";
 
-export default function DifferentsComponent() {
+export default function TechnicsComponent() {
   const [items, setItems] = useState([]);
   const [pagination, setPagination] = useState({});
   const [error, setError] = useState(false);
@@ -16,11 +16,11 @@ export default function DifferentsComponent() {
           setLoading(true);
           setError(false);
           const response = await fetchAnnouncementFilterChapter({
-            chapter: "різне",
+            chapter: "техніка",
             category: "",
             purchaseSale: "",
           });
-          // console.log(`retponse`, response);
+          console.log(`retponse`, response);
           setItems(response.data);
           setPagination({
             perPage: response.perPage,
@@ -32,20 +32,24 @@ export default function DifferentsComponent() {
           });
         } catch (error) {
           setError(true);
-        } finally {
+        }
+        finally {
           setLoading(false);
         }
       }
       fetchDataChapter();
-    }, []);
+    },
+    []);
   }
   return (
-    <div className={css.containerDifferentsComponent}>
+    <div className={css.containerTechnicsComponent}>
       <div className={css.containerTitle}>
-        <h4 className={css.titleDifferentsComponent}>Різне:</h4>
-        {!loadig && <h4 className={css.titlePagination}>
-          Знайдено оголошень: {pagination.totalAnnouncement}
-        </h4>}
+        <h4 className={css.titleHousingComponent}>Пошук нерухомості</h4>
+        {!loadig && (
+          <h4 className={css.titlePagination}>
+            Знайдено оголошень: {pagination.totalAnnouncement}
+          </h4>
+        )}
       </div>
       <div>
         <h5>Фільтр</h5>
@@ -53,10 +57,7 @@ export default function DifferentsComponent() {
       <div>
         {items.length > 0 &&
           items.map((item) => (
-            <ul
-              key={item._id}
-              className={css.tableContainerDifferentsComponent}
-            >
+            <ul key={item._id} className={css.tableContainerHousingComponent}>
               <li className={css.listCard}>
                 <p className={css.chapter}>Категорія: {item.chapter}</p>
               </li>
@@ -75,7 +76,7 @@ export default function DifferentsComponent() {
       <div>
         {loadig && (
           <div className={css.containerLoadingData}>
-            <p className={css.textLoadingData}>Пошук різне ...</p>
+            <p className={css.textLoadingData}>Пошук оголошень ...</p>
             <MyComponent />
           </div>
         )}

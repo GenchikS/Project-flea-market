@@ -1,3 +1,6 @@
+.containerGiftsComponent{
+    min-width: 294px;
+}
 
 .containerTitle{
     display: flex;

@@ -98,8 +98,8 @@ export const HomePages = () => {
           <li>
             <ul className={css.containerListAnnouncement}>
               <li>
-                <NavLink to="/announcement/housing" className={css.listTitle}>
-                  <img src={technics} alt="нерухомість" className={css.img} />
+                <NavLink to="/announcement/technics" className={css.listTitle}>
+                  <img src={technics} alt="техніка" className={css.img} />
                   Техніка
                 </NavLink>
               </li>

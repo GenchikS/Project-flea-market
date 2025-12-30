@@ -45,9 +45,9 @@ export default function GardenComponent() {
     <div className={css.containerGardenComponent}>
       <div className={css.containerTitle}>
         <h4 className={css.titleGardenComponent}>Сад та город:</h4>
-        <h4 className={css.titlePagination}>
+        {!loadig && <h4 className={css.titlePagination}>
           Знайдено оголошень: {pagination.totalAnnouncement}
-        </h4>
+        </h4>}
       </div>
       <div>
         <h5>Фільтр</h5>

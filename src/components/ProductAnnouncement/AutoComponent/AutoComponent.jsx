@@ -43,12 +43,14 @@ export default function AutoComponent() {
   }
   // console.log(`pagination`, pagination);
   return (
-    <div>
+    <div className={css.containerAutoComponent}>
       <div className={css.containerTitle}>
         <h4 className={css.titleAutoComponent}>Автотранспорт:</h4>
-        <h4 className={css.titlePagination}>
-          Знайдено оголошень: {pagination.totalAnnouncement}
-        </h4>
+        {!loadig && (
+          <h4 className={css.titlePagination}>
+            Знайдено оголошень: {pagination.totalAnnouncement}
+          </h4>
+        )}
       </div>
       <div>
         <h5>Фільтр</h5>

@@ -45,9 +45,9 @@ export default function ServicesComponent() {
     <div className={css.containerServicesComponent}>
       <div className={css.containerTitle}>
         <h4 className={css.titleServicesComponent}>Послуги:</h4>
-        <h4 className={css.titlePagination}>
+        {!loadig && <h4 className={css.titlePagination}>
           Знайдено оголошень: {pagination.totalAnnouncement}
-        </h4>
+        </h4>}
       </div>
       <div>
         <h5>Фільтр</h5>

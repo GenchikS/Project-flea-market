@@ -35,6 +35,8 @@ import UserLoading from "./components/UserHomeComponent/UserLoading.jsx";
 import AddAnnouncementUser from "./components/Announcement/AddAnnouncementUser/FormAnnouncementUser/AddAnnouncementUser.jsx";
 import DoneAnnouncementUser from "./components/Announcement/AddAnnouncementUser/DoneAnnouncementUser/DoneAnnouncementUser.jsx";
 import ErrorAnnouncementUser from "./components/Announcement/AddAnnouncementUser/ErrorAnnouncementUser/ErrorAnnouncementUser.jsx";
+import TechnicsComponent from "./components/ProductAnnouncement/Technics/TechnicsComponent.jsx";
+// import TechnicsComponent from "./components/ProductAnnouncement/TechnicsComponent/TechnicsComponent.jsx";
 
 // http://localhost:3000/users
 // http://localhost:3000/announcements
@@ -75,6 +77,10 @@ function App() {
             <Route
               path="/announcement/housing"
               element={<HousingComponent />}
+            />
+            <Route
+              path="/announcement/technics"
+              element={<TechnicsComponent />}
             />
             <Route path="/announcement/garden" element={<GardenComponent />} />
             <Route
@@ -132,7 +138,6 @@ function App() {
                 />
               }
             />
-
 
             {/* <Route
               path="/admin/announcement/delete"

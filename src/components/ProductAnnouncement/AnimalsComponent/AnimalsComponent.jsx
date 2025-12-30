@@ -43,9 +43,9 @@ export default function AnimalsComponent() {
     <div className={css.containerAnimalsComponent}>
       <div className={css.containerTitle}>
         <h4 className={css.titleAnimalsComponent}>Тварини:</h4>
-        <h4 className={css.titlePagination}>
+        {!loadig && <h4 className={css.titlePagination}>
           Знайдено оголошень: {pagination.totalAnnouncement}
-        </h4>
+        </h4>}
       </div>
       <div>
         <h5>Фільтр</h5>
