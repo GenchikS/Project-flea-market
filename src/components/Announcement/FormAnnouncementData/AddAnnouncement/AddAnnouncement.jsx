@@ -14,6 +14,7 @@ import CategoryWork from "../SelectCategory/CategoryWork/CategoryWork.jsx"
 import ButtonModalAnnouncement from "../ButtonModalAnnouncement/ButtonModalAnnouncement.jsx";
 import { useNavigate } from "react-router-dom";
 import { fetchArticleAddAnnouncement } from "../../../../api/articlesAnnouncements-api.js";
+import CategoryTechnics from "../SelectCategory/CategoryTechnics/CategoryTechnics.jsx";
 // import FormAddPhoto from "../FormAddPhoto/FormAddPhoto.jsx";
 
 export default function AddAnnouncement({ marker, pathTo, setIsModalOpen, setError }) {
@@ -34,9 +35,9 @@ export default function AddAnnouncement({ marker, pathTo, setIsModalOpen, setErr
     const value = { idUser, chapter, category, purchaseSale, price, text, yar };
     const announcement = await fetchArticleAddAnnouncement(value);
     // console.log(`announcement`, announcement);
-    if (announcement.message) {
-          setError(announcement.data);
-          return navigate(`/admin/announcement/error`);
+    if (announcement.error) {
+          setError(announcement.error);
+      return navigate(`/admin/announcement/error`);
     }
   
     document.formAnnouncement.reset();
@@ -72,6 +73,13 @@ export default function AddAnnouncement({ marker, pathTo, setIsModalOpen, setErr
         )}
         {chapter === "нерухомість" && (
           <CategoryHousing
+            set={{ setCategory, setPurchaseSale }}
+            category={category}
+            purchaseSale={purchaseSale}
+          />
+        )}
+        {chapter === "техніка" && (
+          <CategoryTechnics
             set={{ setCategory, setPurchaseSale }}
             category={category}
             purchaseSale={purchaseSale}

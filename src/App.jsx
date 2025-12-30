@@ -215,7 +215,7 @@ function App() {
               element={<DoneAnnouncement setIsModalOpen={setIsModalOpen} />}
             />
             <Route
-              path="announcement/error"
+              path="/admin/announcement/error"
               element={
                 <ErrorAnnouncement
                   error={error}

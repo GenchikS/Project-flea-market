@@ -85,7 +85,7 @@ export default function AddAnnouncementUser({
         )}
         {chapter === "техніка" && (
           <CategoryTechnics
-            setPurchaseSale={setPurchaseSale}
+            set={{ setCategory, setPurchaseSale }}
             purchaseSale={purchaseSale}
           />
         )}
@@ -110,10 +110,7 @@ export default function AddAnnouncementUser({
           />
         )}
         {chapter === "дарую" && (
-          <CategoryGifts
-            setCategory={setCategory}
-            category={category}
-           />
+          <CategoryGifts setCategory={setCategory} category={category} />
         )}
         <AnnouncementText setText={setText} marker={marker} />
         <ButtonModalAnnouncement

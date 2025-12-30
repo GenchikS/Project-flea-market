@@ -16,6 +16,7 @@
 .containerTitle{
     display: flex;
     flex-direction: row;
+    min-width: 294px;
     justify-content: space-between;
     margin-top: 12px;
     margin-bottom: 12px;

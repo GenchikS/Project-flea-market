@@ -45,11 +45,11 @@ export default function Chapter({ setChapter, setCategory, chapter, marker }) {
         <option className={css.option} value="тварини">
           тварини
         </option>
-        <option className={css.option} value="різне">
-          різне
-        </option>
         <option className={css.option} value="дарую">
           дарую
+        </option>
+        <option className={css.option} value="різне">
+          різне
         </option>
       </select>
     </div>

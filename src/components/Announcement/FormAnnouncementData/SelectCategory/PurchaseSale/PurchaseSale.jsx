@@ -1,7 +1,8 @@
 import { useId } from "react";
 import css from "./PurchaseSale.module.css";
-export default function PurchaseSale({ setPurchaseSale, purchaseSale, marker }) {
+export default function PurchaseSale({ set, purchaseSale, marker }) {
   const PurchaseSaleId = useId();
+  const { setPurchaseSale } = set;
   return (
     <div className={css.containerCategory}>
       <p className={!marker ? css.markerRed : css.markerGreen}>*</p>

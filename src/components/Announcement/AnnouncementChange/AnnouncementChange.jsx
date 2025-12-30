@@ -8,13 +8,13 @@ export default function AnnouncementChange({ setMarker, pathTo, setIsModalOpen }
   // console.log(`pathTo`, pathTo);
 
   const handleClick = (evn) => {
-    console.log(`evn:`, evn);
+    // console.log(`evn:`, evn);
     switch (evn) {
       case `addAnnouncements`:
         setMarker(false);
         setIsModalOpen(true);
         navigate(`${pathTo}/announcement/add`);
-        console.log(`evn addAnnouncements:`, evn);
+        // console.log(`evn addAnnouncements:`, evn);
         break;
       case `updataAnnouncements`:
         setMarker(true);
