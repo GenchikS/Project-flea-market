@@ -1,7 +1,6 @@
 import { useId } from "react";
 import css from "./PurchaseSale.module.css";
-export default function PurchaseSale({ set, purchaseSale, marker }) {
-  const { setPurchaseSale } = set;
+export default function PurchaseSale({ setPurchaseSale, purchaseSale, marker }) {
   const PurchaseSaleId = useId();
   return (
     <div className={css.containerCategory}>

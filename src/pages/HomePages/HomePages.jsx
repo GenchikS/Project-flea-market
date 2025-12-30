@@ -53,9 +53,9 @@ export const HomePages = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/announcement/garden" className={css.listTitle}>
-                  <img src={garden} alt="сад та город" className={css.img} />
-                  Сад та город
+                <NavLink to="/announcement/technics" className={css.listTitle}>
+                  <img src={technics} alt="техніка" className={css.img} />
+                  Техніка
                 </NavLink>
               </li>
             </ul>
@@ -63,15 +63,31 @@ export const HomePages = () => {
           <li>
             <ul className={css.containerListAnnouncement}>
               <li>
+                <NavLink to="/announcement/garden" className={css.listTitle}>
+                  <img src={garden} alt="сад та город" className={css.img} />
+                  Сад та город
+                </NavLink>
+              </li>
+              <li>
                 <NavLink to="/announcement/services" className={css.listTitle}>
                   <img src={services} alt="послуги" className={css.img} />
                   Послуги
                 </NavLink>
               </li>
+            </ul>
+          </li>
+          <li>
+            <ul className={css.containerListAnnouncement}>
               <li>
                 <NavLink to="/announcement/animals" className={css.listTitle}>
                   <img src={animals} alt="тварини" className={css.img} />
                   Тварини
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/announcement/gifts" className={css.listTitle}>
+                  <img src={gifts} alt="дарую" className={css.img} />
+                  Дарую
                 </NavLink>
               </li>
             </ul>
@@ -88,24 +104,8 @@ export const HomePages = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/announcement/gifts" className={css.listTitle}>
-                  <img src={gifts} alt="дарую" className={css.img} />
-                  Дарую
-                </NavLink>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <ul className={css.containerListAnnouncement}>
-              <li>
-                <NavLink to="/announcement/technics" className={css.listTitle}>
-                  <img src={technics} alt="техніка" className={css.img} />
-                  Техніка
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/announcement/housing" className={css.listTitle}>
-                  <img src={list} alt="нерухомість" className={css.img} />
+                <NavLink to="/announcement/all" className={css.listTitle}>
+                  <img src={list} alt="оголошення" className={css.img} />
                   Всі оголошення
                 </NavLink>
               </li>

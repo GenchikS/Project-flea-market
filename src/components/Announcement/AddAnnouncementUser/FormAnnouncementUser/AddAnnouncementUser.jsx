@@ -13,6 +13,7 @@ import CategoryGifts from "../../FormAnnouncementData/SelectCategory/CategoryGif
 import AnnouncementText from "../../FormAnnouncementData/AnnouncementText/AnnouncementText.jsx";
 import ButtonModalAnnouncement from "../../FormAnnouncementData/ButtonModalAnnouncement/ButtonModalAnnouncement.jsx";
 import CategoryAuto from "../../FormAnnouncementData/SelectCategory/CategoryAuto/CategoryAuto.jsx";
+import CategoryTechnics from "../../FormAnnouncementData/SelectCategory/CategoryTechnics/CategoryTechnics.jsx";
 
 export default function AddAnnouncementUser({
   marker,
@@ -35,7 +36,7 @@ export default function AddAnnouncementUser({
 
   const handleSubmit = async (event) => {
     // console.log(`idUser`, user._id);
-    // const idUser = user._id;
+    const idUser = user._id;
     event.preventDefault();
     const value = { idUser, chapter, category, purchaseSale, price, text, yar };
     const announcement = await fetchArticleAddAnnouncement(value);
@@ -82,6 +83,12 @@ export default function AddAnnouncementUser({
             purchaseSale={purchaseSale}
           />
         )}
+        {chapter === "техніка" && (
+          <CategoryTechnics
+            setPurchaseSale={setPurchaseSale}
+            purchaseSale={purchaseSale}
+          />
+        )}
         {chapter === "сад" && (
           <CategoryGarden
             set={{ setCategory, setPurchaseSale }}
@@ -106,8 +113,7 @@ export default function AddAnnouncementUser({
           <CategoryGifts
             setCategory={setCategory}
             category={category}
-            // marker={marker}
-          />
+           />
         )}
         <AnnouncementText setText={setText} marker={marker} />
         <ButtonModalAnnouncement

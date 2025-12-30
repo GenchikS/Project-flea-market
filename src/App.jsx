@@ -35,7 +35,8 @@ import UserLoading from "./components/UserHomeComponent/UserLoading.jsx";
 import AddAnnouncementUser from "./components/Announcement/AddAnnouncementUser/FormAnnouncementUser/AddAnnouncementUser.jsx";
 import DoneAnnouncementUser from "./components/Announcement/AddAnnouncementUser/DoneAnnouncementUser/DoneAnnouncementUser.jsx";
 import ErrorAnnouncementUser from "./components/Announcement/AddAnnouncementUser/ErrorAnnouncementUser/ErrorAnnouncementUser.jsx";
-import TechnicsComponent from "./components/ProductAnnouncement/Technics/TechnicsComponent.jsx";
+import TechnicsComponent from "./components/ProductAnnouncement/TechnicsComponent/TechnicsComponent.jsx";
+import AllAnnouncementComponent from "./components/ProductAnnouncement/AllAnnouncementComponent/AllAnnouncementComponent.jsx";
 // import TechnicsComponent from "./components/ProductAnnouncement/TechnicsComponent/TechnicsComponent.jsx";
 
 // http://localhost:3000/users
@@ -91,11 +92,15 @@ function App() {
               path="/announcement/animals"
               element={<AnimalsComponent />}
             />
+            <Route path="/announcement/gifts" element={<GiftsComponent />} />
             <Route
               path="/announcement/differents"
               element={<DifferentsComponent />}
             />
-            <Route path="/announcement/gifts" element={<GiftsComponent />} />
+            <Route
+              path="/announcement/all"
+              element={<AllAnnouncementComponent />}
+            />
             <Route
               path="/auth/login"
               element={

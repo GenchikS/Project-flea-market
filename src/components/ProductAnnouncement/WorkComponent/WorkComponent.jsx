@@ -44,7 +44,7 @@ export default function WorkComponent() {
   return (
     <div className={css.containerWorkComponent}>
       <div className={css.containerTitle}>
-        <h4 className={css.titleWorkComponent}>Пошук роботи</h4>
+        <h4 className={css.titleWorkComponent}>Робота:</h4>
         {!loadig && (
           <h4 className={css.titlePagination}>
             Знайдено оголошень: {pagination.totalAnnouncement}

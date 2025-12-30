@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import css from "./HousingComponent.module.css";
-import { fetchAnnouncementFilterChapter } from "../../../api/articlesAnnouncements-api.js";
+import css from "./AllAnnouncementComponent.module.css";
+import { fetchArticleAnnouncementsAll } from "../../../api/articlesAnnouncements-api.js";
 import MyComponent from "../../Loader/Loader.jsx";
 
-export default function HousingComponent() {
+export default function AllAnnouncementComponent() {
   const [items, setItems] = useState([]);
   const [pagination, setPagination] = useState({});
   const [error, setError] = useState(false);
@@ -15,11 +15,7 @@ export default function HousingComponent() {
         try {
           setLoading(true);
           setError(false);
-          const response = await fetchAnnouncementFilterChapter({
-            chapter: "нерухомість",
-            category: "",
-            purchaseSale: "",
-          });
+          const response = await fetchArticleAnnouncementsAll();
           // console.log(`retponse`, response);
           setItems(response.data);
           setPagination({
@@ -32,22 +28,22 @@ export default function HousingComponent() {
           });
         } catch (error) {
           setError(true);
-        }
-        finally {
+        } finally {
           setLoading(false);
         }
       }
       fetchDataChapter();
-    },
-    []);
+    }, []);
   }
   return (
-    <div className={css.containerHousingComponent}>
+    <div className={css.containerAllAnnouncementComponent}>
       <div className={css.containerTitle}>
-        <h4 className={css.titleHousingComponent}>Нерухомість:</h4>
-        {!loadig && <h4 className={css.titlePagination}>
-          Знайдено оголошень: {pagination.totalAnnouncement}
-        </h4>}
+        <h4 className={css.titleHousingComponent}>Всі оголошення:</h4>
+        {!loadig && (
+          <h4 className={css.titlePagination}>
+            Знайдено оголошень: {pagination.totalAnnouncement}
+          </h4>
+        )}
       </div>
       <div>
         <h5>Фільтр</h5>
@@ -74,7 +70,7 @@ export default function HousingComponent() {
       <div>
         {loadig && (
           <div className={css.containerLoadingData}>
-            <p className={css.textLoadingData}>Пошук нерухомості ...</p>
+            <p className={css.textLoadingData}>Пошук оголошень ...</p>
             <MyComponent />
           </div>
         )}

@@ -20,7 +20,7 @@ export default function TechnicsComponent() {
             category: "",
             purchaseSale: "",
           });
-          console.log(`retponse`, response);
+          // console.log(`retponse`, response);
           setItems(response.data);
           setPagination({
             perPage: response.perPage,
@@ -44,7 +44,7 @@ export default function TechnicsComponent() {
   return (
     <div className={css.containerTechnicsComponent}>
       <div className={css.containerTitle}>
-        <h4 className={css.titleHousingComponent}>Пошук нерухомості</h4>
+        <h4 className={css.titleHousingComponent}>Побутова техніка:</h4>
         {!loadig && (
           <h4 className={css.titlePagination}>
             Знайдено оголошень: {pagination.totalAnnouncement}
