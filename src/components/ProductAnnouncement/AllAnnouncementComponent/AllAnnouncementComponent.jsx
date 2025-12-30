@@ -16,7 +16,7 @@ export default function AllAnnouncementComponent() {
           setLoading(true);
           setError(false);
           const response = await fetchArticleAnnouncementsAll();
-          // console.log(`retponse`, response);
+          // console.log(`retponse all`, response);
           setItems(response.data);
           setPagination({
             perPage: response.perPage,

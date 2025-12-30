@@ -11,6 +11,7 @@ import { ButtonUserDate } from "../../../Button/ButtonUserDate.jsx";
 import { fetchAnnouncementFilterChapter } from "../../../../api/articlesAnnouncements-api.js";
 import CategoryGarden from "../../FormAnnouncementData/SelectCategory/CategoryGarden/CategoryGarden.jsx";
 import CategoryAll from "../../FormAnnouncementData/SelectCategory/CategoryAll/CategoryAll.jsx";
+import CategoryTechnics from "../../FormAnnouncementData/SelectCategory/CategoryTechnics/CategoryTechnics.jsx";
 
 export default function AnnouncementFilterChapter({
   chapter,
@@ -30,7 +31,7 @@ export default function AnnouncementFilterChapter({
 
   const handleSubmit = async (evt) => {
     evt.preventDefault();
-    console.log(`chapter`, chapter);
+    // console.log(`chapter`, chapter);
     // console.log(`category`, category);
     // console.log(`purchaseSale`, purchaseSale);
     const response = await fetchAnnouncementFilterChapter({
@@ -38,7 +39,7 @@ export default function AnnouncementFilterChapter({
       category: category,
       purchaseSale: purchaseSale,
     });
-    setItems(response);
+    setItems(response.data);
     // console.log(`response`, response);
     setPurchaseSale("");
     setCategory("");
@@ -73,6 +74,9 @@ export default function AnnouncementFilterChapter({
           </option>
           <option className={css.option} value="нерухомість">
             нерухомість
+          </option>
+          <option className={css.option} value="техніка">
+            техніка
           </option>
           <option className={css.option} value="тварини">
             тварини
@@ -113,6 +117,14 @@ export default function AnnouncementFilterChapter({
             category={category}
             purchaseSale={purchaseSale}
             sourse={sourse}
+            marker={true}
+          />
+        )}
+        {chapter === "техніка" && (
+          <CategoryTechnics
+            setPurchaseSale={setPurchaseSale}
+            category={category}
+            purchaseSale={purchaseSale}
             marker={true}
           />
         )}

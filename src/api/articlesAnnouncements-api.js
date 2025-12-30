@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const fetchArticleAnnouncementsAll = async () => {
    const response = await axios.get(`/announcements`);
-//   console.log(`response`, response);
+  // console.log(`response api`, response.data);
   return response.data.data;
 };
 
@@ -72,7 +72,7 @@ export const fetchAnnouncementFilterChapter = async (payload) => {
   const { chapter, category, purchaseSale } = payload;
   // console.log(`chapter2`, chapter);
   const response = await axios.get(`/announcements/?chapter=${chapter}&category=${category}&purchaseSale=${purchaseSale}`);
-  // console.log(`response`, response.data.data);
+  // console.log(`response`, response.data.data.data);
   return response.data.data;
 }
 
