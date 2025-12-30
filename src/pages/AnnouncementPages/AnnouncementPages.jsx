@@ -25,7 +25,7 @@ export default function AnnouncementPages({ setMarker, pathTo, setIsModalOpen })
         setLoading(true);
         try {
           const response = await fetchArticleAnnouncementsAll();
-          console.log(`response eff`, response);
+          // console.log(`response eff`, response);
           setItems(response.data);
         } catch (error) {
           setError(true);
@@ -44,22 +44,12 @@ export default function AnnouncementPages({ setMarker, pathTo, setIsModalOpen })
       setItemArray(null);
       setError(false);
       const response = await fetchArticleAnnouncementId(id);
-      console.log(`response Id`, response.data.data);
-
-      // if (!response.length) {
-      //   setItemArray([response]);
-      // }
-
+      // console.log(`response Id`, response.data.data);
       setItems(response.data.data);
-
-      if (!response) {
-        setError(true);
-        return;
-      }
     } catch (error) {
-      // setError(true);
+      setError(true);
     } finally {
-      // setLoading(false);
+      setLoading(false);
     }
   };
   return (
