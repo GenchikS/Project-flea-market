@@ -5,6 +5,7 @@ import MyComponent from "../../Loader/Loader.jsx";
 
 export default function DifferentsComponent() {
   const [items, setItems] = useState([]);
+  const [pagination, setPagination] = useState({});
   const [error, setError] = useState(false);
   const [loadig, setLoading] = useState(false);
 
@@ -21,6 +22,14 @@ export default function DifferentsComponent() {
           });
           // console.log(`retponse`, response);
           setItems(response.data);
+          setPagination({
+            perPage: response.perPage,
+            page: response.page,
+            totalPages: response.totalPages,
+            totalAnnouncement: response.totalAnnouncement,
+            nextPage: response.nextPage,
+            previousPage: response.previousPage,
+          });
         } catch (error) {
           setError(true);
         } finally {
@@ -32,14 +41,22 @@ export default function DifferentsComponent() {
   }
   return (
     <div className={css.containerDifferentsComponent}>
-      <h4>Пошук різне</h4>
+      <div className={css.containerTitle}>
+        <h4 className={css.titleDifferentsComponent}>Різне:</h4>
+        <h4 className={css.titlePagination}>
+          Знайдено оголошень: {pagination.totalAnnouncement}
+        </h4>
+      </div>
       <div>
         <h5>Фільтр</h5>
       </div>
       <div>
         {items.length > 0 &&
           items.map((item) => (
-            <ul key={item._id} className={css.tableContainerDifferentsComponent}>
+            <ul
+              key={item._id}
+              className={css.tableContainerDifferentsComponent}
+            >
               <li className={css.listCard}>
                 <p className={css.chapter}>Категорія: {item.chapter}</p>
               </li>

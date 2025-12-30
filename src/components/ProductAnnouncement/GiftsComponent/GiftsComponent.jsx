@@ -5,6 +5,7 @@ import MyComponent from "../../Loader/Loader.jsx";
 
 export default function GiftsComponent() {
   const [items, setItems] = useState([]);
+  const [pagination, setPagination] = useState({});
   const [error, setError] = useState(false);
   const [loadig, setLoading] = useState(false);
 
@@ -21,6 +22,14 @@ export default function GiftsComponent() {
           });
           // console.log(`retponse`, response);
           setItems(response.data);
+          setPagination({
+            perPage: response.perPage,
+            page: response.page,
+            totalPages: response.totalPages,
+            totalAnnouncement: response.totalAnnouncement,
+            nextPage: response.nextPage,
+            previousPage: response.previousPage,
+          });
         } catch (error) {
           setError(true);
         } finally {
@@ -32,7 +41,12 @@ export default function GiftsComponent() {
   }
   return (
     <div className={css.containerGiftsComponent}>
-      <h4>Пошук в дарунок</h4>
+      <div className={css.containerTitle}>
+        <h4 className={css.titleGiftsComponent}>В дарунок:</h4>
+        <h4 className={css.titlePagination}>
+          Знайдено оголошень: {pagination.totalAnnouncement}
+        </h4>
+      </div>
       <div>
         <h5>Фільтр</h5>
       </div>

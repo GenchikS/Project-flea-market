@@ -3,14 +3,16 @@ import css from "./HomePages.module.css";
 import auto from "../../image/car.png";
 import work from "../../image/work.png";
 import housing from "../../image/housing.png";
+import technics from "../../image/technics.png";
 import garden from "../../image/garden.png"
 import services from "../../image/services.png";
 import animals from "../../image/animals.png";
 import differents from "../../image/differents.png";
 import gifts from "../../image/gifts.png";
+import list from "../../image/list.png";
 
 
-import banerOne from "../../imageBaner/banerOne.jpg"
+// import banerOne from "../../imageBaner/banerOne.jpg"
 
 export const HomePages = () => {
   // console.log(`isLogin HomePages`, isLogin);
@@ -89,6 +91,22 @@ export const HomePages = () => {
                 <NavLink to="/announcement/gifts" className={css.listTitle}>
                   <img src={gifts} alt="дарую" className={css.img} />
                   Дарую
+                </NavLink>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <ul className={css.containerListAnnouncement}>
+              <li>
+                <NavLink to="/announcement/housing" className={css.listTitle}>
+                  <img src={technics} alt="нерухомість" className={css.img} />
+                  Техніка
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/announcement/housing" className={css.listTitle}>
+                  <img src={list} alt="нерухомість" className={css.img} />
+                  Всі оголошення
                 </NavLink>
               </li>
             </ul>

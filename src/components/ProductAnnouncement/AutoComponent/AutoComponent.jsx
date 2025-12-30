@@ -6,6 +6,7 @@ import MyComponent from "../../Loader/Loader.jsx";
 export default function AutoComponent() {
 
   const [items, setItems] = useState([]);
+  const [pagination, setPagination] = useState({});
   const [error, setError] = useState(false);
   const [loadig, setLoading] = useState(false);
 {
@@ -21,6 +22,14 @@ export default function AutoComponent() {
           });
           // console.log(`retponse`, response);
           setItems(response.data);
+          setPagination({
+            perPage: response.perPage,
+            page: response.page,
+            totalPages: response.totalPages,
+            totalAnnouncement: response.totalAnnouncement,
+            nextPage: response.nextPage,
+            previousPage: response.previousPage,
+          });
         } catch (error) {
           setError(true);
         }
@@ -32,9 +41,15 @@ export default function AutoComponent() {
     },
     []);
   }
+  // console.log(`pagination`, pagination);
   return (
     <div>
-      <h4 className={css.titleAutoComponent}>Пошук автотранспорту</h4>
+      <div className={css.containerTitle}>
+        <h4 className={css.titleAutoComponent}>Автотранспорт:</h4>
+        <h4 className={css.titlePagination}>
+          Знайдено оголошень: {pagination.totalAnnouncement}
+        </h4>
+      </div>
       <div>
         <h5>Фільтр</h5>
       </div>

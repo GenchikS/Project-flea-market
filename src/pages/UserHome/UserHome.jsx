@@ -7,6 +7,7 @@ import { NavLink } from "react-router-dom";
 export const UserHome = ({ user }) => {
   const [items, setItems] = useState([]);
   const [message, setMessage] = useState("");
+  const [pagination, setPagination] = useState({});
   const [error, setError] = useState(false);
   const [loadig, setLoading] = useState();
 
@@ -17,8 +18,17 @@ export const UserHome = ({ user }) => {
           setLoading(true);
           setError(false);
           const response = await fetchArticleAnnouncementId(user._id);
+          // console.log(`response`, response);
           setItems(response.data.data);
           setMessage(response.message);
+          setPagination({
+            perPage: response.data.perPage,
+            page: response.data.page,
+            totalPages: response.data.totalPages,
+            totalAnnouncement: response.data.totalAnnouncement,
+            nextPage: response.data.nextPage,
+            previousPage: response.data.previousPage,
+          });
         } catch (error) {
           setError(true);
         } finally {
@@ -30,18 +40,19 @@ export const UserHome = ({ user }) => {
 
   // console.log(`items`, items);
   // console.log(`message`, message);
+  // console.log(`pagination`, pagination);
+
 
 return (
   <div className={css.containerUserHome}>
     <div className={css.containerTitle}>
-      <h4 className={css.titleAnnouncement}>{message}</h4>
+      <h4 className={css.titleAnnouncement}>
+        {message} {pagination.totalAnnouncement}
+      </h4>
       <NavLink className={css.addAnnouncement} to="/user/announcement/add">
         Додати оголошення
       </NavLink>
     </div>
-    {/* <div>
-      <h5>Фільтр</h5>
-    </div> */}
     <div className={css.listAnnouncements}>
       {items.length > 0 ? (
         items.map((item) => (
@@ -95,12 +106,4 @@ return (
     </div>
   </div>
 );
-  // return (
-  //   <div>
-
-  // <div className={css.listAnnouncements}>
-
-  // </div>
-  //   </div>
-  // );
 };

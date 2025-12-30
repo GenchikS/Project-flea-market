@@ -1,3 +1,23 @@
+.containerTitle{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.titlePagination{
+    font-size: 8px;
+    font-weight: 400;
+}
+
+
+.titleHousingComponent{
+    font-size: 14px;
+}
+
+
 .tableContainerHousingComponent{
     display: flex;
     flex-direction: column;

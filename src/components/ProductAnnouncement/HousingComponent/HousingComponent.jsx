@@ -4,7 +4,8 @@ import { fetchAnnouncementFilterChapter } from "../../../api/articlesAnnouncemen
 import MyComponent from "../../Loader/Loader.jsx";
 
 export default function HousingComponent() {
-const [items, setItems] = useState([]);
+  const [items, setItems] = useState([]);
+  const [pagination, setPagination] = useState({});
   const [error, setError] = useState(false);
   const [loadig, setLoading] = useState(false);
 
@@ -21,6 +22,14 @@ const [items, setItems] = useState([]);
           });
           // console.log(`retponse`, response);
           setItems(response.data);
+          setPagination({
+            perPage: response.perPage,
+            page: response.page,
+            totalPages: response.totalPages,
+            totalAnnouncement: response.totalAnnouncement,
+            nextPage: response.nextPage,
+            previousPage: response.previousPage,
+          });
         } catch (error) {
           setError(true);
         }
@@ -34,7 +43,12 @@ const [items, setItems] = useState([]);
   }
   return (
     <div className={css.containerHousingComponent}>
-      <h4>Пошук нерухомості</h4>
+      <div className={css.containerTitle}>
+        <h4 className={css.titleHousingComponent}>Пошук нерухомості</h4>
+        <h4 className={css.titlePagination}>
+          Знайдено оголошень: {pagination.totalAnnouncement}
+        </h4>
+      </div>
       <div>
         <h5>Фільтр</h5>
       </div>
