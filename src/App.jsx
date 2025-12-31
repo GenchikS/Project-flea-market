@@ -247,51 +247,49 @@ function App() {
                   setIsModalOpen={setIsModalOpen}
                 />
               }
-            >
-              <Route
-                path="add"
-                element={
-                  <AddUser
-                    marker={marker}
-                    pathTo={"/admin/users"}
-                    setIsModalOpen={setIsModalOpen}
-                    setError={setError}
-                  />
-                }
-              />
-              <Route
-                path="updata"
-                element={
-                  <UpdataUser
-                    marker={marker}
-                    pathTo={"/admin/users"}
-                    setIsModalOpen={setIsModalOpen}
-                    setError={setError}
-                  />
-                }
-              />
-              <Route
-                path="delete"
-                element={
-                  <DeleteUser
-                    pathTo={"/admin/users"}
-                    setIsModalOpen={setIsModalOpen}
-                    setError={setError}
-                  />
-                }
-              />
-              <Route
-                path="done"
-                element={<DoneUser setIsModalOpen={setIsModalOpen} />}
-              />
-              <Route
-                path="error"
-                element={
-                  <ErrorUser error={error} setIsModalOpen={setIsModalOpen} />
-                }
-              />
-            </Route>
-
+            />
+            <Route
+              path="/admin/users/add"
+              element={
+                <AddUser
+                  marker={marker}
+                  pathTo={"/admin/users"}
+                  setIsModalOpen={setIsModalOpen}
+                  setError={setError}
+                />
+              }
+            />
+            <Route
+              path="/admin/users/updata"
+              element={
+                <UpdataUser
+                  marker={marker}
+                  pathTo={"/admin/users"}
+                  setIsModalOpen={setIsModalOpen}
+                  setError={setError}
+                />
+              }
+            />
+            <Route
+              path="/admin/users/delete"
+              element={
+                <DeleteUser
+                  pathTo={"/admin/users"}
+                  setIsModalOpen={setIsModalOpen}
+                  setError={setError}
+                />
+              }
+            />
+            <Route
+              path="admin/users/done"
+              element={<DoneUser setIsModalOpen={setIsModalOpen} />}
+            />
+            <Route
+              path="admin/users/error"
+              element={
+                <ErrorUser error={error} setIsModalOpen={setIsModalOpen} />
+              }
+            />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
