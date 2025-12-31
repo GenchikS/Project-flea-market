@@ -16,8 +16,6 @@
     font-weight: 400;
 }
 
-
-
 .titleServicesComponent{
     font-size: 14px;
 }
@@ -66,4 +64,12 @@ list-style-type: none;
 .textAnnouncemnt{
     font-size: 10px;
     margin-top: 4px;
+}
+
+.textDate{
+    text-align: right;
+    font-size: 8px;
+    font-weight: 500;
+    margin-top: 4px;
+    color: var(--color-text-dark-green) 
 }

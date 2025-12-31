@@ -90,6 +90,11 @@ return (
               <button className={css.buttonUpdate}>редагувати</button>
               <button className={css.buttonDelete}>видалити</button>
             </li>
+              <li>
+                <p className={css.textDate}>
+                  Дата публікації: {item.createdAt.slice(0, 10)}
+                </p>
+              </li>
           </ul>
         ))
       ) : (

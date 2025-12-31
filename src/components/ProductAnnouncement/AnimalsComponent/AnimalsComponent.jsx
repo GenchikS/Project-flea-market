@@ -66,6 +66,11 @@ export default function AnimalsComponent() {
               <li className={css.listTextAnnouncement}>
                 <p className={css.textAnnouncemnt}>{item.text}</p>
               </li>
+             <li className={css.listTextAnnouncement}>
+                <p className={css.textDate}>
+                  Дата публікації: {item.createdAt.slice(0, 10)}
+                </p>
+              </li>
             </ul>
           ))}
       </div>
