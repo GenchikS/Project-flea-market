@@ -21,6 +21,7 @@ export default function AddAnnouncementUser({
   setIsModalOpen,
   setError,
   user,
+  setResponseMessage,
 }) {
   const [idUser, setIdUser] = useState(user._id);
   const [chapter, setChapter] = useState("");
@@ -41,10 +42,14 @@ export default function AddAnnouncementUser({
     const value = { idUser, chapter, category, purchaseSale, price, text, yar };
     const announcement = await fetchArticleAddAnnouncement(value);
     // console.log(`announcement`, announcement);
-    if (announcement.message) {
-      setError(announcement.data);
-      return navigate(`/user/announcement/error`);
+    if (announcement.data) {
+      setResponseMessage(announcement.message);
     }
+
+    // if (announcement.message) {
+    //   setError(announcement.data);
+    //   return navigate(`/user/announcement/error`);
+    // }
 
     document.formAnnouncement.reset();
     navigate(`/user/announcement/done`);

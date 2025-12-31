@@ -8,7 +8,12 @@ import ButtonModalAnnouncement from "../ButtonModalAnnouncement/ButtonModalAnnou
 //   id: Yup.string().required("Requred!"),
 // });
 
-export const DeleteAnnouncement = ({ pathTo, setIsModalOpen, setError }) => {
+export const DeleteAnnouncement = ({
+  pathTo,
+  setIsModalOpen,
+  setError,
+  setResponseMessage,
+}) => {
   const navigate = useNavigate();
 
   const handleSubmit = async (evt) => {
@@ -23,11 +28,18 @@ export const DeleteAnnouncement = ({ pathTo, setIsModalOpen, setError }) => {
     const id = idAnnouncement.toLowerCase();
 
     const responseDelete = await fetchArticleDeleteAnnouncement(id);
-    if (responseDelete.message) {
-      setError(responseDelete.data);
+    console.log(`responseDelete`, responseDelete);
+
+    if (responseDelete.data.error) {
+      setError(responseDelete.data.error);
       return navigate(`/admin/announcement/error`);
     }
 
+    if (responseDelete.data) {
+      const deleteAnnouncement = "Оголошення видалено!";
+      console.log(`deleteAnnouncement`, deleteAnnouncement);
+      setResponseMessage(deleteAnnouncement);
+    }
     form.reset();
     navigate(`/admin/announcement/done`);
   };

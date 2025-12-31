@@ -15,7 +15,13 @@ import CategoryGifts from "../SelectCategory/CategoryGifts/CategoryGifts.jsx";
 import {  fetchArticleUpdataAnnouncement } from "../../../../api/articlesAnnouncements-api.js";
 import CategoryGarden from "../SelectCategory/CategoryGarden/CategoryGarden.jsx";
 
-export default function UpdataAnnouncement({ marker, pathTo, setIsModalOpen, setError }) {
+export default function UpdataAnnouncement({
+  marker,
+  pathTo,
+  setIsModalOpen,
+  setError,
+  setResponseMessage,
+}) {
   const [idAnnoun, setIdAnnoun] = useState("");
   const [chapter, setChapter] = useState("");
   const [category, setCategory] = useState("");
@@ -24,20 +30,11 @@ export default function UpdataAnnouncement({ marker, pathTo, setIsModalOpen, set
   const [yar, setYar] = useState("");
   const [text, setText] = useState("");
   // const [photo, setPhoto] = useState("");
-  
+
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    // const searche = {
-    //   idAnnoun,
-    //   chapter,
-    //   category,
-    //   purchaseSale,
-    //   price,
-    //   yar, text,
-    // };
-    // console.log(`evt submit`, searche);
 
     const responseAnnouncement = await fetchArticleUpdataAnnouncement({
       idAnnoun: idAnnoun,
@@ -49,8 +46,11 @@ export default function UpdataAnnouncement({ marker, pathTo, setIsModalOpen, set
       text: text,
     });
     // console.log(`responseAnnouncement`, responseAnnouncement);
-    if (responseAnnouncement.message) {
-      setError(responseAnnouncement.data);
+      if (responseAnnouncement.data) {
+        setResponseMessage(responseAnnouncement.message);
+      }
+    if (responseAnnouncement.error) {
+      setError(responseAnnouncement.error);
       return navigate(`/admin/announcement/error`);
     }
 

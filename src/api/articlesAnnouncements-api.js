@@ -49,8 +49,8 @@ export const fetchArticleUpdataAnnouncement = async (payload) => {
        `/announcement/updata/${idAnnoun}`,
        payloadObject
      );
-     // console.log(`response`, response.data.data)
-     return response.data.data;
+    //  console.log(`response`, response.data)
+     return response.data;
   } catch (error) {
     // console.log(`error updata`, error.response.data)
     return error.response.data;
@@ -62,10 +62,10 @@ export const fetchArticleDeleteAnnouncement = async (id) => {
   // console.log(`id`, id)
   try {
     const response = await axios.delete(`/announcement/delete/${id}`);
+    // console.log(`response`, response);
     return response;
-  // console.log(`response`, response.data.data);
   } catch (error) {
-    return error.response.data;
+    return error.response;
   }
 }
 

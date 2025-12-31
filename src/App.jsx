@@ -47,6 +47,7 @@ function App() {
   const [isLogin, setIsLogin] = useState(false);
   const [marker, setMarker] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [responseMessage, setResponseMessage] = useState("")
   const [error, setError] = useState(``);
 
   const token = JSON.parse(localStorage.getItem("Project-flea-market"));
@@ -140,6 +141,7 @@ function App() {
                   setIsModalOpen={setIsModalOpen}
                   setError={setError}
                   user={user}
+                  setResponseMessage={setResponseMessage}
                 />
               }
             />
@@ -156,7 +158,12 @@ function App() {
             /> */}
             <Route
               path="/user/announcement/done"
-              element={<DoneAnnouncementUser setIsModalOpen={setIsModalOpen} />}
+              element={
+                <DoneAnnouncementUser
+                  setIsModalOpen={setIsModalOpen}
+                  responseMessage={responseMessage}
+                />
+              }
             />
             <Route
               path="/user/announcement/error"
@@ -186,6 +193,7 @@ function App() {
                   pathTo={"/admin"}
                   setIsModalOpen={setIsModalOpen}
                   setError={setError}
+                  setResponseMessage={setResponseMessage}
                 />
               }
             />
@@ -197,6 +205,7 @@ function App() {
                   pathTo={"/admin"}
                   setIsModalOpen={setIsModalOpen}
                   setError={setError}
+                  setResponseMessage={setResponseMessage}
                 />
               }
             />
@@ -206,13 +215,19 @@ function App() {
                 <DeleteAnnouncement
                   pathTo={"/admin"}
                   setIsModalOpen={setIsModalOpen}
+                  setResponseMessage={setResponseMessage}
                   setError={setError}
                 />
               }
             />
             <Route
               path="/admin/announcement/done"
-              element={<DoneAnnouncement setIsModalOpen={setIsModalOpen} />}
+              element={
+                <DoneAnnouncement
+                  setIsModalOpen={setIsModalOpen}
+                  responseMessage={responseMessage}
+                />
+              }
             />
             <Route
               path="/admin/announcement/error"

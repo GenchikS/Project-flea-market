@@ -17,7 +17,7 @@ import { fetchArticleAddAnnouncement } from "../../../../api/articlesAnnouncemen
 import CategoryTechnics from "../SelectCategory/CategoryTechnics/CategoryTechnics.jsx";
 // import FormAddPhoto from "../FormAddPhoto/FormAddPhoto.jsx";
 
-export default function AddAnnouncement({ marker, pathTo, setIsModalOpen, setError }) {
+export default function AddAnnouncement({ marker, pathTo, setIsModalOpen, setError, setResponseMessage }) {
   const [idUser, setIdUser] = useState("");
   const [chapter, setChapter] = useState("");
   const [category, setCategory] = useState("");
@@ -35,6 +35,10 @@ export default function AddAnnouncement({ marker, pathTo, setIsModalOpen, setErr
     const value = { idUser, chapter, category, purchaseSale, price, text, yar };
     const announcement = await fetchArticleAddAnnouncement(value);
     // console.log(`announcement`, announcement);
+    if (announcement.data) {
+        setResponseMessage(announcement.message);
+    }
+
     if (announcement.error) {
           setError(announcement.error);
       return navigate(`/admin/announcement/error`);
