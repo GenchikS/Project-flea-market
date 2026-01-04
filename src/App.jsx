@@ -17,11 +17,12 @@ import ServicesComponent from "./components/ProductAnnouncement/ServicesComponen
 import AnimalsComponent from "./components/ProductAnnouncement/AnimalsComponent/AnimalsComponent.jsx";
 import DifferentsComponent from "./components/ProductAnnouncement/DifferentsComponent/DifferentsComponent.jsx";
 import GiftsComponent from "./components/ProductAnnouncement/GiftsComponent/GiftsComponent.jsx";
+import GardenComponent from "./components/ProductAnnouncement/GardenComponent/GardenComponent.jsx";
+import TechnicsComponent from "./components/ProductAnnouncement/TechnicsComponent/TechnicsComponent.jsx";
 import DoneAuth from "./components/Auth/DoneAuth/DoneAuth.jsx";
 import { AdminPages } from "./pages/AdminPages/AdminPages.jsx";
 import { AdminUserPages } from "./pages/AdminUserPages/AdminUserPages.jsx";
 import DoneUser from "./components/DoneUser/DoneUser.jsx";
-import GardenComponent from "./components/ProductAnnouncement/GardenComponent/GardenComponent.jsx";
 import ErrorUser from "./components/User/FormUserData/ErrorUser/ErrorUser.jsx";
 import ErrorAnnouncement from "./components/Announcement/FormAnnouncementData/ErrorAnnouncement/ErrorAnnouncement.jsx";
 import ErrorAuth from "./components/Auth/ErrorAuth/ErrorAuth.jsx";
@@ -32,13 +33,13 @@ import Layout from "./components/Layout/Layout.jsx";
 import { fetchArticleRefreshUser } from "./api/articles-api.js";
 import { UserHome } from "./pages/UserHome/UserHome.jsx";
 import UserLoading from "./components/UserHomeComponent/UserLoading.jsx";
-import AddAnnouncementUser from "./components/Announcement/AddAnnouncementUser/FormAnnouncementUser/AddAnnouncementUser.jsx";
-import DoneAnnouncementUser from "./components/Announcement/AddAnnouncementUser/DoneAnnouncementUser/DoneAnnouncementUser.jsx";
-import ErrorAnnouncementUser from "./components/Announcement/AddAnnouncementUser/ErrorAnnouncementUser/ErrorAnnouncementUser.jsx";
-import TechnicsComponent from "./components/ProductAnnouncement/TechnicsComponent/TechnicsComponent.jsx";
+import AddAnnouncementUser from "./components/User/AnnouncementUser/UpdataAnnouncementUser/UpdataAnnouncementUser.jsx";
+import DoneAnnouncementUser from "./components/User/AnnouncementUser/DoneAnnouncementUser/DoneAnnouncementUser.jsx";
+import ErrorAnnouncementUser from "./components/User/AnnouncementUser/ErrorAnnouncementUser/ErrorAnnouncementUser.jsx";
 import AllAnnouncementComponent from "./components/ProductAnnouncement/AllAnnouncementComponent/AllAnnouncementComponent.jsx";
 import { UserDeleteAnnouncement } from "./components/User/UserDeleteAnnouncement/UserDeleteAnnouncement.jsx";
-// import TechnicsComponent from "./components/ProductAnnouncement/TechnicsComponent/TechnicsComponent.jsx";
+
+
 
 // http://localhost:3000/users
 // http://localhost:3000/announcements
@@ -158,7 +159,7 @@ function App() {
                 />
               }
             />
-            <Route
+            {/* <Route
               path="/user/announcement/updata"
               element={
                 <AddAnnouncementUser
@@ -170,7 +171,7 @@ function App() {
                   setResponseMessage={setResponseMessage}
                 />
               }
-            />
+            /> */}
 
             <Route
               path="/user/announcement/delete"

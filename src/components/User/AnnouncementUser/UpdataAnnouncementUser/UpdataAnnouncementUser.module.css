@@ -1,0 +1,28 @@
+.containerAddAnnouncement{
+    display: flex;
+    flex-direction: column;
+    width: 222px;
+    height: auto;
+    /* text-align: center; */
+    align-items: center;
+    border: 1px solid var(--border-color-black);
+    border-radius: 14px;
+    background-color: var(--bg-color);
+    padding: 12px;
+    margin-top: 24px;
+}
+
+.title{
+    font-style: italic;
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+.listAddAnnouncement{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+}
+
+
+
