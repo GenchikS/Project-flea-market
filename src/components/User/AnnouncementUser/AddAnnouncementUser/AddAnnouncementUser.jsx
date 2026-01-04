@@ -2,28 +2,28 @@ import { useState } from "react";
 import css from "./AddAnnouncementUser.module.css";
 import { useNavigate } from "react-router-dom";
 import { fetchArticleAddAnnouncement } from "../../../../api/articlesAnnouncements-api.js";
-import Chapter from "../../FormAnnouncementData/SelectChapter/Chapter.jsx";
-import CategoryWork from "../../FormAnnouncementData/SelectCategory/CategoryWork/CategoryWork.jsx";
-import CategoryHousing from "../../FormAnnouncementData/SelectCategory/CategoryHousing/CategoryHousing.jsx";
-import CategoryGarden from "../../FormAnnouncementData/SelectCategory/CategoryGarden/CategoryGarden.jsx";
-import CategoryServices from "../../FormAnnouncementData/SelectCategory/CategoryServices/CategoryServices.jsx";
-import CategoryAnimals from "../../FormAnnouncementData/SelectCategory/CategoryAnimals/CategoryAnimals.jsx";
-import CategoryDifferents from "../../FormAnnouncementData/SelectCategory/CategoryDifferents/CategoryDifferents.jsx";
-import CategoryGifts from "../../FormAnnouncementData/SelectCategory/CategoryGifts/CategoryGifts.jsx";
-import AnnouncementText from "../../FormAnnouncementData/AnnouncementText/AnnouncementText.jsx";
-import ButtonModalAnnouncement from "../../FormAnnouncementData/ButtonModalAnnouncement/ButtonModalAnnouncement.jsx";
-import CategoryAuto from "../../FormAnnouncementData/SelectCategory/CategoryAuto/CategoryAuto.jsx";
-import CategoryTechnics from "../../FormAnnouncementData/SelectCategory/CategoryTechnics/CategoryTechnics.jsx";
+import Chapter from "../../../Announcement/FormAnnouncementData/SelectChapter/Chapter.jsx";
+import CategoryWork from "../../../Announcement/FormAnnouncementData/SelectCategory/CategoryWork/CategoryWork.jsx";
+import CategoryHousing from "../../../Announcement/FormAnnouncementData/SelectCategory/CategoryHousing/CategoryHousing.jsx";
+import CategoryGarden from "../../../Announcement/FormAnnouncementData/SelectCategory/CategoryGarden/CategoryGarden.jsx";
+import CategoryServices from "../../../Announcement/FormAnnouncementData/SelectCategory/CategoryServices/CategoryServices.jsx";
+import CategoryAnimals from "../../../Announcement/FormAnnouncementData/SelectCategory/CategoryAnimals/CategoryAnimals.jsx";
+import CategoryDifferents from "../../../Announcement/FormAnnouncementData/SelectCategory/CategoryDifferents/CategoryDifferents.jsx";
+import CategoryGifts from "../../../Announcement/FormAnnouncementData/SelectCategory/CategoryGifts/CategoryGifts.jsx";
+import AnnouncementText from "../../../Announcement/FormAnnouncementData/AnnouncementText/AnnouncementText.jsx";
+import ButtonModalAnnouncement from "../../../Announcement/FormAnnouncementData/ButtonModalAnnouncement/ButtonModalAnnouncement.jsx";
+import CategoryAuto from "../../../Announcement/FormAnnouncementData/SelectCategory/CategoryAuto/CategoryAuto.jsx";
+import CategoryTechnics from "../../../Announcement/FormAnnouncementData/SelectCategory/CategoryTechnics/CategoryTechnics.jsx";
 
 export default function AddAnnouncementUser({
   marker,
   pathTo,
   setIsModalOpen,
-  setError,
+  // setError,
   user,
   setResponseMessage,
 }) {
-  const [idUser, setIdUser] = useState(user._id);
+  // const [idUser, setIdUser] = useState(user._id);
   const [chapter, setChapter] = useState("");
   const [category, setCategory] = useState("");
   const [purchaseSale, setPurchaseSale] = useState("");

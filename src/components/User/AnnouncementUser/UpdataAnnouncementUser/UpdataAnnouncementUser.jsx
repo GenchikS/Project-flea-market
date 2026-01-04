@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import css from "./UpdataAnnouncementUser.module.css";
 import { useNavigate } from "react-router-dom";
-import { fetchArticleAddAnnouncement } from "../../../../api/articlesAnnouncements-api.js";
+import {  fetchArticleAnnouncementId, fetchArticleUpdataAnnouncement } from "../../../../api/articlesAnnouncements-api.js";
 import Chapter from "../../../Announcement/FormAnnouncementData/SelectChapter/Chapter.jsx";
 import CategoryAuto from "../../../Announcement/FormAnnouncementData/SelectCategory/CategoryAuto/CategoryAuto.jsx";
 import CategoryTechnics from "../../../Announcement/FormAnnouncementData/SelectCategory/CategoryTechnics/CategoryTechnics.jsx";
@@ -12,40 +12,63 @@ import CategoryServices from "../../../Announcement/FormAnnouncementData/SelectC
 import CategoryAnimals from "../../../Announcement/FormAnnouncementData/SelectCategory/CategoryAnimals/CategoryAnimals.jsx";
 import CategoryDifferents from "../../../Announcement/FormAnnouncementData/SelectCategory/CategoryDifferents/CategoryDifferents.jsx";
 import CategoryGifts from "../../../Announcement/FormAnnouncementData/SelectCategory/CategoryGifts/CategoryGifts.jsx";
-// import AnnouncementText from "../../FormAnnouncementData/AnnouncementText/AnnouncementText.jsx";
-// import ButtonModalAnnouncement from "../../FormAnnouncementData/ButtonModalAnnouncement/ButtonModalAnnouncement.jsx";
-
 import AnnouncementText from "../../../Announcement/FormAnnouncementData/AnnouncementText/AnnouncementText.jsx";
 import ButtonModalAnnouncement from "../../../Announcement/FormAnnouncementData/ButtonModalAnnouncement/ButtonModalAnnouncement.jsx";
-// import CategoryWork from "../../../Announcement/FormAnnouncementData/SelectCategory/CategoryWork/CategoryWork.jsx";
-
+import { PriceAnnouncement } from "../../../Announcement/FormAnnouncementData/SelectCategory/PriceAnnouncement/PriceAnnouncement.jsx";
 
 export default function UpdataAnnouncementUser({
   marker,
   pathTo,
   setIsModalOpen,
-  setError,
+  idAnnouncement,
   user,
   setResponseMessage,
+  setError,
 }) {
-  const [idUser, setIdUser] = useState(user._id);
+  // const [idUser, setIdUser] = useState(user._id);
   const [chapter, setChapter] = useState("");
   const [category, setCategory] = useState("");
   const [purchaseSale, setPurchaseSale] = useState("");
   const [price, setPrice] = useState("");
   const [yar, setYar] = useState("");
   const [text, setText] = useState("");
-
+  const [loadig, setLoading] = useState();
   // const [photo, setPhoto] = useState("");
 
   const navigate = useNavigate();
 
+  // console.log("idAnnouncement", idAnnouncement);
+
+  useEffect(() => {
+    async function featchUpdata() {
+      try {
+        setLoading(true);
+        setError(false);
+        const response = await fetchArticleAnnouncementId(idAnnouncement);
+        // console.log(`response`, response.data.data[0]);
+        setCategory(response.data.data[0].category);
+        setChapter(response.data.data[0].chapter);
+        setPurchaseSale(response.data.data[0].purchaseSale);
+      } catch (error) {
+        setError(true);
+      }
+    }
+    featchUpdata()
+  }, []);
+
   const handleSubmit = async (event) => {
     // console.log(`idUser`, user._id);
-    const idUser = user._id;
+    // const idUser = user._id;
     event.preventDefault();
-    const value = { idUser, chapter, category, purchaseSale, price, text, yar };
-    const announcement = await fetchArticleAddAnnouncement(value);
+     const announcement = await fetchArticleUpdataAnnouncement({
+      idAnnoun: idAnnouncement,
+      chapter: chapter,
+      category: category,
+      purchaseSale: purchaseSale,
+      price: price,
+      yar: yar,
+      text: text,
+    });
     // console.log(`announcement`, announcement);
     if (announcement.data) {
       setResponseMessage(announcement.message);
@@ -58,66 +81,36 @@ export default function UpdataAnnouncementUser({
 
   return (
     <div className={css.containerAddAnnouncement}>
-      <h3 className={css.title}>Форма додавання оголошень</h3>
+      <h3 className={css.title}>Форма редагування оголошеня</h3>
+      <p className={css.markerRed}>*</p>
+      <ul className={css.listTextAnnoncement}>
+        {purchaseSale && (
+          <li>
+            <p className={css.listPurchaseSale}>{purchaseSale}</p>
+          </li>
+        )}
+        <li>
+          <p>Категорія: {chapter}</p>
+        </li>
+        {category && (
+          <li>
+            <p>Тип: {category}</p>
+          </li>
+        )}
+        {yar && (
+          <li>
+            <p>Рік випуску: {yar}</p>
+          </li>
+        )}
+      </ul>
       <form
         className={css.listAddAnnouncement}
         name="formAnnouncement"
         type="submit"
         onSubmit={handleSubmit}
       >
-        <Chapter
-          setChapter={setChapter}
-          setCategory={setCategory}
-          charter={chapter}
-          marker={marker}
-        />
-        {chapter === "автомобіль" && (
-          <CategoryAuto
-            set={{ setCategory, setPurchaseSale, setPrice, setYar }}
-            category={category}
-            purchaseSale={purchaseSale}
-          />
-        )}
-        {chapter === "робота" && (
-          <CategoryWork setCategory={setCategory} category={category} />
-        )}
-        {chapter === "нерухомість" && (
-          <CategoryHousing
-            set={{ setCategory, setPurchaseSale }}
-            category={category}
-            purchaseSale={purchaseSale}
-          />
-        )}
-        {chapter === "техніка" && (
-          <CategoryTechnics
-            set={{ setCategory, setPurchaseSale }}
-            purchaseSale={purchaseSale}
-          />
-        )}
-        {chapter === "сад" && (
-          <CategoryGarden
-            set={{ setCategory, setPurchaseSale }}
-            category={category}
-            purchaseSale={purchaseSale}
-          />
-        )}
-        {chapter === "послуги" && (
-          <CategoryServices setCategory={setCategory} category={category} />
-        )}
-        {chapter === "тварини" && (
-          <CategoryAnimals setCategory={setCategory} category={category} />
-        )}
-        {chapter === "різне" && (
-          <CategoryDifferents
-            set={{ setCategory, setPurchaseSale }}
-            category={category}
-            purchaseSale={purchaseSale}
-          />
-        )}
-        {chapter === "дарую" && (
-          <CategoryGifts setCategory={setCategory} category={category} />
-        )}
-        <AnnouncementText setText={setText} marker={marker} />
+      {price && <PriceAnnouncement setPrice={setPrice} marker={marker} />}
+        <AnnouncementText setText={setText} marker={marker}/>
         <ButtonModalAnnouncement
           type="submit"
           pathTo={pathTo}

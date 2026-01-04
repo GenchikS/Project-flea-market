@@ -33,13 +33,12 @@ import Layout from "./components/Layout/Layout.jsx";
 import { fetchArticleRefreshUser } from "./api/articles-api.js";
 import { UserHome } from "./pages/UserHome/UserHome.jsx";
 import UserLoading from "./components/UserHomeComponent/UserLoading.jsx";
-import AddAnnouncementUser from "./components/User/AnnouncementUser/UpdataAnnouncementUser/UpdataAnnouncementUser.jsx";
+import AddAnnouncementUser from "./components/User/AnnouncementUser/AddAnnouncementUser/AddAnnouncementUser.jsx";
+import UpdataAnnouncementUser from "./components/User/AnnouncementUser/UpdataAnnouncementUser/UpdataAnnouncementUser.jsx";
 import DoneAnnouncementUser from "./components/User/AnnouncementUser/DoneAnnouncementUser/DoneAnnouncementUser.jsx";
 import ErrorAnnouncementUser from "./components/User/AnnouncementUser/ErrorAnnouncementUser/ErrorAnnouncementUser.jsx";
 import AllAnnouncementComponent from "./components/ProductAnnouncement/AllAnnouncementComponent/AllAnnouncementComponent.jsx";
 import { UserDeleteAnnouncement } from "./components/User/UserDeleteAnnouncement/UserDeleteAnnouncement.jsx";
-import UpdataAnnouncementUser from "./components/User/AnnouncementUser/UpdataAnnouncementUser/UpdataAnnouncementUser.jsx";
-
 
 
 // http://localhost:3000/users
@@ -169,6 +168,7 @@ function App() {
                   setIsModalOpen={setIsModalOpen}
                   setError={setError}
                   user={user}
+                  idAnnouncement={idAnnouncement}
                   setResponseMessage={setResponseMessage}
                 />
               }

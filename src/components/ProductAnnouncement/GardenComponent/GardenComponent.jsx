@@ -45,9 +45,11 @@ export default function GardenComponent() {
     <div className={css.containerGardenComponent}>
       <div className={css.containerTitle}>
         <h4 className={css.titleGardenComponent}>Сад та город:</h4>
-        {!loadig && <h4 className={css.titlePagination}>
-          Знайдено оголошень: {pagination.totalAnnouncement}
-        </h4>}
+        {!loadig && (
+          <h4 className={css.titlePagination}>
+            Знайдено оголошень: {pagination.totalAnnouncement}
+          </h4>
+        )}
       </div>
       <div>
         <h5>Фільтр</h5>
@@ -57,10 +59,10 @@ export default function GardenComponent() {
           items.map((item) => (
             <ul key={item._id} className={css.tableContainerGardenComponent}>
               <li className={css.listCard}>
-                <p className={css.chapter}>Категорія: {item.chapter}</p>
+                <p className={css.listPurchaseSale}>{item.purchaseSale}</p>
               </li>
               <li className={css.listCard}>
-                <p className={css.listPurchaseSale}>{item.purchaseSale}</p>
+                <p className={css.chapter}>Категорія: {item.chapter}</p>
               </li>
               <li className={css.listCard}>
                 <p className={css.category}>{item.category}</p>
@@ -68,7 +70,7 @@ export default function GardenComponent() {
               <li className={css.listTextAnnouncement}>
                 <p className={css.textAnnouncemnt}>{item.text}</p>
               </li>
-             <li className={css.listTextAnnouncement}>
+              <li className={css.listTextAnnouncement}>
                 <p className={css.textDate}>
                   Дата публікації: {item.createdAt.slice(0, 10)}
                 </p>

@@ -45,6 +45,13 @@ list-style-type: none;
     justify-content: space-between;
 }
 
+.listPurchaseSale{
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--color-text-dark-blue);
+    margin-bottom: 2px;
+}
+
 .chapter{
     font-size: 12px;
     font-weight: bold;
@@ -67,13 +74,6 @@ list-style-type: none;
 .listDescriptionTitle{
     display: flex;
     flex-direction: column;
-}
-
-.listPurchaseSale{
-    font-size: 14px;
-    font-weight: bold;
-    color: var(--color-text-dark-blue);
-    margin-bottom: 2px;
 }
 
 .listYar, .listPrice, .listCategory{

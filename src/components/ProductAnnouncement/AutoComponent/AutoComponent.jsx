@@ -20,7 +20,7 @@ export default function AutoComponent() {
             category: "",
             purchaseSale: "",
           });
-          console.log(`response`, response.data);
+          // console.log(`response`, response.data);
           setItems(response.data);
           setPagination({
             perPage: response.perPage,
