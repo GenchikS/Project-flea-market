@@ -38,6 +38,7 @@ import DoneAnnouncementUser from "./components/User/AnnouncementUser/DoneAnnounc
 import ErrorAnnouncementUser from "./components/User/AnnouncementUser/ErrorAnnouncementUser/ErrorAnnouncementUser.jsx";
 import AllAnnouncementComponent from "./components/ProductAnnouncement/AllAnnouncementComponent/AllAnnouncementComponent.jsx";
 import { UserDeleteAnnouncement } from "./components/User/UserDeleteAnnouncement/UserDeleteAnnouncement.jsx";
+import UpdataAnnouncementUser from "./components/User/AnnouncementUser/UpdataAnnouncementUser/UpdataAnnouncementUser.jsx";
 
 
 
@@ -150,7 +151,7 @@ function App() {
               path="/user/announcement/add"
               element={
                 <AddAnnouncementUser
-                  marker={marker}
+                  marker={false}
                   pathTo={"/user/home"}
                   setIsModalOpen={setIsModalOpen}
                   setError={setError}
@@ -159,11 +160,11 @@ function App() {
                 />
               }
             />
-            {/* <Route
+            <Route
               path="/user/announcement/updata"
               element={
-                <AddAnnouncementUser
-                  marker={marker}
+                <UpdataAnnouncementUser
+                  marker={true}
                   pathTo={"/user/home"}
                   setIsModalOpen={setIsModalOpen}
                   setError={setError}
@@ -171,7 +172,7 @@ function App() {
                   setResponseMessage={setResponseMessage}
                 />
               }
-            /> */}
+            />
 
             <Route
               path="/user/announcement/delete"
