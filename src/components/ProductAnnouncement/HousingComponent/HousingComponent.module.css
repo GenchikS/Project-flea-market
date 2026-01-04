@@ -47,7 +47,7 @@ list-style-type: none;
     justify-content: space-between;
 }
 
-.chapter{
+.listChapter{
     font-size: 12px;
     font-weight: bold;
     margin-bottom: 2px;
@@ -58,6 +58,11 @@ list-style-type: none;
     font-weight: bold;
     color: var(--color-text-dark-blue);
     margin-bottom: 2px;
+}
+
+.listPrice, .listCategory{
+    font-size: 12px;
+     margin-bottom: 2px;
 }
 
 .listTextAnnouncement{

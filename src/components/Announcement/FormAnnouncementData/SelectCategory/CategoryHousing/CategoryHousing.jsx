@@ -1,8 +1,9 @@
 import { useId } from "react";
 import PurchaseSale from "../PurchaseSale/PurchaseSale.jsx";
 import css from "./CategoryHousing.module.css";
+import { PriceAnnouncement } from "../PriceAnnouncement/PriceAnnouncement.jsx";
 export default function CategoryHousing({ set, category, purchaseSale, marker, sourse }) {
-  const { setCategory } = set;
+  const { setCategory, setPrice } = set;
   const selectCategoryId = useId();
   return (
     <div className={css.containerCategory}>
@@ -32,6 +33,7 @@ export default function CategoryHousing({ set, category, purchaseSale, marker, s
           інше
         </option>
       </select>
+      <PriceAnnouncement setPrice={setPrice} marker={marker} />
     </div>
   );
 }

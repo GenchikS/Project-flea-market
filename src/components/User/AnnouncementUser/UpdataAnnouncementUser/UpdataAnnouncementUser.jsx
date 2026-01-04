@@ -49,6 +49,9 @@ export default function UpdataAnnouncementUser({
         setCategory(response.data.data[0].category);
         setChapter(response.data.data[0].chapter);
         setPurchaseSale(response.data.data[0].purchaseSale);
+        setYar(response.data.data[0].yar);
+        setPrice(response.data.data[0].price);
+
       } catch (error) {
         setError(true);
       }

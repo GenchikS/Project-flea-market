@@ -78,7 +78,7 @@ export default function AddAnnouncementUser({
         )}
         {chapter === "нерухомість" && (
           <CategoryHousing
-            set={{ setCategory, setPurchaseSale }}
+            set={{ setCategory, setPurchaseSale, setPrice }}
             category={category}
             purchaseSale={purchaseSale}
           />
