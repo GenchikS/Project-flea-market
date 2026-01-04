@@ -1,0 +1,12 @@
+.buttonAnnouncementContainer{
+    width: 100%;
+    border-radius: 14px;
+    background-color: var(--bg-color);
+}
+
+.listButtonAnnouncement{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    list-style-type: none;
+}

@@ -37,6 +37,7 @@ import DoneAnnouncementUser from "./components/Announcement/AddAnnouncementUser/
 import ErrorAnnouncementUser from "./components/Announcement/AddAnnouncementUser/ErrorAnnouncementUser/ErrorAnnouncementUser.jsx";
 import TechnicsComponent from "./components/ProductAnnouncement/TechnicsComponent/TechnicsComponent.jsx";
 import AllAnnouncementComponent from "./components/ProductAnnouncement/AllAnnouncementComponent/AllAnnouncementComponent.jsx";
+import { UserDeleteAnnouncement } from "./components/User/UserDeleteAnnouncement/UserDeleteAnnouncement.jsx";
 // import TechnicsComponent from "./components/ProductAnnouncement/TechnicsComponent/TechnicsComponent.jsx";
 
 // http://localhost:3000/users
@@ -47,7 +48,8 @@ function App() {
   const [isLogin, setIsLogin] = useState(false);
   const [marker, setMarker] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [responseMessage, setResponseMessage] = useState("")
+  const [responseMessage, setResponseMessage] = useState("");
+  const [idAnnouncement, setIdAnnouncement] = useState(null);
   const [error, setError] = useState(``);
 
   const token = JSON.parse(localStorage.getItem("Project-flea-market"));
@@ -130,7 +132,18 @@ function App() {
             />
             <Route
               path="/user/home"
-              element={user._id ? <UserHome user={user} /> : <UserLoading />}
+              element={
+                user._id ? (
+                  <UserHome
+                    user={user}
+                    setMarker={setMarker}
+                    setIsModalOpen={setIsModalOpen}
+                    setIdAnnouncement={setIdAnnouncement}
+                  />
+                ) : (
+                  <UserLoading />
+                )
+              }
             />
             <Route
               path="/user/announcement/add"
@@ -145,17 +158,32 @@ function App() {
                 />
               }
             />
-
-            {/* <Route
-              path="/admin/announcement/delete"
+            <Route
+              path="/user/announcement/updata"
               element={
-                <DeleteAnnouncement
-                  pathTo={"/admin"}
+                <AddAnnouncementUser
+                  marker={marker}
+                  pathTo={"/user/home"}
                   setIsModalOpen={setIsModalOpen}
                   setError={setError}
+                  user={user}
+                  setResponseMessage={setResponseMessage}
                 />
               }
-            /> */}
+            />
+
+            <Route
+              path="/user/announcement/delete"
+              element={
+                <UserDeleteAnnouncement
+                  pathTo={"/user/home"}
+                  setIsModalOpen={setIsModalOpen}
+                  setError={setError}
+                  idAnnouncement={idAnnouncement}
+                  setResponseMessage={setResponseMessage}
+                />
+              }
+            />
             <Route
               path="/user/announcement/done"
               element={

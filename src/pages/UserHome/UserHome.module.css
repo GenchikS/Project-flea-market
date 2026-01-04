@@ -118,32 +118,14 @@ list-style-type: none;
 .textAnnouncemnt{
     font-size: 10px;
     margin-top: 4px;
+    margin-bottom: 4px;
     
 }
 
 .containerButton{
     display: flex;
     flex-direction: row;
-    justify-content:space-between;
-    margin: 6px 18px 0 18px;
-}
-
-.buttonDelete{
-    margin: 0;
-    background-color: var(--color-button-red);
-}
-
-.buttonUpdate{
-    margin: 0;    
-    background-color: var(--color-button-green);
-}
-
-.buttonDelete:hover{
-    background-color: var(--color-button-red-hover);
-}
-
-.buttonUpdate:hover{
-    background-color: var(--color-button-green-hover);
+    width: 100%;
 }
 
 .textDate{

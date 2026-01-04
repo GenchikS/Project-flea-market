@@ -8,6 +8,7 @@
 .green{
     font-size: 16px;;
     color :var(--color-button-green);
+    margin-bottom: 8px;
 }
 
 .buttonGreen{
