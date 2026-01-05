@@ -2,11 +2,14 @@ import { useEffect, useState } from "react";
 import css from "./AutoComponent.module.css";
 import { fetchAnnouncementFilterChapter } from "../../../api/articlesAnnouncements-api.js";
 import MyComponent from "../../Loader/Loader.jsx";
+import PaginationComponent from "../../PaginationComponent/PaginationComponent.jsx";
+// import { PaginationComponent } from "../../PaginationComponent/PaginationComponent.jsx";
 
 export default function AutoComponent() {
 
   const [items, setItems] = useState([]);
   const [pagination, setPagination] = useState({});
+  const [page, setPage] = useState(1);
   const [error, setError] = useState(false);
   const [loadig, setLoading] = useState(false);
 {
@@ -19,9 +22,11 @@ export default function AutoComponent() {
             chapter: "автомобіль",
             category: "",
             purchaseSale: "",
+            page: page,
           });
           // console.log(`response`, response.data);
           setItems(response.data);
+          // setPage(response.page);
           setPagination({
             perPage: response.perPage,
             page: response.page,
@@ -32,14 +37,12 @@ export default function AutoComponent() {
           });
         } catch (error) {
           setError(true);
-        }
-        finally {
+        } finally {
           setLoading(false);
         }
       }
       fetchDataChapter();
-    },
-    []);
+    }, [page]);
   }
   // console.log(`pagination`, pagination);
   return (
@@ -90,6 +93,12 @@ export default function AutoComponent() {
             </ul>
           ))}
       </div>
+      {!loadig && (
+        <PaginationComponent
+          pagination={pagination}
+          setPage={setPage}
+        />
+      )}
       <div>
         {loadig && (
           <div className={css.containerLoadingData}>

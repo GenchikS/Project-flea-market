@@ -2,10 +2,12 @@ import { useEffect, useState } from "react";
 import css from "./ServicesComponent.module.css";
 import { fetchAnnouncementFilterChapter } from "../../../api/articlesAnnouncements-api.js";
 import MyComponent from "../../Loader/Loader.jsx";
+import PaginationComponent from "../../PaginationComponent/PaginationComponent.jsx";
 
 export default function ServicesComponent() {
   const [items, setItems] = useState([]);
   const [pagination, setPagination] = useState({});
+  const [page, setPage] = useState(1);
   const [error, setError] = useState(false);
   const [loadig, setLoading] = useState(false);
 
@@ -19,6 +21,7 @@ export default function ServicesComponent() {
             chapter: "послуги",
             category: "",
             purchaseSale: "",
+            page: page,
           });
           // console.log(`retponse`, response);
           setItems(response.data);
@@ -32,14 +35,12 @@ export default function ServicesComponent() {
           });
         } catch (error) {
           setError(true);
-        }
-        finally {
+        } finally {
           setLoading(false);
         }
       }
       fetchDataChapter();
-    },
-    []);
+    }, [page]);
   }
   return (
     <div className={css.containerServicesComponent}>
@@ -76,6 +77,12 @@ export default function ServicesComponent() {
             </ul>
           ))}
       </div>
+      {!loadig && (
+        <PaginationComponent
+          pagination={pagination}
+          setPage={setPage}
+        />
+      )}
       <div>
         {loadig && (
           <div className={css.containerLoadingData}>

@@ -70,6 +70,7 @@ export default function AddAnnouncementUser({
           <CategoryAuto
             set={{ setCategory, setPurchaseSale, setPrice, setYar }}
             category={category}
+            sourse={true}
             purchaseSale={purchaseSale}
           />
         )}
@@ -81,6 +82,7 @@ export default function AddAnnouncementUser({
             set={{ setCategory, setPurchaseSale, setPrice }}
             category={category}
             purchaseSale={purchaseSale}
+            sourse={true}
           />
         )}
         {chapter === "техніка" && (

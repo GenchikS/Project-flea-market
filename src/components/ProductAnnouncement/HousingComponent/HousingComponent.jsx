@@ -2,10 +2,12 @@ import { useEffect, useState } from "react";
 import css from "./HousingComponent.module.css";
 import { fetchAnnouncementFilterChapter } from "../../../api/articlesAnnouncements-api.js";
 import MyComponent from "../../Loader/Loader.jsx";
+import PaginationComponent from "../../PaginationComponent/PaginationComponent.jsx";
 
 export default function HousingComponent() {
   const [items, setItems] = useState([]);
   const [pagination, setPagination] = useState({});
+  const [page, setPage] = useState(1);
   const [error, setError] = useState(false);
   const [loadig, setLoading] = useState(false);
 
@@ -19,6 +21,7 @@ export default function HousingComponent() {
             chapter: "нерухомість",
             category: "",
             purchaseSale: "",
+            page: page,
           });
           // console.log(`retponse`, response);
           setItems(response.data);
@@ -32,14 +35,12 @@ export default function HousingComponent() {
           });
         } catch (error) {
           setError(true);
-        }
-        finally {
+        } finally {
           setLoading(false);
         }
       }
       fetchDataChapter();
-    },
-    []);
+    }, [page]);
   }
   return (
     <div className={css.containerHousingComponent}>
@@ -67,9 +68,11 @@ export default function HousingComponent() {
               <li className={css.listCard}>
                 <p className={css.listCategory}>{item.category}</p>
               </li>
-              {item.price && <li className={css.listCard}>
-                <p className={css.listPrice}>Ціна: {item.price} $</p>
-              </li>}
+              {item.price && (
+                <li className={css.listCard}>
+                  <p className={css.listPrice}>Ціна: {item.price} $</p>
+                </li>
+              )}
               <li className={css.listTextAnnouncement}>
                 <p className={css.textAnnouncemnt}>{item.text}</p>
               </li>
@@ -81,6 +84,9 @@ export default function HousingComponent() {
             </ul>
           ))}
       </div>
+      {!loadig && (
+        <PaginationComponent pagination={pagination} setPage={setPage} />
+      )}
       <div>
         {loadig && (
           <div className={css.containerLoadingData}>

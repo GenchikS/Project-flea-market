@@ -17,13 +17,12 @@ export default function AnnouncementFilterChapter({
   chapter,
   setChapter,
   setItems,
-  // setItemsSourch,
+  sourse,
 }) {
   const selectCarterId = useId();
   const [category, setCategory] = useState("");
   const [purchaseSale, setPurchaseSale] = useState("");
-  const [sourse, setSoursce] = useState(false);
-
+  
   const handleChange = (evt) => {
     // console.log(`evt`, evt.target.value);
     setChapter(evt.target.value);
@@ -116,7 +115,7 @@ export default function AnnouncementFilterChapter({
             set={{ setCategory, setPurchaseSale }}
             category={category}
             purchaseSale={purchaseSale}
-            sourse={sourse}
+            // sourse={sourse}
             marker={true}
           />
         )}

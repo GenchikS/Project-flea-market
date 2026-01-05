@@ -15,6 +15,7 @@ export default function AnnouncementPages({ setMarker, pathTo, setIsModalOpen })
   const [itemArray, setItemArray] = useState(null);
   const [loadig, setLoading] = useState(false);
   const [chapter, setChapter] = useState("");
+  // const [sourse, setSoursce] = useState(false);
 
   // console.log(`chapter`, chapter.length);
 
@@ -61,6 +62,7 @@ export default function AnnouncementPages({ setMarker, pathTo, setIsModalOpen })
             chapter={chapter}
             setChapter={setChapter}
             setItems={setItems}
+            sourse={false}
           />
           {chapter.length === 0 && (
             <AnnouncementFormSearchId
@@ -80,11 +82,12 @@ export default function AnnouncementPages({ setMarker, pathTo, setIsModalOpen })
         </div>
       </div>
       <div className={css.containerUserInfo}>
-        {item && (!itemArray ? (
-          <AnnouncementInfoCard item={item} />
-        ) : (
-          <AnnouncementInfoCard item={itemArray} />
-        ))}
+        {item &&
+          (!itemArray ? (
+            <AnnouncementInfoCard item={item} />
+          ) : (
+            <AnnouncementInfoCard item={itemArray} />
+          ))}
 
         {loadig && (
           <div className={css.containerLoadingData}>

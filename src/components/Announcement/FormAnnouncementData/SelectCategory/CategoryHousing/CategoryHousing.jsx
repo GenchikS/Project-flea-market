@@ -33,7 +33,7 @@ export default function CategoryHousing({ set, category, purchaseSale, marker, s
           інше
         </option>
       </select>
-      <PriceAnnouncement setPrice={setPrice} marker={marker} />
+      {sourse && <PriceAnnouncement setPrice={setPrice} marker={marker} />}
     </div>
   );
 }

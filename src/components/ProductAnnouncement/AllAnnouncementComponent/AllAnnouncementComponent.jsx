@@ -2,10 +2,12 @@ import { useEffect, useState } from "react";
 import css from "./AllAnnouncementComponent.module.css";
 import { fetchArticleAnnouncementsAll } from "../../../api/articlesAnnouncements-api.js";
 import MyComponent from "../../Loader/Loader.jsx";
+import PaginationComponent from "../../PaginationComponent/PaginationComponent.jsx";
 
 export default function AllAnnouncementComponent() {
   const [items, setItems] = useState([]);
   const [pagination, setPagination] = useState({});
+  const [page, setPage] = useState(1);
   const [error, setError] = useState(false);
   const [loadig, setLoading] = useState(false);
 
@@ -15,7 +17,7 @@ export default function AllAnnouncementComponent() {
         try {
           setLoading(true);
           setError(false);
-          const response = await fetchArticleAnnouncementsAll();
+          const response = await fetchArticleAnnouncementsAll({ page: page });
           // console.log(`retponse all`, response);
           setItems(response.data);
           setPagination({
@@ -33,7 +35,7 @@ export default function AllAnnouncementComponent() {
         }
       }
       fetchDataChapter();
-    }, []);
+    }, [page]);
   }
   return (
     <div className={css.containerAllAnnouncementComponent}>
@@ -72,6 +74,12 @@ export default function AllAnnouncementComponent() {
             </ul>
           ))}
       </div>
+      {!loadig && (
+        <PaginationComponent
+          pagination={pagination}
+          setPage={setPage}
+        />
+      )}
       <div>
         {loadig && (
           <div className={css.containerLoadingData}>

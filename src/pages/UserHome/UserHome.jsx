@@ -4,11 +4,13 @@ import { fetchArticleAnnouncementId } from "../../api/articlesAnnouncements-api.
 import MyComponent from "../../components/Loader/Loader.jsx";
 import { NavLink } from "react-router-dom";
 import UserAnnouncementChange from "../../components/User/UserAnnouncementChange/UserAnnouncementChange.jsx";
+import PaginationComponent from "../../components/PaginationComponent/PaginationComponent.jsx";
 
 export const UserHome = ({ user, setMarker, setIsModalOpen, setIdAnnouncement }) => {
   const [items, setItems] = useState([]);
   const [message, setMessage] = useState("");
   const [pagination, setPagination] = useState({});
+  const [page, setPage] = useState(1);
   const [error, setError] = useState(false);
   const [loadig, setLoading] = useState();
 
@@ -17,7 +19,10 @@ export const UserHome = ({ user, setMarker, setIsModalOpen, setIdAnnouncement })
       try {
         setLoading(true);
         setError(false);
-        const response = await fetchArticleAnnouncementId(user._id);
+        const response = await fetchArticleAnnouncementId({
+          id: user._id,
+          page: page,
+        });
         // console.log(`response`, response);
         setItems(response.data.data);
         setMessage(response.message);
@@ -36,7 +41,7 @@ export const UserHome = ({ user, setMarker, setIsModalOpen, setIdAnnouncement })
       }
     }
     fetchData();
-  }, []);
+  }, [page]);
 
   // console.log(`items`, items);
   // console.log(`items id`, (items.map((item )=> item._id)));
@@ -106,6 +111,12 @@ export const UserHome = ({ user, setMarker, setIsModalOpen, setIdAnnouncement })
           <p className={css.errorAnnouncement}>{items.data}</p>
         )}
       </div>
+      {!loadig && (
+        <PaginationComponent
+          pagination={pagination}
+          setPage={setPage}
+        />
+      )}
       <div>
         {loadig && (
           <div className={css.containerLoadingData}>
